@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-07T19:26:59.021708+00:00",
+  "purpose": "Documents read-only source inputs used to build the Axone architecture dashboard. Local source paths are redacted for GitHub Pages/browser safety.",
+  "read_only_inputs": [
+    {
+      "name": "AGENTS.md",
+      "path": "workspace-source://AGENTS.md",
+      "used_for": "authoritative architecture, ownership, boundaries"
+    },
+    {
+      "name": "TOOLS.md",
+      "path": "workspace-source://TOOLS.md",
+      "used_for": "resource ownership and routing contracts"
+    },
+    {
+      "name": "Tibot interactive dashboard",
+      "path": "openclaw-source://agents/guy/workspace/WEB_DASHBOARD/tibot_interactive",
+      "used_for": "sub-dashboard copy/link/embed"
+    },
+    {
+      "name": "Tibot dashboard status",
+      "path": "guy-source://WEB_DASHBOARD/tibot_interactive/dashboard_status.json",
+      "used_for": "artifact availability metrics"
+    }
+  ],
+  "browser_runtime_paths": [
+    "index.html",
+    "assets/styles.css",
+    "assets/app.js",
+    "data/architecture.json",
+    "dashboard_status.json",
+    "tibot_interactive/index.html"
+  ],
+  "write_scope": "openclaw-source://agents/guy/workspace/WEB_DASHBOARD/axone_dashboard"
+}

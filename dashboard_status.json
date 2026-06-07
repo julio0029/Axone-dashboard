@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-07T19:26:59.021708+00:00",
+  "dashboard": "Axone architecture dashboard",
+  "repo_target": "julio0029/Axone-dashboard",
+  "artifact_status": "generated",
+  "live_system_status": "unavailable_not_checked",
+  "status_policy": "No live status is fabricated; this static dashboard reports documented roles and local artifact availability only.",
+  "tibot_subdashboard": {
+    "included": true,
+    "method": "copied static directory and embedded via relative iframe plus direct relative link",
+    "relative_path": "tibot_interactive/index.html",
+    "generated_at": "2026-06-03T22:26:36.629989+00:00",
+    "bot_count": 375,
+    "classes": {
+      "classification": {
+        "bot_count": 223
+      },
+      "prediction": {
+        "bot_count": 152
+      }
+    }
+  },
+  "checks_required": [
+    "json_parse",
+    "python_compile",
+    "js_syntax",
+    "static_safety_scan",
+    "write_scope_scan"
+  ]
+}

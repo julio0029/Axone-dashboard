@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axone Dashboard · Read-only Architecture</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <nav class="nav"><div class="wrap"><a class="brand" href="#top">Axone Dashboard</a><a href="#layers">Layers</a><a href="#flow">Flow</a><a href="#agents">Agents</a><a href="#tibot">Tibot</a><a href="source_registry.json">Sources</a><a href="dashboard_status.json">Status</a></div></nav>
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="panel">
+        <span class="pill">GitHub Pages static artifact · target julio0029/Axone-dashboard</span>
+        <h1>Axone architecture control map</h1>
+        <p>Read-only landing page for the full Axone multi-agent trading/research architecture. This dashboard shows ownership, inputs, outputs, boundaries, approval chains, and the latest Guy-hosted Tibot interactive sub-dashboard.</p>
+        <p class="warning">No live status is fabricated. Status labels here mean documented role or local artifact availability only.</p>
+      </div>
+      <aside class="panel">
+        <h2>Artifact status</h2>
+        <div class="kpis"><div class="kpi"><strong>13</strong><span>Architecture agents</span></div><div class="kpi"><strong data-tibot-count>—</strong><span>Tibot bots in sub-dashboard</span></div><div class="kpi"><strong>0</strong><span>Backend services/API calls</span></div><div class="kpi"><strong>RO</strong><span>Guy read-only scope</span></div></div>
+        <p class="muted">Generated: <span data-generated>—</span><br/>Tibot artifact: <span data-tibot-generated>—</span></p>
+      </aside>
+    </section>
+
+    <section id="layers" class="section panel"><h2>Architecture layers</h2><div class="layer-grid" data-layers></div></section>
+    <section id="flow" class="section panel"><h2>Read-only graph / flow</h2><p>Direction shows allowed information flow, not execution authority.</p><div class="flow-box" data-flow></div></section>
+    <section class="section panel"><h2>Approval chains and hard gates</h2><ul class="chains" data-chains></ul></section>
+
+    <section id="agents" class="section panel">
+      <h2>Agent cards</h2>
+      <input class="search" data-search placeholder="Search agents, ownership, boundaries…" />
+      <div class="filters"><button class="active" data-filter="all">All</button><button data-filter="data">Data</button><button data-filter="historical">Historical</button><button data-filter="model">Model</button><button data-filter="strategy">Strategy</button><button data-filter="risk">Risk</button><button data-filter="research">Research</button><button data-filter="dashboard">Dashboard</button></div>
+      <div class="agent-grid" data-agent-grid></div>
+    </section>
+
+    <section id="tibot" class="section panel">
+      <h2>Tibot interactive sub-dashboard</h2>
+      <p>Included by copying the latest Guy-owned Tibot static dashboard into <code>tibot_interactive/</code> and embedding it with a relative iframe. Data files and browser-side interactivity are preserved.</p>
+      <p><a class="open-btn" href="tibot_interactive/index.html">Open Tibot dashboard directly</a></p>
+      <iframe class="tibot-frame" src="tibot_interactive/index.html" title="Tibot interactive bot explorer"></iframe>
+    </section>
+    <p class="footer">Static dashboard only. No scheduler, broker/API, paper/live trading, retraining, replay, optimisation, or upstream writes.</p>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>
