@@ -1,29 +1,35 @@
 {
-  "generated_at": "2026-06-07T19:26:59.021708+00:00",
-  "dashboard": "Axone architecture dashboard",
+  "generated_at": "2026-06-08T00:45:50.540660+00:00",
+  "dashboard": "Axone architecture dashboard with Tibot quality and Sentinel BTC review panels",
   "repo_target": "julio0029/Axone-dashboard",
   "artifact_status": "generated",
   "live_system_status": "unavailable_not_checked",
-  "status_policy": "No live status is fabricated; this static dashboard reports documented roles and local artifact availability only.",
-  "tibot_subdashboard": {
+  "status_policy": "Static read-only artifact; no live status is fabricated.",
+  "tibot_quality_audit": {
     "included": true,
-    "method": "copied static directory and embedded via relative iframe plus direct relative link",
-    "relative_path": "tibot_interactive/index.html",
-    "generated_at": "2026-06-03T22:26:36.629989+00:00",
-    "bot_count": 375,
-    "classes": {
-      "classification": {
-        "bot_count": 223
-      },
-      "prediction": {
-        "bot_count": 152
-      }
-    }
+    "counts": {
+      "usable": 65,
+      "watch": 43,
+      "blocked": 253,
+      "missing_metric": 88
+    },
+    "source": "tibot-source://AUDITS/btc_htf_vs_all_quality_20260608/"
+  },
+  "sentinel_btc_decisions": {
+    "included": true,
+    "method": "static embedded data from Chronos run ledgers; accepted long/short markers overlaid on raw_5m OHLCV from feed rows",
+    "window": {
+      "start": "2026-06-02T08:49:59.999Z",
+      "end": "2026-06-05T20:05:00Z"
+    },
+    "accepted_markers": 717,
+    "closed_markers": 715,
+    "ohlcv_candles": 1000
   },
   "checks_required": [
     "json_parse",
-    "python_compile",
     "js_syntax",
+    "python_compile_if_changed",
     "static_safety_scan",
     "write_scope_scan"
   ]

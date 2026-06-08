@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-07T19:26:59.021708+00:00",
-  "purpose": "Documents read-only source inputs used to build the Axone architecture dashboard. Local source paths are redacted for GitHub Pages/browser safety.",
+  "generated_at": "2026-06-08T00:45:50.540660+00:00",
+  "purpose": "Documents read-only source inputs used to build the Axone architecture/Tibot/Sentinel BTC dashboard. Local source paths are redacted for browser safety.",
   "read_only_inputs": [
     {
       "name": "AGENTS.md",
@@ -14,13 +14,18 @@
     },
     {
       "name": "Tibot interactive dashboard",
-      "path": "openclaw-source://agents/guy/workspace/WEB_DASHBOARD/tibot_interactive",
+      "path": "guy-source://WEB_DASHBOARD/tibot_interactive",
       "used_for": "sub-dashboard copy/link/embed"
     },
     {
-      "name": "Tibot dashboard status",
-      "path": "guy-source://WEB_DASHBOARD/tibot_interactive/dashboard_status.json",
-      "used_for": "artifact availability metrics"
+      "name": "Tibot BTC quality audit",
+      "path": "tibot-source://AUDITS/btc_htf_vs_all_quality_20260608",
+      "used_for": "bot counts, mismatch note, strongest/weakest groups"
+    },
+    {
+      "name": "Chronos short BTC validation rerun",
+      "path": "chronos-source://HISTORICAL_BACKBONE_REPLAY/runs/short_btc_full_backbone_after_sentinel_polarity_fix_20260607T213719Z",
+      "used_for": "BTC OHLCV, Wally proposals, Sentinel decisions, lifecycle markers, metrics"
     }
   ],
   "browser_runtime_paths": [
@@ -28,8 +33,9 @@
     "assets/styles.css",
     "assets/app.js",
     "data/architecture.json",
+    "data/review_and_btc_decisions.json",
     "dashboard_status.json",
     "tibot_interactive/index.html"
   ],
-  "write_scope": "openclaw-source://agents/guy/workspace/WEB_DASHBOARD/axone_dashboard"
+  "write_scope": "guy-source://WEB_DASHBOARD/axone_dashboard"
 }
