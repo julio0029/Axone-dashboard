@@ -1,0 +1,178 @@
+name: Validate and Publish
+
+on:
+  push:
+    branches: [main]
+
+# Default minimal permissions. deploy_pages declares its own when Pages source
+# is switched to GitHub Actions (see that job's comments).
+permissions:
+  contents: read
+
+jobs:
+
+  # ── Job 1: Secret scan ────────────────────────────────────────────────────
+  secret_scan:
+    name: Secret Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan for secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          FAILED=0
+
+          PATTERNS=(
+            'AKIA[0-9A-Z]{16}'
+            'gh[pousr]_[A-Za-z0-9]{36,}'
+            'sk-[A-Za-z0-9]{32,}'
+            'sk-ant-[A-Za-z0-9_-]{32,}'
+            '[A-Fa-f0-9]{64,}'
+            '-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----'
+          )
+
+          # Allowlisted extensions (binary — skip content scan)
+          SKIP_EXTS='png|jpg|gif|ico'
+
+          while IFS= read -r -d '' file; do
+            base="$(basename "$file")"
+            ext="${file##*.}"
+
+            # Skip binary extensions
+            if echo "$ext" | grep -qE "^($SKIP_EXTS)$"; then
+              continue
+            fi
+
+            # Skip allowlisted filenames
+            case "$base" in
+              LICENSE|CHANGELOG.md|*.lock) continue ;;
+            esac
+
+            for pattern in "${PATTERNS[@]}"; do
+              match=$(grep -Eo "$pattern" "$file" 2>/dev/null | head -1 || true)
+              if [[ -n "$match" ]]; then
+                preview="${match:0:8}...[REDACTED]"
+                echo "::error file=$file::Secret pattern matched: $preview"
+                FAILED=1
+              fi
+            done
+          done < <(find . \
+            -not -path './.git/*' \
+            -not -path './node_modules/*' \
+            -type f -print0)
+
+          if [[ $FAILED -ne 0 ]]; then
+            echo "Secret scan FAILED — one or more patterns matched. Review errors above."
+            exit 1
+          fi
+          echo "Secret scan passed — no patterns matched."
+
+  # ── Job 2: Validate HTML & JSON ───────────────────────────────────────────
+  validate_html_json:
+    name: Validate HTML & JSON
+    runs-on: ubuntu-latest
+    # Runs in parallel with secret_scan; deploy_pages waits on both.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          FAILED=0
+          while IFS= read -r -d '' file; do
+            if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
+              echo "::error file=$file::Invalid JSON — failed to parse"
+              FAILED=1
+            fi
+          done < <(find . \
+            -not -path './.git/*' \
+            -not -path './node_modules/*' \
+            -name '*.json' -type f -print0)
+          if [[ $FAILED -ne 0 ]]; then
+            echo "JSON validation FAILED."
+            exit 1
+          fi
+          echo "JSON validation passed."
+
+      - name: Validate HTML files
+        shell: bash
+        run: |
+          set -euo pipefail
+          FAILED=0
+          while IFS= read -r -d '' file; do
+            # Lightweight structural check — not full validation
+            head_content=$(head -c 4096 "$file")
+            full_content=$(cat "$file")
+
+            if ! echo "$head_content" | grep -qi '<!DOCTYPE html\|<html'; then
+              echo "::error file=$file::Missing DOCTYPE or opening <html> tag"
+              FAILED=1
+              continue
+            fi
+            if ! echo "$full_content" | grep -qi '<body'; then
+              echo "::error file=$file::Missing <body> tag"
+              FAILED=1
+              continue
+            fi
+            if ! echo "$full_content" | grep -qi '</body>'; then
+              echo "::error file=$file::Missing </body> closing tag"
+              FAILED=1
+            fi
+          done < <(find . \
+            -not -path './.git/*' \
+            -not -path './node_modules/*' \
+            -name '*.html' -type f -print0)
+          if [[ $FAILED -ne 0 ]]; then
+            echo "HTML validation FAILED."
+            exit 1
+          fi
+          echo "HTML validation passed."
+
+  # ── Job 3: Deploy Pages ───────────────────────────────────────────────────
+  deploy_pages:
+    name: Deploy Pages
+    needs: [secret_scan, validate_html_json]
+    runs-on: ubuntu-latest
+    # Concurrency guard prevents overlapping deploys (load-bearing when Pages
+    # source is switched to GitHub Actions; harmless in legacy mode).
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+
+    # ── CURRENT STATE: LEGACY BRANCH MODE ────────────────────────────────────
+    # GH Pages is configured to serve from the main branch at root (/).
+    # GitHub Pages deploys automatically on every push — this job is a no-op
+    # placeholder that confirms both validation jobs passed before Pages picks
+    # up the commit.
+    #
+    # ── RECOMMENDATION: switch to GitHub Actions source ───────────────────────
+    # Switching Pages source to "GitHub Actions" gives:
+    #   • An explicit deploy step visible in the Actions UI
+    #   • The concurrency guard above becomes load-bearing (no overlapping deploys)
+    #   • deploy_pages can fail the pipeline before Pages serves bad content
+    # To switch: repo Settings → Pages → Source → GitHub Actions
+    # REQUIRES OPERATOR APPROVAL before changing.
+    #
+    # ── When switched, replace this job with: ────────────────────────────────
+    # permissions:
+    #   pages: write
+    #   id-token: write
+    # steps:
+    #   - uses: actions/checkout@v4
+    #   - uses: actions/configure-pages@v5
+    #   - uses: actions/upload-pages-artifact@v3
+    #     with:
+    #       path: '.'        # entire repo root is the doc root (index.html at /)
+    #   - uses: actions/deploy-pages@v4
+
+    steps:
+      - name: Legacy mode — GitHub Pages deploys from branch
+        run: |
+          echo "Pages source mode: legacy branch (main / root)"
+          echo "GitHub Pages will deploy automatically after this push."
+          echo "Both validation jobs passed — push is safe to serve."
