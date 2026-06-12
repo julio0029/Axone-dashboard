@@ -106,20 +106,19 @@ jobs:
           FAILED=0
           while IFS= read -r -d '' file; do
             # Lightweight structural check — not full validation
-            head_content=$(head -c 4096 "$file")
-            full_content=$(cat "$file")
+            # Use file-direct greps to avoid SIGPIPE on large HTML piped through echo
 
-            if ! echo "$head_content" | grep -qi '<!DOCTYPE html\|<html'; then
+            if ! head -c 4096 "$file" | grep -qi '<!DOCTYPE html\|<html'; then
               echo "::error file=$file::Missing DOCTYPE or opening <html> tag"
               FAILED=1
               continue
             fi
-            if ! echo "$full_content" | grep -qi '<body'; then
+            if ! grep -qi '<body' "$file"; then
               echo "::error file=$file::Missing <body> tag"
               FAILED=1
               continue
             fi
-            if ! echo "$full_content" | grep -qi '</body>'; then
+            if ! grep -qi '</body>' "$file"; then
               echo "::error file=$file::Missing </body> closing tag"
               FAILED=1
             fi
@@ -138,41 +137,20 @@ jobs:
     name: Deploy Pages
     needs: [secret_scan, validate_html_json]
     runs-on: ubuntu-latest
-    # Concurrency guard prevents overlapping deploys (load-bearing when Pages
-    # source is switched to GitHub Actions; harmless in legacy mode).
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     concurrency:
       group: pages
       cancel-in-progress: false
-
-    # ── CURRENT STATE: LEGACY BRANCH MODE ────────────────────────────────────
-    # GH Pages is configured to serve from the main branch at root (/).
-    # GitHub Pages deploys automatically on every push — this job is a no-op
-    # placeholder that confirms both validation jobs passed before Pages picks
-    # up the commit.
-    #
-    # ── RECOMMENDATION: switch to GitHub Actions source ───────────────────────
-    # Switching Pages source to "GitHub Actions" gives:
-    #   • An explicit deploy step visible in the Actions UI
-    #   • The concurrency guard above becomes load-bearing (no overlapping deploys)
-    #   • deploy_pages can fail the pipeline before Pages serves bad content
-    # To switch: repo Settings → Pages → Source → GitHub Actions
-    # REQUIRES OPERATOR APPROVAL before changing.
-    #
-    # ── When switched, replace this job with: ────────────────────────────────
-    # permissions:
-    #   pages: write
-    #   id-token: write
-    # steps:
-    #   - uses: actions/checkout@v4
-    #   - uses: actions/configure-pages@v5
-    #   - uses: actions/upload-pages-artifact@v3
-    #     with:
-    #       path: '.'        # entire repo root is the doc root (index.html at /)
-    #   - uses: actions/deploy-pages@v4
-
     steps:
-      - name: Legacy mode — GitHub Pages deploys from branch
-        run: |
-          echo "Pages source mode: legacy branch (main / root)"
-          echo "GitHub Pages will deploy automatically after this push."
-          echo "Both validation jobs passed — push is safe to serve."
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
