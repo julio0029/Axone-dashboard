@@ -1,39 +1,34 @@
 # Tibot Interactive Bot Explorer — Guy Dashboard
 
 ## Completed
-- Created a read-only interactive Tibot dashboard at `WEB_DASHBOARD/tibot_interactive/index.html`.
-- First view shows exactly two clickable bot-class boxes: `prediction` and `classification`.
-- Class click opens clickable family boxes with aggregate metrics, symbol/timeframe coverage, and blocked counts.
-- Family click opens an initially empty chart panel with required `symbol` and `timeframe` selectors.
-- Once symbol/timeframe are selected, the chart shows:
-  - raw OHLCV candlesticks from Chronos historical artifacts when available,
-  - training output/target layer from Tibot dataset artifacts when available,
-  - actual bot prediction derived by running the packaged Tibot model read-only against its local training dataset when possible.
-- Added interactive period controls and mouse-wheel zoom.
+- Updated read-only interactive Tibot dashboard at `WEB_DASHBOARD/axone_dashboard/tibot_interactive/index.html`.
+- Added per-bot overlay toggles persisted in `localStorage`:
+  - ON by default: raw OHLCV candles; gann_swing/class label markers.
+  - OFF by default: gann_swing step line; gann_swing_change/top-bottom markers; gann_swing_age/gann_count/close_rel_gann_change secondary overlays; target; model prediction; probability_up heatmap.
+- Per-bot `app_data.json` payloads still assemble in `build_dashboard.py`; per-chart JSON now carries `gann_features` from `datasets_active/<SYMBOL>_<TF>_gann_swing.pkl` when present.
+- Time alignment is timestamp-based; overlays filter against the selected candle range and share the OHLCV x-axis.
 
 ## Generated artifacts
 - `index.html` — static dashboard UI with no external libraries.
 - `build_dashboard.py` — local read-only artifact scanner/builder; writes only under this Guy dashboard folder.
 - `app_data.json` — UI class/family/bot hierarchy.
-- `dashboard_status.json` — discovered classes/families/symbols/timeframes plus blocked/unavailable notes.
+- `dashboard_status.json` — includes `gann_swing_overlay_available: true` and toggle defaults.
 - `source_registry.json` — exact source files used per bot/view.
 - `data/*.json` — derived per-bot chart payloads.
 
-## Discovery results
-- Bot packages scanned: 375
-- UI classes: `classification`, `prediction`
-- Chart payloads generated: 207
-- Bots with explicit blocked/unavailable notes: 168
-  - Most blocked cases are missing training datasets, GENERAL/malformed symbol-timeframe mappings, or missing OHLCV.
+## Other touched dashboards
+- `DASHBOARDS/short_btc_validation_trade_review_20260607/btc_validation_chart.html` — rebuilt with OHLCV buttons and gann_swing overlay traces.
+- `DASHBOARDS/gann_swing_regression_diagnostic_20260612/index.html` — new self-contained side-by-side diagnostic view.
+
+## Diagnostic URL/path
+- `file:///Users/axone/.openclaw/agents/guy/workspace/DASHBOARDS/gann_swing_regression_diagnostic_20260612/index.html`
 
 ## Verification
-- JSON parse: OK (`210` generated JSON files parsed).
-- Python compile: OK (`build_dashboard.py`).
-- Dashboard JavaScript syntax check: OK (`node --check`).
-- Static safety scan: OK — no external HTTP fetches, broker/order libraries, scheduler patterns, or upstream write patterns in dashboard code.
-- Write confinement: OK — all `212` files are under `guy-source://WEB_DASHBOARD/tibot_interactive/`.
+- `build_dashboard.py`: ran successfully; 415 bots scanned.
+- Deploy variant synced byte-identically for `build_dashboard.py`, `index.html`, `app_data.json`, `dashboard_status.json`; `data/` copied.
+- Python compile: OK.
+- Static BTC validation chart rebuilt successfully.
 
 ## Safety notes
 - No Tibot, Chronos, Kerry, Wally, Sentinel, Darwin, Karen, bot, strategy, risk, live, or historical files were modified.
-- No trading, paper/live execution, external API, scheduler, retraining, replay, optimisation, or production promotion was performed.
-- Missing/malformed inputs are shown as blocked/unavailable; no data is fabricated.
+- No model files or datasets were modified; inference caches live only under Guy `DATA/`.

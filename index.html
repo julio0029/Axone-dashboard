@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <nav class="nav"><div class="wrap"><a class="brand" href="#top">Axone Dashboard</a><a href="#layers">Layers</a><a href="#flow">Flow</a><a href="#agents">Agents</a><a href="#tibot">Tibot</a><a href="#tibot-review">Quality</a><a href="#sentinel-btc">BTC decisions</a><a href="source_registry.json">Sources</a><a href="dashboard_status.json">Status</a></div></nav>
+  <nav class="nav"><div class="wrap"><a class="brand" href="#top">Axone Dashboard</a><a href="#layers">Layers</a><a href="#flow">Flow</a><a href="#agents">Agents</a><a href="#tibot">Tibot</a><a href="#tibot-review">Quality</a><a href="#sentinel-btc">BTC decisions</a><a href="#diagnostics">Diagnostics</a><a href="source_registry.json">Sources</a><a href="dashboard_status.json">Status</a></div></nav>
   <main id="top" class="wrap">
     <section class="hero">
       <div class="panel">
@@ -67,6 +67,17 @@
       <div class="two-col">
         <div><h3>Recent accepted entries</h3><div data-recent-accepted></div></div>
         <div><h3>Recent closed trades</h3><div data-recent-closed></div></div>
+      </div>
+    </section>
+    <section id="diagnostics" class="section panel">
+      <h2>Diagnostic reports</h2>
+      <p class="muted">Static diagnostic artifacts published by Guy. Each opens a self-contained HTML report.</p>
+      <div class="agent-grid">
+        <div class="panel">
+          <h3>Gann swing regression diagnostic</h3>
+          <p class="muted">2026-06-12 · Regression analysis of the Gann swing classifier across symbols and timeframes.</p>
+          <p><a class="open-btn" href="diagnostics/gann_swing_regression_20260612/index.html">Open diagnostic</a></p>
+        </div>
       </div>
     </section>
     <p class="footer">Static dashboard only. No external execution, paper/live trading, retraining, replay, optimisation, or upstream writes.</p>
