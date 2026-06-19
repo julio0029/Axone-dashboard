@@ -5,6 +5,7 @@ import { CandleChart } from '../components/CandleChart'
 import { ColumnTable } from '../components/ColumnTable'
 import {
   SYMBOLS, TIMEFRAMES, COLUMNS, generateOHLCV,
+  isRealAvailable, getRealBundle, REAL_SYMBOL, REAL_TF,
   type Symbol, type Timeframe,
 } from '../data/kerry'
 
@@ -15,7 +16,12 @@ export function KerryPage() {
     () => new Set(COLUMNS.filter((c) => c.defaultOn).map((c) => c.key)),
   )
 
-  const candles = useMemo(() => generateOHLCV(symbol, tf, 200), [symbol, tf])
+  const real = isRealAvailable(symbol, tf)
+  const bundle = useMemo(() => (real ? getRealBundle() : null), [real])
+  const candles = useMemo(
+    () => (bundle ? bundle.candles : generateOHLCV(symbol, tf, 200)),
+    [bundle, symbol, tf],
+  )
   const last = candles[candles.length - 1]
   const prev = candles[candles.length - 2]
   const chg = ((last.close - prev.close) / prev.close) * 100
@@ -39,14 +45,35 @@ export function KerryPage() {
           <p className="text-ax-muted mt-1 text-sm">
             Raw OHLCV and the features derived from it, aligned candle-by-candle.
           </p>
-          <p className="text-xs mt-2 flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-ax-down/30 bg-[#ff5470]/10 text-ax-down">
-              <span className="w-1.5 h-1.5 rounded-full bg-ax-down" /> illustrative mock OHLCV
-            </span>
+          <p className="text-xs mt-2 flex items-center gap-2 flex-wrap">
+            {real ? (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-ax-up/30 bg-[#1ec8a5]/10 text-ax-up">
+                <span className="w-1.5 h-1.5 rounded-full bg-ax-up" /> REAL OHLCV · Binance via Kerry handoff
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-ax-down/30 bg-[#ff5470]/10 text-ax-down">
+                <span className="w-1.5 h-1.5 rounded-full bg-ax-down" /> illustrative mock OHLCV
+              </span>
+            )}
             <Link to="/ta-v2" className="text-ax-blue-2 hover:underline">
               see the validated TA-v2 schema & BTCUSDT test →
             </Link>
           </p>
+          {real && bundle ? (
+            <p className="text-[11px] mt-1.5 text-ax-muted leading-relaxed max-w-[640px]">
+              {bundle.meta.count} real {bundle.meta.interval} candles · {bundle.meta.windowStartUtc} → {bundle.meta.windowEndUtc} UTC.
+              Overlays (EMA&nbsp;50/200, Bollinger, RSI) use Kerry's precomputed indicator columns, not a
+              client-side recompute. Source: {bundle.meta.source}. EMA/MACD/Bollinger are parity-0 vs TA-v2 per
+              Sublime's validation; the 5m / 100k TA-v2 frame is not exported, so this chart uses the available
+              real 1h handoff.
+            </p>
+          ) : (
+            <p className="text-[11px] mt-1.5 text-ax-muted leading-relaxed max-w-[640px]">
+              {symbol === REAL_SYMBOL
+                ? `Real data for ${REAL_SYMBOL} is wired at the ${REAL_TF} timeframe — switch to ${REAL_TF} to view it. Other timeframes remain a seeded mock.`
+                : `Per operator scope, only ${REAL_SYMBOL} is backed by real data. ${symbol} remains a deterministic seeded mock (no real feed wired).`}
+            </p>
+          )}
         </div>
         <div className="text-right">
           <div className="font-mono text-2xl text-ax-text">${fmt(last.close)}</div>
@@ -109,18 +136,22 @@ export function KerryPage() {
 
         {/* Center chart */}
         <Card
-          title={`${symbol} · ${tf}`}
+          title={`${symbol} · ${tf}${real ? ' · REAL' : ''}`}
           subtitle="Candlestick · interactive zoom (scroll / drag the range bar) · hover for OHLCV"
           bodyClass="!p-2"
         >
-          <CandleChart candles={candles} tf={tf} enabled={enabled} />
+          <CandleChart candles={candles} tf={tf} enabled={enabled} real={bundle?.overlays} />
         </Card>
       </div>
 
       {/* Bottom panel */}
       <Card
         title="Optional columns"
-        subtitle="Client-side mock subset for this chart — the full 90-column TA-v2 schema lives on the TA-v2 · Validation page."
+        subtitle={
+          real
+            ? "Overlay/sub-chart subset for this chart, drawn from Kerry's real precomputed columns — the full 90-column TA-v2 schema lives on the TA-v2 · Validation page."
+            : 'Client-side subset for this chart (recomputed from the seeded mock OHLCV) — the full 90-column TA-v2 schema lives on the TA-v2 · Validation page.'
+        }
       >
         <ColumnTable enabled={enabled} onToggle={toggle} />
       </Card>

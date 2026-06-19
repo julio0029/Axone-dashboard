@@ -1,3 +1,5 @@
+import { BTCUSDT_1H } from './btcusdtReal'
+
 export const SYMBOLS = [
   'BTCUSDT', 'BNBUSDT', 'SOLUSDT', 'SUIUSDT', 'DOGEUSDT',
   'FETUSDT', 'XRPUSDT', 'SHIBUSDT', 'PEPEUSDT', 'TRUMPUSDT',
@@ -166,11 +168,51 @@ export interface ColumnDef {
 }
 
 export const COLUMNS: ColumnDef[] = [
-  { key: 'ema20', name: 'EMA 20', description: 'Exponential moving average (20).', source: 'Kerry · close', timeframe: 'all', display: 'overlay', defaultOn: true },
-  { key: 'ema50', name: 'EMA 50', description: 'Exponential moving average (50).', source: 'Kerry · close', timeframe: 'all', display: 'overlay', defaultOn: true },
-  { key: 'ma200', name: 'MA 200', description: 'Simple moving average (200).', source: 'Kerry · close', timeframe: 'all', display: 'overlay', defaultOn: false },
-  { key: 'boll', name: 'Bollinger Bands', description: 'SMA-20 ± 2σ envelope.', source: 'Kerry · close', timeframe: 'all', display: 'overlay', defaultOn: false },
+  { key: 'ema50', name: 'EMA 50', description: 'Exponential moving average (50).', source: 'Kerry · ema_50', timeframe: 'all', display: 'overlay', defaultOn: true },
+  { key: 'ema200', name: 'EMA 200', description: 'Exponential moving average (200).', source: 'Kerry · ema_200', timeframe: 'all', display: 'overlay', defaultOn: false },
+  { key: 'boll', name: 'Bollinger Bands', description: 'SMA-20 ± 2σ envelope.', source: 'Kerry · bolinger_*', timeframe: 'all', display: 'overlay', defaultOn: false },
   { key: 'swings', name: 'Swing Hi/Lo', description: 'Local swing high/low markers (Gann-style).', source: 'Kerry · high/low', timeframe: 'all', display: 'marker', defaultOn: true },
   { key: 'volume', name: 'Volume', description: 'Per-candle traded volume.', source: 'Kerry · volume', timeframe: 'all', display: 'subchart', defaultOn: true },
-  { key: 'rsi', name: 'RSI 14', description: 'Relative Strength Index (14) — momentum.', source: 'Kerry · close', timeframe: 'all', display: 'subchart', defaultOn: true },
+  { key: 'rsi', name: 'RSI 14', description: 'Relative Strength Index (14) — momentum.', source: 'Kerry · rsi', timeframe: 'all', display: 'subchart', defaultOn: true },
 ]
+
+// ---------- real-data bundle (BTCUSDT · 1h, certified Kerry handoff) ----------
+
+/** Real precomputed indicator series, aligned candle-by-candle to the candles array. */
+export interface RealOverlays {
+  ema50: (number | null)[]
+  ema200: (number | null)[]
+  rsi: (number | null)[]
+  bbMid: (number | null)[]
+  bbUp: (number | null)[]
+  bbLow: (number | null)[]
+}
+
+export interface RealBundle {
+  candles: Candle[]
+  overlays: RealOverlays
+  meta: { source: string; windowStartUtc: string; windowEndUtc: string; count: number; interval: string }
+}
+
+/** The single symbol/timeframe currently backed by real data (operator scope: BTCUSDT only). */
+export const REAL_SYMBOL: Symbol = 'BTCUSDT'
+export const REAL_TF: Timeframe = '1h'
+
+export function isRealAvailable(symbol: Symbol, tf: Timeframe): boolean {
+  return symbol === REAL_SYMBOL && tf === REAL_TF
+}
+
+export function getRealBundle(): RealBundle {
+  const s = BTCUSDT_1H
+  const candles: Candle[] = s.t.map((t, i) => ({
+    time: t, open: s.o[i], high: s.h[i], low: s.l[i], close: s.c[i], volume: s.v[i],
+  }))
+  return {
+    candles,
+    overlays: { ema50: s.ema50, ema200: s.ema200, rsi: s.rsi, bbMid: s.bbMid, bbUp: s.bbUp, bbLow: s.bbLow },
+    meta: {
+      source: s.source, windowStartUtc: s.windowStartUtc, windowEndUtc: s.windowEndUtc,
+      count: s.count, interval: s.interval,
+    },
+  }
+}

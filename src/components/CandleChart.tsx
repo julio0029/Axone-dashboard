@@ -2,8 +2,8 @@ import { useMemo } from 'react'
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import {
-  type Candle, type Timeframe,
-  ema, sma, rsi as calcRsi, bollinger, swings,
+  type Candle, type Timeframe, type RealOverlays,
+  ema, rsi as calcRsi, bollinger, swings,
 } from '../data/kerry'
 
 function fmtTime(ms: number, tf: Timeframe) {
@@ -14,11 +14,14 @@ function fmtTime(ms: number, tf: Timeframe) {
 }
 
 export function CandleChart({
-  candles, tf, enabled,
+  candles, tf, enabled, real,
 }: {
   candles: Candle[]
   tf: Timeframe
   enabled: Set<string>
+  /** Real precomputed indicator series (Kerry handoff). When present, overlays use these
+   *  exact values instead of recomputing client-side. */
+  real?: RealOverlays
 }) {
   const option = useMemo<EChartsOption>(() => {
     const times = candles.map((c) => fmtTime(c.time, tf))
@@ -89,11 +92,12 @@ export function CandleChart({
         lineStyle: { color, width, type: dashed ? 'dashed' : 'solid', opacity: 0.9 },
       })
 
-    if (enabled.has('ema20')) addLine('EMA 20', ema(closes, 20), '#4dd2ff')
-    if (enabled.has('ema50')) addLine('EMA 50', ema(closes, 50), '#7c5cff')
-    if (enabled.has('ma200')) addLine('MA 200', sma(closes, 200), '#ffb454')
+    if (enabled.has('ema50')) addLine('EMA 50', real?.ema50 ?? ema(closes, 50), '#7c5cff')
+    if (enabled.has('ema200')) addLine('EMA 200', real?.ema200 ?? ema(closes, 200), '#ffb454')
     if (enabled.has('boll')) {
-      const b = bollinger(closes, 20, 2)
+      const b = real
+        ? { upper: real.bbUp, mid: real.bbMid, lower: real.bbLow }
+        : bollinger(closes, 20, 2)
       addLine('BB upper', b.upper, 'rgba(47,155,255,0.5)', 1, true)
       addLine('BB mid', b.mid, 'rgba(47,155,255,0.35)', 1, true)
       addLine('BB lower', b.lower, 'rgba(47,155,255,0.5)', 1, true)
@@ -128,7 +132,7 @@ export function CandleChart({
       series.push({
         name: 'RSI 14', type: 'line',
         xAxisIndex: gridIndex.rsi, yAxisIndex: gridIndex.rsi,
-        data: calcRsi(closes, 14), showSymbol: false, smooth: true,
+        data: real?.rsi ?? calcRsi(closes, 14), showSymbol: false, smooth: true,
         lineStyle: { color: '#4dd2ff', width: 1.4 },
         markLine: {
           silent: true, symbol: 'none',
@@ -168,7 +172,7 @@ export function CandleChart({
         },
       ],
     }
-  }, [candles, tf, enabled])
+  }, [candles, tf, enabled, real])
 
   return (
     <ReactECharts
