@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Card } from '../components/Card'
 import { CandleChart } from '../components/CandleChart'
 import { ColumnTable } from '../components/ColumnTable'
@@ -37,6 +38,14 @@ export function KerryPage() {
           <h1 className="font-display text-3xl tracking-tight ax-glow-text">Kerry · Market Data</h1>
           <p className="text-ax-muted mt-1 text-sm">
             Raw OHLCV and the features derived from it, aligned candle-by-candle.
+          </p>
+          <p className="text-xs mt-2 flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-ax-down/30 bg-[#ff5470]/10 text-ax-down">
+              <span className="w-1.5 h-1.5 rounded-full bg-ax-down" /> illustrative mock OHLCV
+            </span>
+            <Link to="/ta-v2" className="text-ax-blue-2 hover:underline">
+              see the validated TA-v2 schema & BTCUSDT test →
+            </Link>
           </p>
         </div>
         <div className="text-right">
@@ -111,7 +120,7 @@ export function KerryPage() {
       {/* Bottom panel */}
       <Card
         title="Optional columns"
-        subtitle="Kerry calculations available for this chart — toggle what renders on the graph."
+        subtitle="Client-side mock subset for this chart — the full 90-column TA-v2 schema lives on the TA-v2 · Validation page."
       >
         <ColumnTable enabled={enabled} onToggle={toggle} />
       </Card>

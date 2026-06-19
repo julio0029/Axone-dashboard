@@ -19,6 +19,10 @@ export function Layout() {
           <NavLink to="/" end className={navClass}>
             <span className="text-ax-blue-2">◈</span> Architecture
           </NavLink>
+          <NavLink to="/ta-v2" className={navClass}>
+            <span className="text-ax-up">◇</span> TA-v2 · Validation
+            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-up">live</span>
+          </NavLink>
           <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
           {AGENTS.filter((a) => a.id !== 'axone').map((a) => (
             <NavLink
@@ -44,9 +48,15 @@ export function Layout() {
       <div className="flex-1 min-w-0 flex flex-col">
         <header className="h-14 shrink-0 border-b border-ax-border/70 bg-ax-bg-2/40 backdrop-blur-sm flex items-center px-6 justify-between">
           <Breadcrumb path={loc.pathname} />
-          <div className="flex items-center gap-2 text-xs text-ax-muted">
-            <span className="w-2 h-2 rounded-full bg-ax-up animate-pulse" /> live · mock data
-          </div>
+          {loc.pathname.startsWith('/ta-v2') ? (
+            <div className="flex items-center gap-2 text-xs text-ax-up">
+              <span className="w-2 h-2 rounded-full bg-ax-up animate-pulse" /> validated · BTCUSDT test data
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 text-xs text-ax-muted">
+              <span className="w-2 h-2 rounded-full bg-ax-down/80 animate-pulse" /> illustrative · mock data
+            </div>
+          )}
         </header>
         <main className="flex-1 min-h-0 overflow-y-auto ax-scroll p-6">
           <Outlet />
@@ -67,7 +77,8 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
-  if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
+  if (path.startsWith('/ta-v2')) label = 'TA-v2 · Validation'
+  else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]
     const a = AGENTS.find((x) => x.id === id)
