@@ -20,8 +20,8 @@ export function Layout() {
             <span className="text-ax-blue-2">◈</span> Architecture
           </NavLink>
           <NavLink to="/ta-v2" className={navClass}>
-            <span className="text-ax-up">◇</span> TA-v2 · Validation
-            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-up">live</span>
+            <span className="text-ax-up">◇</span> Sandbox
+            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">test</span>
           </NavLink>
           <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
           {AGENTS.filter((a) => a.id !== 'axone').map((a) => (
@@ -49,8 +49,8 @@ export function Layout() {
         <header className="h-14 shrink-0 border-b border-ax-border/70 bg-ax-bg-2/40 backdrop-blur-sm flex items-center px-6 justify-between">
           <Breadcrumb path={loc.pathname} />
           {loc.pathname.startsWith('/ta-v2') ? (
-            <div className="flex items-center gap-2 text-xs text-ax-up">
-              <span className="w-2 h-2 rounded-full bg-ax-up animate-pulse" /> validated · BTCUSDT test data
+            <div className="flex items-center gap-2 text-xs text-ax-blue-2">
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v2 testbed
             </div>
           ) : (
             <div className="flex items-center gap-2 text-xs text-ax-muted">
@@ -77,7 +77,7 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
-  if (path.startsWith('/ta-v2')) label = 'TA-v2 · Validation'
+  if (path.startsWith('/ta-v2')) label = 'Sandbox'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]

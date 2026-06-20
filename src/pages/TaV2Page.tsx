@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Card } from '../components/Card'
+import { SandboxChartPanel } from '../components/SandboxChartPanel'
 import {
   TA_V2_PROVENANCE, BTC_VALIDATION, CANDLE_FLAGS, PARITY, NAN_AUDIT,
   SCHEMA_GROUPS, SCHEMA_COLUMN_COUNT, type ParityTag,
@@ -36,12 +37,12 @@ export function TaV2Page() {
           <div className="flex items-start justify-between gap-6 flex-wrap">
             <div>
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ax-blue-2">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-ax-up" />
-                Kerry · TA-v2 feature set · validated
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-ax-blue-2" />
+                Sandbox · TA-v2 testbed
               </div>
               <h1 className="font-display text-[34px] leading-tight tracking-tight mt-2 ax-glow-text">
-                90 columns. 100,000 candles.
-                <br />Zero drift from canonical.
+                Sandbox
+                <br />90 columns. 100,000 candles.
               </h1>
               <p className="text-ax-muted mt-2 text-sm max-w-xl">
                 Sublime's TA-v2 ran the full indicator suite over {nf(BTC_VALIDATION.candles)} latest{' '}
@@ -78,13 +79,17 @@ export function TaV2Page() {
             <span className="text-ax-muted">
               The schema, parity, candle-flag and NaN panels on this page are backed by{' '}
               <span className="text-ax-up">Sublime's real BTCUSDT test</span> — no mock data. The interactive
-              candlestick chart on the <span className="text-ax-text">Kerry</span> page remains an{' '}
-              <span className="text-ax-down">illustrative client-side mock</span> (real per-symbol OHLCV is not
-              yet wired into the dashboard).
+              chart below renders <span className="text-ax-up">only</span> Sublime's re-validated TA-v2 export
+              (all ~90 columns) — until that artifact lands it shows an explicit “awaiting export” state, never a
+              mock. The <span className="text-ax-text">Kerry</span> page's BTCUSDT chart is now backed by real
+              Binance OHLCV (via Kerry's handoff).
             </span>
           </div>
         </div>
       </div>
+
+      {/* Interactive TA-v2 chart — real export, all columns toggleable */}
+      <SandboxChartPanel />
 
       {/* Candle flags — the new story */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
