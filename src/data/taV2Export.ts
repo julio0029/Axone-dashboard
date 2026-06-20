@@ -16,7 +16,16 @@ import { SCHEMA_GROUPS } from './taV2'
 
 /** Where the Sandbox chart fetches the real export from (served as a static
  *  asset under the Vite base). Swap this when Axone forwards the final path. */
-export const EXPORT_PATH = `${import.meta.env.BASE_URL}data/ta_v2_btcusdt.json`
+/** Selectable Sandbox timeframes, each backed by its own real export. */
+export type SandboxTf = '5m' | '1h'
+
+export const EXPORT_PATHS: Record<SandboxTf, string> = {
+  '5m': `${import.meta.env.BASE_URL}data/ta_v2_btcusdt.json`,
+  '1h': `${import.meta.env.BASE_URL}data/ta_v2_btcusdt_1h.json`,
+}
+
+/** Default/5m path (back-compat). */
+export const EXPORT_PATH = EXPORT_PATHS['5m']
 
 /** How a column is rendered on the chart. */
 export type ColumnRole =

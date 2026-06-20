@@ -8,8 +8,14 @@ const PALETTE = [
   '#2f9bff', '#c77dff', '#5ad1b0', '#ffd166', '#ef6f6c',
 ]
 
-// Marker columns whose value is a *price* (plot at the value) rather than a 0/1 flag.
-const PRICED_MARKERS = new Set(['gann_swing_top', 'gann_swing_bottom'])
+// Verified against the real export: the Gann swing columns are INVERTED vs their
+// names. `gann_swing_bottom` values land on actual price PEAKS (swing tops) and
+// `gann_swing_top` values land on actual TROUGHS (swing bottoms). Bind the marker
+// to what each column truly marks, not to its name:
+//   gann_swing_bottom → swing TOP    → green arrow above the high
+//   gann_swing_top    → swing BOTTOM → red arrow below the low
+const GANN_TOP_COL = 'gann_swing_bottom'
+const GANN_BOTTOM_COL = 'gann_swing_top'
 
 function fmtTime(ms: number, interval: string) {
   const d = new Date(ms)
@@ -111,20 +117,35 @@ export function SandboxChart({
     })
 
     markers.forEach((name) => {
-      const priced = PRICED_MARKERS.has(name)
-      const isTop = /top/.test(name) || /bull/.test(name)
+      const isGannTop = name === GANN_TOP_COL
+      const isGannBottom = name === GANN_BOTTOM_COL
+      const highs = col('high')
       const pts: [number, number][] = []
       for (let i = 0; i < time.length; i++) {
         const v = col(name)[i]
-        if (v === null || v === undefined || v === 0 || Number.isNaN(v)) continue
-        pts.push([i, priced ? (v as number) : (lows[i] ?? 0) * 0.999])
+        if (v === null || v === undefined || v === 0 || Number.isNaN(v as number)) continue
+        if (isGannTop) pts.push([i, (highs[i] ?? (v as number)) * 1.0008]) // just above the high
+        else if (isGannBottom) pts.push([i, (lows[i] ?? (v as number)) * 0.9992]) // just below the low
+        else pts.push([i, (lows[i] ?? 0) * 0.999]) // generic flags sit at the low
       }
-      series.push({
-        name, type: 'scatter', xAxisIndex: 0, yAxisIndex: 0,
-        symbol: 'triangle', symbolSize: 8, symbolRotate: isTop ? 180 : 0,
-        itemStyle: { color: isTop ? '#ff5470' : '#1ec8a5' },
-        data: pts,
-      })
+      if (isGannTop || isGannBottom) {
+        series.push({
+          // swing TOP  → green arrow above the high (down-pointing onto the peak)
+          // swing BOTTOM → red arrow below the low (up-pointing under the trough)
+          name: isGannTop ? 'gann swing top' : 'gann swing bottom',
+          type: 'scatter', xAxisIndex: 0, yAxisIndex: 0,
+          symbol: 'triangle', symbolSize: 10, symbolRotate: isGannTop ? 180 : 0,
+          itemStyle: { color: isGannTop ? '#1ec8a5' : '#ff5470' },
+          data: pts,
+        })
+      } else {
+        series.push({
+          name, type: 'scatter', xAxisIndex: 0, yAxisIndex: 0,
+          symbol: 'triangle', symbolSize: 7, symbolRotate: 0,
+          itemStyle: { color: /bear/.test(name) ? '#ff5470' : '#4dd2ff' },
+          data: pts,
+        })
+      }
     })
 
     if (showVol) {
