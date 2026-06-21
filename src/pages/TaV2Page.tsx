@@ -5,6 +5,10 @@ import {
   TA_V2_PROVENANCE, BTC_VALIDATION, CANDLE_FLAGS, PARITY, NAN_AUDIT,
   SCHEMA_GROUPS, SCHEMA_COLUMN_COUNT, type ParityTag,
 } from '../data/taV2'
+import {
+  CHRONOS_GATE_A, GATE_A_TIMEFRAMES, GATE_A_GAPS, GATE_A_VALIDATION,
+  GATE_A_PROVENANCE_CHAIN,
+} from '../data/chronosGateA'
 
 const PARITY_BADGE: Record<ParityTag, { label: string; cls: string }> = {
   exact: { label: 'parity 0.0', cls: 'text-ax-up bg-[#1ec8a5]/10 border-[#1ec8a5]/30' },
@@ -37,59 +41,136 @@ export function TaV2Page() {
           <div className="flex items-start justify-between gap-6 flex-wrap">
             <div>
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ax-blue-2">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-ax-blue-2" />
-                Sandbox · TA-v2 testbed
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-ax-up ax-glow" />
+                Sandbox · Chronos Gate-A · BTCUSDT calculation run
               </div>
               <h1 className="font-display text-[34px] leading-tight tracking-tight mt-2 ax-glow-text">
-                Sandbox
-                <br />90 columns. 100,000 candles.
+                Gate-A verified.
+                <br />Gann swings, 5m → 1D.
               </h1>
               <p className="text-ax-muted mt-2 text-sm max-w-xl">
-                Sublime's TA-v2 ran the full indicator suite over {nf(BTC_VALIDATION.candles)} latest{' '}
-                {BTC_VALIDATION.interval} {BTC_VALIDATION.symbol} candles with no exceptions. EMA, MACD and
-                Bollinger match the canonical implementation bit-for-bit; the two previously-missing
-                candlestick flags are now ported in and populated.
+                Chronos' Sentinel-gated calculation run over {nf(CHRONOS_GATE_A.totalSourceCandles)} source{' '}
+                {CHRONOS_GATE_A.symbol} candles ({CHRONOS_GATE_A.rangeStart} → {CHRONOS_GATE_A.rangeEnd}).
+                Real OHLCV plus the certified <code className="text-ax-blue-2">gann_swing</code> direction across
+                four timeframes — all 8 artifact SHA-256 hashes re-verified before this dashboard was touched.
+                Gate B and the EVIDENCE target-spec are <span className="text-ax-text">parked</span>; no targets built.
               </p>
             </div>
             <div className="text-right shrink-0">
-              <div className="font-mono text-[40px] leading-none text-ax-text">{SCHEMA_COLUMN_COUNT}</div>
-              <div className="text-ax-muted text-xs tracking-wide mt-1">output columns</div>
+              <div className="font-mono text-[40px] leading-none text-ax-up">PASS</div>
+              <div className="text-ax-muted text-xs tracking-wide mt-1">Gate-A verdict</div>
               <div className="mt-3 text-[11px] font-mono text-ax-muted">
-                rows {nf(BTC_VALIDATION.rows)} × cols {BTC_VALIDATION.cols}
+                sentinel gate {CHRONOS_GATE_A.sentinelSha.slice(0, 12)}…
               </div>
             </div>
           </div>
 
           {/* KPI strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-6 rounded-xl overflow-hidden border border-ax-border/70 bg-ax-border/40">
-            <Kpi label="Test window" value={`${BTC_VALIDATION.rangeStart}`} sub={`→ ${BTC_VALIDATION.rangeEnd}`} />
-            <Kpi label="Exceptions" value="0" sub="clean run" good />
-            <Kpi label="All-NaN columns" value={String(NAN_AUDIT.allNanColumns)} sub={`≤ ${NAN_AUDIT.maxNonGannPct}% elsewhere`} good />
-            <Kpi label="Environment" value="Python 3.14.5" sub="conda base" />
+            <Kpi label="Range" value={CHRONOS_GATE_A.rangeStart} sub={`→ ${CHRONOS_GATE_A.rangeEnd}`} />
+            <Kpi label="Timeframes" value="4" sub="5m · 1h · 4h · 1D" />
+            <Kpi label="Hashes verified" value="8 / 8" sub="SHA-256 confirmed" good />
+            <Kpi label="Gate B" value="Parked" sub="no targets built" />
           </div>
         </div>
       </div>
 
-      {/* Provenance: real vs mock */}
+      {/* Provenance: verified Gate-A chain */}
       <div className="ax-card px-5 py-4 border-l-2 border-l-ax-up">
         <div className="flex items-start gap-3">
           <span className="mt-0.5 text-ax-up text-sm">◆</span>
           <div className="text-sm">
             <span className="text-ax-text font-medium">Data provenance.</span>{' '}
             <span className="text-ax-muted">
-              The schema, parity, candle-flag and NaN panels on this page are backed by{' '}
-              <span className="text-ax-up">Sublime's real BTCUSDT test</span> — no mock data. The interactive
-              chart below renders <span className="text-ax-up">only</span> Sublime's re-validated TA-v2 export
-              (all ~90 columns) — until that artifact lands it shows an explicit “awaiting export” state, never a
-              mock. The <span className="text-ax-text">Kerry</span> page's BTCUSDT chart is now backed by real
-              Binance OHLCV (via Kerry's handoff).
+              The interactive chart below renders <span className="text-ax-up">only</span> Chronos' verified
+              Gate-A export — real OHLCV candles and the certified <code className="text-ax-blue-2">gann_swing</code>{' '}
+              direction column (swing pivots derived from its sign flips, nothing recomputed). Guy is read-only with
+              respect to Axone: the canonical stores and Gann artifacts are untouched; only the dashboard's display
+              JSON was written. The <span className="text-ax-text">schema / parity / candle-flag</span> panels lower
+              on this page remain the broader TA-v2 indicator reference (Sublime), distinct from this calculation run.
             </span>
           </div>
         </div>
       </div>
 
-      {/* Interactive TA-v2 chart — real export, all columns toggleable */}
+      {/* Interactive Gann chart — verified Chronos Gate-A export */}
       <SandboxChartPanel />
+
+      {/* Gate-A run summary: per-timeframe split + validation checklist */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <Card
+          title="Gann swing split by timeframe"
+          subtitle="Up / down direction share over the full canonical series"
+          right={<Seal sha1={CHRONOS_GATE_A.sentinelSha} />}
+        >
+          <div className="divide-y divide-ax-border/50">
+            {GATE_A_TIMEFRAMES.map((t) => (
+              <div key={t.tf} className="flex items-center gap-4 py-3">
+                <div className="w-12 shrink-0 font-mono text-ax-text text-sm">{t.tf}</div>
+                <div className="w-28 shrink-0 text-ax-muted text-[11px] font-mono">{nf(t.rows)} rows</div>
+                <div className="flex-1 min-w-0">
+                  <FlagBar
+                    segments={[
+                      { label: `up ${t.upPct}%`, value: t.upPct, cls: 'bg-ax-up' },
+                      { label: `down ${t.downPct}%`, value: t.downPct, cls: 'bg-ax-down' },
+                    ]}
+                    total={100}
+                  />
+                </div>
+                <div className="w-24 shrink-0 text-right font-mono text-[11px]">
+                  <span className="text-ax-up">{t.upPct}%</span>
+                  <span className="text-ax-muted"> / </span>
+                  <span className="text-ax-down">{t.downPct}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-ax-muted text-xs mt-4 pt-3 border-t border-ax-border/50">
+            Accepted ingest gaps (binance-downtime): 5m {GATE_A_GAPS['5m'].breaks} breaks /{' '}
+            {GATE_A_GAPS['5m'].missing} missing · 1h {GATE_A_GAPS['1h'].breaks} breaks /{' '}
+            {GATE_A_GAPS['1h'].missing} missing — consistent with the ingest ledger.
+          </p>
+        </Card>
+
+        <Card
+          title="Gate-A validation"
+          subtitle={`Manifest ${CHRONOS_GATE_A.manifestId}`}
+          right={
+            <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded border text-ax-up bg-[#1ec8a5]/10 border-[#1ec8a5]/30">
+              all pass
+            </span>
+          }
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2">
+            {GATE_A_VALIDATION.map((v) => (
+              <div key={v.key} className="flex items-center gap-2 text-sm py-1">
+                <span className="text-ax-up text-xs">✓</span>
+                <span className="text-ax-muted">{v.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 pt-3 border-t border-ax-border/50 space-y-1.5">
+            {GATE_A_PROVENANCE_CHAIN.map((step, i) => (
+              <div key={i} className="flex gap-2 text-[11px] text-ax-muted leading-relaxed">
+                <span className="text-ax-blue-2 font-mono shrink-0">{i + 1}.</span>
+                <span>{step}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-ax-muted text-[11px] font-mono mt-3 pt-3 border-t border-ax-border/50 break-all">
+            gann shim sha256 {CHRONOS_GATE_A.gannShimSha256.slice(0, 24)}…
+          </p>
+        </Card>
+      </div>
+
+      {/* ── TA-v2 indicator schema reference (Sublime) — context, not this run ── */}
+      <div className="ax-card px-5 py-3 border-l-2 border-l-ax-blue/40">
+        <div className="text-[11px] uppercase tracking-[0.2em] text-ax-blue-2">TA-v2 indicator schema reference</div>
+        <p className="text-ax-muted text-xs mt-1">
+          The panels below describe Sublime's full {SCHEMA_COLUMN_COUNT}-column TA-v2 schema and its parity/candle-flag
+          validation — broader indicator context, separate from the Chronos Gate-A calculation run above.
+        </p>
+      </div>
 
       {/* Candle flags — the new story */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">

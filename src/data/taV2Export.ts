@@ -16,12 +16,15 @@ import { SCHEMA_GROUPS } from './taV2'
 
 /** Where the Sandbox chart fetches the real export from (served as a static
  *  asset under the Vite base). Swap this when Axone forwards the final path. */
-/** Selectable Sandbox timeframes, each backed by its own real export. */
-export type SandboxTf = '5m' | '1h'
+/** Selectable Sandbox timeframes, each backed by its own real export.
+ *  Source: Chronos' Sentinel-gated Gate-A BTCUSDT calculation run (20260621). */
+export type SandboxTf = '5m' | '1h' | '4h' | '1D'
 
 export const EXPORT_PATHS: Record<SandboxTf, string> = {
-  '5m': `${import.meta.env.BASE_URL}data/ta_v2_btcusdt.json`,
-  '1h': `${import.meta.env.BASE_URL}data/ta_v2_btcusdt_1h.json`,
+  '5m': `${import.meta.env.BASE_URL}data/gann_btcusdt_5m.json`,
+  '1h': `${import.meta.env.BASE_URL}data/gann_btcusdt_1h.json`,
+  '4h': `${import.meta.env.BASE_URL}data/gann_btcusdt_4h.json`,
+  '1D': `${import.meta.env.BASE_URL}data/gann_btcusdt_1D.json`,
 }
 
 /** Default/5m path (back-compat). */
@@ -59,6 +62,17 @@ export interface TaV2Manifest {
   scriptLines?: number
   env?: string
   generatedAt?: string
+  // ── verified Chronos Gate-A provenance (optional) ─────────────────────────
+  manifestId?: string
+  gateAVerdict?: string
+  sentinelSha?: string
+  gannShimSha256?: string
+  /** Full canonical row count for this timeframe (the chart shows a window). */
+  canonicalRows?: number
+  /** Gann swing-direction split over the full canonical series. */
+  upPct?: number
+  downPct?: number
+  nanCount?: number
   columns: ManifestColumn[]
 }
 
@@ -76,6 +90,9 @@ export interface TaV2Export {
 const PRICE = new Set(['open', 'high', 'low', 'close'])
 const MARKERS = new Set([
   'candle_doji', 'candle_marubozu',
+  // Chronos Gate-A ships a single certified swing-direction column (+1/-1);
+  // the chart derives swing-top/bottom pivots from its sign flips.
+  'gann_swing',
   'gann_swing_top', 'gann_swing_bottom', 'gann_swing_change',
   '1h_level_breakout_bull', '1h_level_breakout_bear',
   '1d_level_breakout_bull', '1d_level_breakout_bear',

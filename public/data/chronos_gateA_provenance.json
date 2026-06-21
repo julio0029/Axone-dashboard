@@ -1,0 +1,92 @@
+{
+  "manifestId": "chronos-gateA-btcusdt-calculation-run-20260621",
+  "bundleId": "chronos-btcusdt-dashboard-bundle-20260621",
+  "verdict": "PASS",
+  "generatedAt": "2026-06-21T08:47:00.456489+00:00",
+  "sentinelSha": "791418cf83e3c258f353fa8de20e8d3e6763b614e1d395271354b0845dbee7e0",
+  "gannShimSha256": "429873fdc1a252f59e97d292698d023d282d0e36aa8e414eb600e091339c6ac0",
+  "gateBStatus": "PARKED \u2014 targets.py / EVIDENCE target spec not built",
+  "scope": {
+    "as_of": "2026-01-01T00:00:00+00:00",
+    "date_range": {
+      "end": "2025-12-31",
+      "start": "2020-01-01"
+    },
+    "source": "binance-vision (Spider-mediated)",
+    "symbol": "BTCUSDT",
+    "timeframes": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "venue": "binance"
+  },
+  "gapAudit": {
+    "5m_breaks_observed": 15,
+    "5m_missing_candles_estimated": 462,
+    "verdict": "CONSISTENT_WITH_INGEST_LEDGER"
+  },
+  "ingest": {
+    "totalSourceCandles": 683411,
+    "authorizedRepairs": 2,
+    "knownGaps": {
+      "policy": "binance-downtime-accepted",
+      "5m": {
+        "timestamp_breaks": 15,
+        "missing_candles": 462
+      },
+      "1h": {
+        "timestamp_breaks": 15,
+        "missing_candles": 31
+      }
+    }
+  },
+  "provenanceChain": [
+    "Binance Vision public dataset (Spider-fetched)",
+    "Spider: 288 ZIP+CHECKSUM files, HTTP 200, no checksum mismatches",
+    "Sublime ingest_parquet.py SHA-1 94726b04 \u2014 683,411 rows, 10/10 tests PASS",
+    "Chronos owner-acceptance PASS",
+    "Live ingest: 683,411 rows, 144 partitions, 0 month gaps, 2 authorized repairs",
+    "Gate A calculation pipeline PASS (run_pipeline.py 2026-06-21T08:47 UTC)",
+    "Dashboard bundle verification PASS (2026-06-21 \u2014 all 8 SHA-256 hashes confirmed)"
+  ],
+  "validation": {
+    "canonical_schema_pass": true,
+    "dedup_keys_verified": true,
+    "gann_shim_sha256_verified": true,
+    "gate_b_not_started": true,
+    "high_gte_low_verified": true,
+    "monotonic_timestamps_verified": true,
+    "no_live_writes": true,
+    "no_target_columns": true,
+    "ohlc_positive_verified": true,
+    "row_count_verified": true
+  },
+  "timeframes": {
+    "5m": {
+      "canonicalRows": 630834,
+      "upPct": 50.46,
+      "downPct": 49.54,
+      "nanCount": 1
+    },
+    "1h": {
+      "canonicalRows": 52577,
+      "upPct": 51.56,
+      "downPct": 48.43,
+      "nanCount": 1
+    },
+    "4h": {
+      "canonicalRows": 13151,
+      "upPct": 52.81,
+      "downPct": 47.17,
+      "nanCount": 3
+    },
+    "1D": {
+      "canonicalRows": 2192,
+      "upPct": 53.01,
+      "downPct": 46.94,
+      "nanCount": 1
+    }
+  }
+}

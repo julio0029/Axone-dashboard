@@ -117,9 +117,39 @@ export function SandboxChart({
     })
 
     markers.forEach((name) => {
+      const highs = col('high')
+
+      // Chronos Gate-A: a single certified swing-DIRECTION column (+1 up / -1
+      // down / null). A sign flip is a confirmed Gann swing pivot — the candle
+      // closing the prior leg. up→down ends an up-leg → swing TOP (green ▲ above
+      // the high); down→up ends a down-leg → swing BOTTOM (red ▼ below the low).
+      // This is a deterministic read of the certified column — nothing invented.
+      if (name === 'gann_swing') {
+        const dir = col(name)
+        const tops: [number, number][] = []
+        const bottoms: [number, number][] = []
+        for (let i = 1; i < time.length; i++) {
+          const prev = dir[i - 1]
+          const cur = dir[i]
+          if (prev == null || cur == null || prev === cur) continue
+          if (prev === 1 && cur === -1) tops.push([i - 1, (highs[i - 1] ?? 0) * 1.0008])
+          else if (prev === -1 && cur === 1) bottoms.push([i - 1, (lows[i - 1] ?? 0) * 0.9992])
+        }
+        series.push({
+          name: 'gann swing top', type: 'scatter', xAxisIndex: 0, yAxisIndex: 0,
+          symbol: 'triangle', symbolSize: 9, symbolRotate: 180,
+          itemStyle: { color: '#1ec8a5' }, data: tops,
+        })
+        series.push({
+          name: 'gann swing bottom', type: 'scatter', xAxisIndex: 0, yAxisIndex: 0,
+          symbol: 'triangle', symbolSize: 9, symbolRotate: 0,
+          itemStyle: { color: '#ff5470' }, data: bottoms,
+        })
+        return
+      }
+
       const isGannTop = name === GANN_TOP_COL
       const isGannBottom = name === GANN_BOTTOM_COL
-      const highs = col('high')
       const pts: [number, number][] = []
       for (let i = 0; i < time.length; i++) {
         const v = col(name)[i]

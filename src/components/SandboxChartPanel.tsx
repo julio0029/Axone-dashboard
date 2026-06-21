@@ -6,13 +6,11 @@ import {
   type ManifestColumn, type SandboxTf,
 } from '../data/taV2Export'
 
-// Sensible default selection once a real export is present.
-const DEFAULT_ON = [
-  'ema_50', 'ema_200', 'bolinger_upper', 'bolinger_sma', 'bolinger_lower',
-  'volume', 'rsi',
-]
+// Sensible default selection once a real export is present. The Chronos Gate-A
+// bundle ships OHLCV + the certified gann_swing direction column, so both are on.
+const DEFAULT_ON = ['volume', 'gann_swing']
 
-const TIMEFRAMES: SandboxTf[] = ['5m', '1h']
+const TIMEFRAMES: SandboxTf[] = ['5m', '1h', '4h', '1D']
 
 export function SandboxChartPanel() {
   const [tf, setTf] = useState<SandboxTf>('5m')
@@ -63,12 +61,12 @@ export function SandboxChartPanel() {
   const m = data?.manifest
   const subtitle =
     status === 'ready' && m
-      ? `${m.symbol} · ${m.interval} · ${m.rows.toLocaleString('en-US')} rows · all columns toggleable`
-      : 'Real BTCUSDT export · all ~90 columns toggleable'
+      ? `${m.symbol} · ${m.interval} · ${m.rows.toLocaleString('en-US')} of ${(m.canonicalRows ?? m.rows).toLocaleString('en-US')} canonical candles · Gann swings`
+      : 'Verified Chronos Gate-A BTCUSDT bundle · OHLCV + Gann swings'
 
   return (
     <Card
-      title="Interactive TA-v2 chart"
+      title="Interactive Gann swing chart"
       subtitle={subtitle}
       right={
         <div className="flex items-center gap-3">
@@ -98,14 +96,14 @@ export function SandboxChartPanel() {
       {status !== 'loading' && status !== 'ready' && (
         <div className="rounded-xl border border-dashed border-ax-border/70 bg-ax-bg-2/40 px-5 py-6">
           <div className="text-ax-text text-sm font-medium">
-            {tf} timeframe — scaffolded, awaiting Sublime's real {tf} export.
+            {tf} timeframe — awaiting the verified {tf} export.
           </div>
           <p className="text-ax-muted text-sm mt-2 max-w-2xl leading-relaxed">
-            This chart renders <span className="text-ax-up">only</span> the real export (no mock, no client
-            recompute). The moment the artifact is served at the path below it will render candlesticks plus a
-            toggle for every one of the ~90 TA-v2 columns — overlays on the price panel, oscillators in stacked
-            sub-panels, and candle/Gann flags as markers. Switch back to <span className="text-ax-text">5m</span>{' '}
-            for the live export.
+            This chart renders <span className="text-ax-up">only</span> Chronos' Sentinel-gated Gate-A export
+            (no mock, no client recompute). When the artifact is served at the path below it renders real
+            candlesticks plus the certified <code className="text-ax-blue-2">gann_swing</code> direction as
+            swing-top/bottom pivots. Switch to <span className="text-ax-text">1D</span> for the full
+            2020–2025 history.
           </p>
           {status === 'error' && (
             <p className="text-ax-down text-xs mt-3 font-mono">load error: {error}</p>
@@ -172,17 +170,17 @@ export function SandboxChartPanel() {
           <div className="min-w-0">
             <SandboxChart data={data} enabled={sel} />
             <p className="text-ax-muted text-[11px] font-mono mt-3 pt-3 border-t border-ax-border/50 leading-relaxed">
-              real export · {m.symbol} {m.interval} · {m.windowStart} → {m.windowEnd} ·{' '}
-              {m.rows.toLocaleString('en-US')} rows · seal {m.sha1.slice(0, 12)}…
-              {m.scriptLines ? ` · ${m.scriptLines.toLocaleString('en-US')} lines` : ''}
+              verified export · {m.symbol} {m.interval} · {m.windowStart} → {m.windowEnd} ·{' '}
+              {m.rows.toLocaleString('en-US')}/{(m.canonicalRows ?? m.rows).toLocaleString('en-US')} candles ·{' '}
+              {m.gateAVerdict ?? 'PASS'} · sentinel gate {m.sha1.slice(0, 12)}…
               {m.env ? ` · ${m.env}` : ''}
             </p>
             <p className="text-ax-muted text-[11px] mt-1 leading-relaxed">
               <span className="text-ax-up">▲</span> swing top (green, above the high) ·{' '}
-              <span className="text-ax-down">▼</span> swing bottom (red, below the low). Bound to the verified
-              swing semantics — the export's <code className="text-ax-blue-2">gann_swing_top</code>/
-              <code className="text-ax-blue-2">gann_swing_bottom</code> columns are inverted vs price, so markers
-              follow the true peaks/troughs.
+              <span className="text-ax-down">▼</span> swing bottom (red, below the low). Derived from the
+              certified <code className="text-ax-blue-2">gann_swing</code> direction column (+1 up / −1 down):
+              each sign flip is a confirmed Gann pivot closing the prior leg — a deterministic read of the
+              sealed column, nothing recomputed.{m.upPct != null ? ` Full series: ${m.upPct}% up / ${m.downPct}% down.` : ''}
             </p>
           </div>
         </div>
