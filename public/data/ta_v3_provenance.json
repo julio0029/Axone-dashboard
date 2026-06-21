@@ -7,7 +7,7 @@
     "5m",
     "1h"
   ],
-  "ledgerSha256": "70f49d479ef757563b13cc3f0ddca4529378927f23dbd3d35ec0a19e0158fbf4",
+  "ledgerSha256": "078e329a1cb2675bbc636b56957a2227ac9e42622d5726d9cb9621777b242924",
   "scriptSha1": "11345d75b0935a24d7a5d336c421288da54526fd",
   "scriptSha256": "6d9b783af5a0faaef82fce82771ab2e1b8b7503c2228524b9462dba4ce1ea58c",
   "causalNote": "CAUSAL sealed build; ichimoku_lagging excluded from output",
@@ -38,7 +38,7 @@
       "timestamp_ordered": "PASS (monotonic increasing)",
       "timestamp_unique": "PASS (no duplicates)",
       "all_key_fields_present": "PASS (rsi, bolinger_*, open_rel_*_levels, *_level_breakout_* all present)",
-      "null_behavior": "PASS (89 columns have warmup nulls, all confirmed contiguous at head only)",
+      "null_behavior": "PASS \u2014 three categories of NaN, all causal and correct. (1) Warmup-head NaNs: 89 columns contiguous at series head (indicator warm-up, expected). (2) Zero-range degenerate NaNs: stochastic_k, stochastic_d, williams_r_14, mfi_14, vwap and their _rel_* variants carry mid-series NaNs at two clusters (2021-02-11 UTC, 2023-03-24 UTC) where consecutive flat candles produce denominator=0; correctly preserved, not leakage. (3) Sparse event columns: gann_swing_change (556K NaNs), gann_swing_top and gann_swing_bottom (~593K each) are structurally sparse \u2014 fire only at swing reversals/confirmed tops-bottoms, not warmup-gated. (4) No-level-available state: open_rel_1h_levels (276 mid-series NaNs) and open_rel_1D_levels (9) are NaN when no confirmed S/R fractal level exists at that row; breakout columns correctly use 0.0 sentinel. Policy: preserve NaN (no backfill). Not leakage. [Corrected per Sentinel audit F-1, 2026-06-22]",
       "htf_leakage": "PASS (no leakage issues detected; htf_confirmed_* NaN at first row)",
       "causal_excluded": "PASS (ichimoku_lagging absent from output)",
       "csv_sha256": "a020617ab38a2fbd8d25c2fbc73a72ea4857dd53337015605ffc4b953f07381e"
@@ -48,7 +48,7 @@
       "timestamp_ordered": "PASS (monotonic increasing)",
       "timestamp_unique": "PASS (no duplicates)",
       "all_key_fields_present": "PASS (rsi, bolinger_*, open_rel_*_levels, *_level_breakout_* all present)",
-      "null_behavior": "PASS (89 columns have warmup nulls, all confirmed contiguous at head only)",
+      "null_behavior": "PASS \u2014 three categories of NaN, all causal and correct. (1) Warmup-head NaNs: 89 columns contiguous at series head (indicator warm-up, expected). (2) Zero-range degenerate NaNs: stochastic_k, stochastic_d, williams_r_14, mfi_14, vwap and their _rel_* variants may carry mid-series NaNs at flat-candle clusters where denominator=0; correctly preserved, not leakage. (3) Sparse event columns: gann_swing_change, gann_swing_top, gann_swing_bottom are structurally sparse \u2014 fire only at swing reversals/confirmed tops-bottoms, not warmup-gated. (4) No-level-available state: open_rel_1h_levels and open_rel_1D_levels are NaN when no confirmed S/R fractal level exists at that row; breakout columns correctly use 0.0 sentinel. Policy: preserve NaN (no backfill). Not leakage. [Corrected per Sentinel audit F-1, 2026-06-22]",
       "htf_leakage": "PASS (no leakage issues detected; htf_confirmed_* NaN at first row)",
       "causal_excluded": "PASS (ichimoku_lagging absent from output)",
       "csv_sha256": "fc0f89a8d678a5e7a427f4e21c72d3816a48216721e8f40b5a7cd249add9c871"
