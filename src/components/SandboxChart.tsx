@@ -62,6 +62,13 @@ export function SandboxChart({
       else if (role === 'volume') showVol = true
     }
 
+    // candlestick (price columns) is itself toggleable: render it only when all
+    // present price columns are enabled, so O/H/L/C behave as independent toggles.
+    const priceCols = manifest.columns
+      .filter((c) => classifyColumn(c) === 'price')
+      .map((c) => c.name)
+    const showCandles = priceCols.length > 0 && priceCols.every((n) => enabled.has(n))
+
     const subs: string[] = [...(showVol ? ['__vol__'] : []), ...oscillators]
     const nSub = subs.length
 
@@ -98,15 +105,16 @@ export function SandboxChart({
     }))
 
     type Series = NonNullable<EChartsOption['series']>
-    const series: Series = [
-      {
+    const series: Series = []
+    if (showCandles) {
+      series.push({
         name: 'OHLC', type: 'candlestick', xAxisIndex: 0, yAxisIndex: 0, data: ohlc,
         itemStyle: {
           color: '#1ec8a5', color0: '#ff5470',
           borderColor: '#1ec8a5', borderColor0: '#ff5470',
         },
-      },
-    ]
+      })
+    }
 
     overlays.forEach((name, i) => {
       series.push({

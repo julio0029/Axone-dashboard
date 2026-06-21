@@ -2,15 +2,22 @@ import { useMemo, useState } from 'react'
 import { Card } from './Card'
 import { SandboxChart } from './SandboxChart'
 import {
-  useTaV2Export, classifyColumn, familyOf, EXPORT_PATHS,
-  type ManifestColumn, type SandboxTf,
+  useTaV2Export, classifyColumn, EXPORT_PATHS,
+  type ColumnRole, type ManifestColumn, type SandboxTf,
 } from '../data/taV2Export'
 
-// Sensible default selection once a real export is present. The Chronos Gate-A
-// bundle ships OHLCV + the certified gann_swing direction column, so both are on.
-const DEFAULT_ON = ['volume', 'gann_swing']
-
 const TIMEFRAMES: SandboxTf[] = ['5m', '1h', '4h', '1D']
+
+// Every column in the export is independently toggleable — no cap, any number
+// from zero through all. Columns are grouped by render role for the selector.
+// Price (O/H/L/C) drives the candlestick, which renders only when all four are on.
+const ROLE_GROUPS: { role: ColumnRole; name: string; hint?: string }[] = [
+  { role: 'price', name: 'Price · candlestick', hint: 'needs O/H/L/C together' },
+  { role: 'overlay', name: 'Overlays' },
+  { role: 'oscillator', name: 'Oscillators' },
+  { role: 'volume', name: 'Volume' },
+  { role: 'marker', name: 'Markers' },
+]
 
 export function SandboxChartPanel() {
   const [tf, setTf] = useState<SandboxTf>('5m')
@@ -18,18 +25,19 @@ export function SandboxChartPanel() {
   const [query, setQuery] = useState('')
   const [enabled, setEnabled] = useState<Set<string> | null>(null)
 
-  // toggleable columns = everything except the raw candlestick (price) columns
-  const toggleCols: ManifestColumn[] = useMemo(
-    () => (data ? data.manifest.columns.filter((c) => classifyColumn(c) !== 'price') : []),
+  // Every column is toggleable, including the candlestick price columns. There
+  // is no 2-column cap: any number from zero through all may be selected.
+  const allCols: ManifestColumn[] = useMemo(
+    () => (data ? data.manifest.columns : []),
     [data],
   )
 
-  // initialise selection from defaults the first time an export is ready
+  // default selection = all available columns (preserves the candle + volume +
+  // Gann-swing view); the user can then independently toggle any column off.
   const sel = useMemo(() => {
     if (enabled) return enabled
-    const names = new Set(toggleCols.map((c) => c.name))
-    return new Set(DEFAULT_ON.filter((n) => names.has(n)))
-  }, [enabled, toggleCols])
+    return new Set(allCols.map((c) => c.name))
+  }, [enabled, allCols])
 
   const toggle = (name: string) =>
     setEnabled(() => {
@@ -38,18 +46,18 @@ export function SandboxChartPanel() {
       return n
     })
 
-  // group columns by schema family for the control list
+  // group columns by render role for the control list
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase()
-    const map = new Map<string, { name: string; cols: ManifestColumn[] }>()
-    for (const c of toggleCols) {
-      if (q && !c.name.toLowerCase().includes(q)) continue
-      const fam = familyOf(c)
-      if (!map.has(fam.key)) map.set(fam.key, { name: fam.name, cols: [] })
-      map.get(fam.key)!.cols.push(c)
-    }
-    return [...map.entries()].map(([key, v]) => ({ key, ...v }))
-  }, [toggleCols, query])
+    return ROLE_GROUPS.map((rg) => ({
+      key: rg.role,
+      name: rg.name,
+      hint: rg.hint,
+      cols: allCols.filter(
+        (c) => classifyColumn(c) === rg.role && (!q || c.name.toLowerCase().includes(q)),
+      ),
+    })).filter((g) => g.cols.length > 0)
+  }, [allCols, query])
 
   const badge =
     status === 'ready'
@@ -130,15 +138,27 @@ export function SandboxChartPanel() {
               className="w-full px-3 py-2 rounded-lg bg-ax-bg-2/70 border border-ax-border/70 text-sm text-ax-text placeholder:text-ax-muted focus:outline-none focus:border-ax-blue/50"
             />
             <div className="flex items-center justify-between text-[11px] text-ax-muted">
-              <span>{sel.size} selected</span>
-              <button onClick={() => setEnabled(new Set())} className="hover:text-ax-text transition">
-                clear all
-              </button>
+              <span>{sel.size} / {allCols.length} selected</span>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setEnabled(new Set(allCols.map((c) => c.name)))}
+                  className="hover:text-ax-text transition"
+                >
+                  all
+                </button>
+                <span className="text-ax-border">·</span>
+                <button onClick={() => setEnabled(new Set())} className="hover:text-ax-text transition">
+                  clear
+                </button>
+              </div>
             </div>
             <div className="max-h-[520px] overflow-y-auto ax-scroll space-y-3 pr-1">
               {groups.map((g) => (
                 <div key={g.key}>
-                  <div className="text-[10px] uppercase tracking-widest text-ax-muted px-1 pb-1">{g.name}</div>
+                  <div className="text-[10px] uppercase tracking-widest text-ax-muted px-1 pb-1">
+                    {g.name}
+                    {g.hint && <span className="text-ax-muted/60 normal-case tracking-normal"> · {g.hint}</span>}
+                  </div>
                   <div className="flex flex-wrap gap-1.5">
                     {g.cols.map((c) => {
                       const on = sel.has(c.name)
