@@ -24,7 +24,7 @@ export function Layout() {
             <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">test</span>
           </NavLink>
           <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
-          {AGENTS.filter((a) => a.id !== 'axone').map((a) => (
+          {AGENTS.filter((a) => a.id !== 'axone' && a.id !== 'operator').map((a) => (
             <NavLink
               key={a.id}
               to={a.detailed ? '/kerry' : `/agent/${a.id}`}
@@ -32,10 +32,17 @@ export function Layout() {
             >
               <span
                 className="inline-block w-2 h-2 rounded-full"
-                style={{ background: CATEGORIES[a.cat].color }}
+                style={{
+                  background: a.status === 'pending' ? 'transparent' : CATEGORIES[a.cat].color,
+                  border: a.status === 'pending' ? '1px dashed #ff5470' : undefined,
+                }}
               />
-              {a.name}
-              {!a.detailed && <span className="ml-auto text-[9px] text-ax-muted">soon</span>}
+              <span className={a.status === 'pending' ? 'text-[#ff8aa0]' : undefined}>{a.name}</span>
+              {a.status === 'pending' ? (
+                <span className="ml-auto text-[9px] uppercase tracking-wide text-[#ff5470]">pending</span>
+              ) : (
+                !a.detailed && <span className="ml-auto text-[9px] text-ax-muted">soon</span>
+              )}
             </NavLink>
           ))}
         </nav>
