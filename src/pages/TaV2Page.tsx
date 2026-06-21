@@ -9,6 +9,7 @@ import {
   CHRONOS_GATE_A, GATE_A_TIMEFRAMES, GATE_A_GAPS, GATE_A_VALIDATION,
   GATE_A_PROVENANCE_CHAIN,
 } from '../data/chronosGateA'
+import { useV3Provenance } from '../data/taV3Export'
 
 const PARITY_BADGE: Record<ParityTag, { label: string; cls: string }> = {
   exact: { label: 'parity 0.0', cls: 'text-ax-up bg-[#1ec8a5]/10 border-[#1ec8a5]/30' },
@@ -19,6 +20,7 @@ const PARITY_BADGE: Record<ParityTag, { label: string; cls: string }> = {
 const nf = (n: number) => n.toLocaleString('en-US')
 
 export function TaV2Page() {
+  const { data: v3 } = useV3Provenance()
   const [open, setOpen] = useState<Set<string>>(() => new Set(['candles']))
   const toggle = (k: string) =>
     setOpen((s) => {
@@ -42,35 +44,36 @@ export function TaV2Page() {
             <div>
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-ax-blue-2">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-ax-up ax-glow" />
-                Sandbox · Chronos Gate-A · BTCUSDT calculation run
+                Sandbox · Chronos certified · BTCUSDT Technical_analysis_v3
               </div>
               <h1 className="font-display text-[34px] leading-tight tracking-tight mt-2 ax-glow-text">
-                Gate-A verified.
-                <br />Gann swings, 5m → 1D.
+                149 columns, certified.
+                <br />Every field, independently selectable.
               </h1>
-              <p className="text-ax-muted mt-2 text-sm max-w-xl">
-                Chronos' Sentinel-gated calculation run over {nf(CHRONOS_GATE_A.totalSourceCandles)} source{' '}
-                {CHRONOS_GATE_A.symbol} candles ({CHRONOS_GATE_A.rangeStart} → {CHRONOS_GATE_A.rangeEnd}).
-                Real OHLCV plus the certified <code className="text-ax-blue-2">gann_swing</code> direction across
-                four timeframes — all 8 artifact SHA-256 hashes re-verified before this dashboard was touched.
-                Gate B and the EVIDENCE target-spec are <span className="text-ax-text">parked</span>; no targets built.
+              <p className="text-ax-muted mt-2 text-sm max-w-2xl">
+                Chronos' certified Technical_analysis_v3 fresh pass over BTCUSDT (2020-01-01 → 2025-12-31),
+                both <span className="text-ax-text">5m</span> and <span className="text-ax-text">1h</span> timeframes,
+                all <span className="text-ax-text">149</span> columns. Both CSV SHA-256 hashes are re-verified against
+                the certified ledger before any export is written; values are copied verbatim (nothing recomputed
+                client-side). The 1.5 GB 5m file is made browser-safe by a documented tail row-window — all 149
+                columns are kept, only rows are windowed.
               </p>
             </div>
             <div className="text-right shrink-0">
               <div className="font-mono text-[40px] leading-none text-ax-up">PASS</div>
-              <div className="text-ax-muted text-xs tracking-wide mt-1">Gate-A verdict</div>
-              <div className="mt-3 text-[11px] font-mono text-ax-muted">
-                sentinel gate {CHRONOS_GATE_A.sentinelSha.slice(0, 12)}…
+              <div className="text-ax-muted text-xs tracking-wide mt-1">Chronos validation</div>
+              <div className="mt-3 text-[11px] font-mono text-ax-muted break-all max-w-[180px]">
+                script sha1 {(v3?.scriptSha1 ?? '11345d75b093').slice(0, 12)}…
               </div>
             </div>
           </div>
 
           {/* KPI strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-6 rounded-xl overflow-hidden border border-ax-border/70 bg-ax-border/40">
-            <Kpi label="Range" value={CHRONOS_GATE_A.rangeStart} sub={`→ ${CHRONOS_GATE_A.rangeEnd}`} />
-            <Kpi label="Timeframes" value="4" sub="5m · 1h · 4h · 1D" />
-            <Kpi label="Hashes verified" value="8 / 8" sub="SHA-256 confirmed" good />
-            <Kpi label="Gate B" value="Parked" sub="no targets built" />
+            <Kpi label="Range" value="2020-01-01" sub="→ 2025-12-31" />
+            <Kpi label="Timeframes" value="2" sub="5m · 1h" />
+            <Kpi label="Columns" value={`${v3?.columnCount ?? 149} / 149`} sub="full schema parity" good />
+            <Kpi label="CSV hashes" value="2 / 2" sub="SHA-256 verified" good />
           </div>
         </div>
       </div>
@@ -82,19 +85,74 @@ export function TaV2Page() {
           <div className="text-sm">
             <span className="text-ax-text font-medium">Data provenance.</span>{' '}
             <span className="text-ax-muted">
-              The interactive chart below renders <span className="text-ax-up">only</span> Chronos' verified
-              Gate-A export — real OHLCV candles and the certified <code className="text-ax-blue-2">gann_swing</code>{' '}
-              direction column (swing pivots derived from its sign flips, nothing recomputed). Guy is read-only with
-              respect to Axone: the canonical stores and Gann artifacts are untouched; only the dashboard's display
-              JSON was written. The <span className="text-ax-text">schema / parity / candle-flag</span> panels lower
-              on this page remain the broader TA-v2 indicator reference (Sublime), distinct from this calculation run.
+              The interactive chart below renders <span className="text-ax-up">only</span> Chronos' certified
+              Technical_analysis_v3 export — all 149 columns, copied verbatim from the certified CSVs (nothing
+              recomputed client-side). Guy is read-only with respect to Axone: the Chronos source artifacts are
+              untouched; only the dashboard's display JSON was written, after re-verifying both CSV SHA-256 hashes
+              against the certified ledger. The prior <span className="text-ax-text">Gate-A Gann run</span> and the
+              broader <span className="text-ax-text">TA-v2 schema</span> panels lower on this page are preserved as
+              historical context, distinct from this v3 pass.
             </span>
           </div>
         </div>
       </div>
 
-      {/* Interactive Gann chart — verified Chronos Gate-A export */}
+      {/* Interactive chart — certified Chronos Technical_analysis_v3 export */}
       <SandboxChartPanel />
+
+      {/* TA-v3 certification: hashes, windowing, validation, role tally */}
+      <Card
+        title="TA-v3 certification & export integrity"
+        subtitle="Chronos certified ledger · re-verified before this dashboard was written"
+        right={
+          <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded border text-ax-up bg-[#1ec8a5]/10 border-[#1ec8a5]/30">
+            all pass
+          </span>
+        }
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
+          <div className="space-y-2">
+            <HashRow k="5m CSV SHA-256" v={v3?.artifacts?.['5m']?.csvSha256 ?? 'a020617ab38a2fbd8d25c2fbc73a72ea4857dd53337015605ffc4b953f07381e'} />
+            <HashRow k="1h CSV SHA-256" v={v3?.artifacts?.['1h']?.csvSha256 ?? 'fc0f89a8d678a5e7a427f4e21c72d3816a48216721e8f40b5a7cd249add9c871'} />
+            <HashRow k="Script SHA-1" v={v3?.scriptSha1 ?? '11345d75b0935a24d7a5d336c421288da54526fd'} />
+            <HashRow k="Ledger SHA-256" v={v3?.ledgerSha256 ?? '—'} />
+            <p className="text-ax-muted text-[11px] leading-relaxed pt-1">
+              {v3?.causalNote ?? 'CAUSAL sealed build; ichimoku_lagging excluded from output'}
+            </p>
+          </div>
+          <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-px rounded-lg overflow-hidden border border-ax-border/70 bg-ax-border/40">
+              <Kpi label="5m rows" value={`${nf(v3?.artifacts?.['5m']?.shownRows ?? 3000)}`} sub={`of ${nf(v3?.artifacts?.['5m']?.rows ?? 630834)} canonical`} />
+              <Kpi label="1h rows" value={`${nf(v3?.artifacts?.['1h']?.shownRows ?? 3000)}`} sub={`of ${nf(v3?.artifacts?.['1h']?.rows ?? 52577)} canonical`} />
+              <Kpi label="Columns" value={`${v3?.columnCount ?? 149} / 149`} sub="full parity" good />
+              <Kpi label="Relative-price" value={`${v3?.relativePriceFields ?? 53}`} sub="rel fields" />
+            </div>
+            {v3?.roleTally && (
+              <div className="flex flex-wrap gap-1.5">
+                {Object.entries(v3.roleTally).map(([role, n]) => (
+                  <span key={role} className="font-mono text-[11px] px-2 py-1 rounded-md bg-ax-bg-2/70 border border-ax-border/60 text-ax-muted">
+                    {role} <span className="text-ax-text">{n as number}</span>
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        <p className="text-ax-muted text-[11px] leading-relaxed mt-4 pt-3 border-t border-ax-border/50">
+          <span className="text-ax-text">Browser-safe loading.</span>{' '}
+          {v3?.windowing?.note ??
+            'All 149 certified columns are exported. Only rows are windowed: the most-recent N rows per timeframe (browser-safe; past warmup nulls). No values recomputed; cells copied verbatim from the certified CSV (NaN→null).'}
+        </p>
+      </Card>
+
+      {/* Prior Gate-A Gann run — preserved historical context */}
+      <div className="ax-card px-5 py-3 border-l-2 border-l-ax-blue/40">
+        <div className="text-[11px] uppercase tracking-[0.2em] text-ax-blue-2">Prior Gate-A Gann run · preserved</div>
+        <p className="text-ax-muted text-xs mt-1">
+          The panels below are the earlier Chronos Gate-A Gann calculation run (5m → 1D), kept intact as historical
+          provenance. They are separate from the TA-v3 pass driving the interactive chart above.
+        </p>
+      </div>
 
       {/* Gate-A run summary: per-timeframe split + validation checklist */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -331,6 +389,15 @@ function Kpi({ label, value, sub, good }: { label: string; value: string; sub?: 
       <div className="text-ax-muted text-[10px] uppercase tracking-widest">{label}</div>
       <div className={`font-mono text-sm mt-1 ${good ? 'text-ax-up' : 'text-ax-text'}`}>{value}</div>
       {sub && <div className="text-ax-muted text-[11px] font-mono mt-0.5">{sub}</div>}
+    </div>
+  )
+}
+
+function HashRow({ k, v }: { k: string; v: string }) {
+  return (
+    <div className="flex gap-3 items-baseline">
+      <span className="shrink-0 w-32 text-ax-muted uppercase tracking-wide text-[10px]">{k}</span>
+      <code className="font-mono text-[11px] text-ax-blue-2 break-all">{v}</code>
     </div>
   )
 }

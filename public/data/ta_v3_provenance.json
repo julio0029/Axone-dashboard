@@ -1,0 +1,75 @@
+{
+  "ledgerType": "ta_v3_fresh_computation",
+  "generatedBy": "Chronos",
+  "generatedAt": "2026-06-22T00:00:00Z",
+  "symbol": "BTCUSDT",
+  "timeframes": [
+    "5m",
+    "1h"
+  ],
+  "ledgerSha256": "70f49d479ef757563b13cc3f0ddca4529378927f23dbd3d35ec0a19e0158fbf4",
+  "scriptSha1": "11345d75b0935a24d7a5d336c421288da54526fd",
+  "scriptSha256": "6d9b783af5a0faaef82fce82771ab2e1b8b7503c2228524b9462dba4ce1ea58c",
+  "causalNote": "CAUSAL sealed build; ichimoku_lagging excluded from output",
+  "columnCount": 149,
+  "artifacts": {
+    "5m": {
+      "csvSha256": "a020617ab38a2fbd8d25c2fbc73a72ea4857dd53337015605ffc4b953f07381e",
+      "rows": 630834,
+      "tsRange": {
+        "first": "2020-01-01T00:00:00+00:00",
+        "last": "2025-12-31T23:55:00+00:00"
+      },
+      "shownRows": 3000
+    },
+    "1h": {
+      "csvSha256": "fc0f89a8d678a5e7a427f4e21c72d3816a48216721e8f40b5a7cd249add9c871",
+      "rows": 52577,
+      "tsRange": {
+        "first": "2020-01-01T00:00:00+00:00",
+        "last": "2025-12-31T23:00:00+00:00"
+      },
+      "shownRows": 3000
+    }
+  },
+  "validation": {
+    "5m": {
+      "row_count_matches_source": "PASS (630834 rows = source parquet rows)",
+      "timestamp_ordered": "PASS (monotonic increasing)",
+      "timestamp_unique": "PASS (no duplicates)",
+      "all_key_fields_present": "PASS (rsi, bolinger_*, open_rel_*_levels, *_level_breakout_* all present)",
+      "null_behavior": "PASS (89 columns have warmup nulls, all confirmed contiguous at head only)",
+      "htf_leakage": "PASS (no leakage issues detected; htf_confirmed_* NaN at first row)",
+      "causal_excluded": "PASS (ichimoku_lagging absent from output)",
+      "csv_sha256": "a020617ab38a2fbd8d25c2fbc73a72ea4857dd53337015605ffc4b953f07381e"
+    },
+    "1h": {
+      "row_count_matches_source": "PASS (52577 rows = source parquet rows)",
+      "timestamp_ordered": "PASS (monotonic increasing)",
+      "timestamp_unique": "PASS (no duplicates)",
+      "all_key_fields_present": "PASS (rsi, bolinger_*, open_rel_*_levels, *_level_breakout_* all present)",
+      "null_behavior": "PASS (89 columns have warmup nulls, all confirmed contiguous at head only)",
+      "htf_leakage": "PASS (no leakage issues detected; htf_confirmed_* NaN at first row)",
+      "causal_excluded": "PASS (ichimoku_lagging absent from output)",
+      "csv_sha256": "fc0f89a8d678a5e7a427f4e21c72d3816a48216721e8f40b5a7cd249add9c871"
+    },
+    "overall": "PASS \u2014 both artifacts certified clean"
+  },
+  "relativePriceFields": 53,
+  "roleTally": {
+    "meta": 7,
+    "price": 4,
+    "volume": 1,
+    "overlay": 51,
+    "oscillator": 80,
+    "marker": 6
+  },
+  "windowing": {
+    "mode": "tail",
+    "n": {
+      "5m": 3000,
+      "1h": 3000
+    },
+    "note": "All 149 certified columns are exported. Only rows are windowed: the most-recent N rows per timeframe (browser-safe; past warmup nulls). No values recomputed; cells copied verbatim from the certified CSV (NaN\u2192null). Window is reproducible via windowRowRange."
+  }
+}
