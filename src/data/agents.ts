@@ -22,8 +22,10 @@ export interface AgentNode {
   y: number
   /** category index -> colour */
   cat: number
-  /** route slug; only kerry has a detailed page for now */
+  /** has a bespoke detailed page (vs the Coming-soon placeholder) */
   detailed: boolean
+  /** explicit route for the detailed page (defaults handled in the nav) */
+  route?: string
   status: AgentStatus
 }
 
@@ -78,13 +80,13 @@ export const AGENTS: AgentNode[] = [
     x: 110, y: 285,
   },
   {
-    id: 'kerry', name: 'Kerry', status: 'live', cat: 1, detailed: true,
+    id: 'kerry', name: 'Kerry', status: 'live', cat: 1, detailed: true, route: '/kerry',
     role: 'Live data layer — DATA/live/<symbol>_<period>.csv, ≤200 closed candles, live indicators/features & cadence checks.',
     owns: 'Rolling live datasets (≤200 closed candles) & live features',
     x: 305, y: 285,
   },
   {
-    id: 'chronos', name: 'Chronos', status: 'live', cat: 2, detailed: false,
+    id: 'chronos', name: 'Chronos', status: 'live', cat: 2, detailed: true, route: '/chronos',
     role: 'Historical owner — historical training, replay, backtests/walk-forward evidence, manifests, hashes & certified reports. DATA/live is out of scope.',
     owns: 'Historical datasets, training, replay, evidence, manifests & hashes',
     x: 765, y: 270,

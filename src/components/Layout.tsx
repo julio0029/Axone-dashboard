@@ -27,7 +27,7 @@ export function Layout() {
           {AGENTS.filter((a) => a.id !== 'axone' && a.id !== 'operator').map((a) => (
             <NavLink
               key={a.id}
-              to={a.detailed ? '/kerry' : `/agent/${a.id}`}
+              to={a.detailed ? (a.route ?? `/agent/${a.id}`) : `/agent/${a.id}`}
               className={navClass}
             >
               <span
@@ -86,6 +86,7 @@ function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
   if (path.startsWith('/ta-v2')) label = 'Sandbox'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
+  else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]
     const a = AGENTS.find((x) => x.id === id)
