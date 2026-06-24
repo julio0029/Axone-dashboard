@@ -1,12 +1,14 @@
 {
   "manifestType": "CHRONOS_PREDICTIVE_TARGETS",
   "version": "v1_with_gann_and_ema_reversal_ta_v3_consumer",
-  "symbol": "DOGEUSDT",
+  "symbol": "BNBUSDT",
   "timeframes": [
     "5m",
-    "1h"
+    "1h",
+    "4h",
+    "1D"
   ],
-  "generatedAtUtc": "2026-06-24T22:04:45.445147+00:00",
+  "generatedAtUtc": "2026-06-24T22:05:17.155653+00:00",
   "buildScript": "/Users/julesdevaux/.openclaw/agents/chronos/scripts/build_predictive_targets_v1.py",
   "buildScriptSha1": "92b92fd6484beeeac3539f1435ffe65bc6637d12",
   "parameters": {
@@ -26,7 +28,7 @@
     "swing_top_col": null,
     "swing_bottom_col": null,
     "swing_state_col": "gann_swing",
-    "event_count": 71877,
+    "event_count": 69834,
     "direction_convention": "top extremum => next 'down'; bottom extremum => next 'up'",
     "availability": "Gann events are indexed at extremum bar t but observable at close_of_bar_t+1 (lookahead_bars=1). Effective label horizon for a row = bars_to_next_swing + 1.",
     "policy": "Future confirmed Gann swing extrema used as labels only. Never use as features.",
@@ -36,18 +38,32 @@
   "sameCandleDualTouchPolicy": "first_passage_12 emits 'unknown' on same-bar dual touch.",
   "artifacts": {
     "5m": {
-      "targetsCsvSha256": "573b213d2b1d5509e102d5ab8779976b54042a7356b8e2fbf192c4339321c955",
-      "sourceCsvSha256": "6ce5e55b544102f7a43b161e8351368cdef76aab4b22e53983c59a81561a9d09",
-      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/DOGEUSDT_5m_ta_v3.csv",
+      "targetsCsvSha256": "0951f54905b655ef4a6173a1671cb46ba90254953ba3e3034dbd6a98ae2df745",
+      "sourceCsvSha256": "d5ebbd7a80be2491bd778c32a7ef01135f331ac2058cf3990c5da547eaa5c497",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/BNBUSDT_5m_ta_v3.csv",
       "canonicalRows": 630834,
       "shownRows": 2000
     },
     "1h": {
-      "targetsCsvSha256": "7a3924a01d53fe6301c7222ce33a726037159aebe3d18e07315eb6fdc0ed44af",
-      "sourceCsvSha256": "bedf591938683cfe7a6ac2377fd1a2b322f077a284ad95b6ebff0e6fff2a4b50",
-      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/DOGEUSDT_1h_ta_v3.csv",
+      "targetsCsvSha256": "655d929e64c2d3d1111bbe606c33a6991e3ad0eb40b1850a38a41c7a7517adf7",
+      "sourceCsvSha256": "26aa295e1ea69f3684104ee3c6764cfb497f7404ab8f62ec27c5a4fbc6403544",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/BNBUSDT_1h_ta_v3.csv",
       "canonicalRows": 52577,
       "shownRows": 2000
+    },
+    "4h": {
+      "targetsCsvSha256": "834f8fd8c22f560d24a6c401bf6d52ea9341e9c067c818fb04a1add8d3e9930a",
+      "sourceCsvSha256": "4b2948c7b8802a69bcb6af35473b05340ebe49197d2237629db3fa1d1668f71e",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/BNBUSDT_4h_ta_v3.csv",
+      "canonicalRows": 13151,
+      "shownRows": 1000
+    },
+    "1D": {
+      "targetsCsvSha256": "21d95bf001514264e30a7ee04c1d9c1cbba491790f477612c65aae4aabd5dd49",
+      "sourceCsvSha256": "5a743680995c335a091b8de9676eab129a723841dbe5cd635d31826cf4915da7",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624/BNBUSDT_1D_ta_v3.csv",
+      "canonicalRows": 2192,
+      "shownRows": 500
     }
   },
   "targetColumns": [
@@ -101,7 +117,9 @@
     "mode": "tail",
     "n": {
       "5m": 2000,
-      "1h": 2000
+      "1h": 2000,
+      "4h": 1000,
+      "1D": 500
     },
     "note": "All 25 predictive target columns + OHLCV are exported. Only rows are windowed (most-recent N per timeframe; browser-safe). OHLCV is joined from the certified TA-v3 source on timestamp == open_time_utc (row-for-row alignment asserted). No values recomputed; cells copied verbatim from the certified CSVs (NaN/''\u2192null)."
   }

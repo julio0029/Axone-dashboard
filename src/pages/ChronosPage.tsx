@@ -5,7 +5,7 @@ import { ChronosChart } from '../components/ChronosChart'
 import { ChronosTargetTable } from '../components/ChronosTargetTable'
 import {
   CHRONOS_PATHS, CHRONOS_PROVENANCE_PATHS, CHRONOS_TIMEFRAMES, CHRONOS_SYMBOLS,
-  GROUP_ORDER, DIR_COLOR,
+  AVAILABLE_TFS, GROUP_ORDER, DIR_COLOR,
   useChronosExport, useChronosProvenance,
   type ChronosTf, type ChronosSym,
 } from '../data/chronosTargets'
@@ -22,7 +22,16 @@ export function ChronosPage() {
   const [showVolume, setShowVolume] = useState(true)
   const [enabled, setEnabled] = useState<Set<string>>(() => new Set(DEFAULT_ON))
 
-  const state = useChronosExport(CHRONOS_PATHS[sym][tf])
+  const availTfs = AVAILABLE_TFS[sym]
+  const safeTf = availTfs.includes(tf) ? tf : availTfs[0]
+
+  const handleSymChange = (newSym: ChronosSym) => {
+    setSym(newSym)
+    if (!AVAILABLE_TFS[newSym].includes(tf)) setTf(AVAILABLE_TFS[newSym][0])
+  }
+
+  const path = CHRONOS_PATHS[sym][safeTf]
+  const state = useChronosExport(path ?? '')
   const { data: prov } = useChronosProvenance(CHRONOS_PROVENANCE_PATHS[sym])
   const data = state.data
 
@@ -91,7 +100,7 @@ export function ChronosPage() {
           {data && (
             <p className="text-[11px] mt-1.5 text-ax-muted leading-relaxed max-w-[680px]">
               {data.manifest.rows.toLocaleString()} of {data.manifest.canonicalRows.toLocaleString()} canonical{' '}
-              {tf} rows (tail window) · {data.manifest.windowStart} → {data.manifest.windowEnd} UTC.
+              {safeTf} rows (tail window) · {data.manifest.windowStart} → {data.manifest.windowEnd} UTC.
               OHLCV joined from the certified TA-v3 source on timestamp; 25 target columns copied verbatim
               (NaN→null). Nothing recomputed client-side.
             </p>
@@ -111,35 +120,44 @@ export function ChronosPage() {
         {/* Left panel */}
         <div className="space-y-5">
           <Card title="Symbol" bodyClass="!p-3">
-            <div className="grid grid-cols-1 gap-2">
+            <div className="grid grid-cols-2 gap-1.5">
               {CHRONOS_SYMBOLS.map((s) => (
                 <button
                   key={s}
-                  onClick={() => setSym(s)}
-                  className={`py-2 rounded-lg text-sm font-mono transition ${
+                  onClick={() => handleSymChange(s)}
+                  className={`py-1.5 rounded-lg text-xs font-mono transition truncate ${
                     s === sym
                       ? 'bg-ax-blue/15 text-ax-text ax-glow'
                       : 'text-ax-muted hover:text-ax-text hover:bg-white/5'
                   }`}
                 >
-                  {s}
+                  {s.replace('USDT', '')}
                 </button>
               ))}
             </div>
           </Card>
           <Card title="Timeframe" bodyClass="!p-3">
             <div className="grid grid-cols-2 gap-2">
-              {CHRONOS_TIMEFRAMES.map((t) => (
-                <button
-                  key={t}
-                  onClick={() => setTf(t)}
-                  className={`py-2 rounded-lg text-sm font-mono transition ${
-                    t === tf ? 'bg-ax-blue/15 text-ax-text ax-glow' : 'text-ax-muted hover:text-ax-text hover:bg-white/5'
-                  }`}
-                >
-                  {t}
-                </button>
-              ))}
+              {CHRONOS_TIMEFRAMES.map((t) => {
+                const avail = availTfs.includes(t)
+                return (
+                  <button
+                    key={t}
+                    disabled={!avail}
+                    onClick={() => avail && setTf(t)}
+                    title={!avail ? `${t} not available for ${sym}` : undefined}
+                    className={`py-2 rounded-lg text-sm font-mono transition ${
+                      !avail
+                        ? 'text-ax-muted/30 cursor-not-allowed'
+                        : t === safeTf
+                        ? 'bg-ax-blue/15 text-ax-text ax-glow'
+                        : 'text-ax-muted hover:text-ax-text hover:bg-white/5'
+                    }`}
+                  >
+                    {t}
+                  </button>
+                )
+              })}
             </div>
           </Card>
           <Card title="View" bodyClass="!p-3">
@@ -191,16 +209,16 @@ export function ChronosPage() {
 
         {/* Center chart */}
         <Card
-          title={`${sym} · ${tf} · predictive targets`}
+          title={`${sym} · ${safeTf} · predictive targets`}
           subtitle="Candles + direction label ribbons + banded numeric target panes · scroll / drag to zoom · hover for values"
           bodyClass="!p-2"
         >
           {state.status === 'ready' && data ? (
-            <ChronosChart data={data} tf={tf} enabled={enabled} showVolume={showVolume} />
+            <ChronosChart data={data} tf={safeTf} enabled={enabled} showVolume={showVolume} />
           ) : (
             <div className="h-[420px] flex items-center justify-center text-sm text-ax-muted">
               {state.status === 'loading' && 'loading certified targets…'}
-              {state.status === 'absent' && `targets export not found (run scripts/gen_chronos_targets${sym === 'DOGEUSDT' ? '_doge' : ''}.py)`}
+              {state.status === 'absent' && `targets export not found (run scripts/gen_chronos_targets_v3.py)`}
               {state.status === 'error' && `failed to load: ${state.error}`}
             </div>
           )}
@@ -234,10 +252,13 @@ export function ChronosPage() {
             <Prov k="Script sha1" v={prov.buildScriptSha1 ?? '—'} mono />
             <Prov k="Manifest version" v={prov.version} />
             <Prov k="Generated (UTC)" v={prov.generatedAtUtc} />
-            <Prov k="5m targets sha256" v={prov.artifacts['5m']?.targetsCsvSha256 ?? ''} mono />
-            <Prov k="1h targets sha256" v={prov.artifacts['1h']?.targetsCsvSha256 ?? ''} mono />
-            <Prov k="OHLCV source sha256 (5m)" v={prov.artifacts['5m']?.sourceCsvSha256 ?? ''} mono />
             <Prov k="Purge/embargo" v={String(prov.purgeEmbargoRequiredBars ?? '—')} />
+            {prov.timeframes.map((t) => (
+              <Prov key={t} k={`${t} targets sha256`} v={prov.artifacts[t]?.targetsCsvSha256 ?? '—'} mono />
+            ))}
+            {prov.timeframes.slice(0, 1).map((t) => (
+              <Prov key={`src-${t}`} k={`OHLCV source sha256 (${t})`} v={prov.artifacts[t]?.sourceCsvSha256 ?? '—'} mono />
+            ))}
           </div>
           <div className="mt-4 space-y-2">
             <p className="text-[11px] text-[#ffb454] bg-[#ffb454]/5 border border-[#ffb454]/25 rounded-lg px-3 py-2 leading-relaxed">

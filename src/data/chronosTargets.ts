@@ -15,26 +15,59 @@
 
 import { useEffect, useState } from 'react'
 
-export type ChronosTf = '5m' | '1h'
-export type ChronosSym = 'BTCUSDT' | 'DOGEUSDT'
+export type ChronosTf = '5m' | '1h' | '4h' | '1D'
+export type ChronosSym =
+  | 'BTCUSDT' | 'ETHUSDT' | 'BNBUSDT' | 'SOLUSDT' | 'XRPUSDT'
+  | 'DOGEUSDT' | 'FETUSDT' | 'PEPEUSDT' | 'SHIBUSDT' | 'SUIUSDT'
 
-export const CHRONOS_TIMEFRAMES: ChronosTf[] = ['5m', '1h']
-export const CHRONOS_SYMBOLS: ChronosSym[] = ['BTCUSDT', 'DOGEUSDT']
+export const CHRONOS_TIMEFRAMES: ChronosTf[] = ['5m', '1h', '4h', '1D']
+export const CHRONOS_SYMBOLS: ChronosSym[] = [
+  'BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'SOLUSDT', 'XRPUSDT',
+  'DOGEUSDT', 'FETUSDT', 'PEPEUSDT', 'SHIBUSDT', 'SUIUSDT',
+]
 
-export const CHRONOS_PATHS: Record<ChronosSym, Record<ChronosTf, string>> = {
-  BTCUSDT: {
-    '5m': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_5m.json`,
-    '1h': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_1h.json`,
-  },
-  DOGEUSDT: {
-    '5m': `${import.meta.env.BASE_URL}data/chronos_targets_dogeusdt_5m.json`,
-    '1h': `${import.meta.env.BASE_URL}data/chronos_targets_dogeusdt_1h.json`,
-  },
+/** Which timeframes exist per symbol in the Phase-3 bundle (DOGE: 5m+1h only). */
+export const AVAILABLE_TFS: Record<ChronosSym, ChronosTf[]> = {
+  BTCUSDT:  ['5m', '1h', '4h', '1D'],
+  ETHUSDT:  ['5m', '1h', '4h', '1D'],
+  BNBUSDT:  ['5m', '1h', '4h', '1D'],
+  SOLUSDT:  ['5m', '1h', '4h', '1D'],
+  XRPUSDT:  ['5m', '1h', '4h', '1D'],
+  DOGEUSDT: ['5m', '1h'],
+  FETUSDT:  ['5m', '1h', '4h', '1D'],
+  PEPEUSDT: ['5m', '1h', '4h', '1D'],
+  SHIBUSDT: ['5m', '1h', '4h', '1D'],
+  SUIUSDT:  ['5m', '1h', '4h', '1D'],
+}
+
+function p(sym: ChronosSym, tf: ChronosTf): string {
+  return `${import.meta.env.BASE_URL}data/chronos_targets_${sym.toLowerCase()}_${tf.toLowerCase()}.json`
+}
+
+export const CHRONOS_PATHS: Record<ChronosSym, Partial<Record<ChronosTf, string>>> = {
+  BTCUSDT:  { '5m': p('BTCUSDT','5m'),  '1h': p('BTCUSDT','1h'),  '4h': p('BTCUSDT','4h'),  '1D': p('BTCUSDT','1D')  },
+  ETHUSDT:  { '5m': p('ETHUSDT','5m'),  '1h': p('ETHUSDT','1h'),  '4h': p('ETHUSDT','4h'),  '1D': p('ETHUSDT','1D')  },
+  BNBUSDT:  { '5m': p('BNBUSDT','5m'),  '1h': p('BNBUSDT','1h'),  '4h': p('BNBUSDT','4h'),  '1D': p('BNBUSDT','1D')  },
+  SOLUSDT:  { '5m': p('SOLUSDT','5m'),  '1h': p('SOLUSDT','1h'),  '4h': p('SOLUSDT','4h'),  '1D': p('SOLUSDT','1D')  },
+  XRPUSDT:  { '5m': p('XRPUSDT','5m'),  '1h': p('XRPUSDT','1h'),  '4h': p('XRPUSDT','4h'),  '1D': p('XRPUSDT','1D')  },
+  DOGEUSDT: { '5m': p('DOGEUSDT','5m'), '1h': p('DOGEUSDT','1h') },
+  FETUSDT:  { '5m': p('FETUSDT','5m'),  '1h': p('FETUSDT','1h'),  '4h': p('FETUSDT','4h'),  '1D': p('FETUSDT','1D')  },
+  PEPEUSDT: { '5m': p('PEPEUSDT','5m'), '1h': p('PEPEUSDT','1h'), '4h': p('PEPEUSDT','4h'), '1D': p('PEPEUSDT','1D') },
+  SHIBUSDT: { '5m': p('SHIBUSDT','5m'), '1h': p('SHIBUSDT','1h'), '4h': p('SHIBUSDT','4h'), '1D': p('SHIBUSDT','1D') },
+  SUIUSDT:  { '5m': p('SUIUSDT','5m'),  '1h': p('SUIUSDT','1h'),  '4h': p('SUIUSDT','4h'),  '1D': p('SUIUSDT','1D')  },
 }
 
 export const CHRONOS_PROVENANCE_PATHS: Record<ChronosSym, string> = {
-  BTCUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance.json`,
+  BTCUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_btcusdt.json`,
+  ETHUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_ethusdt.json`,
+  BNBUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_bnbusdt.json`,
+  SOLUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_solusdt.json`,
+  XRPUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_xrpusdt.json`,
   DOGEUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance_dogeusdt.json`,
+  FETUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_fetusdt.json`,
+  PEPEUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance_pepeusdt.json`,
+  SHIBUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance_shibusdt.json`,
+  SUIUSDT:  `${import.meta.env.BASE_URL}data/chronos_targets_provenance_suiusdt.json`,
 }
 
 /** How a target column is rendered.
