@@ -4,12 +4,12 @@ import { Card } from '../components/Card'
 import { ChronosChart } from '../components/ChronosChart'
 import { ChronosTargetTable } from '../components/ChronosTargetTable'
 import {
-  CHRONOS_PATHS, CHRONOS_TIMEFRAMES, GROUP_ORDER, DIR_COLOR,
+  CHRONOS_PATHS, CHRONOS_PROVENANCE_PATHS, CHRONOS_TIMEFRAMES, CHRONOS_SYMBOLS,
+  GROUP_ORDER, DIR_COLOR,
   useChronosExport, useChronosProvenance,
-  type ChronosTf,
+  type ChronosTf, type ChronosSym,
 } from '../data/chronosTargets'
 
-// readable default: one direction ribbon + colour ribbon + 1-bar returns + volume
 const DEFAULT_ON = [
   'target_direction_1',
   'target_candle_color_1',
@@ -17,12 +17,13 @@ const DEFAULT_ON = [
 ]
 
 export function ChronosPage() {
+  const [sym, setSym] = useState<ChronosSym>('BTCUSDT')
   const [tf, setTf] = useState<ChronosTf>('1h')
   const [showVolume, setShowVolume] = useState(true)
   const [enabled, setEnabled] = useState<Set<string>>(() => new Set(DEFAULT_ON))
 
-  const state = useChronosExport(CHRONOS_PATHS[tf])
-  const { data: prov } = useChronosProvenance()
+  const state = useChronosExport(CHRONOS_PATHS[sym][tf])
+  const { data: prov } = useChronosProvenance(CHRONOS_PROVENANCE_PATHS[sym])
   const data = state.data
 
   const toggle = (name: string) =>
@@ -68,7 +69,7 @@ export function ChronosPage() {
           <h1 className="font-display text-3xl tracking-tight ax-glow-text">Chronos · Predictive Targets</h1>
           <p className="text-ax-muted mt-1 text-sm">
             The training labels Chronos derives for Tibot — forward returns, directions, excursions,
-            EMA-reversal and Gann-swing horizons — overlaid candle-by-candle on certified BTCUSDT price.
+            EMA-reversal and Gann-swing horizons — overlaid candle-by-candle on certified {sym} price.
           </p>
           <p className="text-xs mt-2 flex items-center gap-2 flex-wrap">
             {state.status === 'ready' ? (
@@ -110,8 +111,21 @@ export function ChronosPage() {
         {/* Left panel */}
         <div className="space-y-5">
           <Card title="Symbol" bodyClass="!p-3">
-            <div className="px-3 py-2 rounded-lg text-sm font-mono bg-ax-blue/15 text-ax-text ax-glow">BTCUSDT</div>
-            <p className="text-[10px] text-ax-muted mt-2 px-1">Operator scope: BTCUSDT only is labelled.</p>
+            <div className="grid grid-cols-1 gap-2">
+              {CHRONOS_SYMBOLS.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSym(s)}
+                  className={`py-2 rounded-lg text-sm font-mono transition ${
+                    s === sym
+                      ? 'bg-ax-blue/15 text-ax-text ax-glow'
+                      : 'text-ax-muted hover:text-ax-text hover:bg-white/5'
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
           </Card>
           <Card title="Timeframe" bodyClass="!p-3">
             <div className="grid grid-cols-2 gap-2">
@@ -177,7 +191,7 @@ export function ChronosPage() {
 
         {/* Center chart */}
         <Card
-          title={`BTCUSDT · ${tf} · predictive targets`}
+          title={`${sym} · ${tf} · predictive targets`}
           subtitle="Candles + direction label ribbons + banded numeric target panes · scroll / drag to zoom · hover for values"
           bodyClass="!p-2"
         >
@@ -186,7 +200,7 @@ export function ChronosPage() {
           ) : (
             <div className="h-[420px] flex items-center justify-center text-sm text-ax-muted">
               {state.status === 'loading' && 'loading certified targets…'}
-              {state.status === 'absent' && 'targets export not found (run scripts/gen_chronos_targets.py)'}
+              {state.status === 'absent' && `targets export not found (run scripts/gen_chronos_targets${sym === 'DOGEUSDT' ? '_doge' : ''}.py)`}
               {state.status === 'error' && `failed to load: ${state.error}`}
             </div>
           )}
@@ -215,6 +229,7 @@ export function ChronosPage() {
       {prov && (
         <Card title="Provenance & integrity" subtitle="how this page is wired to Chronos' certified output">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-xs">
+            <Prov k="Symbol" v={prov.symbol} />
             <Prov k="Build script" v={prov.buildScript.split('/').pop() ?? ''} />
             <Prov k="Script sha1" v={prov.buildScriptSha1 ?? '—'} mono />
             <Prov k="Manifest version" v={prov.version} />

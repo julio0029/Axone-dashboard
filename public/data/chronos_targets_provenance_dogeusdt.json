@@ -1,0 +1,108 @@
+{
+  "manifestType": "CHRONOS_PREDICTIVE_TARGETS",
+  "version": "v1_with_gann_and_ema_reversal_ta_v3_consumer",
+  "symbol": "DOGEUSDT",
+  "timeframes": [
+    "5m",
+    "1h"
+  ],
+  "generatedAtUtc": "2026-06-23T22:27:29.030168+00:00",
+  "buildScript": "/Users/julesdevaux/.openclaw/agents/chronos/scripts/build_predictive_targets_v1.py",
+  "buildScriptSha1": "92b92fd6484beeeac3539f1435ffe65bc6637d12",
+  "parameters": {
+    "time_col": "open_time_utc",
+    "atr_window": 14,
+    "flat_deadband_atr_mult": 0.05,
+    "first_passage_atr_mult": 1.0,
+    "max_base_target_horizon_bars": 12,
+    "ema_reversal_definition": "next EMA-9/EMA-21 crossover opposite to current EMA trend",
+    "gann_target_definition": "bars/pct/direction to the next confirmed Gann swing extremum"
+  },
+  "leakagePolicy": "Targets are labels/ground-truth ONLY and must never be used as Tibot features or live-inference columns. TA v3 marks gann_swing_change/top/bottom as target-only, feature_safe=false; gann_swing/gann_count are causal and feature-safe, but any target DERIVED from future swings here is a label only. Gann and EMA-reversal targets use future events and REQUIRE purged + embargoed splits.",
+  "nullPolicy": "Terminal/unavailable labels remain NaN. No filling.",
+  "gannEventContract": {
+    "status": "PASS",
+    "mode": "reconstructed_from_gann_swing",
+    "swing_top_col": null,
+    "swing_bottom_col": null,
+    "swing_state_col": "gann_swing",
+    "event_count": 71877,
+    "direction_convention": "top extremum => next 'down'; bottom extremum => next 'up'",
+    "availability": "Gann events are indexed at extremum bar t but observable at close_of_bar_t+1 (lookahead_bars=1). Effective label horizon for a row = bars_to_next_swing + 1.",
+    "policy": "Future confirmed Gann swing extrema used as labels only. Never use as features.",
+    "resolved_time_col": "open_time_utc"
+  },
+  "purgeEmbargoRequiredBars": "max(12, (max target_gann_bars_to_next_swing observed) + 1, max target_reversal_bars_ema_9_21 observed)",
+  "sameCandleDualTouchPolicy": "first_passage_12 emits 'unknown' on same-bar dual touch.",
+  "artifacts": {
+    "5m": {
+      "targetsCsvSha256": "573b213d2b1d5509e102d5ab8779976b54042a7356b8e2fbf192c4339321c955",
+      "sourceCsvSha256": "e07ef0a8484480a88409198587414a68401031a6a3b88200db747a00f48b5cbc",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_dogeusdt_20260624/DOGEUSDT_5m_ta_v3.csv",
+      "canonicalRows": 630834,
+      "shownRows": 2000
+    },
+    "1h": {
+      "targetsCsvSha256": "7a3924a01d53fe6301c7222ce33a726037159aebe3d18e07315eb6fdc0ed44af",
+      "sourceCsvSha256": "ee0025d09476e4ba9b1607df25437a4e13146c47d5958e28875dcb302338f4d4",
+      "sourceFile": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_dogeusdt_20260624/DOGEUSDT_1h_ta_v3.csv",
+      "canonicalRows": 52577,
+      "shownRows": 2000
+    }
+  },
+  "targetColumns": [
+    "target_candle_pct_1",
+    "target_candle_color_1",
+    "target_candle_pct_2",
+    "target_candle_color_2",
+    "target_candle_pct_3",
+    "target_candle_color_3",
+    "target_fwd_return_1",
+    "target_log_return_1",
+    "target_direction_1",
+    "target_fwd_return_3",
+    "target_log_return_3",
+    "target_direction_3",
+    "target_fwd_return_12",
+    "target_log_return_12",
+    "target_direction_12",
+    "target_mfe_12",
+    "target_mae_12",
+    "target_realized_vol_12",
+    "target_first_passage_12",
+    "target_reversal_bars_ema_9_21",
+    "target_reversal_pct_move_ema_9_21",
+    "target_reversal_direction_ema_9_21",
+    "target_gann_bars_to_next_swing",
+    "target_gann_pct_to_next_swing",
+    "target_gann_next_direction"
+  ],
+  "bandOrder": [
+    "candle_pct",
+    "returns",
+    "excursion",
+    "vol",
+    "rev_bars",
+    "rev_pct",
+    "gann_bars",
+    "gann_pct"
+  ],
+  "bandLabel": {
+    "candle_pct": "Next-candle % move",
+    "returns": "Forward returns (simple / log)",
+    "excursion": "MFE / MAE (12)",
+    "vol": "Realised vol (12)",
+    "rev_bars": "EMA-reversal \u00b7 bars",
+    "rev_pct": "EMA-reversal \u00b7 % move",
+    "gann_bars": "Gann swing \u00b7 bars",
+    "gann_pct": "Gann swing \u00b7 % move"
+  },
+  "windowing": {
+    "mode": "tail",
+    "n": {
+      "5m": 2000,
+      "1h": 2000
+    },
+    "note": "All 25 predictive target columns + OHLCV are exported. Only rows are windowed (most-recent N per timeframe; browser-safe). OHLCV is joined from the certified TA-v3 source on timestamp == open_time_utc (row-for-row alignment asserted). No values recomputed; cells copied verbatim from the certified CSVs (NaN/''\u2192null)."
+  }
+}

@@ -16,15 +16,26 @@
 import { useEffect, useState } from 'react'
 
 export type ChronosTf = '5m' | '1h'
+export type ChronosSym = 'BTCUSDT' | 'DOGEUSDT'
 
 export const CHRONOS_TIMEFRAMES: ChronosTf[] = ['5m', '1h']
+export const CHRONOS_SYMBOLS: ChronosSym[] = ['BTCUSDT', 'DOGEUSDT']
 
-export const CHRONOS_PATHS: Record<ChronosTf, string> = {
-  '5m': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_5m.json`,
-  '1h': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_1h.json`,
+export const CHRONOS_PATHS: Record<ChronosSym, Record<ChronosTf, string>> = {
+  BTCUSDT: {
+    '5m': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_5m.json`,
+    '1h': `${import.meta.env.BASE_URL}data/chronos_targets_btcusdt_1h.json`,
+  },
+  DOGEUSDT: {
+    '5m': `${import.meta.env.BASE_URL}data/chronos_targets_dogeusdt_5m.json`,
+    '1h': `${import.meta.env.BASE_URL}data/chronos_targets_dogeusdt_1h.json`,
+  },
 }
 
-export const CHRONOS_PROVENANCE_PATH = `${import.meta.env.BASE_URL}data/chronos_targets_provenance.json`
+export const CHRONOS_PROVENANCE_PATHS: Record<ChronosSym, string> = {
+  BTCUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance.json`,
+  DOGEUSDT: `${import.meta.env.BASE_URL}data/chronos_targets_provenance_dogeusdt.json`,
+}
 
 /** How a target column is rendered.
  *   direction → categorical label drawn as a coloured marker on the price pane
@@ -159,17 +170,17 @@ export interface ChronosProvenance {
   windowing: { mode: string; n: Record<string, number>; note: string }
 }
 
-export function useChronosProvenance(): { data: ChronosProvenance | null } {
+export function useChronosProvenance(path: string): { data: ChronosProvenance | null } {
   const [data, setData] = useState<ChronosProvenance | null>(null)
   useEffect(() => {
     let alive = true
-    fetch(CHRONOS_PROVENANCE_PATH, { cache: 'no-store' })
+    fetch(path, { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => alive && setData(j))
       .catch(() => alive && setData(null))
     return () => {
       alive = false
     }
-  }, [])
+  }, [path])
   return { data }
 }
