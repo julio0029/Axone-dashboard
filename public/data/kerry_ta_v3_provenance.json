@@ -1,0 +1,561 @@
+{
+  "manifestType": "KERRY_TA_V3",
+  "taVersion": "v3",
+  "evidenceDir": "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/ta_v3_production_20260624",
+  "generatedAt": "2026-06-25",
+  "windowMode": "tail",
+  "windowN": {
+    "5m": 2000,
+    "1h": 2000,
+    "4h": 2000,
+    "1D": 2000
+  },
+  "pairs": {
+    "BTCUSDT": {
+      "5m": {
+        "csvSha256": "78d32b8e1829ea0600cb2266dd217ea874444f7524726f0fe43401c8485fa5b5",
+        "manifestSha256": "496ebf3b9607107f4647d77476e67f0bcff895957dfa0c10c2a6907223ba3e32",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (78d32b8e1829\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4696.8,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "2c31ee7c29ff7dbda75b2e06781b85b84482ffdd242038308f2fb76c1ba32541",
+        "manifestSha256": "329151734fe1cec4290a3c0df5f1f81201d97b611b460c98c951187513b2c106",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (2c31ee7c29ff\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4699.0,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "8f06e515299e91b1f4d1c23c4ac4b6a1942b65246fbcc15de13b54838e77d057",
+        "manifestSha256": "37bbbf69d53c3380b921d1453593fa5d17972790805be02af4b45b696a7ce8e5",
+        "rows": 2000,
+        "canonicalRows": 13151,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (8f06e515299e\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4688.4,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "bead3d4834a8059d96701a954352ac76f3cb58b8a102eecdc024dd9e91d6445e",
+        "manifestSha256": "4355e297f28fd413429eb88aa6ac17a43acf10a9f63d1d64f25daeb7634fc179",
+        "rows": 2000,
+        "canonicalRows": 2192,
+        "columnCount": 150,
+        "windowStart": "2020-07-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (bead3d4834a8\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4630.2,
+        "real": true
+      }
+    },
+    "BNBUSDT": {
+      "5m": {
+        "csvSha256": "d5ebbd7a80be2491bd778c32a7ef01135f331ac2058cf3990c5da547eaa5c497",
+        "manifestSha256": "fbefc8f8ec59c14e48ae1845173108fab8ce1dc2c2d1f232b479e6a0fb66f3ee",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (d5ebbd7a80be\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4552.5,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "26aa295e1ea69f3684104ee3c6764cfb497f7404ab8f62ec27c5a4fbc6403544",
+        "manifestSha256": "f6786007502dd10f347575f017ce0817c745618d68ca16db3708f9083dc5becb",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (26aa295e1ea6\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4546.8,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "4b2948c7b8802a69bcb6af35473b05340ebe49197d2237629db3fa1d1668f71e",
+        "manifestSha256": "22d32f3dbf31340f70a86d46c9b11647ccd900743c51e891fe0d3568ac039ce9",
+        "rows": 2000,
+        "canonicalRows": 13151,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (4b2948c7b880\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4531.4,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "5a743680995c335a091b8de9676eab129a723841dbe5cd635d31826cf4915da7",
+        "manifestSha256": "5e5f377408ab6df492fb6f57236392faa4c40fa507ce2181908667a7db8f02c2",
+        "rows": 2000,
+        "canonicalRows": 2192,
+        "columnCount": 150,
+        "windowStart": "2020-07-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (5a743680995c\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4477.2,
+        "real": true
+      }
+    },
+    "ETHUSDT": {
+      "5m": {
+        "csvSha256": "bd20d6a9bf9bd56812382137da1b3ca476fdd92a998cf4cd846ed9b329d9da99",
+        "manifestSha256": "d9672e7e2f97720d4acdcb00ed8da2c463928295083081abd84183b84e0dad9c",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (bd20d6a9bf9b\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4655.6,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "8ca831a6250f1ba664250744f3b4b5c10bd1ef57d20d17fd403a9c9b6773f157",
+        "manifestSha256": "3598ca2bc864404b29bb8da9c75546048e7b50c44a10be2dc19e7e2268d8f274",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (8ca831a6250f\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4627.8,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "38c0692c7285aeb9175d9c33c3223faa71413f84d0f5a73589fcc33ab5bf1c98",
+        "manifestSha256": "4ffbfbe578000e3baed3a62a456ae54b8695388662ef1b91c12c21bef5a95e30",
+        "rows": 2000,
+        "canonicalRows": 13151,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (38c0692c7285\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4617.1,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "aa86c236b6f365e8646f1f775d31dc533e0ff289ac3c57be8aaedee2e2a1fbbe",
+        "manifestSha256": "487e1a8b98678c8eb7dfb83439e52d2d45ab6d0c4c86fd7c7508a4a4010e000d",
+        "rows": 2000,
+        "canonicalRows": 2192,
+        "columnCount": 150,
+        "windowStart": "2020-07-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (aa86c236b6f3\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4580.7,
+        "real": true
+      }
+    },
+    "FETUSDT": {
+      "5m": {
+        "csvSha256": "f15727c6009981f9f3c87d32b51f6f7a93bc41870d6aa1701a8b1635bf8f1f50",
+        "manifestSha256": "9a790edc28decf710bf09b19a2b13dfb672ea594189f07fe59e31301dcd50e54",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (f15727c60099\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4517.4,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "e63deff62f9e087278edc2520ac2dd96421e328e700bb4dab407087789c1c5aa",
+        "manifestSha256": "b43a9402f418d795a4f56ae9ac1371a66e7dbda405575d64a42d2d0a57a9882a",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (e63deff62f9e\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4524.1,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "0646ca3526c25535eaf50f332827f53e04beece7e8413494f58e4a3e33622641",
+        "manifestSha256": "68c94b508e8f999585ecaaac129583288de82e9eead6b98638fe49ca96427abf",
+        "rows": 2000,
+        "canonicalRows": 13151,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (0646ca3526c2\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4479.9,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "71596274caba585b67639862ebb3ec544c10ce6892754b350faed267d60f7dae",
+        "manifestSha256": "690f12f9ccd71e65d988b609e6aa4970eb6f9c49ec3501bb2c1ae209a6dae363",
+        "rows": 2000,
+        "canonicalRows": 2192,
+        "columnCount": 150,
+        "windowStart": "2020-07-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (71596274caba\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4503.2,
+        "real": true
+      }
+    },
+    "PEPEUSDT": {
+      "5m": {
+        "csvSha256": "468cf15656a29eeecc5e829793ea76114145cf22ad2d078a18e40e7e53353cff",
+        "manifestSha256": "3cdf68fe0042e87e6327e2a8fa388d3c7ff566b20e69db8f7de9181828d6f6de",
+        "rows": 2000,
+        "canonicalRows": 279720,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (468cf15656a2\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4867.0,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "51325cbcb881f49bf3aaf36e7cb88e9a6bc0fe793958aad6a9945ae74ac7851b",
+        "manifestSha256": "833459662f1b5ad8352dc577819fe9c7a85966140420832b526ba98b2b4cc116",
+        "rows": 2000,
+        "canonicalRows": 23310,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (51325cbcb881\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4927.0,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "7e65ac8b2ca27767dd04a793e30963790d1817353b906a5a7f3773400ddf5c4e",
+        "manifestSha256": "f75f103c04ec9a43cba19f8170bb15c0c1f5f7832c5574974c69dfda31b4d5a3",
+        "rows": 2000,
+        "canonicalRows": 5828,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (7e65ac8b2ca2\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4940.6,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "f851917658eec4f19be9557cda6922ede3ac9d6d67338fe9b8aee7acfb8b3c30",
+        "manifestSha256": "a7ad62cc16bf97d1a8c286d4705177586bd63553f1915311a0fa60e70e02476d",
+        "rows": 972,
+        "canonicalRows": 972,
+        "columnCount": 150,
+        "windowStart": "2023-05-05 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (f851917658ee\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 2366.2,
+        "real": true
+      }
+    },
+    "SHIBUSDT": {
+      "5m": {
+        "csvSha256": "d0a74a7a5a448d6fe74b8bda1ae2baefe5d031eb03bab26710a295926c3c33b3",
+        "manifestSha256": "a7ab66c8915460d88c8081e6cfa2efdcf61d9e37c65164e136bf8af131ae0e2b",
+        "rows": 2000,
+        "canonicalRows": 488510,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (d0a74a7a5a44\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4881.6,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "5e78871580c76dcc095f999c4dd58fb086c8b26dfb3b0ddf2f58ce8b93271a91",
+        "manifestSha256": "fb3fb2aabf4d72aaad69d07a93d244195466096d785339fb9614442556fe87c1",
+        "rows": 2000,
+        "canonicalRows": 40710,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (5e78871580c7\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4917.7,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "aa8d27c93bbbe414589b21fed13dc41a5bc5daa1a865e95eff84962437084ff3",
+        "manifestSha256": "e99579fd8a6e80eede84c1d6c0cb85afc9560c3e87b8d986ff1632f4c98fbb48",
+        "rows": 2000,
+        "canonicalRows": 10180,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (aa8d27c93bbb\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4968.7,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "949bba00f4d2a3bef825497ff87132587782ae27d525d3d510c0630e72d216f7",
+        "manifestSha256": "08aaee28880612d662f3cf2956128442d653ab170c678d77f0bd8a9abb043a32",
+        "rows": 1697,
+        "canonicalRows": 1697,
+        "columnCount": 150,
+        "windowStart": "2021-05-10 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (949bba00f4d2\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4167.0,
+        "real": true
+      }
+    },
+    "SOLUSDT": {
+      "5m": {
+        "csvSha256": "e9671a04fc4cb3c9f00cf06b878c58125bd61e3a27e3221b45e144c1f77bf122",
+        "manifestSha256": "12a1f8a00708f616ba8e836a983bca20f7da92d74f5ed96a9b9764438e0cc8a6",
+        "rows": 2000,
+        "canonicalRows": 566717,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (e9671a04fc4c\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4533.6,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "3ccc16cc4a8bb8118bbb8aaf54b5fddeb1e87d0ee2bef3eec90abcd59a2a96ea",
+        "manifestSha256": "a59b51ac7231cc44f31a92a35ed724ba011e833a73b8e23ac64db5cf6d1eec20",
+        "rows": 2000,
+        "canonicalRows": 47231,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (3ccc16cc4a8b\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4552.9,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "c9063aac9a3695d70247636234ccc538ab8cbe305f8c55a9c1db4b2124e9fd1b",
+        "manifestSha256": "79bea4a00a023fb2a713f0728cb4171218c4afb5c7ea534e73cccf8f5a6bbc28",
+        "rows": 2000,
+        "canonicalRows": 11813,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (c9063aac9a36\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4554.4,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "e2a0c2223e267e5f6f7a485a31478c7485eff71437d25507cdda0279e28d5b33",
+        "manifestSha256": "2b5a1e418fef1d0ef91abe11a1a38d36b68c634458ba3509301ca9862596a73d",
+        "rows": 1969,
+        "canonicalRows": 1969,
+        "columnCount": 150,
+        "windowStart": "2020-08-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (e2a0c2223e26\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4384.4,
+        "real": true
+      }
+    },
+    "SUIUSDT": {
+      "5m": {
+        "csvSha256": "1545c516ac884fcb1da2a9f56951297c81b14c2e11efac0dc56c60fcc7cc15c9",
+        "manifestSha256": "49be5e448574adc491e54bcfa6ed7c34dff57a8b8da26cc515ef5c67c4f80537",
+        "rows": 2000,
+        "canonicalRows": 280368,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (1545c516ac88\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4522.0,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "4d905f2e41b64ecae62b6a2fcb5b62794ba2a67c427f1aa9a7f6f2786c796b5f",
+        "manifestSha256": "515b23f586867944dbc17274148e3abe9616699fff09deaab05142379c2eb191",
+        "rows": 2000,
+        "canonicalRows": 23364,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (4d905f2e41b6\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4533.6,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "e87f6952bad8a22e8198593c0950e835ccca0ea2ff072a60e5f9af7f98cf4f1b",
+        "manifestSha256": "54ed47771bcd328878a60fc361c5695346e547c367df5918d8ed79bffffb9752",
+        "rows": 2000,
+        "canonicalRows": 5841,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (e87f6952bad8\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4537.2,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "2eacef9557eb167ce641a9cd48ce38a886702196691b53a62f1e345a5707a409",
+        "manifestSha256": "c97965cb9d9b892e5cc9425a118029c1b4e7ddbb519ee0f4c3549d6f9a55dc11",
+        "rows": 974,
+        "canonicalRows": 974,
+        "columnCount": 150,
+        "windowStart": "2023-05-03 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (2eacef9557eb\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 2182.6,
+        "real": true
+      }
+    },
+    "XRPUSDT": {
+      "5m": {
+        "csvSha256": "f81749ba02e3d915b75715dd5f6095be4ef416604ae651fb9cb84741fd7c6e04",
+        "manifestSha256": "9da52540bb5201916caef53fc9e0ca1e14260b534e68c6ed47bb04e5919a7533",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (f81749ba02e3\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4499.1,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "2789a9dc94931414f237d793474518150387c75497b30ecae22122909b44e3cf",
+        "manifestSha256": "1406bd6ab40cf3f26d0f98af148a166b21620c8f69a0a5afeb696ee755c0a2e8",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (2789a9dc9493\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4536.7,
+        "real": true
+      },
+      "4h": {
+        "csvSha256": "e6d5605782895eb474ecdbff9375ebc0ca16a09c7de4b13818f92071736d43c8",
+        "manifestSha256": "42859d5368f139d54196a41cb68ad3c8576c81dd2a6238c7a40234d3ca36de28",
+        "rows": 2000,
+        "canonicalRows": 13151,
+        "columnCount": 150,
+        "windowStart": "2025-02-01 16:00:00+00:00",
+        "windowEnd": "2025-12-31 20:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (e6d560578289\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4545.8,
+        "real": true
+      },
+      "1D": {
+        "csvSha256": "4897d2413887a99d9776da2b91544ee8b2c442eab9b90e01bdcb8b4f9f780a74",
+        "manifestSha256": "2c198bb16ae52040d4d4633b5a49136c6b9bf68dbcc0b32960bd73eac7fc87e7",
+        "rows": 2000,
+        "canonicalRows": 2192,
+        "columnCount": 150,
+        "windowStart": "2020-07-11 00:00:00+00:00",
+        "windowEnd": "2025-12-31 00:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (4897d2413887\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4529.5,
+        "real": true
+      }
+    },
+    "DOGEUSDT": {
+      "5m": {
+        "csvSha256": "6ce5e55b544102f7a43b161e8351368cdef76aab4b22e53983c59a81561a9d09",
+        "manifestSha256": "6ab7374f80145acc23337cd2f48b14c7a1461a3e8e3b402506df6e009f505643",
+        "rows": 2000,
+        "canonicalRows": 630834,
+        "columnCount": 150,
+        "windowStart": "2025-12-25 01:20:00+00:00",
+        "windowEnd": "2025-12-31 23:55:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (6ce5e55b5441\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4619.8,
+        "real": true
+      },
+      "1h": {
+        "csvSha256": "bedf591938683cfe7a6ac2377fd1a2b322f077a284ad95b6ebff0e6fff2a4b50",
+        "manifestSha256": "1dd0403e1472e180bd2d70971fd4801d05abfe1e3a3d91e832bbab41582f2290",
+        "rows": 2000,
+        "canonicalRows": 52577,
+        "columnCount": 150,
+        "windowStart": "2025-10-09 16:00:00+00:00",
+        "windowEnd": "2025-12-31 23:00:00+00:00",
+        "gateVerdict": "PASS \u2014 output_csv_sha256 verified (bedf59193868\u2026), ts_aligned=True, input_row_match=True",
+        "fileSizeKb": 4608.1,
+        "real": true
+      }
+    }
+  },
+  "symbolTimeframes": {
+    "BTCUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "BNBUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "ETHUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "FETUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "PEPEUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "SHIBUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "SOLUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "SUIUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "XRPUSDT": [
+      "5m",
+      "1h",
+      "4h",
+      "1D"
+    ],
+    "DOGEUSDT": [
+      "5m",
+      "1h"
+    ]
+  },
+  "windowing": {
+    "mode": "tail",
+    "n": {
+      "5m": 2000,
+      "1h": 2000,
+      "4h": 2000,
+      "1D": 2000
+    },
+    "note": "All 150 certified TA-v3 columns are exported. Only rows are windowed: the most-recent N rows per timeframe (browser-safe; past warmup nulls). No values recomputed; cells copied verbatim from the certified CSVs (NaN\u2192null). Window is reproducible via windowRowRange."
+  }
+}
