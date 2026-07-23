@@ -84,13 +84,14 @@
       ],
       "statuses": [
         "CHRONOS_INPUT_READY__TIBOT_FREEZE_BLOCKED",
+        "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED",
         "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
         "SENTINEL_CANONICAL_FREEZE_DECLARATION_PASS_REPORT_ONLY",
         "SENTINEL_PREFLIGHT_PASS_CURRENT_SHA_REPORT_ONLY"
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",
       "finalTraining": {
-        "status": "CANONICAL_FREEZE_DECLARATION_PASS_ONLY__NO_TRAINING_OR_CANONICAL_ACTION_AUTHORIZATION",
+        "status": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED",
         "evidence": null
       }
     },
@@ -4419,7 +4420,7 @@
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
           ],
-          "displayState": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+          "displayState": "EVIDENCE PREFLIGHT PASS / CURRENT SHA",
           "supersedes": "9a477e003e581709a0b6ea9bb92aa5c7a13271225cf184fbac4c1700b1c8f9d4"
         },
         "sentinelCanonicalFreezeDeclaration": {
@@ -4541,10 +4542,12 @@
             "no_BOTS_or_registry_write": true,
             "no_training_serialization_or_promotion": true,
             "self_sha256": "recorded in canonical_manifest.sha256"
-          }
-        }
+          },
+          "displayState": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
+        },
+        "dashboardState": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
       },
-      "metricsStatus": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+      "metricsStatus": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -4593,15 +4596,15 @@
         },
         {
           "name": "sentinel_final_preflight",
-          "verdict": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION"
+          "verdict": "EVIDENCE PREFLIGHT PASS / CURRENT SHA"
         },
         {
           "name": "canonical_action",
-          "verdict": "NO_FIT_SERIALIZATION_BOTS_WRITE_OR_PROMOTION_AUTHORIZED"
+          "verdict": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
         },
         {
           "name": "sentinel_canonical_freeze_declaration",
-          "verdict": "PASS_DECLARATION_ONLY_CURRENT_SHA"
+          "verdict": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
         }
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",
@@ -16426,7 +16429,7 @@
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
           ],
-          "displayState": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+          "displayState": "EVIDENCE PREFLIGHT PASS / CURRENT SHA",
           "supersedes": "9a477e003e581709a0b6ea9bb92aa5c7a13271225cf184fbac4c1700b1c8f9d4"
         },
         "sentinelCanonicalFreezeDeclaration": {
@@ -16548,10 +16551,12 @@
             "no_BOTS_or_registry_write": true,
             "no_training_serialization_or_promotion": true,
             "self_sha256": "recorded in canonical_manifest.sha256"
-          }
-        }
+          },
+          "displayState": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
+        },
+        "dashboardState": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
       },
-      "metricsStatus": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+      "metricsStatus": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -16600,15 +16605,15 @@
         },
         {
           "name": "sentinel_final_preflight",
-          "verdict": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION"
+          "verdict": "EVIDENCE PREFLIGHT PASS / CURRENT SHA"
         },
         {
           "name": "canonical_action",
-          "verdict": "NO_FIT_SERIALIZATION_BOTS_WRITE_OR_PROMOTION_AUTHORIZED"
+          "verdict": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
         },
         {
           "name": "sentinel_canonical_freeze_declaration",
-          "verdict": "PASS_DECLARATION_ONLY_CURRENT_SHA"
+          "verdict": "DECLARATION PASSED / NO FIT, SERIALIZATION, BOTS WRITE, OR PROMOTION AUTHORIZED"
         }
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",
