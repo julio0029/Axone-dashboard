@@ -5,7 +5,13 @@ import type { TibotModelRow } from '../data/tibotSuite'
 
 const TARGET_COLORS = ['#4dd2ff', '#7c5cff', '#ffb454', '#1ec8a5', '#ff5470', '#9fe870']
 
-export function TibotSuiteChart({ model }: { model: TibotModelRow }) {
+export function TibotSuiteChart({
+  model,
+  selectedTargets,
+}: {
+  model: TibotModelRow
+  selectedTargets?: string[]
+}) {
   const option = useMemo<EChartsOption>(() => {
     const rows = model.sample.rowsData
     const times = rows.map((r) => shortTime(String(r.timestamp ?? ''), model.interval))
@@ -16,18 +22,60 @@ export function TibotSuiteChart({ model }: { model: TibotModelRow }) {
       Number(r.high),
     ])
 
-    const targetSeries = model.targetColumns.map((col, i) => ({
-      name: col,
-      type: 'line' as const,
-      xAxisIndex: 2,
-      yAxisIndex: 2,
-      data: rows.map((r) => coerceTarget(r[col])),
-      showSymbol: false,
-      step: isDiscrete(rows.map((r) => r[col])) ? 'middle' as const : false as const,
-      connectNulls: false,
-      lineStyle: { width: 1.4, color: TARGET_COLORS[i % TARGET_COLORS.length] },
-      itemStyle: { color: TARGET_COLORS[i % TARGET_COLORS.length] },
-    }))
+    const activeTargets = selectedTargets?.length ? selectedTargets : model.targetColumns
+
+    const targetSeries = activeTargets.flatMap((col, i) => {
+      const predictionCol = predictionColumnFor(rows, col)
+      const color = TARGET_COLORS[i % TARGET_COLORS.length]
+      const series: Record<string, unknown>[] = [{
+        name: `${col} · hard target`,
+        type: 'line' as const,
+        xAxisIndex: 2,
+        yAxisIndex: 2,
+        data: rows.map((r) => coerceTarget(r[col])),
+        showSymbol: false,
+        step: isDiscrete(rows.map((r) => r[col])) ? 'middle' as const : false as const,
+        connectNulls: false,
+        lineStyle: { width: 1.5, color },
+        itemStyle: { color },
+      }]
+      if (predictionCol) {
+        series.push({
+          name: `${col} · model prediction`,
+          type: 'line' as const,
+          xAxisIndex: 2,
+          yAxisIndex: 2,
+          data: rows.map((r) => coerceTarget(r[predictionCol])),
+          showSymbol: false,
+          step: false as const,
+          connectNulls: false,
+          lineStyle: { width: 1.3, color, type: 'dashed' as const, opacity: 0.82 },
+          itemStyle: { color },
+        })
+      }
+      return series
+    })
+
+    const predictionMissing = activeTargets.length > 0 && activeTargets.every((col) => !predictionColumnFor(rows, col))
+
+    const graphic = [
+      paneLabel('raw OHLCV', 5),
+      paneLabel('volume', 57),
+      paneLabel('hard target / model prediction', 76),
+    ]
+    if (predictionMissing) {
+      graphic.push({
+        type: 'text',
+        right: 52,
+        top: '76%',
+        style: {
+          text: 'model prediction series missing in reporting payload',
+          fill: '#ffb454',
+          font: '10px ui-monospace, monospace',
+        },
+        z: 10,
+      })
+    }
 
     return {
       backgroundColor: 'transparent',
@@ -86,11 +134,7 @@ export function TibotSuiteChart({ model }: { model: TibotModelRow }) {
           axisLabel: { color: '#6b7a96', fontSize: 9 },
         },
       ],
-      graphic: [
-        paneLabel('raw OHLCV', 5),
-        paneLabel('volume', 57),
-        paneLabel('target / predictive target', 76),
-      ],
+      graphic,
       series: [
         {
           name: 'OHLC',
@@ -135,13 +179,26 @@ export function TibotSuiteChart({ model }: { model: TibotModelRow }) {
         },
       ],
     }
-  }, [model])
+  }, [model, selectedTargets])
 
   if (!model.sample.rowsData.length) {
     return <div className="h-[440px] flex items-center justify-center text-sm text-ax-muted">no joined rows in payload</div>
   }
 
   return <ReactECharts option={option} notMerge style={{ height: 560, width: '100%' }} opts={{ renderer: 'canvas' }} />
+}
+
+function predictionColumnFor(rows: Record<string, string | number | null>[], targetColumn: string): string | null {
+  const candidates = [
+    `prediction_${targetColumn}`,
+    `pred_${targetColumn}`,
+    `yhat_${targetColumn}`,
+    `${targetColumn}_prediction`,
+    `${targetColumn}_pred`,
+  ]
+  const sample = rows.find(Boolean)
+  if (!sample) return null
+  return candidates.find((name) => Object.prototype.hasOwnProperty.call(sample, name)) ?? null
 }
 
 function coerceTarget(v: string | number | null): number | null {

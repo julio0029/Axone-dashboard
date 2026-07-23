@@ -12,9 +12,10 @@ import {
 
 export function TibotSuitePage() {
   const { status, data, error } = useTibotSuitePayload()
-  const [family, setFamily] = useState<string>('all')
-  const [interval, setInterval] = useState<string>('all')
+  const [family, setFamily] = useState<string>('prediction/expected_move_magnitude')
+  const [interval, setInterval] = useState<string>('1h')
   const [modelKey, setModelKey] = useState<string>('')
+  const [selectedTargets, setSelectedTargets] = useState<Set<string> | null>(null)
 
   const filtered = useMemo(() => {
     if (!data) return []
@@ -30,10 +31,21 @@ export function TibotSuitePage() {
     return filtered.find((m) => m.modelKey === modelKey) ?? filtered[0]
   }, [filtered, modelKey])
 
+  const activeTargets = useMemo(() => {
+    if (!selected) return []
+    if (!selectedTargets) return selected.targetColumns
+    return selected.targetColumns.filter((target) => selectedTargets.has(target))
+  }, [selected, selectedTargets])
+
   const intervals = useMemo(() => {
     if (!data) return []
     return Array.from(new Set(data.models.map((m) => m.interval)))
   }, [data])
+
+  const isBtc1hEmmNoGo =
+    selected?.symbol === 'BTCUSDT' &&
+    selected.interval === '1h' &&
+    selected.family === 'prediction/expected_move_magnitude'
 
   if (status !== 'ready' || !data) {
     return (
@@ -58,7 +70,7 @@ export function TibotSuitePage() {
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
             <Badge tone="up">Chronos contract verified {shortHash(data.contractSha256)}</Badge>
-            <Badge tone="warn">no promotion · no BOTS write</Badge>
+            <Badge tone="warn">historical-only reporting · no training · no promotion</Badge>
             <Badge tone="muted">{data.models.length} candidate rows</Badge>
           </div>
         </div>
@@ -88,6 +100,40 @@ export function TibotSuitePage() {
               ))}
             </ControlGroup>
           </Card>
+
+          {selected && (
+            <Card title="Targets" subtitle="select one or both target horizons" bodyClass="!p-3">
+              <ControlGroup label="Target selector">
+                {selected.targetColumns.map((target) => (
+                  <SelectButton
+                    key={target}
+                    active={activeTargets.includes(target)}
+                    onClick={() => {
+                      setSelectedTargets((prev) => {
+                        const next = new Set(prev ?? selected.targetColumns)
+                        if (next.has(target)) {
+                          next.delete(target)
+                        } else {
+                          next.add(target)
+                        }
+                        return next
+                      })
+                    }}
+                  >
+                    {target.replace('target_expected_move_mag_', 'h=')}
+                  </SelectButton>
+                ))}
+              </ControlGroup>
+              <div className="flex flex-wrap gap-1.5">
+                <SelectButton active={selectedTargets === null} onClick={() => setSelectedTargets(null)}>
+                  all targets
+                </SelectButton>
+                <SelectButton active={selectedTargets !== null && activeTargets.length === 0} onClick={() => setSelectedTargets(new Set())}>
+                  none
+                </SelectButton>
+              </div>
+            </Card>
+          )}
 
           <Card title="Candidate selector" subtitle={`${filtered.length} rows in current filter`} bodyClass="!p-2">
             <div className="max-h-[500px] overflow-y-auto ax-scroll space-y-1 pr-1">
@@ -126,30 +172,36 @@ export function TibotSuitePage() {
 
         {selected && (
           <div className="space-y-5 min-w-0">
+            {isBtc1hEmmNoGo && <EmmNoGoBanner model={selected} />}
+
             <Card
               title={`${selected.symbol} · ${selected.interval} · ${familyLabel(selected.family)}`}
               subtitle={`${selected.sample.windowMode} · ${selected.sample.timestampStartUtc ?? '-'} -> ${selected.sample.timestampEndUtc ?? '-'} UTC`}
               right={<StatusChip status={selected.status} />}
               bodyClass="!p-2"
             >
-              <TibotSuiteChart model={selected} />
+              <TibotSuiteChart model={selected} selectedTargets={activeTargets} />
             </Card>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <Card title="Candidate metrics & guards" subtitle={selected.metricsStatus}>
                 <MetricPanel model={selected} />
               </Card>
-              <Card title="Latest joined row" subtitle="raw OHLCV plus target columns">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 text-xs font-mono">
-                  {selected.sample.columns.map((c) => (
-                    <div key={c} className="flex justify-between gap-3">
-                      <span className="text-ax-muted truncate">{c}</span>
-                      <span className="text-ax-text shrink-0">{formatCell(selected.sample.latest[c])}</span>
-                    </div>
-                  ))}
-                </div>
+              <Card title="Hard target vs model prediction" subtitle="latest joined historical row">
+                <TargetComparison model={selected} selectedTargets={activeTargets} />
               </Card>
             </div>
+
+            <Card title="Latest OHLCV row" subtitle="source candle values, unchanged">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-1 text-xs font-mono">
+                {['timestamp', 'open', 'high', 'low', 'close', 'volume'].map((c) => (
+                  <div key={c} className="flex justify-between gap-3">
+                    <span className="text-ax-muted truncate">{c}</span>
+                    <span className="text-ax-text shrink-0">{formatCell(selected.sample.latest[c])}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
 
             <Card title="Source provenance" subtitle="real paths, date ranges, schemas, SHA-256">
               <div className="space-y-4">
@@ -174,6 +226,94 @@ export function TibotSuitePage() {
       </div>
     </div>
   )
+}
+
+function EmmNoGoBanner({ model }: { model: TibotModelRow }) {
+  return (
+    <div className="rounded-lg border border-ax-down/45 bg-[#ff5470]/10 px-4 py-3">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div className="text-sm font-semibold text-ax-down">BTCUSDT 1h EMM selection: HARD NO-GO / NON-PROMOTED</div>
+          <p className="mt-1 max-w-5xl text-xs leading-relaxed text-ax-muted">
+            Current historical 1h expected-move-magnitude evidence is reporting-only. The selected model identity is
+            <span className="font-mono text-ax-text"> {model.selectedModelEvidence}</span>, but the 2026-07-02
+            Tibot bake-off records 0/9 models clearing the ratified guard, so no final train, no BOTS artifact,
+            no promotion, and no trading use is represented here.
+          </p>
+        </div>
+        <StatusChip status="HARD_NO_GO" />
+      </div>
+      <div className="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_120px] gap-2 text-[11px]">
+        <span className="font-mono text-ax-muted break-all">
+          /Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/emm_bakeoff/EMM_BAKEOFF_1h_REPORT.md
+        </span>
+        <span className="font-mono text-ax-blue-2">reporting evidence</span>
+      </div>
+    </div>
+  )
+}
+
+function TargetComparison({ model, selectedTargets }: { model: TibotModelRow; selectedTargets: string[] }) {
+  const targets = selectedTargets.length ? selectedTargets : model.targetColumns
+  const rows = model.sample.rowsData
+  const latest = model.sample.latest
+
+  if (!targets.length) {
+    return <div className="py-8 text-center text-sm text-ax-muted">no target selected</div>
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="overflow-x-auto ax-scroll">
+        <table className="min-w-full text-xs">
+          <thead className="text-ax-muted">
+            <tr className="border-b border-ax-border/60">
+              <th className="text-left py-2 pr-4 font-normal">Target</th>
+              <th className="text-right py-2 pr-4 font-normal">Hard / realized target</th>
+              <th className="text-right py-2 pr-4 font-normal">Selected-model prediction</th>
+              <th className="text-left py-2 font-normal">Prediction status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {targets.map((target) => {
+              const predCol = predictionColumnFor(rows, target)
+              return (
+                <tr key={target} className="border-b border-ax-border/40">
+                  <td className="py-2 pr-4 font-mono text-ax-blue-2">{target}</td>
+                  <td className="py-2 pr-4 text-right font-mono text-ax-text">{formatCell(latest[target])}</td>
+                  <td className="py-2 pr-4 text-right font-mono text-ax-text">{predCol ? formatCell(latest[predCol]) : '-'}</td>
+                  <td className="py-2">
+                    {predCol ? (
+                      <StatusChip status={`RECORDED:${predCol}`} />
+                    ) : (
+                      <StatusChip status="MISSING_PREDICTION_PAYLOAD" />
+                    )}
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-[11px] leading-relaxed text-ax-muted">
+        Missing prediction values mean the reporting payload contains no selected-model prediction series for that target.
+        The dashboard leaves those cells blank instead of inferring or recomputing model output.
+      </p>
+    </div>
+  )
+}
+
+function predictionColumnFor(rows: Record<string, string | number | null>[], targetColumn: string): string | null {
+  const candidates = [
+    `prediction_${targetColumn}`,
+    `pred_${targetColumn}`,
+    `yhat_${targetColumn}`,
+    `${targetColumn}_prediction`,
+    `${targetColumn}_pred`,
+  ]
+  const sample = rows.find(Boolean)
+  if (!sample) return null
+  return candidates.find((name) => Object.prototype.hasOwnProperty.call(sample, name)) ?? null
 }
 
 function MetricPanel({ model }: { model: TibotModelRow }) {
@@ -329,7 +469,7 @@ function Badge({ children, tone }: { children: ReactNode; tone: 'up' | 'warn' | 
 
 function StatusChip({ status }: { status: string }) {
   const good = status.includes('PASS') || status === 'true'
-  const blocked = status.includes('BLOCK') || status.includes('FAIL') || status === 'false'
+  const blocked = status.includes('BLOCK') || status.includes('FAIL') || status.includes('NO_GO') || status === 'false'
   const cls = good
     ? 'border-ax-up/30 bg-[#1ec8a5]/10 text-ax-up'
     : blocked
