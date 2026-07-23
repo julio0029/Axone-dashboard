@@ -3,6 +3,7 @@ import { Layout } from './components/Layout'
 import { ArchitecturePage } from './pages/ArchitecturePage'
 import { KerryPage } from './pages/KerryPage'
 import { ChronosPage } from './pages/ChronosPage'
+import { TibotSuitePage } from './pages/TibotSuitePage'
 import { TaV2Page } from './pages/TaV2Page'
 import { ComingSoon } from './pages/ComingSoon'
 
@@ -13,6 +14,7 @@ export default function App() {
         <Route index element={<ArchitecturePage />} />
         <Route path="kerry" element={<KerryPage />} />
         <Route path="chronos" element={<ChronosPage />} />
+        <Route path="tibot" element={<TibotSuitePage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
         <Route path="agent/:id" element={<ComingSoon />} />
         <Route path="*" element={<Navigate to="/" replace />} />

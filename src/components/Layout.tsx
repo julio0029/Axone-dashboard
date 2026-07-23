@@ -59,6 +59,10 @@ export function Layout() {
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
               <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v2 testbed
             </div>
+          ) : loc.pathname.startsWith('/tibot') ? (
+            <div className="flex items-center gap-2 text-xs text-ax-blue-2">
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · Chronos-bound review
+            </div>
           ) : (
             <div className="flex items-center gap-2 text-xs text-ax-muted">
               <span className="w-2 h-2 rounded-full bg-ax-down/80 animate-pulse" /> illustrative · mock data
@@ -87,6 +91,7 @@ function Breadcrumb({ path }: { path: string }) {
   if (path.startsWith('/ta-v2')) label = 'Sandbox'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
+  else if (path.startsWith('/tibot')) label = 'Tibot · Suite Review'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]
     const a = AGENTS.find((x) => x.id === id)

@@ -92,7 +92,7 @@ export const AGENTS: AgentNode[] = [
     x: 765, y: 270,
   },
   {
-    id: 'tibot', name: 'Tibot', status: 'live', cat: 3, detailed: false,
+    id: 'tibot', name: 'Tibot', status: 'live', cat: 3, detailed: true, route: '/tibot',
     role: 'Sole bot owner — prediction, classification AND strategy bots; training and bot registries/outputs. Bot-level strategy logic lives here.',
     owns: 'Prediction / classification / strategy bots & their training',
     x: 470, y: 405,

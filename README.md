@@ -14,6 +14,10 @@ Interactive control deck for the **Axone** multi-agent trading/research system, 
   timeframe selectors, interactive candlestick chart with volume & RSI sub-charts, indicator
   overlays (EMA / MA / Bollinger), swing-high/low markers, and a column-toggle table for choosing
   which Kerry calculations render on the chart.
+- **Tibot · Suite Review** (`/#/tibot`) — sandbox-only review of the Tibot candidate suite using
+  the Chronos read-only dashboard contract. Charts bind raw historical BTCUSDT OHLCV to target /
+  predictive-target parquet rows by timestamp and show candidate metrics/guards as reporting-only
+  evidence with source paths and SHA-256 hashes.
 - Other agent pages are **“Coming soon”** placeholders, scaffolded incrementally.
 
 > ⚠️ The dashboard currently renders **deterministic mock OHLCV** so the UI is fully demonstrable
