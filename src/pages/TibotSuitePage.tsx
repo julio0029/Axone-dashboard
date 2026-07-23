@@ -192,7 +192,7 @@ function MetricPanel({ model }: { model: TibotModelRow }) {
         <div className="rounded-lg border border-ax-up/30 bg-[#1ec8a5]/10 p-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <div className="text-sm text-ax-up">Sentinel current-SHA preflight PASS</div>
+              <div className="text-sm text-ax-up">PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION</div>
               <div className="text-[11px] text-ax-muted mt-1">{String(preflight.boundary ?? '')}</div>
             </div>
             <div className="text-[11px] text-ax-blue-2 font-mono">{shortHash(String(preflight.manifestSha256 ?? ''))}</div>
@@ -200,6 +200,7 @@ function MetricPanel({ model }: { model: TibotModelRow }) {
           <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
             <Metric k="Schema SHA" v={shortHash(String(preflight.orderedFeatureSchemaSha256 ?? ''))} />
             <Metric k="Audit SHA" v={shortHash(String(preflight.auditSha256 ?? ''))} />
+            <Metric k="Supersedes" v={shortHash(String(preflight.supersedes ?? ''))} />
             <Metric k="Policy" v={String(preflight.generalToSymbolPolicy ?? '-')} />
             <Metric k="Prohibited" v={Array.isArray(preflight.prohibited) ? preflight.prohibited.join(', ') : '-'} />
           </div>

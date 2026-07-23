@@ -84,6 +84,7 @@
       ],
       "statuses": [
         "CHRONOS_INPUT_READY__TIBOT_FREEZE_BLOCKED",
+        "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
         "SENTINEL_CANONICAL_FREEZE_DECLARATION_PASS_REPORT_ONLY",
         "SENTINEL_PREFLIGHT_PASS_CURRENT_SHA_REPORT_ONLY"
       ],
@@ -4417,7 +4418,9 @@
             "BTCUSDT_5m_target_next_candle_logret_2",
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
-          ]
+          ],
+          "displayState": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+          "supersedes": "9a477e003e581709a0b6ea9bb92aa5c7a13271225cf184fbac4c1700b1c8f9d4"
         },
         "sentinelCanonicalFreezeDeclaration": {
           "verdict": "PASS",
@@ -4541,7 +4544,7 @@
           }
         }
       },
-      "metricsStatus": "CANONICAL_FREEZE_DECLARATION_PASS_REPORTING_ONLY__NO_ACTION_AUTHORIZATION",
+      "metricsStatus": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -4590,7 +4593,7 @@
         },
         {
           "name": "sentinel_final_preflight",
-          "verdict": "PASS_CURRENT_SHA_PREFLIGHT_ONLY"
+          "verdict": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION"
         },
         {
           "name": "canonical_action",
@@ -16422,7 +16425,9 @@
             "BTCUSDT_5m_target_next_candle_logret_2",
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
-          ]
+          ],
+          "displayState": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
+          "supersedes": "9a477e003e581709a0b6ea9bb92aa5c7a13271225cf184fbac4c1700b1c8f9d4"
         },
         "sentinelCanonicalFreezeDeclaration": {
           "verdict": "PASS",
@@ -16546,7 +16551,7 @@
           }
         }
       },
-      "metricsStatus": "CANONICAL_FREEZE_DECLARATION_PASS_REPORTING_ONLY__NO_ACTION_AUTHORIZATION",
+      "metricsStatus": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -16595,7 +16600,7 @@
         },
         {
           "name": "sentinel_final_preflight",
-          "verdict": "PASS_CURRENT_SHA_PREFLIGHT_ONLY"
+          "verdict": "PRE-FLIGHT PASSED / NO TRAINING OR PROMOTION AUTHORIZATION"
         },
         {
           "name": "canonical_action",
