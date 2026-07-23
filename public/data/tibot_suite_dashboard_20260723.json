@@ -84,11 +84,12 @@
       ],
       "statuses": [
         "CHRONOS_INPUT_READY__TIBOT_FREEZE_BLOCKED",
+        "SENTINEL_CANONICAL_FREEZE_DECLARATION_PASS_REPORT_ONLY",
         "SENTINEL_PREFLIGHT_PASS_CURRENT_SHA_REPORT_ONLY"
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",
       "finalTraining": {
-        "status": "PREFLIGHT_PASS_ONLY__AWAITING_CHRONOS_TRAINING_OR_CANONICAL_ACTION_AUTHORIZATION",
+        "status": "CANONICAL_FREEZE_DECLARATION_PASS_ONLY__NO_TRAINING_OR_CANONICAL_ACTION_AUTHORIZATION",
         "evidence": null
       }
     },
@@ -4417,9 +4418,130 @@
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
           ]
+        },
+        "sentinelCanonicalFreezeDeclaration": {
+          "verdict": "PASS",
+          "boundary": "declaration-only, manifest-specific; no training, serialization, BOTS/registry write, promotion, strategy, or risk authorization",
+          "manifestPath": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/canonical_freeze_manifest.json",
+          "manifestSha256": "002d3e28b6fa70f53e1a0feb67a0e83c588e5a29b2306ef9c951687ad997317b",
+          "auditPath": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_canonical_freeze_declaration_hgb53_20260723.md",
+          "auditSha256": "398f2dc5e34503b1998d030ad28d5bba6c9a34895cb44d318bbd94265d48b4f5",
+          "manifestId": "tibot-next-candle-hgb53-btcusdt-canonical-freeze-declaration-20260723-v1",
+          "immutableEvidencePayload": {
+            "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/freeze_manifest.json",
+            "sha256": "ea59cc5e58429f539cab81c3cff3e59e1166f6a00a8aae063157a031fc6c2233",
+            "contents": "exact 53 feature list; paths/schemas/rows; full source and evidence hashes; per-cell input/runner/metrics/reproducibility bindings"
+          },
+          "chronosContracts": {
+            "suite": {
+              "id": "chronos-tibot-suite-selection-restart-contract-bundle-20260723",
+              "sha256": "3cc2ab8bd0c3b38d206de502d4aa0e58475611bc3ae1e3a9bb861f9012fd7da1"
+            },
+            "next_candle": {
+              "id": "next-candle-hgb-full53-chronos-freeze-sources-20260723",
+              "sha256": "c8fe1f5c26a0d66424bf1997445a786298132f14d554e2872c58e05b51753287",
+              "source_bundle_sha256": "b733092cd8872a5ddcb87ee34b65d1d7d6333a1d7dc5a3ed89fbd78ed0a1f977"
+            },
+            "feature": {
+              "id": "next-candle-full53-btcusdt-5m-1h-v1.0.0",
+              "schema_sha256": "9fb8bde710b7528efd701d0f7d7333968ffcf837409c76387ac2b46528f49be6",
+              "count": 53
+            },
+            "target": {
+              "id": "next-candle-all-symbols-all-intervals-v1.0.0",
+              "sha256": "2f441ae5c8a5e0686d4a4a12209760087dc01a13f26bae80eda0c3f7408b8de3"
+            }
+          },
+          "authorizedFutureOnlyDestinations": {
+            "model_artifacts": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/next_candle/hgb_next_candle_53_v1/BTCUSDT/",
+            "registry_declaration": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/next_candle/family.json",
+            "policy_reference": "Axone decision 2026-07-23; destination declaration only, no write authorization"
+          },
+          "canonicalScope": {
+            "symbol": "BTCUSDT",
+            "timeframes": [
+              "5m",
+              "1h"
+            ],
+            "targets": [
+              "target_next_candle_logret_1",
+              "target_next_candle_logret_2"
+            ],
+            "no_general_model": true,
+            "no_cross_symbol_promotion": true,
+            "no_incremental_general_to_symbol_finetuning": true
+          },
+          "frozenCandidate": {
+            "architecture_id": "hgb_next_candle_53_v1",
+            "algorithm": "hist_gradient_boosting",
+            "task": "regression",
+            "params": {
+              "loss": "squared_error",
+              "learning_rate": 0.05,
+              "max_iter": 60,
+              "max_leaf_nodes": 31,
+              "min_samples_leaf": 40,
+              "l2_regularization": 0.0,
+              "random_state": 31,
+              "early_stopping": false
+            },
+            "preprocessing": "none; non-null inputs required; no scaling; no calibration; no inferred defaults"
+          },
+          "splitAndAlignment": {
+            "join": "UTC timestamp inner join only; never row position",
+            "label_end": "timestamp + horizon_bars * interval_duration",
+            "cv": "five expanding chronological folds",
+            "holdout": "final chronological 20%",
+            "purge_bars": 3,
+            "embargo_bars": 3,
+            "terminal_null_gap": "reject null inputs/targets; Chronos gap-guarded artifacts; no missing candle state"
+          },
+          "cellPass": [
+            "BTCUSDT_5m_target_next_candle_logret_1",
+            "BTCUSDT_5m_target_next_candle_logret_2",
+            "BTCUSDT_1h_target_next_candle_logret_1",
+            "BTCUSDT_1h_target_next_candle_logret_2"
+          ],
+          "perCellBlocks": [
+            {
+              "cell_id": "BTCUSDT_5m_target_next_candle_logret_1",
+              "timeframe": "5m",
+              "target": "target_next_candle_logret_1",
+              "horizon_bars": 1,
+              "metrics_sha256": "f2def85c402028c1fa215029958f2ac1c30086423fa6ca53b38f13efd6085476"
+            },
+            {
+              "cell_id": "BTCUSDT_5m_target_next_candle_logret_2",
+              "timeframe": "5m",
+              "target": "target_next_candle_logret_2",
+              "horizon_bars": 2,
+              "metrics_sha256": "0394d2f562fc90431f3a90df8e25d3d631e14fcaf5cc4c0e9127ed966ed65b6e"
+            },
+            {
+              "cell_id": "BTCUSDT_1h_target_next_candle_logret_1",
+              "timeframe": "1h",
+              "target": "target_next_candle_logret_1",
+              "horizon_bars": 1,
+              "metrics_sha256": "9de9a9e35da5cb21abfe7412801e8da50e46206725b964b56eefde9a7db85590"
+            },
+            {
+              "cell_id": "BTCUSDT_1h_target_next_candle_logret_2",
+              "timeframe": "1h",
+              "target": "target_next_candle_logret_2",
+              "horizon_bars": 2,
+              "metrics_sha256": "0e7f26656476ca07f8af768ab28be8a74a31fe4a0a11f0f8672853ceb852d0c3"
+            }
+          ],
+          "integrityDeclarations": {
+            "evidence": "real Chronos-managed historical artifacts only; no synthetic, memory, or unverified cache",
+            "no_model_action_before_pass": true,
+            "no_BOTS_or_registry_write": true,
+            "no_training_serialization_or_promotion": true,
+            "self_sha256": "recorded in canonical_manifest.sha256"
+          }
         }
       },
-      "metricsStatus": "PREFLIGHT_PASS_REPORTING_ONLY__NO_TRAINING_OR_PROMOTION_AUTHORIZATION",
+      "metricsStatus": "CANONICAL_FREEZE_DECLARATION_PASS_REPORTING_ONLY__NO_ACTION_AUTHORIZATION",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -4445,6 +4567,16 @@
           "path": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_final_preflight_next_candle_hgb53_20260723.md",
           "sha256": "47741976108b46204d6b2be4963f2e97104975c52fa5eecd13ec1e9c8ad366f0",
           "note": "Sentinel final preflight PASS audit"
+        },
+        {
+          "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/canonical_freeze_manifest.json",
+          "sha256": "002d3e28b6fa70f53e1a0feb67a0e83c588e5a29b2306ef9c951687ad997317b",
+          "note": "Sentinel-passed HGB53 canonical freeze declaration manifest"
+        },
+        {
+          "path": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_canonical_freeze_declaration_hgb53_20260723.md",
+          "sha256": "398f2dc5e34503b1998d030ad28d5bba6c9a34895cb44d318bbd94265d48b4f5",
+          "note": "Sentinel canonical freeze declaration PASS audit"
         }
       ],
       "guards": [
@@ -4463,6 +4595,10 @@
         {
           "name": "canonical_action",
           "verdict": "NO_FIT_SERIALIZATION_BOTS_WRITE_OR_PROMOTION_AUTHORIZED"
+        },
+        {
+          "name": "sentinel_canonical_freeze_declaration",
+          "verdict": "PASS_DECLARATION_ONLY_CURRENT_SHA"
         }
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",
@@ -16287,9 +16423,130 @@
             "BTCUSDT_1h_target_next_candle_logret_1",
             "BTCUSDT_1h_target_next_candle_logret_2"
           ]
+        },
+        "sentinelCanonicalFreezeDeclaration": {
+          "verdict": "PASS",
+          "boundary": "declaration-only, manifest-specific; no training, serialization, BOTS/registry write, promotion, strategy, or risk authorization",
+          "manifestPath": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/canonical_freeze_manifest.json",
+          "manifestSha256": "002d3e28b6fa70f53e1a0feb67a0e83c588e5a29b2306ef9c951687ad997317b",
+          "auditPath": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_canonical_freeze_declaration_hgb53_20260723.md",
+          "auditSha256": "398f2dc5e34503b1998d030ad28d5bba6c9a34895cb44d318bbd94265d48b4f5",
+          "manifestId": "tibot-next-candle-hgb53-btcusdt-canonical-freeze-declaration-20260723-v1",
+          "immutableEvidencePayload": {
+            "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/freeze_manifest.json",
+            "sha256": "ea59cc5e58429f539cab81c3cff3e59e1166f6a00a8aae063157a031fc6c2233",
+            "contents": "exact 53 feature list; paths/schemas/rows; full source and evidence hashes; per-cell input/runner/metrics/reproducibility bindings"
+          },
+          "chronosContracts": {
+            "suite": {
+              "id": "chronos-tibot-suite-selection-restart-contract-bundle-20260723",
+              "sha256": "3cc2ab8bd0c3b38d206de502d4aa0e58475611bc3ae1e3a9bb861f9012fd7da1"
+            },
+            "next_candle": {
+              "id": "next-candle-hgb-full53-chronos-freeze-sources-20260723",
+              "sha256": "c8fe1f5c26a0d66424bf1997445a786298132f14d554e2872c58e05b51753287",
+              "source_bundle_sha256": "b733092cd8872a5ddcb87ee34b65d1d7d6333a1d7dc5a3ed89fbd78ed0a1f977"
+            },
+            "feature": {
+              "id": "next-candle-full53-btcusdt-5m-1h-v1.0.0",
+              "schema_sha256": "9fb8bde710b7528efd701d0f7d7333968ffcf837409c76387ac2b46528f49be6",
+              "count": 53
+            },
+            "target": {
+              "id": "next-candle-all-symbols-all-intervals-v1.0.0",
+              "sha256": "2f441ae5c8a5e0686d4a4a12209760087dc01a13f26bae80eda0c3f7408b8de3"
+            }
+          },
+          "authorizedFutureOnlyDestinations": {
+            "model_artifacts": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/next_candle/hgb_next_candle_53_v1/BTCUSDT/",
+            "registry_declaration": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/next_candle/family.json",
+            "policy_reference": "Axone decision 2026-07-23; destination declaration only, no write authorization"
+          },
+          "canonicalScope": {
+            "symbol": "BTCUSDT",
+            "timeframes": [
+              "5m",
+              "1h"
+            ],
+            "targets": [
+              "target_next_candle_logret_1",
+              "target_next_candle_logret_2"
+            ],
+            "no_general_model": true,
+            "no_cross_symbol_promotion": true,
+            "no_incremental_general_to_symbol_finetuning": true
+          },
+          "frozenCandidate": {
+            "architecture_id": "hgb_next_candle_53_v1",
+            "algorithm": "hist_gradient_boosting",
+            "task": "regression",
+            "params": {
+              "loss": "squared_error",
+              "learning_rate": 0.05,
+              "max_iter": 60,
+              "max_leaf_nodes": 31,
+              "min_samples_leaf": 40,
+              "l2_regularization": 0.0,
+              "random_state": 31,
+              "early_stopping": false
+            },
+            "preprocessing": "none; non-null inputs required; no scaling; no calibration; no inferred defaults"
+          },
+          "splitAndAlignment": {
+            "join": "UTC timestamp inner join only; never row position",
+            "label_end": "timestamp + horizon_bars * interval_duration",
+            "cv": "five expanding chronological folds",
+            "holdout": "final chronological 20%",
+            "purge_bars": 3,
+            "embargo_bars": 3,
+            "terminal_null_gap": "reject null inputs/targets; Chronos gap-guarded artifacts; no missing candle state"
+          },
+          "cellPass": [
+            "BTCUSDT_5m_target_next_candle_logret_1",
+            "BTCUSDT_5m_target_next_candle_logret_2",
+            "BTCUSDT_1h_target_next_candle_logret_1",
+            "BTCUSDT_1h_target_next_candle_logret_2"
+          ],
+          "perCellBlocks": [
+            {
+              "cell_id": "BTCUSDT_5m_target_next_candle_logret_1",
+              "timeframe": "5m",
+              "target": "target_next_candle_logret_1",
+              "horizon_bars": 1,
+              "metrics_sha256": "f2def85c402028c1fa215029958f2ac1c30086423fa6ca53b38f13efd6085476"
+            },
+            {
+              "cell_id": "BTCUSDT_5m_target_next_candle_logret_2",
+              "timeframe": "5m",
+              "target": "target_next_candle_logret_2",
+              "horizon_bars": 2,
+              "metrics_sha256": "0394d2f562fc90431f3a90df8e25d3d631e14fcaf5cc4c0e9127ed966ed65b6e"
+            },
+            {
+              "cell_id": "BTCUSDT_1h_target_next_candle_logret_1",
+              "timeframe": "1h",
+              "target": "target_next_candle_logret_1",
+              "horizon_bars": 1,
+              "metrics_sha256": "9de9a9e35da5cb21abfe7412801e8da50e46206725b964b56eefde9a7db85590"
+            },
+            {
+              "cell_id": "BTCUSDT_1h_target_next_candle_logret_2",
+              "timeframe": "1h",
+              "target": "target_next_candle_logret_2",
+              "horizon_bars": 2,
+              "metrics_sha256": "0e7f26656476ca07f8af768ab28be8a74a31fe4a0a11f0f8672853ceb852d0c3"
+            }
+          ],
+          "integrityDeclarations": {
+            "evidence": "real Chronos-managed historical artifacts only; no synthetic, memory, or unverified cache",
+            "no_model_action_before_pass": true,
+            "no_BOTS_or_registry_write": true,
+            "no_training_serialization_or_promotion": true,
+            "self_sha256": "recorded in canonical_manifest.sha256"
+          }
         }
       },
-      "metricsStatus": "PREFLIGHT_PASS_REPORTING_ONLY__NO_TRAINING_OR_PROMOTION_AUTHORIZATION",
+      "metricsStatus": "CANONICAL_FREEZE_DECLARATION_PASS_REPORTING_ONLY__NO_ACTION_AUTHORIZATION",
       "reportingEvidence": [
         {
           "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/freeze_review/full_suite_model_selection_matrix_20260723.md",
@@ -16315,6 +16572,16 @@
           "path": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_final_preflight_next_candle_hgb53_20260723.md",
           "sha256": "47741976108b46204d6b2be4963f2e97104975c52fa5eecd13ec1e9c8ad366f0",
           "note": "Sentinel final preflight PASS audit"
+        },
+        {
+          "path": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/SANDBOX/sentinel_preflight/next_candle_hgb53_20260723/canonical_freeze_manifest.json",
+          "sha256": "002d3e28b6fa70f53e1a0feb67a0e83c588e5a29b2306ef9c951687ad997317b",
+          "note": "Sentinel-passed HGB53 canonical freeze declaration manifest"
+        },
+        {
+          "path": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/sentinel_canonical_freeze_declaration_hgb53_20260723.md",
+          "sha256": "398f2dc5e34503b1998d030ad28d5bba6c9a34895cb44d318bbd94265d48b4f5",
+          "note": "Sentinel canonical freeze declaration PASS audit"
         }
       ],
       "guards": [
@@ -16333,6 +16600,10 @@
         {
           "name": "canonical_action",
           "verdict": "NO_FIT_SERIALIZATION_BOTS_WRITE_OR_PROMOTION_AUTHORIZED"
+        },
+        {
+          "name": "sentinel_canonical_freeze_declaration",
+          "verdict": "PASS_DECLARATION_ONLY_CURRENT_SHA"
         }
       ],
       "selectedModelEvidence": "hgb_next_candle_53_v1",

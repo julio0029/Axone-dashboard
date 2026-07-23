@@ -180,6 +180,7 @@ function MetricPanel({ model }: { model: TibotModelRow }) {
   const metrics = model.metrics ?? {}
   const cells = Array.isArray((metrics as { cells?: unknown[] }).cells) ? (metrics as { cells: unknown[] }).cells : []
   const preflight = (metrics as { sentinelFinalPreflight?: Record<string, unknown> }).sentinelFinalPreflight
+  const declaration = (metrics as { sentinelCanonicalFreezeDeclaration?: Record<string, unknown> }).sentinelCanonicalFreezeDeclaration
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -201,6 +202,23 @@ function MetricPanel({ model }: { model: TibotModelRow }) {
             <Metric k="Audit SHA" v={shortHash(String(preflight.auditSha256 ?? ''))} />
             <Metric k="Policy" v={String(preflight.generalToSymbolPolicy ?? '-')} />
             <Metric k="Prohibited" v={Array.isArray(preflight.prohibited) ? preflight.prohibited.join(', ') : '-'} />
+          </div>
+        </div>
+      )}
+      {declaration && (
+        <div className="rounded-lg border border-ax-up/30 bg-[#1ec8a5]/10 p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <div className="text-sm text-ax-up">Sentinel canonical freeze declaration PASS</div>
+              <div className="text-[11px] text-ax-muted mt-1">{String(declaration.boundary ?? '')}</div>
+            </div>
+            <div className="text-[11px] text-ax-blue-2 font-mono">{shortHash(String(declaration.manifestSha256 ?? ''))}</div>
+          </div>
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <Metric k="Immutable evidence" v={shortHash(String((declaration.immutableEvidencePayload as Record<string, unknown> | undefined)?.sha256 ?? ''))} />
+            <Metric k="Audit SHA" v={shortHash(String(declaration.auditSha256 ?? ''))} />
+            <Metric k="Artifact destination" v={String((declaration.authorizedFutureOnlyDestinations as Record<string, unknown> | undefined)?.model_artifacts ?? '-')} />
+            <Metric k="Registry declaration" v={String((declaration.authorizedFutureOnlyDestinations as Record<string, unknown> | undefined)?.registry_declaration ?? '-')} />
           </div>
         </div>
       )}
