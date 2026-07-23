@@ -179,13 +179,31 @@ export function TibotSuitePage() {
 function MetricPanel({ model }: { model: TibotModelRow }) {
   const metrics = model.metrics ?? {}
   const cells = Array.isArray((metrics as { cells?: unknown[] }).cells) ? (metrics as { cells: unknown[] }).cells : []
+  const preflight = (metrics as { sentinelFinalPreflight?: Record<string, unknown> }).sentinelFinalPreflight
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <Metric k="Selected" v={model.selectedModelEvidence} />
-        <Metric k="Artifact" v="blocked until Sentinel final PASS" />
+        <Metric k="Canonical action" v="no fit / serialization / BOTS write / promotion authorized" />
         {model.guards.map((g) => <Metric key={g.name} k={g.name} v={g.verdict} />)}
       </div>
+      {preflight && (
+        <div className="rounded-lg border border-ax-up/30 bg-[#1ec8a5]/10 p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <div className="text-sm text-ax-up">Sentinel current-SHA preflight PASS</div>
+              <div className="text-[11px] text-ax-muted mt-1">{String(preflight.boundary ?? '')}</div>
+            </div>
+            <div className="text-[11px] text-ax-blue-2 font-mono">{shortHash(String(preflight.manifestSha256 ?? ''))}</div>
+          </div>
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <Metric k="Schema SHA" v={shortHash(String(preflight.orderedFeatureSchemaSha256 ?? ''))} />
+            <Metric k="Audit SHA" v={shortHash(String(preflight.auditSha256 ?? ''))} />
+            <Metric k="Policy" v={String(preflight.generalToSymbolPolicy ?? '-')} />
+            <Metric k="Prohibited" v={Array.isArray(preflight.prohibited) ? preflight.prohibited.join(', ') : '-'} />
+          </div>
+        </div>
+      )}
       {cells.length > 0 ? (
         <div className="overflow-x-auto ax-scroll">
           <table className="min-w-full text-xs">
