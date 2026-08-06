@@ -5,6 +5,7 @@ import { KerryPage } from './pages/KerryPage'
 import { ChronosPage } from './pages/ChronosPage'
 import { TibotSuitePage } from './pages/TibotSuitePage'
 import { TaV2Page } from './pages/TaV2Page'
+import { RegistryPage } from './pages/RegistryPage'
 import { ComingSoon } from './pages/ComingSoon'
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
+        <Route path="registry" element={<RegistryPage />} />
         <Route path="agent/:id" element={<ComingSoon />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

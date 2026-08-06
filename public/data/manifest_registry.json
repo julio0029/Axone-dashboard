@@ -1,0 +1,1809 @@
+{
+  "artifactType": "AXONE_PROGRESSIVE_MANIFEST_REGISTRY",
+  "version": "scaffold_v1",
+  "generatedAtUtc": "2026-08-06T20:52:40Z",
+  "generatedBy": "Guy (dashboard, read-only)",
+  "banner": "Historical sandbox \u2014 not live forecasts",
+  "policy": {
+    "renderRule": "Only slices with status 'verified' render; 'pending'/'blocked' show a placeholder state.",
+    "readOnly": "Guy consumes published Chronos/Tibot manifests read-only and never mutates Axone source data.",
+    "leakage": "Tier-3 targets are labels only \u2014 never Tibot features or live inference."
+  },
+  "tiers": [
+    {
+      "key": "t1_ohlcv",
+      "label": "Raw OHLCV",
+      "order": 1,
+      "owner": "Chronos / Spider",
+      "desc": "Certified native-source open/high/low/close/volume bars."
+    },
+    {
+      "key": "t2_features",
+      "label": "Technical features",
+      "order": 2,
+      "owner": "Chronos",
+      "desc": "TA-v3 causal feature columns derived from raw OHLCV."
+    },
+    {
+      "key": "t3_targets",
+      "label": "Ground-truth targets",
+      "order": 3,
+      "owner": "Chronos",
+      "desc": "Label-only predictive targets (purged/embargoed; never live features)."
+    },
+    {
+      "key": "t4_models",
+      "label": "Models & predictions",
+      "order": 4,
+      "owner": "Tibot",
+      "desc": "Selected/alternative models, timestamp-aligned predictions, confidence & metrics."
+    }
+  ],
+  "gates": {
+    "gateA": {
+      "status": "pending",
+      "label": "Gate A \u2014 Tibot Tier-4 export contract",
+      "description": "Tier-4 predictions render only after Gate A passes and Tibot emits hash-manifested dashboard exports. Contract coordinated with Tibot on pass."
+    }
+  },
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "FETUSDT",
+    "PEPEUSDT",
+    "SHIBUSDT",
+    "SUIUSDT"
+  ],
+  "timeframes": [
+    "5m",
+    "1h",
+    "4h",
+    "1D"
+  ],
+  "tally": {
+    "t1_ohlcv": {
+      "verified": 38,
+      "pending": 0,
+      "blocked": 0
+    },
+    "t2_features": {
+      "verified": 2,
+      "pending": 36,
+      "blocked": 0
+    },
+    "t3_targets": {
+      "verified": 38,
+      "pending": 0,
+      "blocked": 0
+    },
+    "t4_models": {
+      "verified": 0,
+      "pending": 0,
+      "blocked": 1
+    }
+  },
+  "sliceCount": 115,
+  "slices": [
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "5a743680995c335a091b8de9676eab129a723841dbe5cd635d31826cf4915da7",
+      "renderedFile": "data/chronos_targets_bnbusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "21d95bf001514264e30a7ee04c1d9c1cbba491790f477612c65aae4aabd5dd49",
+      "renderedFile": "data/chronos_targets_bnbusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "26aa295e1ea69f3684104ee3c6764cfb497f7404ab8f62ec27c5a4fbc6403544",
+      "renderedFile": "data/chronos_targets_bnbusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "655d929e64c2d3d1111bbe606c33a6991e3ad0eb40b1850a38a41c7a7517adf7",
+      "renderedFile": "data/chronos_targets_bnbusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "4b2948c7b8802a69bcb6af35473b05340ebe49197d2237629db3fa1d1668f71e",
+      "renderedFile": "data/chronos_targets_bnbusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "834f8fd8c22f560d24a6c401bf6d52ea9341e9c067c818fb04a1add8d3e9930a",
+      "renderedFile": "data/chronos_targets_bnbusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "d5ebbd7a80be2491bd778c32a7ef01135f331ac2058cf3990c5da547eaa5c497",
+      "renderedFile": "data/chronos_targets_bnbusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "0951f54905b655ef4a6173a1671cb46ba90254953ba3e3034dbd6a98ae2df745",
+      "renderedFile": "data/chronos_targets_bnbusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "bead3d4834a8059d96701a954352ac76f3cb58b8a102eecdc024dd9e91d6445e",
+      "renderedFile": "data/chronos_targets_btcusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "cdbf07e2cdf75b85cddcd362f996656552bfa2c4a809413a8716dc25f34ae28b",
+      "renderedFile": "data/chronos_targets_btcusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "2c31ee7c29ff7dbda75b2e06781b85b84482ffdd242038308f2fb76c1ba32541",
+      "renderedFile": "data/chronos_targets_btcusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "a3cee9e6e0c4b6b4d757b30028ee52c104e3e2073d20aa2eb4ab8b68f12ea9a6",
+      "renderedFile": "data/chronos_targets_btcusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "8f06e515299e91b1f4d1c23c4ac4b6a1942b65246fbcc15de13b54838e77d057",
+      "renderedFile": "data/chronos_targets_btcusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "6a7b12c4d69e2fe19284b4839ecc18bb777c752744740eb87824e9c85a5cc407",
+      "renderedFile": "data/chronos_targets_btcusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "78d32b8e1829ea0600cb2266dd217ea874444f7524726f0fe43401c8485fa5b5",
+      "renderedFile": "data/chronos_targets_btcusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "b2621a98e83086212435aafed9b78a619fd352fabb43a009c109a61d6bf04ca9",
+      "renderedFile": "data/chronos_targets_btcusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "bedf591938683cfe7a6ac2377fd1a2b322f077a284ad95b6ebff0e6fff2a4b50",
+      "renderedFile": "data/chronos_targets_dogeusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "7a3924a01d53fe6301c7222ce33a726037159aebe3d18e07315eb6fdc0ed44af",
+      "renderedFile": "data/chronos_targets_dogeusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "6ce5e55b544102f7a43b161e8351368cdef76aab4b22e53983c59a81561a9d09",
+      "renderedFile": "data/chronos_targets_dogeusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "573b213d2b1d5509e102d5ab8779976b54042a7356b8e2fbf192c4339321c955",
+      "renderedFile": "data/chronos_targets_dogeusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "aa86c236b6f365e8646f1f775d31dc533e0ff289ac3c57be8aaedee2e2a1fbbe",
+      "renderedFile": "data/chronos_targets_ethusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "379cfda7fd62fb1e70f1be6320a71598a384d770fa8982d2b43fc5842290e203",
+      "renderedFile": "data/chronos_targets_ethusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "8ca831a6250f1ba664250744f3b4b5c10bd1ef57d20d17fd403a9c9b6773f157",
+      "renderedFile": "data/chronos_targets_ethusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "41cd71b43ff00c1d96f3ef4dc5b278769cf43373d410a536770397a3c1ea46e9",
+      "renderedFile": "data/chronos_targets_ethusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "38c0692c7285aeb9175d9c33c3223faa71413f84d0f5a73589fcc33ab5bf1c98",
+      "renderedFile": "data/chronos_targets_ethusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "d03ab73c0e0a1d49d8f4704bc650eea0cb766bcfbe1dbd32bfcf57a6d9e897e1",
+      "renderedFile": "data/chronos_targets_ethusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "bd20d6a9bf9bd56812382137da1b3ca476fdd92a998cf4cd846ed9b329d9da99",
+      "renderedFile": "data/chronos_targets_ethusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "7024a3a7b4344fb01724432e24561ba10e9848bb5f75b3daf13f01759c5c22bb",
+      "renderedFile": "data/chronos_targets_ethusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "71596274caba585b67639862ebb3ec544c10ce6892754b350faed267d60f7dae",
+      "renderedFile": "data/chronos_targets_fetusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "d5104d2c5ad54d5e50eafb9f3088ff873254492f4873b5a8e62d6f00d6f29fbe",
+      "renderedFile": "data/chronos_targets_fetusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "e63deff62f9e087278edc2520ac2dd96421e328e700bb4dab407087789c1c5aa",
+      "renderedFile": "data/chronos_targets_fetusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "8d9fc1d6e2dcd028358c970371fa29631deabb684a38dc6fe2949ba286d19bb5",
+      "renderedFile": "data/chronos_targets_fetusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "0646ca3526c25535eaf50f332827f53e04beece7e8413494f58e4a3e33622641",
+      "renderedFile": "data/chronos_targets_fetusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "9b8f773164533c448c38c0c8aeaacc20d26ee3d77aaa0ae8c61641566163a7d2",
+      "renderedFile": "data/chronos_targets_fetusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "f15727c6009981f9f3c87d32b51f6f7a93bc41870d6aa1701a8b1635bf8f1f50",
+      "renderedFile": "data/chronos_targets_fetusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "180a0ca96c32073252f5d583866db653c289ecce4493316724453367a2bd6020",
+      "renderedFile": "data/chronos_targets_fetusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 972,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "f851917658eec4f19be9557cda6922ede3ac9d6d67338fe9b8aee7acfb8b3c30",
+      "renderedFile": "data/chronos_targets_pepeusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 972,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "375a0779f37fc3b61cc1615158f2b7d26f5fff3e4df4ae7451a2f78f7b3eff22",
+      "renderedFile": "data/chronos_targets_pepeusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 23310,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "51325cbcb881f49bf3aaf36e7cb88e9a6bc0fe793958aad6a9945ae74ac7851b",
+      "renderedFile": "data/chronos_targets_pepeusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 23310,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "9a1c65ae0afadc767c44a759b36eef0a36a9e5b74b3d0e140bc23ebf0f35be3a",
+      "renderedFile": "data/chronos_targets_pepeusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 5828,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "7e65ac8b2ca27767dd04a793e30963790d1817353b906a5a7f3773400ddf5c4e",
+      "renderedFile": "data/chronos_targets_pepeusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 5828,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "95dc324adbb0b70a0be824a2de84c64d47898eccf337e4726ef60e0500635a05",
+      "renderedFile": "data/chronos_targets_pepeusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 279720,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "468cf15656a29eeecc5e829793ea76114145cf22ad2d078a18e40e7e53353cff",
+      "renderedFile": "data/chronos_targets_pepeusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 279720,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "be2dbb24531ea1eee33d1524a31aab4fcda98f92d18d7e9aa460bcfcc6c27c67",
+      "renderedFile": "data/chronos_targets_pepeusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 1697,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "949bba00f4d2a3bef825497ff87132587782ae27d525d3d510c0630e72d216f7",
+      "renderedFile": "data/chronos_targets_shibusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 1697,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "4b80c0de2ca664d5970740a8d03105524ad40018bcac2ab708a9e4440590b2d0",
+      "renderedFile": "data/chronos_targets_shibusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 40710,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "5e78871580c76dcc095f999c4dd58fb086c8b26dfb3b0ddf2f58ce8b93271a91",
+      "renderedFile": "data/chronos_targets_shibusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 40710,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "cea514583cb35cbb6ef2ad229730b48f6edc8a0996fd5e01b24a85d4ae6813b1",
+      "renderedFile": "data/chronos_targets_shibusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 10180,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "aa8d27c93bbbe414589b21fed13dc41a5bc5daa1a865e95eff84962437084ff3",
+      "renderedFile": "data/chronos_targets_shibusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 10180,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "7291d2f3ac4677e64fb1f55bb2438b9a38a212e2b298cd82f9b6dbcd84b758d2",
+      "renderedFile": "data/chronos_targets_shibusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 488510,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "d0a74a7a5a448d6fe74b8bda1ae2baefe5d031eb03bab26710a295926c3c33b3",
+      "renderedFile": "data/chronos_targets_shibusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 488510,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "368c927f51abb7701297ee0926e43547e599f103832d4fccb54df6a09c3b7f62",
+      "renderedFile": "data/chronos_targets_shibusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 1969,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "e2a0c2223e267e5f6f7a485a31478c7485eff71437d25507cdda0279e28d5b33",
+      "renderedFile": "data/chronos_targets_solusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 1969,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "29bfdecc098be6a066db4f0fb52e5d3f413577ab92df915891fd101ac83a814a",
+      "renderedFile": "data/chronos_targets_solusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 47231,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "3ccc16cc4a8bb8118bbb8aaf54b5fddeb1e87d0ee2bef3eec90abcd59a2a96ea",
+      "renderedFile": "data/chronos_targets_solusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 47231,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "3f3cfec09c0d84d28414faa17af175a8f07040a3e68cdd2961e340942e593372",
+      "renderedFile": "data/chronos_targets_solusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 11813,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "c9063aac9a3695d70247636234ccc538ab8cbe305f8c55a9c1db4b2124e9fd1b",
+      "renderedFile": "data/chronos_targets_solusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 11813,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "22c064e17da72efb3430588d2e4f9068ce07c43642f8ae8c98b8982a875fe03f",
+      "renderedFile": "data/chronos_targets_solusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 566717,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "e9671a04fc4cb3c9f00cf06b878c58125bd61e3a27e3221b45e144c1f77bf122",
+      "renderedFile": "data/chronos_targets_solusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 566717,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "cffafe9632a0eb1b595f729f79d973fe9bdca4ba6cf3c6ea2498bea72b4f9e60",
+      "renderedFile": "data/chronos_targets_solusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 974,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "2eacef9557eb167ce641a9cd48ce38a886702196691b53a62f1e345a5707a409",
+      "renderedFile": "data/chronos_targets_suiusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 974,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "5d1cca36cd766adf8082eb4b436374f27c2758a9c8980cab7ce3a748404454e0",
+      "renderedFile": "data/chronos_targets_suiusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 23364,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "4d905f2e41b64ecae62b6a2fcb5b62794ba2a67c427f1aa9a7f6f2786c796b5f",
+      "renderedFile": "data/chronos_targets_suiusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 23364,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "929d3e2233573913fddf34126787b972f835de9f0e8fef77f08fe461100d281a",
+      "renderedFile": "data/chronos_targets_suiusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 5841,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "e87f6952bad8a22e8198593c0950e835ccca0ea2ff072a60e5f9af7f98cf4f1b",
+      "renderedFile": "data/chronos_targets_suiusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 5841,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "185c47a9c8c3a870d86835c197570bff7c0ed5cd6bf981d1fbe435985a375530",
+      "renderedFile": "data/chronos_targets_suiusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 280368,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "1545c516ac884fcb1da2a9f56951297c81b14c2e11efac0dc56c60fcc7cc15c9",
+      "renderedFile": "data/chronos_targets_suiusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 280368,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "40d3c60be2f66a19a98e0359b02e926fa00f7ea7b31e5e189580d05152b30394",
+      "renderedFile": "data/chronos_targets_suiusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1D",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "4897d2413887a99d9776da2b91544ee8b2c442eab9b90e01bdcb8b4f9f780a74",
+      "renderedFile": "data/chronos_targets_xrpusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1D",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 500,
+      "canonicalRows": 2192,
+      "range": {
+        "startUtc": "2024-08-19 00:00:00+00:00",
+        "endUtc": "2025-12-31 00:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "ebc18d38b2f53704baec9a6d29a48715bd6a51f302133805030d9ea2aac5ce7d",
+      "renderedFile": "data/chronos_targets_xrpusdt_1d.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "2789a9dc94931414f237d793474518150387c75497b30ecae22122909b44e3cf",
+      "renderedFile": "data/chronos_targets_xrpusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-10-09 16:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "5db449f5ed943d062e82e31c0df29b5faa9a7d48570905ce24205de14c4ec8ab",
+      "renderedFile": "data/chronos_targets_xrpusdt_1h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "4h",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "e6d5605782895eb474ecdbff9375ebc0ca16a09c7de4b13818f92071736d43c8",
+      "renderedFile": "data/chronos_targets_xrpusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "4h",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 1000,
+      "canonicalRows": 13151,
+      "range": {
+        "startUtc": "2025-07-18 08:00:00+00:00",
+        "endUtc": "2025-12-31 20:00:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "be39669fc9fbd1b6ebac4af18651759403b8c61ddcfe5f5650ef913f7d7784fd",
+      "renderedFile": "data/chronos_targets_xrpusdt_4h.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "5m",
+      "tier": "t1_ohlcv",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "source": "Chronos ta_v3 native OHLCV (dual-hash-gated)",
+      "manifestSha256": "f81749ba02e3d915b75715dd5f6095be4ef416604ae651fb9cb84741fd7c6e04",
+      "renderedFile": "data/chronos_targets_xrpusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "OHLCV shipped inside the hash-gated targets bundle."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "5m",
+      "tier": "t3_targets",
+      "status": "verified",
+      "rows": 2000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-25 01:20:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "targetCount": 25,
+      "source": "Chronos predictive targets v3 (label-only)",
+      "manifestSha256": "fa4bed81b3193d1d6c8958d959f42849d32f5bebd60b9e2db871ca75d3ae6d3e",
+      "renderedFile": "data/chronos_targets_xrpusdt_5m.json",
+      "renderedRoute": "/chronos",
+      "note": "Labels only \u2014 never used as Tibot features / live inference."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "verified",
+      "rows": 3000,
+      "canonicalRows": 630834,
+      "range": {
+        "startUtc": "2025-12-21 14:00:00+00:00",
+        "endUtc": "2025-12-31 23:55:00+00:00"
+      },
+      "featureCount": null,
+      "source": "Chronos Technical_analysis_v3 (149-col certified)",
+      "manifestSha256": "078e329a1cb2675bbc636b56957a2227ac9e42622d5726d9cb9621777b242924",
+      "renderedFile": "data/ta_v3_btcusdt_5m.json",
+      "renderedRoute": "/ta-v2",
+      "note": "Full TA-v3 feature slice surfaced on the Sandbox chart."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "verified",
+      "rows": 3000,
+      "canonicalRows": 52577,
+      "range": {
+        "startUtc": "2025-08-29 00:00:00+00:00",
+        "endUtc": "2025-12-31 23:00:00+00:00"
+      },
+      "featureCount": null,
+      "source": "Chronos Technical_analysis_v3 (149-col certified)",
+      "manifestSha256": "078e329a1cb2675bbc636b56957a2227ac9e42622d5726d9cb9621777b242924",
+      "renderedFile": "data/ta_v3_btcusdt_1h.json",
+      "renderedRoute": "/ta-v2",
+      "note": "Full TA-v3 feature slice surfaced on the Sandbox chart."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "FETUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "5m",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "4h",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "SUIUSDT",
+      "timeframe": "1D",
+      "tier": "t2_features",
+      "status": "pending",
+      "source": "Chronos Technical_analysis_v3 (upstream evidence)",
+      "renderedRoute": null,
+      "note": "TA-v3 features certified upstream by Chronos; full slice not yet surfaced on the dashboard."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "tier": "t4_models",
+      "status": "blocked",
+      "range": {
+        "startUtc": "2023-03-24T14:00:00Z",
+        "endUtc": "2025-12-31T23:00:00Z"
+      },
+      "rows": 24321,
+      "source": "Tibot MODEL_CHOICE_V1 (Chronos-certified intake)",
+      "manifestSha256": "1b333c6ee0cc74b35c6fb452d10c411a066dee3f3cc1a516614c3aff2ffe8cc6",
+      "packageStatus": "NOT_FOR_TRAINING_PENDING_SOURCE_RIGHTS",
+      "targetContract": "target_direction_1_v1.0",
+      "renderedRoute": null,
+      "note": "Awaiting Gate A + Tibot dashboard exports (prediction/actual/confidence/metrics).",
+      "gate": "gateA"
+    }
+  ],
+  "provenance": {
+    "targetsGridSource": "public/data/chronos_targets_*.json (dual-hash-gated)",
+    "featuresSource": "public/data/ta_v3_*.json (149-col certified)",
+    "modelChoice": {
+      "manifestPath": "../../chronos/workspace/EVIDENCE/MANIFESTS/MODEL_CHOICE_V1_BTCUSDT_1h_NATIVE_CONTIGUOUS_20260803_manifest.json",
+      "packageStatus": "NOT_FOR_TRAINING_PENDING_SOURCE_RIGHTS"
+    },
+    "note": "Additive scaffold. Existing live views (/, /chronos, /ta-v2, /tibot) unchanged."
+  }
+}
