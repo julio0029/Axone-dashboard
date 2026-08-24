@@ -27,6 +27,10 @@ export function Layout() {
             <span className="text-ax-blue-2">▤</span> Registry
             <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">new</span>
           </NavLink>
+          <NavLink to="/tibot-forward" className={navClass}>
+            <span className="text-ax-up">⬡</span> Tibot Validation
+            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-up">live</span>
+          </NavLink>
           <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
           {AGENTS.filter((a) => a.id !== 'axone' && a.id !== 'operator').map((a) => (
             <NavLink
@@ -62,6 +66,10 @@ export function Layout() {
           {loc.pathname.startsWith('/ta-v2') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
               <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v2 testbed
+            </div>
+          ) : loc.pathname.startsWith('/tibot-forward') ? (
+            <div className="flex items-center gap-2 text-xs text-ax-up">
+              <span className="w-2 h-2 rounded-full bg-ax-up animate-pulse" /> 24h live-forward validation · prediction only
             </div>
           ) : loc.pathname.startsWith('/tibot') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
@@ -100,6 +108,7 @@ function Breadcrumb({ path }: { path: string }) {
   else if (path.startsWith('/registry')) label = 'Registry · Progressive Universe'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
+  else if (path.startsWith('/tibot-forward')) label = 'Tibot · 24h Live-Forward Validation'
   else if (path.startsWith('/tibot')) label = 'Tibot · Suite Review'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]

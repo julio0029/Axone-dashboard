@@ -4,6 +4,7 @@ import { ArchitecturePage } from './pages/ArchitecturePage'
 import { KerryPage } from './pages/KerryPage'
 import { ChronosPage } from './pages/ChronosPage'
 import { TibotSuitePage } from './pages/TibotSuitePage'
+import { TibotForwardPage } from './pages/TibotForwardPage'
 import { TaV2Page } from './pages/TaV2Page'
 import { RegistryPage } from './pages/RegistryPage'
 import { ComingSoon } from './pages/ComingSoon'
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="kerry" element={<KerryPage />} />
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
+        <Route path="tibot-forward" element={<TibotForwardPage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
         <Route path="registry" element={<RegistryPage />} />
         <Route path="agent/:id" element={<ComingSoon />} />
