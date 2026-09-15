@@ -5,8 +5,6 @@ import { KerryPage } from './pages/KerryPage'
 import { WallyPage } from './pages/WallyPage'
 import { ChronosPage } from './pages/ChronosPage'
 import { TibotSuitePage } from './pages/TibotSuitePage'
-import { TibotForwardPage } from './pages/TibotForwardPage'
-import { TibotBatchesPage } from './pages/TibotBatchesPage'
 import { TaV2Page } from './pages/TaV2Page'
 import { RegistryPage } from './pages/RegistryPage'
 import { ComingSoon } from './pages/ComingSoon'
@@ -17,13 +15,13 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<ArchitecturePage />} />
         <Route path="kerry" element={<KerryPage />} />
-        <Route path="wally" element={<WallyPage />} />
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
-        <Route path="tibot-forward" element={<TibotForwardPage />} />
-        <Route path="tibot-batches" element={<TibotBatchesPage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
         <Route path="registry" element={<RegistryPage />} />
+        {/* Wally research now lives under the Sandbox section */}
+        <Route path="sandbox/wally" element={<WallyPage />} />
+        <Route path="wally" element={<Navigate to="/sandbox/wally" replace />} />
         <Route path="agent/:id" element={<ComingSoon />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

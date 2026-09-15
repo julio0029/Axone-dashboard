@@ -1,8 +1,35 @@
+import type { ReactNode } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { AGENTS, CATEGORIES } from '../data/agents'
 
+interface NavItem {
+  to: string
+  label: string
+  glyph: string
+  badge?: string
+}
+
+/** Canonical / production pages (real data, certified or live). */
+const CANONICAL: NavItem[] = [
+  { to: '/kerry', label: 'Kerry', glyph: '●' },
+  { to: '/chronos', label: 'Chronos', glyph: '●' },
+  { to: '/tibot', label: 'Tibot Suite', glyph: '●' },
+  { to: '/registry', label: 'Registry', glyph: '▤', badge: 'new' },
+]
+
+/** Sandbox / research pages — exploratory, historical, not production. */
+const SANDBOX: NavItem[] = [
+  { to: '/ta-v2', label: 'TA-v3 Testbed', glyph: '◇', badge: 'test' },
+  { to: '/sandbox/wally', label: 'Wally Research', glyph: '◎', badge: 'historical' },
+]
+
 export function Layout() {
   const loc = useLocation()
+  // Coming-soon agents: real agent nodes without a bespoke page (excl. orchestrator,
+  // operator and the future Execution concept). Wolf & Oracle live here until built out.
+  const comingSoon = AGENTS.filter(
+    (a) => !a.detailed && !['axone', 'operator', 'execution'].includes(a.id),
+  )
   return (
     <div className="min-h-screen flex text-ax-text">
       {/* Sidebar */}
@@ -19,33 +46,32 @@ export function Layout() {
           <NavLink to="/" end className={navClass}>
             <span className="text-ax-blue-2">◈</span> Architecture
           </NavLink>
-          <NavLink to="/ta-v2" className={navClass}>
-            <span className="text-ax-up">◇</span> Sandbox
-            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">test</span>
-          </NavLink>
-          <NavLink to="/registry" className={navClass}>
-            <span className="text-ax-blue-2">▤</span> Registry
-            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">new</span>
-          </NavLink>
-          <NavLink to="/tibot-forward" className={navClass}>
-            <span className="text-ax-up">⬡</span> Tibot Validation
-            <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-up">live</span>
-          </NavLink>
-          <NavLink to="/tibot-batches" className={navClass}>
-            <span style={{ color: '#ffb454' }}>◐</span> Tibot Gate-B
-            <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>batch 3</span>
-          </NavLink>
-          <NavLink to="/wally" className={navClass}>
-            <span style={{ color: '#ffb454' }}>◎</span> Wally Research
-            <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>historical</span>
-          </NavLink>
-          <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
-          {AGENTS.filter((a) => a.id !== 'axone' && a.id !== 'operator').map((a) => (
-            <NavLink
-              key={a.id}
-              to={a.detailed ? (a.route ?? `/agent/${a.id}`) : `/agent/${a.id}`}
-              className={navClass}
-            >
+
+          <SectionLabel>Canonical</SectionLabel>
+          {CANONICAL.map((item) => (
+            <NavLink key={item.to} to={item.to} className={navClass}>
+              <span className="text-ax-blue-2">{item.glyph}</span> {item.label}
+              {item.badge && (
+                <span className="ml-auto text-[9px] uppercase tracking-wide text-ax-blue-2">{item.badge}</span>
+              )}
+            </NavLink>
+          ))}
+
+          <SectionLabel>Sandbox / Research</SectionLabel>
+          {SANDBOX.map((item) => (
+            <NavLink key={item.to} to={item.to} className={navClass}>
+              <span style={{ color: '#ffb454' }}>{item.glyph}</span> {item.label}
+              {item.badge && (
+                <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>
+                  {item.badge}
+                </span>
+              )}
+            </NavLink>
+          ))}
+
+          <SectionLabel>Coming Soon</SectionLabel>
+          {comingSoon.map((a) => (
+            <NavLink key={a.id} to={`/agent/${a.id}`} className={navClass}>
               <span
                 className="inline-block w-2 h-2 rounded-full"
                 style={{
@@ -57,7 +83,7 @@ export function Layout() {
               {a.status === 'pending' ? (
                 <span className="ml-auto text-[9px] uppercase tracking-wide text-[#ff5470]">pending</span>
               ) : (
-                !a.detailed && <span className="ml-auto text-[9px] text-ax-muted">soon</span>
+                <span className="ml-auto text-[9px] text-ax-muted">soon</span>
               )}
             </NavLink>
           ))}
@@ -73,17 +99,9 @@ export function Layout() {
           <Breadcrumb path={loc.pathname} />
           {loc.pathname.startsWith('/ta-v2') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
-              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v2 testbed
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v3 testbed
             </div>
-          ) : loc.pathname.startsWith('/tibot-forward') ? (
-            <div className="flex items-center gap-2 text-xs text-ax-up">
-              <span className="w-2 h-2 rounded-full bg-ax-up animate-pulse" /> 24h live-forward validation · prediction only
-            </div>
-          ) : loc.pathname.startsWith('/tibot-batches') ? (
-            <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> Gate-B Batch 3 · BTCUSDT prototype · not promoted
-            </div>
-          ) : loc.pathname.startsWith('/wally') ? (
+          ) : loc.pathname.startsWith('/sandbox/wally') ? (
             <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> historical research · simulation only — no live/paper trades
             </div>
@@ -109,6 +127,12 @@ export function Layout() {
   )
 }
 
+function SectionLabel({ children }: { children: ReactNode }) {
+  return (
+    <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">{children}</p>
+  )
+}
+
 function navClass({ isActive }: { isActive: boolean }) {
   return [
     'flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition',
@@ -120,13 +144,11 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
-  if (path.startsWith('/ta-v2')) label = 'Sandbox'
+  if (path.startsWith('/ta-v2')) label = 'Sandbox · TA-v3 Testbed'
   else if (path.startsWith('/registry')) label = 'Registry · Progressive Universe'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
-  else if (path.startsWith('/wally')) label = 'Wally · Trade Research (Historical)'
+  else if (path.startsWith('/sandbox/wally')) label = 'Sandbox · Wally Research (Historical)'
   else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
-  else if (path.startsWith('/tibot-forward')) label = 'Tibot · 24h Live-Forward Validation'
-  else if (path.startsWith('/tibot-batches')) label = 'Tibot · Gate-B Pipeline (Batch 3)'
   else if (path.startsWith('/tibot')) label = 'Tibot · Suite Review'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]

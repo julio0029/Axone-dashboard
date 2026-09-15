@@ -8,6 +8,7 @@ const EDGE_STYLE: Record<EdgeKind, { color: string; type: 'solid' | 'dashed' | '
   control: { color: '#7c5cff', type: 'dashed', width: 1,   opacity: 0.26, arrow: true,  curve: 0.18 },
   memory:  { color: '#b07cff', type: 'dotted', width: 1,   opacity: 0.16, arrow: false, curve: 0.3  },
   read:    { color: '#ffb454', type: 'dashed', width: 1.4, opacity: 0.6,  arrow: true,  curve: 0.1  },
+  eval:    { color: '#ffd166', type: 'dashed', width: 1.6, opacity: 0.7,  arrow: true,  curve: 0.16 },
   pending: { color: '#ff5470', type: 'dashed', width: 1.4, opacity: 0.4,  arrow: true,  curve: 0.14 },
 }
 

@@ -1,5 +1,7 @@
-// Authoritative Axone architecture — synced 2026-06-22.
-// 11 live/configured agents + 2 pending (Wally, Darwin) + the human Operator.
+// Authoritative Axone architecture — synced 2026-09-16.
+// Live/configured agents + pending (Darwin, future Execution) + the human Operator.
+// Trade path: Kerry+Chronos → Tibot → Wally (opportunity) → Wolf (lifecycle) → future execution.
+// Independent evaluation: Wolf/Wally decisions → Oracle (counterfactual) → Sentinel (integrity).
 // This is a faithful, read-only representation of system ownership & flows;
 // it does not mutate any source architecture file.
 
@@ -7,6 +9,7 @@ export type AgentId =
   | 'operator'
   | 'axone' | 'kerry' | 'tibot' | 'wally' | 'sentinel' | 'chronos'
   | 'darwin' | 'karen' | 'guy' | 'spider' | 'glia' | 'sublime' | 'conchita'
+  | 'wolf' | 'oracle' | 'execution'
 
 /** live = configured & active · pending = not configured / no authority yet · external = human */
 export type AgentStatus = 'live' | 'pending' | 'external'
@@ -35,6 +38,7 @@ export type EdgeKind =
   | 'memory'   // Glia durable-memory links
   | 'read'     // Guy read-only dashboard flow
   | 'audit'    // Sentinel integrity / leakage supervision
+  | 'eval'     // Oracle counterfactual decision-quality evaluation (scoring-only, firewalled)
   | 'pending'  // future / disabled execution flow (not live)
 
 export interface AgentEdge {
@@ -45,7 +49,8 @@ export interface AgentEdge {
 
 // Category 0: orchestrator, 1: live/external data, 2: historical/evidence,
 // 3: model/bots, 4: integrity/supervision, 5: memory, 6: system/code,
-// 7: advisory, 8: visualisation, 9: risk/execution (pending), 10: operator
+// 7: advisory, 8: visualisation, 9: risk/execution (pending), 10: operator,
+// 11: evaluation (counterfactual), 12: lifecycle/portfolio, 13: opportunity/decision
 export const CATEGORIES = [
   { name: 'Orchestrator', color: '#4dd2ff' },
   { name: 'Data (live / external)', color: '#2f9bff' },
@@ -56,8 +61,11 @@ export const CATEGORIES = [
   { name: 'System / Code', color: '#8aa0c6' },
   { name: 'Advisory', color: '#ffb454' },
   { name: 'Visualisation', color: '#ff9f6b' },
-  { name: 'Risk / Execution (pending)', color: '#ff5470' },
+  { name: 'Execution (pending)', color: '#ff5470' },
   { name: 'Operator', color: '#cdd9ec' },
+  { name: 'Evaluation (counterfactual)', color: '#ffd166' },
+  { name: 'Lifecycle / Portfolio', color: '#ff6b9d' },
+  { name: 'Opportunity / Decision', color: '#c084fc' },
 ]
 
 export const AGENTS: AgentNode[] = [
@@ -107,19 +115,19 @@ export const AGENTS: AgentNode[] = [
     id: 'glia', name: 'Glia', status: 'live', cat: 5, detailed: false,
     role: 'Memory system — durable context retrieval/compression/persistence & token-efficient recall. Sole owner of memory writes.',
     owns: 'Durable memory writes & compression',
-    x: 470, y: 600,
+    x: 470, y: 540,
   },
   {
     id: 'conchita', name: 'Conchita', status: 'live', cat: 6, detailed: false,
     role: 'System maintenance — OpenClaw config, health/recovery, logs, prompt structures & skills upkeep.',
     owns: 'Config / system / skill maintenance',
-    x: 110, y: 575,
+    x: 110, y: 515,
   },
   {
     id: 'sublime', name: 'Sublime', status: 'live', cat: 6, detailed: false,
     role: 'Code design / writing / review only — once final, code moves to the designated owning agent that runs it. Not a runtime owner.',
     owns: 'Code authoring & review (not runtime)',
-    x: 285, y: 575,
+    x: 285, y: 515,
   },
   {
     id: 'karen', name: 'Karen', status: 'live', cat: 7, detailed: false,
@@ -134,16 +142,34 @@ export const AGENTS: AgentNode[] = [
     x: 920, y: 540,
   },
   {
-    id: 'wally', name: 'Wally', status: 'pending', cat: 9, detailed: true, route: '/wally',
-    role: 'PENDING — intended trade-decision authority, risk gate & final approval before paper/live execution. Not configured live; no current execution authority.',
-    owns: '(future) Risk gate & execution approval — not live',
-    x: 700, y: 480,
+    id: 'wally', name: 'Wally', status: 'live', cat: 13, detailed: true, route: '/sandbox/wally',
+    role: 'Opportunity & directional intelligence — LONG/SHORT/ABSTAIN calls, conviction, expected move, multi-timeframe context & opportunity ranking. Produces ranked proposals; does NOT manage open positions. Dashboard view is historical V3_CANDIDATE research (simulation only).',
+    owns: 'Directional opportunity proposals & conviction (no lifecycle / no execution)',
+    x: 700, y: 470,
+  },
+  {
+    id: 'wolf', name: 'Wolf', status: 'live', cat: 12, detailed: false,
+    role: 'Trade lifecycle, position & portfolio management — reads Wally proposals + portfolio state and decides ENTER/HOLD/EXIT/REVERSE/REDUCE, sizing, TP/SL/trailing & exposure. Owns the position lifecycle after Wally identifies an opportunity. No broker or paper/live execution authority yet. NOT a repurposing of Sentinel.',
+    owns: 'Position lifecycle decisions & portfolio ledger (no execution authority)',
+    x: 875, y: 470,
+  },
+  {
+    id: 'oracle', name: 'Oracle', status: 'live', cat: 11, detailed: false,
+    role: 'Counterfactual decision-quality evaluator — retrospectively scores Wally/Wolf decisions using future price info (scoring-only, firewalled from decision inputs). Distinct from Sentinel: Oracle judges whether a decision was good; Sentinel audits integrity / leakage / causality.',
+    owns: 'Retrospective counterfactual evaluations (writes EVALUATIONS/ only)',
+    x: 815, y: 320,
+  },
+  {
+    id: 'execution', name: 'Execution', status: 'pending', cat: 9, detailed: false,
+    role: 'FUTURE — paper/live trade execution & broker connectivity. Not built and not connected to any exchange. Shown for architecture completeness only; requires explicit operator approval to ever enable.',
+    owns: '(future) Order execution — not built',
+    x: 1010, y: 560,
   },
   {
     id: 'darwin', name: 'Darwin', status: 'pending', cat: 9, detailed: false,
     role: 'PENDING — intended evolution/discovery role; precise scope awaiting operator definition. Not configured live.',
     owns: '(future) Evolution / discovery — scope TBD',
-    x: 960, y: 360,
+    x: 985, y: 250,
   },
 ]
 
@@ -179,16 +205,25 @@ export const EDGES: AgentEdge[] = [
   { source: 'sentinel', target: 'glia', kind: 'memory' },
   { source: 'glia', target: 'axone', kind: 'memory' },
 
-  // I — future execution (PENDING / disabled): Tibot → Wally risk gate → Operator approval
-  { source: 'tibot', target: 'wally', kind: 'pending' },
-  { source: 'wally', target: 'operator', kind: 'pending' },
+  // I — canonical decision chain: Tibot evidence → Wally opportunity → Wolf lifecycle
+  { source: 'tibot', target: 'wally', kind: 'flow' },
+  { source: 'wally', target: 'wolf', kind: 'flow' },
+  // future execution (PENDING / disabled): Wolf lifecycle → Execution (not built)
+  { source: 'wolf', target: 'execution', kind: 'pending' },
+
+  // J — independent evaluation chain (never fed back into decision timestamps):
+  //     Wally/Wolf decisions → Oracle counterfactual eval → Sentinel integrity/audit
+  { source: 'wally', target: 'oracle', kind: 'eval' },
+  { source: 'wolf', target: 'oracle', kind: 'eval' },
+  { source: 'oracle', target: 'sentinel', kind: 'eval' },
+
   // Darwin future evolution feedback (PENDING)
   { source: 'darwin', target: 'tibot', kind: 'pending' },
   { source: 'darwin', target: 'axone', kind: 'pending' },
 ]
 
 // Axone routes/orchestrates every live specialist (faint control edges)
-const AXONE_ROUTED: AgentId[] = ['spider', 'kerry', 'chronos', 'tibot', 'sentinel', 'karen', 'sublime', 'conchita']
+const AXONE_ROUTED: AgentId[] = ['spider', 'kerry', 'chronos', 'tibot', 'sentinel', 'karen', 'sublime', 'conchita', 'wally', 'wolf', 'oracle']
 for (const id of AXONE_ROUTED) EDGES.push({ source: 'axone', target: id, kind: 'control' })
 
 // Glia underlies all live agents' durable memory (faint dotted edges)

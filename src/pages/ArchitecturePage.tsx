@@ -11,7 +11,7 @@ export function ArchitecturePage() {
   const go = (id: AgentId) => {
     if (id === 'operator') return // operator is the human, not a dashboard
     const a = AGENTS.find((x) => x.id === id)
-    if (a?.detailed) nav('/kerry')
+    if (a?.detailed) nav(a.route ?? `/agent/${id}`)
     else if (id !== 'axone') nav(`/agent/${id}`)
   }
 
@@ -20,7 +20,7 @@ export function ArchitecturePage() {
       <div>
         <h1 className="font-display text-3xl tracking-tight ax-glow-text">Axone Architecture</h1>
         <p className="text-ax-muted mt-1 text-sm">
-          Authoritative agent topology &amp; information flow · synced 2026-06-22 ·{' '}
+          Authoritative agent topology &amp; information flow · synced 2026-09-16 ·{' '}
           <span className="text-ax-text">{liveCount} live</span> +{' '}
           <span className="text-[#ff8aa0]">{pendingCount} pending</span> + operator. Click any node for detail.
         </p>
@@ -28,7 +28,7 @@ export function ArchitecturePage() {
 
       <Card
         title="System Topology"
-        subtitle="Operator → Axone routes specialists · Spider gateway · Chronos→Sentinel audit · Kerry+Chronos→Tibot bots · Guy read-only · Wally & Darwin pending"
+        subtitle="Operator → Axone routes specialists · Spider gateway · Kerry+Chronos→Tibot bots → Wally opportunity → Wolf lifecycle → future execution · Wally/Wolf → Oracle eval → Sentinel audit · Guy read-only"
         bodyClass="!p-2"
       >
         <ArchitectureGraph onSelect={go} />
@@ -37,8 +37,9 @@ export function ArchitecturePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card title="Edge legend">
           <ul className="text-sm text-ax-muted space-y-1.5">
-            <li><span className="text-ax-blue-2">━━</span> data / contract flow</li>
+            <li><span className="text-ax-blue-2">━━</span> data / contract / decision flow</li>
             <li><span className="text-[#1ec8a5]">━━</span> Sentinel integrity / leakage audit</li>
+            <li><span className="text-[#ffd166]">╌╌</span> Oracle counterfactual evaluation (scoring-only)</li>
             <li><span className="text-[#7c5cff]">╌╌</span> Axone request routing</li>
             <li><span className="text-[#ffb454]">╌╌</span> Guy read-only dashboard flow</li>
             <li><span className="text-ax-muted">┄┄</span> Glia memory links</li>
@@ -46,15 +47,21 @@ export function ArchitecturePage() {
           </ul>
         </Card>
 
-        <Card title="Status legend">
+        <Card title="Trade path &amp; status">
           <ul className="text-sm text-ax-muted space-y-1.5">
             <li><span className="text-[#1ec8a5]">●</span> <span className="text-ax-text">LIVE / configured</span> — active agent</li>
             <li><span className="text-[#ff5470]">◌</span> <span className="text-[#ff8aa0]">PENDING / not live</span> — no current authority</li>
             <li className="pt-1">
-              <span className="text-[#ff8aa0]">Wally ⏳</span> — future risk gate &amp; execution approval (not live).
+              <span style={{ color: '#c084fc' }}>Wally</span> — identifies opportunities (LONG/SHORT/ABSTAIN, conviction). No position management.
             </li>
             <li>
-              <span className="text-[#ff8aa0]">Darwin ⏳</span> — future evolution / discovery (scope TBD).
+              <span style={{ color: '#ff6b9d' }}>Wolf</span> — owns the position lifecycle &amp; portfolio (ENTER/HOLD/EXIT/REVERSE, TP/SL). No execution authority yet. Not Sentinel.
+            </li>
+            <li>
+              <span style={{ color: '#ffd166' }}>Oracle</span> — counterfactual decision-quality scoring (firewalled). Distinct from Sentinel.
+            </li>
+            <li>
+              <span className="text-[#ff8aa0]">Execution ⏳</span> — future paper/live order routing (not built).
             </li>
           </ul>
         </Card>
@@ -73,10 +80,12 @@ export function ArchitecturePage() {
 
         <Card title="Detailed pages">
           <p className="text-sm text-ax-muted">
-            <span className="text-ax-text">Kerry</span> is live. Other agent pages are scaffolded
-            incrementally and currently show a “Coming soon” placeholder. The{' '}
-            <span className="text-ax-text">TA v3</span> Sandbox integration lives on the{' '}
-            <span className="text-ax-text">/ta-v2</span> page.
+            <span className="text-ax-text">Kerry</span>, <span className="text-ax-text">Chronos</span>,{' '}
+            <span className="text-ax-text">Tibot</span> and the <span className="text-ax-text">Registry</span> are
+            canonical pages. <span className="text-ax-text">Wally research</span> and the{' '}
+            <span className="text-ax-text">TA v3</span> testbed live under the{' '}
+            <span className="text-ax-text">Sandbox</span> section (Wally at <span className="text-ax-text">/sandbox/wally</span>).
+            Wolf, Oracle &amp; the remaining agents currently show a “Coming soon” placeholder.
           </p>
         </Card>
       </div>
@@ -88,6 +97,9 @@ export function ArchitecturePage() {
             <li>Historical datasets / training / replay / evidence → <span className="text-ax-text">Chronos</span> only</li>
             <li>Rolling live data (≤200 closed candles) → <span className="text-ax-text">Kerry</span> only</li>
             <li>Prediction / classification / strategy bots + training → <span className="text-ax-text">Tibot</span> only</li>
+            <li>Directional opportunity proposals &amp; conviction → <span className="text-ax-text">Wally</span> (no position management)</li>
+            <li>Position lifecycle &amp; portfolio ledger → <span className="text-ax-text">Wolf</span> (no execution authority yet)</li>
+            <li>Counterfactual decision-quality scoring → <span className="text-ax-text">Oracle</span> (firewalled; distinct from Sentinel)</li>
             <li>Durable memory writes / compression → <span className="text-ax-text">Glia</span> only</li>
             <li>Integrity / leakage supervision + transient hygiene → <span className="text-ax-text">Sentinel</span> (no repair, no risk approval)</li>
             <li>Config / system / skills → <span className="text-ax-text">Conchita</span></li>
@@ -109,7 +121,9 @@ export function ArchitecturePage() {
             <span className="text-[#ff8aa0]">pending proposal</span> (id <code className="text-ax-blue-2">axone-setup-20260621-5b0dbebc06</code>) — not installed/applied.
           </p>
           <p className="text-xs text-ax-muted mt-2">
-            Paper/live execution requires the future <span className="text-[#ff8aa0]">Wally</span> gate plus explicit operator approval — currently disabled.
+            Trade path: <span style={{ color: '#c084fc' }}>Wally</span> finds opportunities →{' '}
+            <span style={{ color: '#ff6b9d' }}>Wolf</span> manages the position lifecycle →{' '}
+            <span className="text-[#ff8aa0]">future execution</span>. Paper/live execution is not built and requires explicit operator approval — currently disabled.
           </p>
         </Card>
       </div>
