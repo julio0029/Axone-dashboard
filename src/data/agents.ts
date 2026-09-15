@@ -134,7 +134,7 @@ export const AGENTS: AgentNode[] = [
     x: 920, y: 540,
   },
   {
-    id: 'wally', name: 'Wally', status: 'pending', cat: 9, detailed: false,
+    id: 'wally', name: 'Wally', status: 'pending', cat: 9, detailed: true, route: '/wally',
     role: 'PENDING — intended trade-decision authority, risk gate & final approval before paper/live execution. Not configured live; no current execution authority.',
     owns: '(future) Risk gate & execution approval — not live',
     x: 700, y: 480,

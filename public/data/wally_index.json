@@ -1,0 +1,86 @@
+{
+ "generated_at": "2026-09-15T09:07:42.797230Z",
+ "variants": [
+  {
+   "id": "baseline_0.05",
+   "label": "V3 Baseline (conv 0.05)",
+   "oracle_dir": "/Users/julesdevaux/.openclaw/agents/oracle/workspace/EVALUATIONS/oracle_eval_v1_0_0",
+   "trades_file": "/Users/julesdevaux/.openclaw/agents/wally/workspace/EVIDENCE/WALLY_V3_CANDIDATE/baseline_0.05/all_trades.jsonl",
+   "ledger_glob": "/Users/julesdevaux/.openclaw/agents/wally/workspace/EVIDENCE/WALLY_V3_CANDIDATE/baseline_0.05/ledger_{SYM}.jsonl",
+   "note": "Wally V3 candidate walk, conviction-closure baseline 0.05."
+  }
+ ],
+ "symbols": [
+  {
+   "symbol": "BTCUSDT",
+   "trade_count": 2126,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "ETHUSDT",
+   "trade_count": 1495,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "BNBUSDT",
+   "trade_count": 1590,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "XRPUSDT",
+   "trade_count": 1738,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "SOLUSDT",
+   "trade_count": 1611,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "DOGEUSDT",
+   "trade_count": 1594,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "PEPEUSDT",
+   "trade_count": 1310,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "SHIBUSDT",
+   "trade_count": 1731,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "FETUSDT",
+   "trade_count": 1142,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  },
+  {
+   "symbol": "SUIUSDT",
+   "trade_count": 1408,
+   "ohlcv_bars": 122113,
+   "window_start": "2025-06-29T00:00:00Z",
+   "window_end": "2026-08-27T00:00:00Z"
+  }
+ ],
+ "note": "WALLY HISTORICAL RESEARCH \u2014 historical simulation only, no live/paper trades executed."
+}

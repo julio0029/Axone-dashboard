@@ -35,6 +35,10 @@ export function Layout() {
             <span style={{ color: '#ffb454' }}>◐</span> Tibot Gate-B
             <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>batch 3</span>
           </NavLink>
+          <NavLink to="/wally" className={navClass}>
+            <span style={{ color: '#ffb454' }}>◎</span> Wally Research
+            <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>historical</span>
+          </NavLink>
           <p className="text-ax-muted text-[10px] uppercase tracking-widest px-3 pt-4 pb-1">Agents</p>
           {AGENTS.filter((a) => a.id !== 'axone' && a.id !== 'operator').map((a) => (
             <NavLink
@@ -79,6 +83,10 @@ export function Layout() {
             <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> Gate-B Batch 3 · BTCUSDT prototype · not promoted
             </div>
+          ) : loc.pathname.startsWith('/wally') ? (
+            <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> historical research · simulation only — no live/paper trades
+            </div>
           ) : loc.pathname.startsWith('/tibot') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
               <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · Chronos-bound review
@@ -115,6 +123,7 @@ function Breadcrumb({ path }: { path: string }) {
   if (path.startsWith('/ta-v2')) label = 'Sandbox'
   else if (path.startsWith('/registry')) label = 'Registry · Progressive Universe'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
+  else if (path.startsWith('/wally')) label = 'Wally · Trade Research (Historical)'
   else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
   else if (path.startsWith('/tibot-forward')) label = 'Tibot · 24h Live-Forward Validation'
   else if (path.startsWith('/tibot-batches')) label = 'Tibot · Gate-B Pipeline (Batch 3)'

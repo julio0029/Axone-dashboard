@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { ArchitecturePage } from './pages/ArchitecturePage'
 import { KerryPage } from './pages/KerryPage'
+import { WallyPage } from './pages/WallyPage'
 import { ChronosPage } from './pages/ChronosPage'
 import { TibotSuitePage } from './pages/TibotSuitePage'
 import { TibotForwardPage } from './pages/TibotForwardPage'
@@ -16,6 +17,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<ArchitecturePage />} />
         <Route path="kerry" element={<KerryPage />} />
+        <Route path="wally" element={<WallyPage />} />
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
         <Route path="tibot-forward" element={<TibotForwardPage />} />
