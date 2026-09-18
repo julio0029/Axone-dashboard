@@ -17,6 +17,13 @@ const CANONICAL: NavItem[] = [
   { to: '/registry', label: 'Registry', glyph: '▤', badge: 'new' },
 ]
 
+/** Axone V2 programme — three separate views over the V2 research root. */
+const V2: NavItem[] = [
+  { to: '/v2/portfolio-lab', label: 'Portfolio Lab', glyph: '▚', badge: 'V2' },
+  { to: '/v2/paper-test', label: '48h Paper Test', glyph: '◈', badge: 'paper' },
+  { to: '/v2/symbol-research', label: 'Symbol Research', glyph: '⬡', badge: 'V2' },
+]
+
 /** Sandbox / research pages — exploratory, historical, not production. */
 const SANDBOX: NavItem[] = [
   { to: '/ta-v2', label: 'TA-v3 Testbed', glyph: '◇', badge: 'test' },
@@ -56,6 +63,22 @@ export function Layout() {
               )}
             </NavLink>
           ))}
+
+          <SectionLabel>Axone V2</SectionLabel>
+          {V2.map((item) => {
+            const isPaper = item.to === '/v2/paper-test'
+            const accent = isPaper ? '#ffb454' : '#4dd2ff'
+            return (
+              <NavLink key={item.to} to={item.to} className={navClass}>
+                <span style={{ color: accent }}>{item.glyph}</span> {item.label}
+                {item.badge && (
+                  <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: accent }}>
+                    {item.badge}
+                  </span>
+                )}
+              </NavLink>
+            )
+          })}
 
           <SectionLabel>Sandbox / Research</SectionLabel>
           {SANDBOX.map((item) => (
@@ -97,7 +120,19 @@ export function Layout() {
       <div className="flex-1 min-w-0 flex flex-col">
         <header className="h-14 shrink-0 border-b border-ax-border/70 bg-ax-bg-2/40 backdrop-blur-sm flex items-center px-6 justify-between">
           <Breadcrumb path={loc.pathname} />
-          {loc.pathname.startsWith('/ta-v2') ? (
+          {loc.pathname.startsWith('/v2/paper-test') ? (
+            <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> paper / testnet · simulated — no real money
+            </div>
+          ) : loc.pathname.startsWith('/v2/portfolio-lab') ? (
+            <div className="flex items-center gap-2 text-xs text-ax-blue-2">
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Axone V2 · historical simulation
+            </div>
+          ) : loc.pathname.startsWith('/v2/symbol-research') ? (
+            <div className="flex items-center gap-2 text-xs text-ax-blue-2">
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Axone V2 · symbol research
+            </div>
+          ) : loc.pathname.startsWith('/ta-v2') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
               <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · TA-v3 testbed
             </div>
@@ -144,7 +179,10 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
-  if (path.startsWith('/ta-v2')) label = 'Sandbox · TA-v3 Testbed'
+  if (path.startsWith('/v2/portfolio-lab')) label = 'Axone V2 · Historical Portfolio Lab'
+  else if (path.startsWith('/v2/paper-test')) label = 'Axone V2 · 48h Paper Test (Testnet)'
+  else if (path.startsWith('/v2/symbol-research')) label = 'Axone V2 · Symbol Research'
+  else if (path.startsWith('/ta-v2')) label = 'Sandbox · TA-v3 Testbed'
   else if (path.startsWith('/registry')) label = 'Registry · Progressive Universe'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/sandbox/wally')) label = 'Sandbox · Wally Research (Historical)'
