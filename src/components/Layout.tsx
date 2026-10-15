@@ -11,16 +11,21 @@ interface NavItem {
 
 /** Canonical / production pages (real data, certified or live). */
 const CANONICAL: NavItem[] = [
+  { to: '/wolf-live-48h', label: 'Wolf Live 48h', glyph: '◆', badge: 'live' },
   { to: '/kerry', label: 'Kerry', glyph: '●' },
   { to: '/chronos', label: 'Chronos', glyph: '●' },
   { to: '/tibot', label: 'Tibot Suite', glyph: '●' },
   { to: '/registry', label: 'Registry', glyph: '▤', badge: 'new' },
 ]
 
-/** Axone V2 programme — three separate views over the V2 research root. */
-const V2: NavItem[] = [
+/** BRANCH 1 — Paper Candidate V1 (frozen forward test). Isolated from research. */
+const BRANCH1: NavItem[] = [
+  { to: '/paper-candidate-v1', label: 'Paper Candidate V1', glyph: '◈', badge: 'frozen' },
+]
+
+/** BRANCH 2 — V2 Research (Wolf/Karen/risk experiments over the research root). */
+const BRANCH2: NavItem[] = [
   { to: '/v2/portfolio-lab', label: 'Portfolio Lab', glyph: '▚', badge: 'V2' },
-  { to: '/v2/paper-test', label: '48h Paper Test', glyph: '◈', badge: 'paper' },
   { to: '/v2/symbol-research', label: 'Symbol Research', glyph: '⬡', badge: 'V2' },
 ]
 
@@ -64,21 +69,29 @@ export function Layout() {
             </NavLink>
           ))}
 
-          <SectionLabel>Axone V2</SectionLabel>
-          {V2.map((item) => {
-            const isPaper = item.to === '/v2/paper-test'
-            const accent = isPaper ? '#ffb454' : '#4dd2ff'
-            return (
-              <NavLink key={item.to} to={item.to} className={navClass}>
-                <span style={{ color: accent }}>{item.glyph}</span> {item.label}
-                {item.badge && (
-                  <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: accent }}>
-                    {item.badge}
-                  </span>
-                )}
-              </NavLink>
-            )
-          })}
+          <SectionLabel>Branch 1 · Paper Candidate V1</SectionLabel>
+          {BRANCH1.map((item) => (
+            <NavLink key={item.to} to={item.to} className={navClass}>
+              <span style={{ color: '#ffb454' }}>{item.glyph}</span> {item.label}
+              {item.badge && (
+                <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#ffb454' }}>
+                  {item.badge}
+                </span>
+              )}
+            </NavLink>
+          ))}
+
+          <SectionLabel>Branch 2 · V2 Research</SectionLabel>
+          {BRANCH2.map((item) => (
+            <NavLink key={item.to} to={item.to} className={navClass}>
+              <span style={{ color: '#4dd2ff' }}>{item.glyph}</span> {item.label}
+              {item.badge && (
+                <span className="ml-auto text-[9px] uppercase tracking-wide" style={{ color: '#4dd2ff' }}>
+                  {item.badge}
+                </span>
+              )}
+            </NavLink>
+          ))}
 
           <SectionLabel>Sandbox / Research</SectionLabel>
           {SANDBOX.map((item) => (
@@ -120,17 +133,21 @@ export function Layout() {
       <div className="flex-1 min-w-0 flex flex-col">
         <header className="h-14 shrink-0 border-b border-ax-border/70 bg-ax-bg-2/40 backdrop-blur-sm flex items-center px-6 justify-between">
           <Breadcrumb path={loc.pathname} />
-          {loc.pathname.startsWith('/v2/paper-test') ? (
+          {loc.pathname.startsWith('/wolf-live-48h') ? (
+            <div className="flex items-center gap-2 text-xs text-[#1ec8a5]">
+              <span className="w-2 h-2 rounded-full bg-[#1ec8a5] animate-pulse" /> BINANCE SPOT TESTNET · LIVE · NOT REAL MONEY
+            </div>
+          ) : loc.pathname.startsWith('/paper-candidate-v1') ? (
             <div className="flex items-center gap-2 text-xs" style={{ color: '#ffb454' }}>
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> paper / testnet · simulated — no real money
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ffb454' }} /> Branch 1 · Paper Candidate V1 · frozen forward test — isolated from research
             </div>
           ) : loc.pathname.startsWith('/v2/portfolio-lab') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
-              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Axone V2 · historical simulation
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Branch 2 · V2 Research · historical simulation
             </div>
           ) : loc.pathname.startsWith('/v2/symbol-research') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
-              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Axone V2 · symbol research
+              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> Branch 2 · V2 Research · symbol research
             </div>
           ) : loc.pathname.startsWith('/ta-v2') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
@@ -179,9 +196,10 @@ function navClass({ isActive }: { isActive: boolean }) {
 
 function Breadcrumb({ path }: { path: string }) {
   let label = 'Architecture'
-  if (path.startsWith('/v2/portfolio-lab')) label = 'Axone V2 · Historical Portfolio Lab'
-  else if (path.startsWith('/v2/paper-test')) label = 'Axone V2 · 48h Paper Test (Testnet)'
-  else if (path.startsWith('/v2/symbol-research')) label = 'Axone V2 · Symbol Research'
+  if (path.startsWith('/paper-candidate-v1')) label = 'Branch 1 · Paper Candidate V1 (Frozen Forward Test)'
+  else if (path.startsWith('/wolf-live-48h')) label = 'Wolf · Live 48h Testnet Monitor'
+  else if (path.startsWith('/v2/portfolio-lab')) label = 'Branch 2 · V2 Research · Historical Portfolio Lab'
+  else if (path.startsWith('/v2/symbol-research')) label = 'Branch 2 · V2 Research · Symbol Research'
   else if (path.startsWith('/ta-v2')) label = 'Sandbox · TA-v3 Testbed'
   else if (path.startsWith('/registry')) label = 'Registry · Progressive Universe'
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
