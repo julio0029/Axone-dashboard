@@ -344,7 +344,10 @@ def main():
 
     out = {
         "schema": "v2_portfolio_lab.v1",
+        "branch": "V2_RESEARCH",
+        "branchLabel": "Branch 2 — V2 Research",
         "track": "TRACK_C_portfolio_matrix",
+        "sourcePath": "agents/axone/workspace/AXONE_V2_RESEARCH_20260918/TRACK_C_portfolio_matrix/",
         "generatedAtUtc": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sourceRoot": TRACK_C,
         "trackPresent": exists,

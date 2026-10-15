@@ -155,6 +155,9 @@ def main():
     e = track_e()
     out = {
         "schema": "v2_symbol_research.v1",
+        "branch": "V2_RESEARCH",
+        "branchLabel": "Branch 2 — V2 Research",
+        "sourcePath": "agents/axone/workspace/AXONE_V2_RESEARCH_20260918/ (Track A + Track E)",
         "generatedAtUtc": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sourceRoot": V2_ROOT,
         "trackA": a,

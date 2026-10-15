@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
 
-// Axone V2 dashboard data layer.
-// Three independent views, each fetching a read-only JSON emitted by a
-// scripts/gen_v2_*.py generator from the V2 research root. Every payload is
-// designed to degrade gracefully: if a source track has not produced output
+// BRANCH 2 — V2 RESEARCH data layer.
+// Research views (Portfolio Lab / Symbol Research), each fetching a read-only
+// JSON emitted by a scripts/gen_v2_*.py generator from the V2 research root.
+// This adapter serves the RESEARCH branch ONLY. The PAPER CANDIDATE V1 branch
+// has its own isolated loader in src/data/paper.ts and never uses useJson here.
+// Every payload degrades gracefully: if a source track has not produced output
 // yet, the JSON says so (status/awaiting) and the UI shows "awaiting data"
 // rather than crashing or fabricating numbers.
+export const RESEARCH_BRANCH = 'V2_RESEARCH'
 
 export type LoadStatus = 'loading' | 'ready' | 'absent' | 'error'
 
@@ -129,59 +132,13 @@ export function usePortfolioLab() {
   )
 }
 
-// ---------------------------------------------------------------------------
-// View 2 — 48h Paper Test (Track D) — PAPER / TESTNET / SIMULATED
-// ---------------------------------------------------------------------------
-
-export interface PaperTest {
-  schema: string
-  track: string
-  generatedAtUtc: string
-  trackPresent: boolean
-  status: 'not_started' | 'running' | 'complete'
-  mode: string
-  simulated: boolean
-  realMoney: boolean
-  exchangeEndpoint: string
-  labelBanner: string
-  universe: string[]
-  slotSizeUsd: number
-  orderType: string
-  boundarySeconds: number
-  decisionExecutionSeparation: {
-    decisionRecord: string
-    executionRecord: string
-    fillStatuses: string[]
-  }
-  pipelineHealthComponents: { key: string; label: string; source: string; states?: string[] }[]
-  severityModel: string[]
-  activeRun: PaperRun | null
-  contractFile: string | null
-  contractSha: string | null
-  provenance: { note: string }
-}
-export interface PaperRun {
-  runId: string
-  runDir: string
-  counts: Record<string, number>
-  latestEquity: Record<string, unknown> | null
-  killSwitchState: string
-  latestHeartbeat: Record<string, unknown> | null
-  missedBoundaries: Record<string, unknown>[]
-  missedBoundaryCount: number
-  wolfDecisionsTail: Record<string, unknown>[]
-  adapterFillsTail: Record<string, unknown>[]
-  portfolioTail: Record<string, unknown>[]
-  reconciliationTail: Record<string, unknown>[]
-  killSwitchLog: Record<string, unknown>[]
-}
-
-export function usePaperTest() {
-  return useJson<PaperTest>('v2_paper_test.json', (j) => (j as PaperTest)?.mode === 'PAPER_TESTNET')
-}
+// NOTE: The 48h Paper Test (Branch 1 — Paper Candidate V1) is intentionally
+// NOT served from this research adapter. It has its own isolated loader and
+// provenance guard in src/data/paper.ts, so no research payload can ever be
+// fetched into the paper branch through a shared code path.
 
 // ---------------------------------------------------------------------------
-// View 3 — Symbol Research (Tracks A + E)
+// View 2 — Symbol Research (Tracks A + E)
 // ---------------------------------------------------------------------------
 
 export interface FamilyRow {

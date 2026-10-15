@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# live dashboard runtime state (local only, never published)
+.wolf-live-48h-cursor.json
+.wolf-live-48h-producer.pid
+.wolf-live-48h-vite.pid
+*.backup-hermes

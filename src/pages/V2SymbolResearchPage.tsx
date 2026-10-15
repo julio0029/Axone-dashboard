@@ -1,5 +1,5 @@
 import { Card } from '../components/Card'
-import { AwaitingData, LoadGate, Pill } from '../components/V2'
+import { AwaitingData, BranchBanner, LoadGate, Pill } from '../components/V2'
 import {
   useSymbolResearch,
   sym,
@@ -24,10 +24,12 @@ export function V2SymbolResearchPage() {
   const { status, data, error } = useSymbolResearch()
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-ax-blue/30 bg-ax-blue/[0.06] px-4 py-2.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-display text-[13px] tracking-wide text-ax-blue-2 uppercase">Symbol Research</span>
-        <span className="text-ax-muted text-xs">Track A symbol-transfer classification · Track E Karen advisory discovery</span>
-      </div>
+      <BranchBanner
+        branch="research"
+        title="V2 Research — Symbol Research & Track A Remediation"
+        subtitle="Track A symbol-transfer classification / remediation · Track E Karen advisory discovery"
+        sourcePath="agents/axone/workspace/AXONE_V2_RESEARCH_20260918/ (Track A + Track E)"
+      />
       <LoadGate status={status} error={error} absentHint="symbol-research data not found — run scripts/gen_v2_symbol_research.py">
         {data && <Body d={data} />}
       </LoadGate>

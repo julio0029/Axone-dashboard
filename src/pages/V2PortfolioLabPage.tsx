@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { Card } from '../components/Card'
-import { AwaitingData, LoadGate, Pill, StatTile } from '../components/V2'
+import { AwaitingData, BranchBanner, LoadGate, Pill, StatTile } from '../components/V2'
 import {
   usePortfolioLab,
   usd,
@@ -26,7 +26,12 @@ export function V2PortfolioLabPage() {
 
   return (
     <div className="space-y-4">
-      <SimHeader />
+      <BranchBanner
+        branch="research"
+        title="V2 Research — Historical Portfolio Lab"
+        subtitle="Track C · 5-minute walk-forward simulation over the frozen 10-symbol universe · historical backtest, not live, not paper"
+        sourcePath="agents/axone/workspace/AXONE_V2_RESEARCH_20260918/TRACK_C_portfolio_matrix/"
+      />
       <LoadGate status={status} error={error} absentHint="portfolio lab data not found — run scripts/gen_v2_portfolio_lab.py">
         {data && (
           <>
@@ -42,20 +47,6 @@ export function V2PortfolioLabPage() {
           </>
         )}
       </LoadGate>
-    </div>
-  )
-}
-
-function SimHeader() {
-  return (
-    <div className="rounded-lg border border-ax-blue/30 bg-ax-blue/[0.06] px-4 py-2.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-      <span className="font-display text-[13px] tracking-wide text-ax-blue-2 uppercase">Historical Portfolio Lab</span>
-      <span className="text-ax-muted text-xs">
-        Track C · 5-minute walk-forward simulation over the frozen 10-symbol universe
-      </span>
-      <span className="ml-auto text-ax-muted/70 text-[10px] uppercase tracking-widest">
-        historical backtest · not live · not paper
-      </span>
     </div>
   )
 }
