@@ -1,0 +1,2967 @@
+{
+  "generated_utc": "2026-10-20T03:11:57.340334+00:00",
+  "transaction": "TX:20261019-053",
+  "contract_id": "TX-20261019-050-canonical-live-features-v2",
+  "display_policy": "general model only; per symbol/timeframe views unlock after training",
+  "families_total": 49,
+  "families": [
+    {
+      "family": "2b_failed_breakout",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=70620; n_active=118429"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "bollinger_breakout",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "SCAFFOLD_PENDING_TARGET_CONTRACT",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "bollinger_keltner_squeeze",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=17491; n_active=29868"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "bollinger_mean_reversion",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CONTRACT_REQUEST_SUPERSEDED_BY_RETIREMENT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=2427"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "breakout_quality",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "READY": 41
+      },
+      "cells_total": 41,
+      "cells_ready": 41,
+      "bot_class": "classification",
+      "model_architecture": "extra_trees (extra_trees_bq_v1), frozen 2026-08-08",
+      "prediction_target": "target_bq_quality_class_h1 (breakout-quality-all-symbols-all-intervals-v1.2.0); 3-class {-1,0,+1}",
+      "trading_interpretation": "breakout follow-through quality; live role ADVISORY_ONLY (bq_context), non-directional",
+      "horizon": "h1 (1 closed candle)",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "0.8173913",
+        "balanced_accuracy": "0.69",
+        "macro_f1": "0.38205999",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "460"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/classification/breakout_quality/symbol_variants/run_20260813/PEPEUSDT_1D/variant_model.joblib",
+        "sha256": "a0f7c32c0027dd2077f5c30089f46064bc5b2698bc58a026bc83735a4147ecb8",
+        "feature_source": "sidecar:gate_c_variant_package.json[\"features\"] count_verified_vs_n_features_in_=7",
+        "required_features": [
+          "log_return_1",
+          "range_pct",
+          "body_pct",
+          "volatility_20",
+          "volume_ratio_20",
+          "time_day_sin",
+          "time_day_cos"
+        ],
+        "required_n": 7,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1d",
+        "1h",
+        "4h",
+        "5m"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "5m"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1d"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "5m"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "breakout_quality_5m",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 1,
+      "bot_class": "classification",
+      "model_architecture": "extra_trees_bq_v1",
+      "prediction_target": "target_bq_quality_class_h1",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "h1",
+      "prior_promotion_state": "GATE_C_PASS_PENDING_SENTINEL",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "0.5426",
+        "macro_f1": "0.3792",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS_V2/classification/breakout_quality_5m/general/models/gate_c_et_bq_h1_5m_btcusdt_20260913.joblib",
+        "sha256": "7be66ef11f799232015ea7b70ec486f2cc53364889e87eae422f55055d09716c",
+        "feature_source": "estimator.feature_names_in_",
+        "required_features": [
+          "log_return_1",
+          "range_pct",
+          "body_pct",
+          "volatility_20",
+          "volume_ratio_20",
+          "time_day_sin",
+          "time_day_cos"
+        ],
+        "required_n": 7,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "breakout_retest",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "SCAFFOLD_PENDING_TARGET_CONTRACT",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "donchian_breakout",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "PRESCREEN_RETIRED_NO_INCREMENTAL_INFORMATION",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "ema_crossover_quality",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CONTRACT_REQUEST_SUPERSEDED_BY_RETIREMENT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;QUALITY_GATE;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=2458"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "ema_dynamics",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "READY": 6
+      },
+      "cells_total": 6,
+      "cells_ready": 6,
+      "bot_class": "prediction",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "live-path operational role as audited",
+      "horizon": "live decision boundary",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/ema_dynamics/symbols/ETHUSDT/models/4h_target_ema_spread_change_20_50_h24_ridge_ema_dyn_v1.joblib",
+        "sha256": "7ac5ad9bc81c883f649cbef348dc559a0007fe335147587e9cd218d30fb85226",
+        "feature_source": "dict[\"feature_cols\"]",
+        "required_features": [
+          "x_logret_1_clip_10pct",
+          "x_logret_3_clip_20pct",
+          "x_logret_6_clip_30pct",
+          "x_intrabar_oc_logret_clip_10pct",
+          "x_intrabar_hl_logrange_clip_20pct",
+          "x_close_location_0_1",
+          "x_body_to_range_clip_1",
+          "x_upper_wick_to_range_0_1",
+          "x_lower_wick_to_range_0_1",
+          "x_close_to_ema9_log_clip_20pct",
+          "x_ema9_ema21_logspread_clip_20pct",
+          "x_ema20_ema50_logspread_clip_20pct",
+          "x_ema50_ema200_logspread_clip_20pct",
+          "x_rv24_logret_std_clip_20pct",
+          "x_atr14_pct_clip_20pct",
+          "x_volume_log_rel_prev96_median_clip_5",
+          "x_volume_z_prev96_clip_5"
+        ],
+        "required_n": 17,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "ema_transition",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "READY": 22
+      },
+      "cells_total": 22,
+      "cells_ready": 22,
+      "bot_class": "classification",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "live-path operational role as audited",
+      "horizon": "live decision boundary",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/classification/ema_transition/symbols/run_gate_c_sv_20260820/artifacts/ETHUSDT_1h_target_ema_transition_9_21_h24/model.pkl",
+        "sha256": "6d3cff7c87ed358a881d2eb6ab4606cc52a3af358462a6333d6ceb219b1e8b4e",
+        "feature_source": "dict[\"feature_cols\"]",
+        "required_features": [
+          "x_logret_1_clip_10pct",
+          "x_logret_3_clip_20pct",
+          "x_logret_6_clip_30pct",
+          "x_intrabar_oc_logret_clip_10pct",
+          "x_intrabar_hl_logrange_clip_20pct",
+          "x_close_location_0_1",
+          "x_body_to_range_clip_1",
+          "x_upper_wick_to_range_0_1",
+          "x_lower_wick_to_range_0_1",
+          "x_close_to_ema9_log_clip_20pct",
+          "x_ema9_ema21_logspread_clip_20pct",
+          "x_ema20_ema50_logspread_clip_20pct",
+          "x_ema50_ema200_logspread_clip_20pct",
+          "x_rv24_logret_std_clip_20pct",
+          "x_atr14_pct_clip_20pct",
+          "x_volume_log_rel_prev96_median_clip_5",
+          "x_volume_z_prev96_clip_5"
+        ],
+        "required_n": 17,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "ema_trend_continuation",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "rf_balanced",
+      "prediction_target": "target_ema_continuation_h6",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;REGIME_CONTEXT;MAGNITUDE_PROVIDER",
+      "horizon": "h6",
+      "prior_promotion_state": "GATE_C_10SYM_PASS_PENDING_SENTINEL",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "0.786",
+        "macro_f1": "0.779",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS_V2/strategy/ema_trend_continuation/general/models/gate_c_rf_balanced_h6_v1_btcusdt_1h_20260913.joblib",
+        "sha256": "663b42d8c481e118b4d0ebd3f8d19ae780cd757a4a4ae2da4be1d8abad0e1b7d",
+        "feature_source": "estimator.feature_names_in_",
+        "required_features": [
+          "ema_stack_direction",
+          "ema_stack_bars_norm",
+          "ema9_to_ema21_dist",
+          "price_in_pullback_zone",
+          "x_ema20_ema50_logspread_clip_20pct",
+          "x_ema50_ema200_logspread_clip_20pct",
+          "x_logret_1_clip_10pct",
+          "x_volume_z_prev96_clip_5",
+          "x_rv24_logret_std_clip_20pct",
+          "x_atr14_pct_clip_20pct",
+          "regime_trend_signed_strength_adx14"
+        ],
+        "required_n": 11,
+        "missing_from_contract": [
+          "ema9_to_ema21_dist",
+          "ema_stack_bars_norm",
+          "ema_stack_direction",
+          "price_in_pullback_zone"
+        ],
+        "blocked_reason": "CONTRACT_MISSING_REQUIRED_FEATURES"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "excursion_payoff_forecast",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "NOT_READY": 22
+      },
+      "cells_total": 22,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "live-path operational role as audited",
+      "horizon": "live decision boundary",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/excursion_payoff_forecast/symbols/BNBUSDT/4h/target_realized_range_pct_h24/run_sv_20260820/BNBUSDT_4h_target_realized_range_pct_h24_ridge_sv.joblib",
+        "sha256": "c0c74465a7d76186fff79f60c15d653b9b6cb669ed978ca7522b2398f032249d",
+        "feature_source": "pipeline_unnamed_n_features_in_17",
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": [],
+        "blocked_reason": "FEATURE_NAMES_UNRECOVERABLE (pipeline_unnamed_n_features_in_17)"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "expected_move_magnitude",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "gru",
+      "prediction_target": "target_expected_move_mag_2,target_expected_move_mag_3",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "2,3 bars",
+      "prior_promotion_state": "NO_GO",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "failed_breakout_trap",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "SCAFFOLD_PENDING_TARGET_CONTRACT",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "forward_signed_return",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "candidate pool only, no selection: ridge,lightgbm,histgb,gru",
+      "prediction_target": "target_fsr_signed_pct_return_h1,target_fsr_signed_pct_return_h3,target_fsr_signed_pct_return_h6,target_fsr_signed_pct_return_h12,target_fsr_signed_pct_return_h24,target_fsr_signed_pct_return_h48",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "1,3,6,12,24,48 closed candles",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "gann_swing_forecast",
+      "tier": "TIER_4_STRUCTURALLY_BLOCKED",
+      "tier_rationale": "unbounded prediction horizon; better data does not make it testable",
+      "readiness_summary": {
+        "NOT_WIRED_BY_DESIGN": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "candidate pool only, no selection: ridge,hgb_mae,hgb_sq",
+      "prediction_target": "target_gann_remaining_bars,target_gann_remaining_swing_return_pct",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "until first causally-confirmed opposite swing; capped at 3,6,12,24-bar evaluation windows",
+      "prior_promotion_state": "NO_GO",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "UNBOUNDED_HORIZON_NO_FINITE_TARGET"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "gann_swing_remaining",
+      "tier": "TIER_5_SETTLED_NULL_KEEP_CLOSED",
+      "tier_rationale": "Sentinel-audited NULL carried end-to-end; needs a new hypothesis, not better data",
+      "readiness_summary": {
+        "NOT_READY": 22
+      },
+      "cells_total": 22,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "Gann swing bar-count patterns + volatility context contain signal about swing-exhaustion timing, reframed from regression (gann_swing_forecast) into classification (progress_stage 4-class ordinal; terminal_h{3,6,12,24} binary).",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "NOT_A_CANDIDATE",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/gann_swing_remaining/symbols/BTCUSDT/variant_model_BTCUSDT_1h_progress_stage_v021.joblib",
+        "sha256": "3816574a9403d29c106727e3ed405709376fecae8d15238e7756f826f64cc135",
+        "feature_source": "pipeline_unnamed_n_features_in_18",
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": [],
+        "blocked_reason": "FEATURE_NAMES_UNRECOVERABLE (pipeline_unnamed_n_features_in_18)"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "htf_ltf_entry",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CONTRACT_REQUEST_SUPERSEDED_BY_RETIREMENT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;REGIME_CONTEXT;QUALITY_GATE;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=1864"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "htf_trend_ltf_pullback",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=14461; n_active=59221"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "keltner_breakout",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "PRESCREEN_RETIRED_NO_INCREMENTAL_INFORMATION",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "macd_momentum",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "BLOCKED_SUBLIME_NAN_WARMUP",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "market_regime",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "READY": 22
+      },
+      "cells_total": 22,
+      "cells_ready": 22,
+      "bot_class": "classification",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "live-path operational role as audited",
+      "horizon": "live decision boundary",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/classification/market_regime/symbols/run_sv_20260820/models/PEPEUSDT_1h_target_regime_transition_h12_extra_trees_balanced_mr_v1.joblib",
+        "sha256": "77e72b4fd9e918d1fab4a7076215c3ce00a4ba1d75dcba4a03b4026d23bbd288",
+        "feature_source": "estimator.feature_names_in_",
+        "required_features": [
+          "x_logret_1_clip_10pct",
+          "x_logret_3_clip_20pct",
+          "x_logret_6_clip_30pct",
+          "x_intrabar_oc_logret_clip_10pct",
+          "x_intrabar_hl_logrange_clip_20pct",
+          "x_close_location_0_1",
+          "x_body_to_range_clip_1",
+          "x_upper_wick_to_range_0_1",
+          "x_lower_wick_to_range_0_1",
+          "x_close_to_ema9_log_clip_20pct",
+          "x_ema9_ema21_logspread_clip_20pct",
+          "x_ema20_ema50_logspread_clip_20pct",
+          "x_ema50_ema200_logspread_clip_20pct",
+          "x_rv24_logret_std_clip_20pct",
+          "x_atr14_pct_clip_20pct",
+          "x_volume_log_rel_prev96_median_clip_5",
+          "x_volume_z_prev96_clip_5"
+        ],
+        "required_n": 17,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "multi_indicator_confluence",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;REGIME_CONTEXT;MAGNITUDE_PROVIDER;QUALITY_GATE",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "BLOCKED_SUBLIME_NAN_WARMUP",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "next_candle",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "{'type': 'gru', 'input': 'sequence of general_features (53): reconciled 46-feature control set plus 7 Sentinel-gated factored candle-pattern one-hots', 'seq_len': 24, 'hidden_size': 48, 'num_layers': 1, 'dropout': 0.1, 'output_dim': 2, 'horizons': [1, 2], 'output_activation': 'identity', '_output_note': \"IDENTITY (linear) output \u2014 the ONLY architecture delta vs gru_emm_v1. Signed target can be negative, so Softplus (EMM's non-negativity enforcer) must NOT be applied. EMM model.py currently hardcodes nn.Softplus(); reuse requires selecting activation from arch['output_activation'] before training.\", 'input_projection': {'enabled': True, 'embed_dim': 32, 'time_distributed': True, 'dense': {'activation': None, 'use_bias': True, 'kernel_initializer': 'glorot_uniform', 'bias_initializer': 'zeros'}, 'layer_norm': {'enabled': True, 'axis': -1, 'epsilon': 0.001, 'center': True, 'scale': True}, 'post_activation': 'gelu', 'masking': {'enabled': False, 'mask_value': 0.0, 'require_right_padding_if_enabled': True}}}",
+      "prediction_target": "target_next_candle_logret_1,target_next_candle_logret_2",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "1,2 bars",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "permutation_entropy_regime",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=65776; n_active=440361"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "pivot_reversal",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "PRESCREEN_RETIRED_NO_INCREMENTAL_INFORMATION",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "pivot_sr_wick_rejection",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=3133; n_active=24567"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "range_breakout_retest",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=1100; n_active=9746"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "realized_move_window",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "candidate pool only, no selection: mean_baseline,persistence_naive,quantile_ridge,hist_gradient_boosting,lightgbm_quantile,catboost_quantile,xgboost_quantile,random_forest,mlp_pinball,gru_quantile,gru_nll,tcn_quanti",
+      "prediction_target": "realized_move_window",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "1h:N24/K24 and 4h:N6/K6 log-normalized",
+      "prior_promotion_state": "NO_GO",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "relative_volume_continuation",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "SCAFFOLD_PENDING_TARGET_CONTRACT",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "rsi_reversal",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "rf_balanced",
+      "prediction_target": "CHRONOS_CONTRACT_REQUESTED_20260912",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "GATE_C_10SYM_PASS_PENDING_SENTINEL",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "0.736",
+        "macro_f1": "0.734",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS_V2/strategy/rsi_reversal/general/models/gate_c_rf_balanced_h6_v1_btcusdt_1h_20260913.joblib",
+        "sha256": "647fb529ea84a84bc0b436d7cb7afb1bba3c107e12f7cff0612cc3ee28fd39f4",
+        "feature_source": "estimator.feature_names_in_",
+        "required_features": [
+          "rsi_zone",
+          "rsi_extreme_bars_norm",
+          "rsi_from_extreme",
+          "rsi_divergence_1h",
+          "x_close_to_ema9_log_clip_20pct",
+          "x_logret_3_clip_20pct",
+          "x_rv24_logret_std_clip_20pct",
+          "x_volume_z_prev96_clip_5",
+          "x_body_to_range_clip_1",
+          "x_atr14_pct_clip_20pct",
+          "regime_trend_signed_strength_adx14"
+        ],
+        "required_n": 11,
+        "missing_from_contract": [
+          "rsi_divergence_1h",
+          "rsi_extreme_bars_norm",
+          "rsi_from_extreme",
+          "rsi_zone"
+        ],
+        "blocked_reason": "CONTRACT_MISSING_REQUIRED_FEATURES"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "session_vwap_mean_reversion",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=43298; n_active=162862"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "slot_rvol_impulse",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=100278; n_active=247759"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "sr_bounce",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "SCAFFOLD_PENDING_TARGET_CONTRACT",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "sr_breakout",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "PRESCREEN_RETIRED_NO_INCREMENTAL_INFORMATION",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "supertrend_continuation",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CHRONOS_CONTRACT_REQUESTED_20260912",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;REGIME_CONTEXT;MAGNITUDE_PROVIDER",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "GATE_B_FAIL_ESCALATION_PENDING",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "sweep_reclaim",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=70358; n_active=89354"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "swing_amplitude",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "reopened by operator 2026-10-20; prior blocker resolved by data refresh or rests on void measurements",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "candidate pool only, no selection: mean_baseline,persistence_lag1,lightgbm_q50,xgboost_q50,catboost_q50,random_forest,mlp_pinball",
+      "prediction_target": "target_swing_amp_lognorm_w24,target_swing_amp_lognorm_w6",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "1h N=24/K=24 and 4h N=6/K=6, 24h economic horizon",
+      "prior_promotion_state": "BLOCKED_WITH_EXACT_REASON",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "swing_reversal_continuation",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "reopened by operator 2026-10-20; prior blocker resolved by data refresh or rests on void measurements",
+      "readiness_summary": {
+        "NOT_READY": 12
+      },
+      "cells_total": 12,
+      "cells_ready": 0,
+      "bot_class": "classification",
+      "model_architecture": "hgb_shallow",
+      "prediction_target": "target_swing_reversal_h{3,6,12,24},target_swing_reversal_direction_h{3,6,12,24}",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "3,6,12,24 closed candles",
+      "prior_promotion_state": "NOT_PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/classification/swing_reversal_continuation/symbols/run_gate_c_sv_corrected_20260825/models/SHIBUSDT_1h_target_swing_reversal_h6_hgb_shallow_swing_reversal_v1.joblib",
+        "sha256": "f4233c9ad4d88e4f9142f71985fb407647cb27fca6e62a176279dd768b504d13",
+        "feature_source": "load_failed_ModuleNotFoundError",
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": [],
+        "blocked_reason": "FEATURE_NAMES_UNRECOVERABLE (load_failed_ModuleNotFoundError)"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "trend_pullback_long",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CONTRACT_REQUEST_SUPERSEDED_BY_RETIREMENT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=1588"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "trend_pullback_short",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CONTRACT_REQUEST_SUPERSEDED_BY_RETIREMENT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=1409"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "triple_barrier_outcome",
+      "tier": "TIER_1_PROMOTED",
+      "tier_rationale": "promoted; metrics measured on pre-refresh data -> reassess",
+      "readiness_summary": {
+        "NOT_READY": 20
+      },
+      "cells_total": 20,
+      "cells_ready": 0,
+      "bot_class": "classification",
+      "model_architecture": "rf (random forest)",
+      "prediction_target": "target_tbo_h{6,12,24,48} (triple-barrier-outcome-v0.1.0); labels {up,down,no_material_move}",
+      "trading_interpretation": "barrier touch side -> Wally FULL_CONTRIBUTOR directional vote (TP_HIT/SL_HIT/TIMEOUT); eligible 1h/4h only",
+      "horizon": "h12",
+      "prior_promotion_state": "PROMOTED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "63"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/classification/triple_barrier_outcome/gate_c/results/models/PEPEUSDT_1h_h12_rf.joblib",
+        "sha256": "7a4a6359c76c0e3f69d411cd02bbd01aef24f86e087d66d246273a58a93ecdb7",
+        "feature_source": "dict_without_feature_names",
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": [],
+        "blocked_reason": "FEATURE_NAMES_UNRECOVERABLE (dict_without_feature_names)"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "DOGEUSDT",
+        "ETHUSDT",
+        "FETUSDT",
+        "PEPEUSDT",
+        "SHIBUSDT",
+        "SOLUSDT",
+        "SUIUSDT",
+        "XRPUSDT"
+      ],
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "per_cell_available_after_training": [
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SHIBUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "4h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h"
+        },
+        {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h"
+        }
+      ],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "triple_barrier_outcome_1d",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 1,
+      "bot_class": "classification",
+      "model_architecture": "rf_balanced_subsample_v0.1.0",
+      "prediction_target": "target_tbo_touch_side_h6",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "h6",
+      "prior_promotion_state": "GATE_B_FAIL",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "0.392",
+        "macro_f1": "0.381",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS_V2/classification/triple_barrier_outcome_1d/general/models/gate_b_rf_subsample_h6_1d_10sym_20260913.joblib",
+        "sha256": "0b505f89aa87d47ac25a100d2b22260aab5b3a148958ad47d3bb591831d735fb",
+        "feature_source": "estimator.feature_names_in_",
+        "required_features": [
+          "x_logret_1_clip_10pct",
+          "x_logret_3_clip_20pct",
+          "x_logret_6_clip_30pct",
+          "x_intrabar_oc_logret_clip_10pct",
+          "x_intrabar_hl_logrange_clip_20pct",
+          "x_close_location_0_1",
+          "x_body_to_range_clip_1",
+          "x_upper_wick_to_range_0_1",
+          "x_lower_wick_to_range_0_1",
+          "x_close_to_ema9_log_clip_20pct",
+          "x_ema9_ema21_logspread_clip_20pct",
+          "x_ema20_ema50_logspread_clip_20pct",
+          "x_ema50_ema200_logspread_clip_20pct",
+          "x_rv24_logret_std_clip_20pct",
+          "x_atr14_pct_clip_20pct",
+          "x_volume_log_rel_prev96_median_clip_5",
+          "x_volume_z_prev96_clip_5"
+        ],
+        "required_n": 17,
+        "missing_from_contract": [],
+        "blocked_reason": null
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "volatility_expansion",
+      "tier": "TIER_2_NEVER_COMPLETED",
+      "tier_rationale": "never received a verdict; highest value",
+      "readiness_summary": {
+        "NOT_READY": 2
+      },
+      "cells_total": 2,
+      "cells_ready": 0,
+      "bot_class": "prediction",
+      "model_architecture": "hgb_mae",
+      "prediction_target": "target_realized_vol_ratio_h{6,12,24,48},target_atr_expansion_ratio_h{6,12,24,48}",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "6,12,24,48 closed candles",
+      "prior_promotion_state": "NO_GO",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": "/Users/julesdevaux/.openclaw/agents/tibot/workspace/BOTS/prediction/volatility_expansion/general/run_20260814/models/1h__target_atr_expansion_ratio_h12__hgb_mae.pkl",
+        "sha256": "84e15f67c9492ca136c3596677993c4666696536ce3d05ec676f60f63f66312e",
+        "feature_source": "pipeline_unnamed_n_features_in_17",
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": [],
+        "blocked_reason": "FEATURE_NAMES_UNRECOVERABLE (pipeline_unnamed_n_features_in_17)"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "volume_confirmed_breakout",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CHRONOS_CONTRACT_REQUESTED_20260912",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;QUALITY_GATE;VOLATILITY_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "GATE_B_FAIL_ESCALATION_PENDING",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "vsa_climax_absorption",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "NOT MEASURED",
+      "trading_interpretation": "NOT MEASURED",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "RETIRED",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "n_eff=12303; n_active=17081"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "vwap_mean_reversion",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "CHRONOS_CONTRACT_REQUESTED_20260912",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;MAGNITUDE_PROVIDER;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "GATE_B_FAIL_ESCALATION_PENDING",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    },
+    {
+      "family": "vwap_trend_continuation",
+      "tier": "TIER_3_VERDICT_VOID_PENDING_RETEST",
+      "tier_rationale": "retired on data-dependent statistics computed on defective bars",
+      "readiness_summary": {
+        "NOT_READY": 1
+      },
+      "cells_total": 1,
+      "cells_ready": 0,
+      "bot_class": "strategy",
+      "model_architecture": "NOT MEASURED",
+      "prediction_target": "PENDING_CHRONOS_CONTRACT",
+      "trading_interpretation": "wally_roles=DIRECTIONAL;REGIME_CONTEXT;TIMING_CONTEXT",
+      "horizon": "NOT MEASURED",
+      "prior_promotion_state": "PRESCREEN_RETIRED_NO_INCREMENTAL_INFORMATION",
+      "prior_metrics": {
+        "accuracy": "NOT MEASURED",
+        "balanced_accuracy": "NOT MEASURED",
+        "macro_f1": "NOT MEASURED",
+        "roc_auc": "NOT MEASURED",
+        "pr_auc": "NOT MEASURED",
+        "n_samples": "NOT MEASURED"
+      },
+      "prior_metrics_validity": "VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining",
+      "general_model": {
+        "artifact": null,
+        "sha256": null,
+        "feature_source": null,
+        "required_features": null,
+        "required_n": null,
+        "missing_from_contract": null,
+        "blocked_reason": "NO_MODEL_ARTIFACT_ON_DISK"
+      },
+      "input_contract": {
+        "contract_id": "TX-20261019-050-canonical-live-features-v2",
+        "live": "~/.openclaw/workspace/DATA/live/<SYMBOL>/<INTERVAL>/",
+        "historical": "~/.openclaw/workspace/DATA/historical/<SYMBOL>/<INTERVAL>/compacted.parquet"
+      },
+      "symbols": [],
+      "timeframes": [],
+      "per_cell_available_after_training": [],
+      "certification_gate": "C8 external authority control plane not installed; no test run authorized"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+TX:20261019-053 — browser-rendered proof
+
+Overview
+- 49 families indexed
+- 49 / 49 family rows rendered
+- 93 / 209 connectors ready
+- 115 NOT_READY · fail closed
+
+Selected detail: breakout_quality
+- Required features · n=7
+- log_return_1
+- range_pct
+- body_pct
+- volatility_20
+- volume_ratio_20
+- time_day_sin
+- time_day_cos
+
+Visible safety state
+- C8 · NOT INSTALLED
+- Certification control plane is not installed.
+- Nothing in this view is a validated or deployable model.
+- VOID · PRE-REFRESH DATA
+- VOID_MEASURED_ON_PRE_REFRESH_DATA -- reassess after retraining
+- AVAILABLE AFTER TRAINING (disabled)
+
+Captured from http://127.0.0.1:5173/Axone-dashboard/#/tibot

@@ -14,7 +14,7 @@ const CANONICAL: NavItem[] = [
   { to: '/wolf-live-48h', label: 'Wolf Live 48h', glyph: '◆', badge: 'live' },
   { to: '/kerry', label: 'Kerry', glyph: '●' },
   { to: '/chronos', label: 'Chronos', glyph: '●' },
-  { to: '/tibot', label: 'Tibot Suite', glyph: '●' },
+  { to: '/tibot', label: 'Tibot Families', glyph: '●', badge: '49' },
   { to: '/registry', label: 'Registry', glyph: '▤', badge: 'new' },
 ]
 
@@ -159,7 +159,7 @@ export function Layout() {
             </div>
           ) : loc.pathname.startsWith('/tibot') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
-              <span className="w-2 h-2 rounded-full bg-ax-blue-2 animate-pulse" /> sandbox · Chronos-bound review
+              <span className="w-2 h-2 rounded-full bg-[#ff5470]" /> general models · metrics void · C8 not installed
             </div>
           ) : loc.pathname.startsWith('/registry') ? (
             <div className="flex items-center gap-2 text-xs text-ax-blue-2">
@@ -205,7 +205,7 @@ function Breadcrumb({ path }: { path: string }) {
   else if (path.startsWith('/kerry')) label = 'Kerry · Market Data'
   else if (path.startsWith('/sandbox/wally')) label = 'Sandbox · Wally Research (Historical)'
   else if (path.startsWith('/chronos')) label = 'Chronos · Predictive Targets'
-  else if (path.startsWith('/tibot')) label = 'Tibot · Suite Review'
+  else if (path.startsWith('/tibot')) label = 'Tibot · 49 Family Registry'
   else if (path.startsWith('/agent/')) {
     const id = path.split('/')[2]
     const a = AGENTS.find((x) => x.id === id)

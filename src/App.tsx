@@ -12,6 +12,7 @@ import { PaperCandidateV1Page } from './pages/PaperCandidateV1Page'
 import { V2SymbolResearchPage } from './pages/V2SymbolResearchPage'
 import { ComingSoon } from './pages/ComingSoon'
 import { WolfLive48hPage } from './pages/WolfLive48hPage'
+import './tibot.css'
 
 export default function App() {
   return (
