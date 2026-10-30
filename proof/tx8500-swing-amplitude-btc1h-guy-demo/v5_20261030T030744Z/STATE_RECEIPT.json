@@ -1,0 +1,38 @@
+{
+  "schema_version": "guy.swing_demo.state_receipt.v1",
+  "receipt_version": 5,
+  "recorded_at_utc": "2026-10-30T03:07:44Z",
+  "layer": "visualization",
+  "owner": "Guy",
+  "workflow_authority": "Hermes-authorized scoped workflow review/repair",
+  "state": "GATED_NO_RENDER__V2_SUPERSEDED_PERMANENTLY_INADMISSIBLE__WAITING_SENTINEL_PASS_V3_HANDOFF",
+  "state_sha256": "1c492a10315d744f4ae1d793302399f195b011b5f8ba94609b2232e383709abc",
+  "bindings": {
+    "sentinel_addendum": {
+      "name": "HERMES_WRAPPER_AND_TRACK_STATE_ADDENDUM.json",
+      "sha256": "585a4a5e140726b63b51b8886ea847ac65d0019c7bcf07a87bb37a27c7520683",
+      "verification": "IDENTITY_SUPPLIED_BY_HERMES_NOT_LOCALLY_CONTENT_VERIFIED"
+    },
+    "guy_recovery_receipt": {
+      "path": "../v4_20261028T071655Z/RECOVERY_RECEIPT.md",
+      "sha256": "f42e9b77aabf7b007dea640bf528f006a513d7a651c290418ec3a548b6fb7db1",
+      "verification": "LOCALLY_SHA256_VERIFIED"
+    }
+  },
+  "admissibility": {
+    "v2": "SUPERSEDED_PERMANENTLY_INADMISSIBLE",
+    "render": "DENIED",
+    "reopen_condition": "VERSIONED_V3_FROZEN_INFERENCE_HANDOFF_WITH_EXPLICIT_SENTINEL_PASS_AND_VERIFIABLE_HASHES_AND_PROVENANCE"
+  },
+  "actions_performed": [
+    "STATE_EVIDENCE_CORRECTION_ONLY"
+  ],
+  "actions_not_performed": [
+    "RENDER_LAUNCH",
+    "NUMERICAL_WORK",
+    "TRADING_OR_EXECUTION",
+    "GATE_BYPASS",
+    "PROMOTION",
+    "PRODUCTION_DISPATCH"
+  ]
+}
