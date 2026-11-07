@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 type Metric = string | number | null
 
@@ -189,6 +190,12 @@ function FamilyDossier({ family }: { family: Family }) {
         <p>Measured on defective data: 4h buckets had 3 of 48 constituents; daily history contained 1,190 zero-coverage bars. Do not use for ranking or deployment.</p>
         <div>{Object.entries(family.prior_metrics).map(([key, value]) => <span key={key}><small>{key.replaceAll('_', ' ')}</small><b>{value ?? '—'}</b></span>)}</div>
       </section>
+
+      {family.family === 'donchian_breakout' && (
+        <Link className="tibot-example-link" to="/tibot/family/donchian_breakout/bnbusdt/1h">
+          <span>Completed cell example · BNBUSDT / 1h</span><b>OPEN SCREENING TAPE →</b>
+        </Link>
+      )}
 
       <button className="tibot-after-training" disabled><span>Symbol × timeframe predictions</span><b>AVAILABLE AFTER TRAINING</b></button>
     </article>

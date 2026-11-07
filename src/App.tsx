@@ -5,6 +5,7 @@ import { KerryPage } from './pages/KerryPage'
 import { WallyPage } from './pages/WallyPage'
 import { ChronosPage } from './pages/ChronosPage'
 import { TibotSuitePage } from './pages/TibotSuitePage'
+import { TibotFamilyExamplePage } from './pages/TibotFamilyExamplePage'
 import { TaV2Page } from './pages/TaV2Page'
 import { RegistryPage } from './pages/RegistryPage'
 import { V2PortfolioLabPage } from './pages/V2PortfolioLabPage'
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="kerry" element={<KerryPage />} />
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
+        <Route path="tibot/family/donchian_breakout/bnbusdt/1h" element={<TibotFamilyExamplePage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
         <Route path="registry" element={<RegistryPage />} />
         <Route path="wolf-live-48h" element={<WolfLive48hPage />} />
