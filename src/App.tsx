@@ -13,6 +13,7 @@ import { PaperCandidateV1Page } from './pages/PaperCandidateV1Page'
 import { V2SymbolResearchPage } from './pages/V2SymbolResearchPage'
 import { ComingSoon } from './pages/ComingSoon'
 import { WolfLive48hPage } from './pages/WolfLive48hPage'
+import { TibotBtcResultsPage } from './pages/TibotBtcResultsPage'
 import './tibot.css'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="kerry" element={<KerryPage />} />
         <Route path="chronos" element={<ChronosPage />} />
         <Route path="tibot" element={<TibotSuitePage />} />
+        <Route path="tibot/results/btcusdt-clean-pass" element={<TibotBtcResultsPage />} />
         <Route path="tibot/family/donchian_breakout/bnbusdt/1h" element={<TibotFamilyExamplePage />} />
         <Route path="ta-v2" element={<TaV2Page />} />
         <Route path="registry" element={<RegistryPage />} />

@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "candidate_architecture": "Selected candidate architecture",
+    "family": "Target family",
+    "horizon_bars": "Forecast horizon in 1h bars; nullable when governed metadata has no fixed horizon",
+    "ordinal": "Zero-based ordinal in the 18,176-row accepted frame",
+    "prediction_status": "PREDICTED or GOVERNED_NUMERICAL_FAILURE",
+    "queue_ordinal": "Zero-based queue ordinal",
+    "target": "Canonical target name",
+    "timeframe": "Canonical timeframe",
+    "timestamp_utc": "Exact canonical source timestamp UTC",
+    "value": "Prediction value; null outside target-eligible score rows and for governed failures."
+  },
+  "long": "One row per timestamp x selected candidate (3,570,534 rows). value is nullable and never imputed.",
+  "wide": "One row per canonical BTCUSDT 1h score timestamp (ordinals 12165..18175), OHLCV plus 594 selected candidate prediction columns. Null means unavailable or governed failure."
+}

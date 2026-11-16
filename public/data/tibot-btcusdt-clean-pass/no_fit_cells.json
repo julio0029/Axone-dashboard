@@ -1,0 +1,55 @@
+{
+  "cells": [
+    {
+      "family": "ema_trend_continuation",
+      "horizon_bars": 6,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_ema_continuation_h6",
+      "timeframe": "1h"
+    },
+    {
+      "family": "gann_swing_remaining",
+      "horizon_bars": null,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_gsf_remaining_duration_bars",
+      "timeframe": "1h"
+    },
+    {
+      "family": "swing_exhaustion_probability",
+      "horizon_bars": null,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_swing_exhaustion_probability_v0",
+      "timeframe": "1h"
+    },
+    {
+      "family": "gann_swing_forecast",
+      "horizon_bars": null,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_gann_remaining_bars",
+      "timeframe": "1h"
+    },
+    {
+      "family": "gann_swing_remaining",
+      "horizon_bars": null,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_terminal_hN",
+      "timeframe": "1h"
+    },
+    {
+      "family": "gann_swing_forecast",
+      "horizon_bars": null,
+      "route_scope": "symbol",
+      "symbol": "BTCUSDT",
+      "target": "target_gann_remaining_swing_return_pct",
+      "timeframe": "1h"
+    }
+  ],
+  "count": 6,
+  "ledger_path": "/Users/julesdevaux/.openclaw/agents/sublime/workspace/TX_20261110_001_SUBLIME_TX339_STAGE3_QUEUE_ENGINE_V9_1_R9/CONTROL_R4/STAGE3_NO_FIT_LEDGER.jsonl",
+  "ledger_sha256": "81117ced747de0eb44347fb7a38538967e5e14587ab7fb3f69f6c46f48d88157"
+}
