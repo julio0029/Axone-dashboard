@@ -1,0 +1,30 @@
+{
+  "canonical_source_hash_matched": true,
+  "counts_expected_and_observed": {
+    "candidate_receipts": 594,
+    "executable_cells": 198,
+    "governed_numerical_failures": 9,
+    "no_fit_cells": 6,
+    "predicted": 585
+  },
+  "long_columns": 10,
+  "long_rows": 3570534,
+  "model_binaries_credentials_wally_oracle_deployment_connectivity_trading_included": false,
+  "non_null_prediction_values": 1676412,
+  "null_prediction_values": 1894122,
+  "prediction_columns": 594,
+  "queue_no_fit_overlay_hashes_matched": true,
+  "receipt_manifest_all_selected_matched": true,
+  "result": "PASS",
+  "score_rows": 6011,
+  "selected_receipt_commitment_sha256": "ba25e9574402d71ed18ac5c4bc726e15e1896bf4cd54e482eb4ff9a837f57eb5",
+  "selected_receipts_all_rehashed": true,
+  "source_read_only": "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS",
+  "status_counts": {
+    "GOVERNED_NUMERICAL_FAILURE": 9,
+    "PREDICTED": 585
+  },
+  "transaction": "TX:20261116-164642",
+  "unique_timestamps": 6011,
+  "wide_columns": 603
+}

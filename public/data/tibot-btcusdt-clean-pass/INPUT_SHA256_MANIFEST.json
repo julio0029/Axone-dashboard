@@ -1,0 +1,2580 @@
+{
+  "files": {
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/EVIDENCE/TX_20261108_002_CHRONOS_TX339_STAGE3_COMPLETE_SEMANTIC_BINDING_V1/SOURCE_BINDINGS.json": {
+      "sha256": "7af774b4e45a88e7940441412be8b63520c06ae2993b2edb0e5cbe98331248ba",
+      "size_bytes": 16298
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/2b_failed_breakout/BTCUSDT_1h_labels.parquet": {
+      "sha256": "0d98d562233200c996a1c7ddefa5e6a017c5f2fc245644733de166c31592e9fd",
+      "size_bytes": 31978
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/bollinger_keltner_squeeze/BTCUSDT_1h_labels.parquet": {
+      "sha256": "4dca3c63164b178f3eaec5cee955a95018bc6b45aca3707ba9e0eb6d0d1d02c5",
+      "size_bytes": 119597
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/breakout_failure_reversal/BTCUSDT_1h_labels.parquet": {
+      "sha256": "a5a3bc996c5b76bfe04506443eebd018c41dd874eb5647c96c896981cfeb4f87",
+      "size_bytes": 21428
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/breakout_quality/BTCUSDT_1h_labels.parquet": {
+      "sha256": "8b0fe58a74672b3d4174efa3d0ffbf7ff8bf6de9d99802b3739e46dcbdf4168b",
+      "size_bytes": 18813
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/breakout_quality_5m/BTCUSDT_1h_labels.parquet": {
+      "sha256": "8b0fe58a74672b3d4174efa3d0ffbf7ff8bf6de9d99802b3739e46dcbdf4168b",
+      "size_bytes": 18813
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/donchian_breakout/BTCUSDT_1h_labels.parquet": {
+      "sha256": "fcab9486f60c9e7ec6a14e91f9fbc6a0867edcb9e9c159cae799a468d539f5ac",
+      "size_bytes": 96991
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/ema_dynamics/BTCUSDT_1h_labels.parquet": {
+      "sha256": "cf1027556bbeb0a288a540553b89f6327ffe699aa833f0eca4ba50656e3277f0",
+      "size_bytes": 56544
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/ema_transition/BTCUSDT_1h_labels.parquet": {
+      "sha256": "5dc259854e92128f1eaffa120372e5ec4ab29f5a0ebe59e78eaf082a3a8e6cd0",
+      "size_bytes": 153254
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/excursion_payoff_forecast/BTCUSDT_1h_labels.parquet": {
+      "sha256": "004b03185b9330bf6c92d0786fab4fc9d7b458e7963a58696319ef776e9281a4",
+      "size_bytes": 4904576
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/expected_move_magnitude/BTCUSDT_1h_labels.parquet": {
+      "sha256": "913c0e232f61ec59008ced4f350cd9c9128f3d9e887dd8df6c1eaefe4894db1d",
+      "size_bytes": 709696
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/forward_signed_return/BTCUSDT_1h_labels.parquet": {
+      "sha256": "ac5111d3f49dd3099f12175ced32cde73c238c9aaef525ffc8af445d164c0ac2",
+      "size_bytes": 1922620
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/gann_swing_remaining/BTCUSDT_1h_labels.parquet": {
+      "sha256": "bd1ff518f34fdace72b547785e76d20a65c30d283ecab114e1479467137117da",
+      "size_bytes": 161972
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/htf_ltf_swing_alignment/BTCUSDT_1h_labels.parquet": {
+      "sha256": "004244fa26df0222e44d0068cd61d6d9387d83caee5e63dddb16dee8e67225c7",
+      "size_bytes": 185263
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/htf_trend_ltf_pullback/BTCUSDT_1h_labels.parquet": {
+      "sha256": "6153493a5f9d1fb03e8c33d5989237c33309e68f5f60703c8cd9488feaa2c690",
+      "size_bytes": 82025
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/keltner_breakout/BTCUSDT_1h_labels.parquet": {
+      "sha256": "c8b912775d43c06c674c8d565530f6d2a138e97aefcc93017dbaa3d3c60116ff",
+      "size_bytes": 283772
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/macd_momentum/BTCUSDT_1h_labels.parquet": {
+      "sha256": "9b8651a9b6c5a4ad98b518d9b6c2ade067978101fd3ca5bc9ac5f0dda7769721",
+      "size_bytes": 80559
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/market_regime/BTCUSDT_1h_labels.parquet": {
+      "sha256": "a7719795c471421f2c83d0669ed2b873cc6612b3e79d8630ca28655226ba5494",
+      "size_bytes": 165116
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/multi_indicator_confluence/BTCUSDT_1h_labels.parquet": {
+      "sha256": "6521b2f77f29086c2274a238b329d4a95bd632b9a7b7121bdc471cbc280231a5",
+      "size_bytes": 23817
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/next_candle/BTCUSDT_1h_labels.parquet": {
+      "sha256": "882b04c6eb7a91f0a1a9efb79d64b3ab4f9471146e0eca5f05211946e014ec60",
+      "size_bytes": 738033
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/permutation_entropy_regime/BTCUSDT_1h_labels.parquet": {
+      "sha256": "5d92908a289350448a02293b7a418d9df07c1f55ccbf46fc6d7d47c54946a3f2",
+      "size_bytes": 145183
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/pivot_capture_timing/BTCUSDT_1h_labels.parquet": {
+      "sha256": "0a0d54d014fec0789a6fbecb79cb32cb4373a668cd7d4547c2527fe5dbad10b8",
+      "size_bytes": 82717
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/pivot_reversal/BTCUSDT_1h_labels.parquet": {
+      "sha256": "571239791d1f9d92622d94154b73389dda4d6b467b2cc5e6d24ff3e740e84492",
+      "size_bytes": 79755
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/pivot_sr_wick_rejection/BTCUSDT_1h_labels.parquet": {
+      "sha256": "1e3ea7cc6ad4fa447e94b3bd93844b20163e6bd8bfc7067a989ed68f633c6540",
+      "size_bytes": 362209
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/range_breakout_retest/BTCUSDT_1h_labels.parquet": {
+      "sha256": "19eaaa002b4a514a2ea97d60640ece6923d43fd8b4f0f1e9fddbf394cabacadb",
+      "size_bytes": 16414
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/realized_move_window/BTCUSDT_1h_labels.parquet": {
+      "sha256": "09384f0872ab6068739bfdccfae8466feda3bf3524db2bf9f188fc61d8447c0a",
+      "size_bytes": 1020859
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/rsi_reversal/BTCUSDT_1h_labels.parquet": {
+      "sha256": "0bc8349f94ea226f35738af45e07c7518e2135344a8f4bd20048ef26d9f7f7b1",
+      "size_bytes": 7384
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/session_vwap_mean_reversion/BTCUSDT_1h_labels.parquet": {
+      "sha256": "65cb08246421b9fa5ab1285c02022af3f528f254aad2ff3dc0f7b9abfffd1a0d",
+      "size_bytes": 146661
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/slot_rvol_impulse/BTCUSDT_1h_labels.parquet": {
+      "sha256": "574496cdfd6f960af954f8f1b52c3267bc1bcf9e91cc91ba2ffe7ca306077009",
+      "size_bytes": 101829
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/sr_breakout/BTCUSDT_1h_labels.parquet": {
+      "sha256": "714ff3a3329c2cdf4ecaefdfa8d89180da005cd702e6aae7bce5380bfbfeb98d",
+      "size_bytes": 84150
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/supertrend_continuation/BTCUSDT_1h_labels.parquet": {
+      "sha256": "e0b4013a6e81ac5a834b1fa78fd69bd352f386ec9a07233a815fa380f6eb775a",
+      "size_bytes": 4068
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/sweep_reclaim/BTCUSDT_1h_labels.parquet": {
+      "sha256": "42afaf124a71a0212965c77de523a2d2fa8ea3f6334184b6679fee29b3921c83",
+      "size_bytes": 125459
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/swing_amplitude/BTCUSDT_1h_labels.parquet": {
+      "sha256": "1b363354607deb11dd41a54a3bdeae3098957187002c9df12c2455a1ab9d4bee",
+      "size_bytes": 731244
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/swing_exhaustion_probability/BTCUSDT_1h_labels.parquet": {
+      "sha256": "938b05e3ac919d1b44cade901a27fb5e611bbfa676df98422162a6f9c048e28a",
+      "size_bytes": 159242
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/swing_reversal_continuation/BTCUSDT_1h_labels.parquet": {
+      "sha256": "d0bfab82b490303fd8c12166755694d4e37d212f9c8a46eff46327491d272311",
+      "size_bytes": 87278
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/trend_pullback/BTCUSDT_1h_labels.parquet": {
+      "sha256": "647a6084866921ac473560dd2eb072f209e41c72b08828555f35c5bedb05f2d0",
+      "size_bytes": 81889
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/triple_barrier_outcome/BTCUSDT_1h_labels.parquet": {
+      "sha256": "8bee3ac961cc616d493929d204b8c549df5044feab157130420f906b052249ac",
+      "size_bytes": 167407
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/triple_barrier_outcome_1d/BTCUSDT_1h_labels.parquet": {
+      "sha256": "67dc7c27253861baa79b6f3f02f3835c4617fd2d60f05fc107e80daa8d18253b",
+      "size_bytes": 148604
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/volatility_expansion/BTCUSDT_1h_labels.parquet": {
+      "sha256": "28737e87113dd33a6c74e872507fa7eb70969da224acd5d4010bed66ed19c0d6",
+      "size_bytes": 2490547
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/volume_confirmed_breakout/BTCUSDT_1h_labels.parquet": {
+      "sha256": "706052766d398559b25162bbb1ba24bfe984ae231770ef2037fd8c39fd432793",
+      "size_bytes": 12958
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/vsa_climax_absorption/BTCUSDT_1h_labels.parquet": {
+      "sha256": "81aeceadbde8678c870e83d6c71ae127da111e3c5fa872211eafde8d80484a59",
+      "size_bytes": 7078
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/vwap_mean_reversion/BTCUSDT_1h_labels.parquet": {
+      "sha256": "14d73c3b58d4cf987b1a9157c441fcaff07c495b68cc5f93fa82dfb5729fb14d",
+      "size_bytes": 703531
+    },
+    "/Users/julesdevaux/.openclaw/agents/chronos/workspace/LABELS/TX_20261024_8500_R5_ALLFAMILY_CAUSAL_LABELS_v1.0.1/vwap_trend_continuation/BTCUSDT_1h_labels.parquet": {
+      "sha256": "be9508239fa52bea03109c781f4ddde51c17f93b80158d4d5225bd19eb6bd873",
+      "size_bytes": 282455
+    },
+    "/Users/julesdevaux/.openclaw/agents/sublime/workspace/TX_20261110_001_SUBLIME_TX339_STAGE3_QUEUE_ENGINE_V9_1_R9/CONTROL_R4/COMPLETE_SEMANTIC_BINDING.json": {
+      "sha256": "7cf7e1f28376f9e65c3f37cd151c6eafe96cfff6449df47bf0fbfd09915fcc28",
+      "size_bytes": 5392829
+    },
+    "/Users/julesdevaux/.openclaw/agents/sublime/workspace/TX_20261110_001_SUBLIME_TX339_STAGE3_QUEUE_ENGINE_V9_1_R9/CONTROL_R4/STAGE3_EXECUTION_QUEUE.jsonl": {
+      "sha256": "2102f60920ad9b6e389d5c3f893898e9423129f29dceadfee18df82795f04282",
+      "size_bytes": 22840979
+    },
+    "/Users/julesdevaux/.openclaw/agents/sublime/workspace/TX_20261110_001_SUBLIME_TX339_STAGE3_QUEUE_ENGINE_V9_1_R9/CONTROL_R4/STAGE3_NO_FIT_LEDGER.jsonl": {
+      "sha256": "81117ced747de0eb44347fb7a38538967e5e14587ab7fb3f69f6c46f48d88157",
+      "size_bytes": 914555
+    },
+    "/Users/julesdevaux/.openclaw/workspace/DATA/historical/BTCUSDT/1h/compacted.parquet": {
+      "sha256": "cd79b648522edfc79feb780ad4226d691843a35c2bf7359666f1f29cff4fc0e7",
+      "size_bytes": 1449270
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/CONFIGURATION_CORRECTION_OVERLAY_V2.jsonl": {
+      "sha256": "0baa198454015b4b7befe715a39358944761643a3d199e4ec6e350fb4b9b727b",
+      "size_bytes": 203821
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/RECEIPT_SHA256SUMS_V3.json": {
+      "sha256": "94b5eee43c391ce77daee550918bf1038e24ea1a8966fe2d0cc79ef58c9e3689",
+      "size_bytes": 107171
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/RECONCILIATION_V3.json": {
+      "sha256": "61590bef1c5d2135104b89102ee2993d6bdd6f81e5900c9f408a71138ebfc7d3",
+      "size_bytes": 328874
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000006.json": {
+      "sha256": "f1fde513bed5fd6f8f6b6d5ede31ba93e33006e3e2b302b9f488564107bba9ed",
+      "size_bytes": 2816
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000007.json": {
+      "sha256": "2b34fb12aa10977f29ed90b949d3ffae4a1675abd0738e54aa8c14944eccfa03",
+      "size_bytes": 2965
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000008.json": {
+      "sha256": "a42e84e55f7e33a49864e9b724997057e8358f9bc06f1b8d6b9ff9bba2a695bd",
+      "size_bytes": 2812
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000039.json": {
+      "sha256": "c56f0038870069379513666b41ce710ca8fc998e0b61c8334a222b16b47331bb",
+      "size_bytes": 2814
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000040.json": {
+      "sha256": "79294afe8b465b75cdca391848f57813d3bd20a20a8d65e13270be7377a4236a",
+      "size_bytes": 2959
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000041.json": {
+      "sha256": "b9dcb8f3a322f02d4a74a302b3bcea27123de11b6469de2565347841c19deb96",
+      "size_bytes": 2805
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000072.json": {
+      "sha256": "8a1e3810549721b8899a9c2bbaf2c5636e7721eb32ff1c3cba8aa53faf2ea706",
+      "size_bytes": 2826
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000073.json": {
+      "sha256": "f81b561b3f077e6c4a3ebeb71d7e7a3fada82f17447f8775180bfc5b156e155f",
+      "size_bytes": 2948
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000074.json": {
+      "sha256": "603327d62ddb3dc2f45e8ef549b25d841b6b2ab6f24d073250508d85a46c34c2",
+      "size_bytes": 2815
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000105.json": {
+      "sha256": "df9bb37e6b30c2ed62d279f4a4e12b8e887225f2565571a8735396094d378dd3",
+      "size_bytes": 5476
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000106.json": {
+      "sha256": "4f12a548831439086f2907c0edcb79cfff444aed8fe36da3891f5221d6cd5f71",
+      "size_bytes": 5474
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000107.json": {
+      "sha256": "94df20aa529b34fd8e366e969417a88f73892987487be24608e5c27c47f87d61",
+      "size_bytes": 5484
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000138.json": {
+      "sha256": "9ace143727b8710375657b51cf6de5c974a34a1f4d13c5612b024786e6daff8f",
+      "size_bytes": 5446
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000139.json": {
+      "sha256": "832d68592d26cc43ad3f7f7443651a4ec06d7a5393ea7ae7c0af66f4cf01274a",
+      "size_bytes": 5463
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000140.json": {
+      "sha256": "9ad04010492600168e0ba334286a0251447d9e68e58445cf261c893a8cc23275",
+      "size_bytes": 5465
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000171.json": {
+      "sha256": "33bc1f7459aab7e8d1be53752998e3b7395f48fb3ca015bfcc95c9676ef98dd8",
+      "size_bytes": 5419
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000172.json": {
+      "sha256": "9c8cbfc348836f4d553b35e5e81d30a9ace06ed28f0bec26a10f2a1bdba5ea7b",
+      "size_bytes": 5401
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000173.json": {
+      "sha256": "0d19c51edfba646860dac8d04d544d8d281c0dd9e58e5fb31a3c5bc4f21310ce",
+      "size_bytes": 5470
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000204.json": {
+      "sha256": "2b5bf08cf709dd850a19b93d1437114fdfd337dc9efa29da2c62e560052212eb",
+      "size_bytes": 4145
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000205.json": {
+      "sha256": "284723bbee4fc684c29b60f273499c19456eddc1b25a9141fc2b1530d13becac",
+      "size_bytes": 4324
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000206.json": {
+      "sha256": "a3e917a00bf88bff60af329ac8adb2bac0615df6e9039ae39bbb5dbc46f1a024",
+      "size_bytes": 4147
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000237.json": {
+      "sha256": "c39d5645816666fa6e0f1edc092c6abc4c26ece8a0410a9fe7ce2fb95ef9ae25",
+      "size_bytes": 4263
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000238.json": {
+      "sha256": "3849ec9e2ab9afc9f72da578e41d8768b8b1d90f8ce444f8293e03ff673dbfb6",
+      "size_bytes": 4358
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000239.json": {
+      "sha256": "9ccf3ea34093247aee62935dcfac5ab6ecb590c0c334356dd520e730e5de1d04",
+      "size_bytes": 4210
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000270.json": {
+      "sha256": "c1e9e1e98437c161cf220e810111eec2a1d3cfe7b2d1b3bd033560061d4c2c9b",
+      "size_bytes": 4313
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000271.json": {
+      "sha256": "482595abcdc3130ab9aae2e45c6c1125303737206d50af1410301f8e8260fd4e",
+      "size_bytes": 4363
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000272.json": {
+      "sha256": "510ffa4d275fdcc786559e2eac7571bdb6c99c2958d239ace1e4d4d45948150f",
+      "size_bytes": 4264
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000303.json": {
+      "sha256": "13ea6a4302b743211e95f5605df22db3aef1fde95be82f5518e688097cbc0a94",
+      "size_bytes": 12289
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000304.json": {
+      "sha256": "c32b98559863f4b8e9814cda1e5edf76b082f5164c177441fe8f1cad438c7ba2",
+      "size_bytes": 12173
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000305.json": {
+      "sha256": "4687d193f7f95725cb394a23c0053ed3e5c7b1f75c76c41e638df946c2b12352",
+      "size_bytes": 12339
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000336.json": {
+      "sha256": "9c9f91a1ee1878ccbc7e7978353fc7eb994d2b503b6b02f959ce0a78e51c6f64",
+      "size_bytes": 12306
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000337.json": {
+      "sha256": "566e00dcc96c905849d48daf24199c0f97675e3c127743f8d4b05daf7d0adaa9",
+      "size_bytes": 12098
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000338.json": {
+      "sha256": "4f3cfd3fa33912d857321cfc4ad6b241a977b5441f76944b49fef92ebcfa08c2",
+      "size_bytes": 12298
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000369.json": {
+      "sha256": "1280e49ade105e850d04982a495a9243784518b9bbac4221c84e4212e7fe2c3b",
+      "size_bytes": 11908
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000370.json": {
+      "sha256": "7f45c4e0607facb55db23a64ab93b14ade0cb8ee12d4498f7efdba45f7ba5f16",
+      "size_bytes": 12162
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000371.json": {
+      "sha256": "e836c994234b42f2ef17d3180c71f5cac9cebddba1554c056beaa94e7592cc6f",
+      "size_bytes": 11929
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000402.json": {
+      "sha256": "ac8b0256098bce2350549734737f02c6c0bb8399ef7a030318009a9d95c1d408",
+      "size_bytes": 4400
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000403.json": {
+      "sha256": "341967fac1938fb75e3e0bced1c2f9cb6607a5d5a54e6a114974b315f3c23cf5",
+      "size_bytes": 4520
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000404.json": {
+      "sha256": "94e867fc150265546d7e7ac3e9b51524fbe3e9077c8a453636f69f1e7be82f1a",
+      "size_bytes": 4391
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000435.json": {
+      "sha256": "dbcfd3d7ec1df89e9d8ff6025eb3157759ee680427fd483f53efb20ae57974ea",
+      "size_bytes": 4527
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000436.json": {
+      "sha256": "fa0ffe90cd3ec402255cfec54e8af453236d7e5dfa4b564eb5419a3e63eb3c67",
+      "size_bytes": 4620
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000437.json": {
+      "sha256": "6639872ea7d438b1628258dfe22ba2f2a3a68e8cf25645a2d27a61d571207798",
+      "size_bytes": 4553
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000468.json": {
+      "sha256": "7acd9e3625cd4d10ab2197241475102c5b0bc56994b38aa5ec2797b80875df68",
+      "size_bytes": 4562
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000469.json": {
+      "sha256": "f52daea522d125264767e475b883fdee751f9f24f7b94b6f09720c2165a188f2",
+      "size_bytes": 4638
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000470.json": {
+      "sha256": "c6aa23b5e4ce06d3ef2946dda24c8bea44f84f6986ee7695c9a8b6b62a9d198c",
+      "size_bytes": 4595
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000501.json": {
+      "sha256": "d9a4d83b3e099ac4d8cce2aef87acbd85dabecd346f7e87eacf9b0b6c9280811",
+      "size_bytes": 13223
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000534.json": {
+      "sha256": "b790a4128487416357c59bcfa8b2e4215eff883d37ecfa2386bb788b30ccd395",
+      "size_bytes": 13226
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000567.json": {
+      "sha256": "cdb0486a29aea7da234c1610916859bfe40033e7bed766d9447c3ac569d0ff96",
+      "size_bytes": 4266
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000568.json": {
+      "sha256": "c4a591a72768f822ea216b00b7003df83c0a7c9d84f09e45f2a049a3820a35d8",
+      "size_bytes": 4389
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000569.json": {
+      "sha256": "c09962aa1009b01a20ef8b6528f8f8db668b2fbb0e33b58a886f58fc53719cec",
+      "size_bytes": 4268
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000600.json": {
+      "sha256": "7ac114d75fcc9b4f524207714f46f5ac30d247ceea3156caedfe259be4d657f6",
+      "size_bytes": 4267
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000601.json": {
+      "sha256": "990d0cdc222513980110eb70288691098dd48e3a535edcf210320f628b7a830d",
+      "size_bytes": 4386
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000602.json": {
+      "sha256": "20c11f29b9717be1a5059cc0b1b6f5a2fe1fd395a8b5a8ad0d9bead0f0ae0432",
+      "size_bytes": 4273
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000633.json": {
+      "sha256": "2bc713869672de59d5a869f9bff585ca19582cad81048614a2f1615a10f5b8b3",
+      "size_bytes": 4269
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000634.json": {
+      "sha256": "916e43a2174de37caf5210ae5df3afff1a95c59fb3d94764fcd31c17dface625",
+      "size_bytes": 4393
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000635.json": {
+      "sha256": "5a02e40e889b941e2f4cd21b1038406a2d17f4d09a5c7bdd1c24e2296f295848",
+      "size_bytes": 4275
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000666.json": {
+      "sha256": "2cc45396d42f17404b8ff4324387bc690736d2d8c09ae6815799368aa170498e",
+      "size_bytes": 13314
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000667.json": {
+      "sha256": "8624c7b48d07f22001c7ba9e338375fe9287edb72355a9ade441e894029db4c2",
+      "size_bytes": 13198
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000668.json": {
+      "sha256": "f66aa342a70d18209bbd94490b7f1cda4071d9bdc90191aae4d785fa355b44cb",
+      "size_bytes": 13385
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000699.json": {
+      "sha256": "f4e2e556e79d1a7d7dc1d0e1d8e39df8c5297855a45049bd38249a97508ac2cc",
+      "size_bytes": 13241
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000700.json": {
+      "sha256": "9dd5b55eee4e0847df43ca35162d3cef46ebc0458d6e4affde3d2f694253b1c9",
+      "size_bytes": 13217
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000701.json": {
+      "sha256": "9516d81054a6d2b9c0a792ff910c0f804a4e6ff2e308b1856784dfdf566f507f",
+      "size_bytes": 13255
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000732.json": {
+      "sha256": "0506bf88c6693195d24b5758c8b2bf24f313f782564d0c0e65b8a9a3c5a90e05",
+      "size_bytes": 13193
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000733.json": {
+      "sha256": "c79e6d4f80fd0384b250639be71fc0c57fb417fdf9e2011172704258e626a604",
+      "size_bytes": 13082
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000734.json": {
+      "sha256": "dde44ddb3a9529e4c527351eabdbb4760788fa2c843c26db635a361dc50b82d5",
+      "size_bytes": 13242
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000765.json": {
+      "sha256": "3ad4dba05455172e6123c55905c0c5bbba5bb4ee950c0cf4bfc099eb01257b1d",
+      "size_bytes": 8341
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000766.json": {
+      "sha256": "e3e5abbaa34b2226d8b25d2ca4100d71a229c6833812a50819bf33de16c8bdf4",
+      "size_bytes": 8463
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000767.json": {
+      "sha256": "6d6ba818484a33f927fdcefbc9cdba946f8cdb6e2372ac4458b9cc081414976a",
+      "size_bytes": 8344
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000798.json": {
+      "sha256": "906dd6604302687ebcfda6772ff6e85b39cc22e42cf1b4cdaeda6b7ca17adb8c",
+      "size_bytes": 8338
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000799.json": {
+      "sha256": "9ad8c3705b2f95ea866f8f959268e3c1e2bc9d1bf5d4953d0121833184f0136a",
+      "size_bytes": 8462
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000800.json": {
+      "sha256": "48d00ad30ce2a03cded37150fbb463e8465dac4f5610b7f787d15e17671d869e",
+      "size_bytes": 8343
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000831.json": {
+      "sha256": "00c7aea11e0766ce2c42ec29fbe715c5269c92937970e89667a8a6af4a4af621",
+      "size_bytes": 8342
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000832.json": {
+      "sha256": "22836134f427242e540bd6dc856657624febaf24e0d2c0047cbcfb1fe69eeb9c",
+      "size_bytes": 8463
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000833.json": {
+      "sha256": "edb5076cf86298957c49244c63dc08ab8671cd3600a3e3fe424c56f12e9ba6df",
+      "size_bytes": 8345
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000864.json": {
+      "sha256": "836eb3018bd16c13c092792125e1d67a387c6620f36d741e1058b8b7addb9c2f",
+      "size_bytes": 33749
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000897.json": {
+      "sha256": "b7b7afdf7f25f82d07f18df059061bca6f480d83440f1585464f2756f7e3b792",
+      "size_bytes": 33492
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000930.json": {
+      "sha256": "910e2e7f616d9676166c888916f39167e10056498d0062096110b49084942833",
+      "size_bytes": 33228
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000963.json": {
+      "sha256": "736d28b9648f107249b6a97f42ce5be296bf070573ce46a35dafc907fabfc5a3",
+      "size_bytes": 4360
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000964.json": {
+      "sha256": "8c7093ec83b081982c02caebf8b0ee00502fcbfb74715b6842b5cf3b8fd4007c",
+      "size_bytes": 4423
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000965.json": {
+      "sha256": "95421b45d3296b5a0b1828aa3d10675a1cbeae5bf07ecd861547550d35d683c4",
+      "size_bytes": 4391
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000996.json": {
+      "sha256": "2b86701ac57ffb8dc91b85fc10840cabda893d098ba756bbfd0477be1a8dee82",
+      "size_bytes": 3912
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000997.json": {
+      "sha256": "bac25853c54505491d2df020123baa2e4991c18d110f6ffef8483ce59e696810",
+      "size_bytes": 4033
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/000998.json": {
+      "sha256": "9eec8c69f8729bed71d37c0af5faf3e5804551e1dacda1f87ae4e7e06965852c",
+      "size_bytes": 3916
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001029.json": {
+      "sha256": "149428eb71eb50166f3459416fbc50ab6d1393b6f3f570e9ebe2a97a02737238",
+      "size_bytes": 3913
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001030.json": {
+      "sha256": "5ff957f95ad2d117e72fa8a6aa0794fbc5d6edbfa7f6920ba18544212c808078",
+      "size_bytes": 4034
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001031.json": {
+      "sha256": "6ca976efe58923dba4eeb0a0207fd9f25b12a50ae052b54fb754730170b40bb6",
+      "size_bytes": 3916
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001062.json": {
+      "sha256": "d3fe7876aed60706b6eff96312d9628862f7788d68a3f907a70c98d82a86ab9b",
+      "size_bytes": 3914
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001063.json": {
+      "sha256": "8112ef6275b98435f1aeb0b197e3100526e726462eb59a2dc0d8347e9aa97948",
+      "size_bytes": 4038
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001064.json": {
+      "sha256": "97cacb697eb4b06d2e87c95d87e77f14f6cdb0c34a0902f522d30882ecfc061c",
+      "size_bytes": 3920
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001095.json": {
+      "sha256": "c2771d25fc053bf56ae87aa4f59f4889e048058cf0c34518b54b67d543e91730",
+      "size_bytes": 11588
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001128.json": {
+      "sha256": "e173c1a1dfb60c56d8549eb7693e70dd85047cbf6e9227e14a78dd788a77e560",
+      "size_bytes": 11423
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001161.json": {
+      "sha256": "2ee420a9f4b2416b10d7eaffed92c9d9c893a9594e77ad8c42e97d97b584643a",
+      "size_bytes": 11499
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001194.json": {
+      "sha256": "e0d3ea924b1365af67960784e2a7261b53dd2c7b30ff0dad93484b9256482ec9",
+      "size_bytes": 4774
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001195.json": {
+      "sha256": "cce3bed320fa4c8ed3cb37b8d9629d458ac8ea9eab15a3a4cbfa1d62b0a9a33b",
+      "size_bytes": 4897
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001196.json": {
+      "sha256": "f53ed9f8882540db69ae20028acfe08a6fca946468b421e980d7213e2429b963",
+      "size_bytes": 4775
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001227.json": {
+      "sha256": "75460aa2f7189e81ed7d4f8d4947551600ef574a8edf9a08965b2b40ff995237",
+      "size_bytes": 4774
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001228.json": {
+      "sha256": "f0939b7efdea5fd56fb9df776166df3df3dd3d656c6373dd6b6aea6396ea3ce3",
+      "size_bytes": 4897
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001229.json": {
+      "sha256": "8208a3bc1f9d597abba2a91b1dfc1a9e3cadba2b36544332eaeb4135a10f8dd4",
+      "size_bytes": 4779
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001260.json": {
+      "sha256": "8141c9a2c74c85902390e8c1b8aee387d57e034ee42adee104055e250b420a84",
+      "size_bytes": 4777
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001261.json": {
+      "sha256": "72718a2fed92a6138897b93d5af508012ee531450b9f9ec351f0dde8c4d8583d",
+      "size_bytes": 4900
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001262.json": {
+      "sha256": "d687f81c57d37db8d501257d3122fd7b2377df982d7b42ed489c6b24c023846e",
+      "size_bytes": 4781
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001293.json": {
+      "sha256": "718f68ff75928f7c5f883f3ef57cbccf50bf0da994f710d6e6145963876b4a3a",
+      "size_bytes": 15875
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001326.json": {
+      "sha256": "64dd338e03611dcf60455aef144267501428aa3da490b140916ee8e6fedc20ac",
+      "size_bytes": 15902
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001359.json": {
+      "sha256": "1f659e0d858fccbcce2f0a55aa4e6ff80acf3531117bb1ef8c95894cf0e77920",
+      "size_bytes": 15773
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001392.json": {
+      "sha256": "4ec9c432766a9ffd48236945755befeb5c091eb0dd972f1709f051e95992dfd8",
+      "size_bytes": 3559
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001393.json": {
+      "sha256": "4da0c15a84f8a052ebe0feed1c25c4625d3aedb19f326b917fdb81d18ebcdcb0",
+      "size_bytes": 3679
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001394.json": {
+      "sha256": "ef94cd956e5a1df04c732b9e4bdfdc81c81199633327c1a23568c38debfea2ee",
+      "size_bytes": 3564
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001425.json": {
+      "sha256": "5bf01aa6d3547078aade34bcfbcb0f9825b3e2f082a2845190f92fdd588bee4c",
+      "size_bytes": 4903
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001426.json": {
+      "sha256": "b5f0462eef82df9328433877de91fdd2c44bc63ac43b8d7bc1536c337478d670",
+      "size_bytes": 4916
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001427.json": {
+      "sha256": "c102159a0cc3211aec502ac60c0689e7b468ebac728978f28d81a2086b7dbcb9",
+      "size_bytes": 4863
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001458.json": {
+      "sha256": "a805e100e71f6e423b6c8e8ca2ea4a5cadbe09b83e6e3b93c61724852528bac0",
+      "size_bytes": 4899
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001459.json": {
+      "sha256": "a6e516baaacdda3473305fe346b80a3abf915ae4a0810180885dee83076722cb",
+      "size_bytes": 4891
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001460.json": {
+      "sha256": "5801d7f6a8de3297910cfe326adadf6485f34d04039c2544a2a63784f8a5f46c",
+      "size_bytes": 4856
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001491.json": {
+      "sha256": "1c47cb028cced3b1e5a2f20dbc24556ef94b4f2a3faf5a0fa244c5a31f852f64",
+      "size_bytes": 4902
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001492.json": {
+      "sha256": "c402220309360b0ffe1e8e7f8bc8c84ebbd361f5d083ae56be22fc41e5d57793",
+      "size_bytes": 4885
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001493.json": {
+      "sha256": "30c0c18d9d898e50f575ac3d88966ec5b5f8580eb5c255cd7d709d3534160f9e",
+      "size_bytes": 4889
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001524.json": {
+      "sha256": "b6d2e36ecbeaaad4d745365f907619c6365cd36dd7d4cc9e14fe08735331b06b",
+      "size_bytes": 4905
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001525.json": {
+      "sha256": "8ac301b26d2002a1e4e3738806bf397367398fc6e2b30b1327a6f8ad46aad97b",
+      "size_bytes": 4852
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001526.json": {
+      "sha256": "8483d106ab068ce653b6a6e9aa8b66efbe10915b95f67ebdf465ca291f755ef1",
+      "size_bytes": 4913
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001557.json": {
+      "sha256": "3c464ab63b000728173088ea71a3517abe6eff771d3dd3b6b1b22107088909f7",
+      "size_bytes": 4863
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001558.json": {
+      "sha256": "98ea5474c416eac8f2924cada2a3e87bbe5be323241b502af8cd5d1907f5fd0e",
+      "size_bytes": 4827
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001559.json": {
+      "sha256": "4835d46865d31b4f2ab56f32933b5e1b7a3b6c81335d471f478cff7ab03acc47",
+      "size_bytes": 4900
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001590.json": {
+      "sha256": "d64f225d4de1fc3b460ccf7c1be456e28e95b230baef953c73b951992dd5bb59",
+      "size_bytes": 4864
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001591.json": {
+      "sha256": "44a62c3cd7716c908dcb4a8211aecad9100b13e5ffc3b0702c07a0142f9f2286",
+      "size_bytes": 4811
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001592.json": {
+      "sha256": "34329ab687b2fb6e7ebd4a8dd59e4fd041bf4d4aa15f6a7b7e5a33c9439067a2",
+      "size_bytes": 4889
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001623.json": {
+      "sha256": "01b1de74815c2d22cfcd6f86d0189dd39b93a74387acc3e8105aa06cbadc7d4d",
+      "size_bytes": 26538
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001624.json": {
+      "sha256": "b1b18519c8e2612c32eae04a823eed8ad738de1d2e18e7c1cd3cd25a4dcc4d0c",
+      "size_bytes": 26889
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001625.json": {
+      "sha256": "a41c5366ec315a1381f8d691b9f683d41ae7cf7f16a6c67de034eefd07bc94f3",
+      "size_bytes": 26627
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001656.json": {
+      "sha256": "d64a11fb25115f216b2c2f1b455a803c06a57a1073309b65314f28dd86512962",
+      "size_bytes": 26673
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001657.json": {
+      "sha256": "c20a33e4d501f9ed470945a4cdbea8597faebf7057e15b40cbf7fbd92079bf49",
+      "size_bytes": 27068
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001658.json": {
+      "sha256": "a58d9797dad2b43f667db173366b94e5e0e73bcbaabf31f14daa1856d31bdf28",
+      "size_bytes": 26374
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001689.json": {
+      "sha256": "33718bb83a750c6dba1025c6f4796ae88e3e357628964f3d653f5f85b344bf0e",
+      "size_bytes": 26179
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001690.json": {
+      "sha256": "d5d693f63fe229b1309dc154ee2315b7c2d5c33fbc446cfb4cb475adcdfbb01b",
+      "size_bytes": 27197
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001691.json": {
+      "sha256": "66c234e211e504556c3b7acd87b979da78fd6fdc6aa621827e22322f25b786ee",
+      "size_bytes": 26301
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001755.json": {
+      "sha256": "34e113dc57a60eae2c1a2f11da3762209217c9ce787eee134bc9628e94c81333",
+      "size_bytes": 3705
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001756.json": {
+      "sha256": "2dc621c89cb388e9f901a381185998b181136a72111feb132dc21cf592960345",
+      "size_bytes": 3827
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001757.json": {
+      "sha256": "22525aa1cce23a82b3d2a6b7033d689d0301a3f2af8a236cac60de6a7054f388",
+      "size_bytes": 3705
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001788.json": {
+      "sha256": "653f3a70c78822d938fad72951c8b92ef7cb53dd4499fc0ffffdbdf91115b7df",
+      "size_bytes": 3704
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001789.json": {
+      "sha256": "851a64f42746775dfd9b3f944f54c7a959918759d02ee810054062dfa9ac76af",
+      "size_bytes": 3827
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001790.json": {
+      "sha256": "97939ca2bf2edd5a08b9d49e09ff9eddf45026dc90e43891521610e8a5e904da",
+      "size_bytes": 3710
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001821.json": {
+      "sha256": "2fde9d8f3a1c46c7f2e257ad367c04c8870afa4769e462a0eb87c9ea090ec10c",
+      "size_bytes": 3708
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001822.json": {
+      "sha256": "6bdeb51df9f58b29ac9a0d7b13091148472d557b26e7eb150db3508f94e9375a",
+      "size_bytes": 3830
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001823.json": {
+      "sha256": "47c1fbca7e25b926695883ba32448976977b7bb4fc9c1c10ac53f50a5dcc9eb1",
+      "size_bytes": 3711
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001854.json": {
+      "sha256": "fd6e4399214e64e7344cc1b616396c66fe6c384d04c6ae65cd6777df706fc35b",
+      "size_bytes": 10580
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001887.json": {
+      "sha256": "61945ab4a3738d1d3b091beda1ca461d709f77ce2cc93d419a70f077e2521520",
+      "size_bytes": 10510
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001920.json": {
+      "sha256": "b30b8b746d9c61a97fdc9c6b7d129722f7e69c456d2328efa2fa99f0aa714b2a",
+      "size_bytes": 10446
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001953.json": {
+      "sha256": "326805b7893ed5766b314fa3a9f8912978ca537922113cb67e0c8a02c09c08a8",
+      "size_bytes": 2323
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001954.json": {
+      "sha256": "0ad0becbdb02c9cffd024b57fe7f4b6dc23efd4e282ffe005c83d66511e7c2ef",
+      "size_bytes": 2447
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001955.json": {
+      "sha256": "d0ed611009be18e040de2ee1bbc05b67dc0233488a99cfe220d069dbb1414904",
+      "size_bytes": 2330
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001986.json": {
+      "sha256": "6c22d73fe055e62a2888f4866a0dbb0a55ebffeccd770219d36c43e3269738cd",
+      "size_bytes": 2284
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001987.json": {
+      "sha256": "ca1b07e62459e5bf94169f2b7e62f62e15b4bdfe0947ee3ebe1bcaea633d4294",
+      "size_bytes": 2449
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/001988.json": {
+      "sha256": "7a13a26112bb9a5213e7ab71d1f31ef59a75cddcf43f0ae4b4dd3dee85d6911e",
+      "size_bytes": 2329
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002019.json": {
+      "sha256": "90de098ec128da2dc39d03256f4d99433178d553c5057c3533a8a629306d5a7a",
+      "size_bytes": 2330
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002020.json": {
+      "sha256": "ebcc502c51e3e4fd00b4115026f31c4ce77a0310af745221e890e3ceabc0b21c",
+      "size_bytes": 2449
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002021.json": {
+      "sha256": "4d94066668e11ec00c75eabf3dce340d94a21681e7d6e8de51ac0bd42d9729ad",
+      "size_bytes": 2330
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002052.json": {
+      "sha256": "1d2f2b49e3906744c307c3897c294410f30a7afcca2655100fd48c7a2588f9fb",
+      "size_bytes": 3619
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002085.json": {
+      "sha256": "8f170575840751146e0d8af098c052766c2d0e8734396289a20854d97f52693d",
+      "size_bytes": 3620
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002118.json": {
+      "sha256": "d285106a002ae1c80eab07e14f9f2306223187f96eef9aae01e66847b4c8dfb9",
+      "size_bytes": 3588
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002151.json": {
+      "sha256": "256619a12e934ee0bfdcbdc548d84068a7455d62bdf56a8c0f6c5b7373dcdfb4",
+      "size_bytes": 2635
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002152.json": {
+      "sha256": "d491e7d5d46828971cec72efdce95cbd62e1f2e6f2be7512397bd15b17f37e63",
+      "size_bytes": 2750
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002153.json": {
+      "sha256": "66e014830f1ea25a612897b2cc1ea7835cd7317b79ec116a47105086d89be4c8",
+      "size_bytes": 2638
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002184.json": {
+      "sha256": "a5336fc0f3d042072d7f92890dbbabfe7d2b766d5d44a3b61f9eab3c5a265e3c",
+      "size_bytes": 25893
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/002185.json": {
+      "sha256": "86d60751b61103b3bbb9a5b62da6ab1b5f30db88eddac49f13bdd7e9a816e727",
+      "size_bytes": 1424
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/005418.json": {
+      "sha256": "7e3cbcf81f1f6da2556ec179cf91f4a9663bebf7e82c02a35cd6c1bc89912917",
+      "size_bytes": 114834
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/005419.json": {
+      "sha256": "f1935eaffcc7ce2164d21509e8955c7b8f61af0bb42de469b752fae84690b6f8",
+      "size_bytes": 115169
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts/005420.json": {
+      "sha256": "2976c58341140fe44317add6556082038e43ef6b73b64486ba697361c3361e6d",
+      "size_bytes": 114499
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000502.json": {
+      "sha256": "c746519f3ca5280201d7ea824f10c5ba3b097de88596729a9b3820a885395829",
+      "size_bytes": 13875
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000503.json": {
+      "sha256": "dc6f3d683b81408f0e9b6262ab91d67f83e404fe81b331751c46cabbd6454120",
+      "size_bytes": 13784
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000535.json": {
+      "sha256": "aa3c5cae408540a8b5e7fe407a84c30cf6b1b9412dcc7ea3a9cf4c53a16adc04",
+      "size_bytes": 13878
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000536.json": {
+      "sha256": "ad68877add6c4081d7ddb8987b27e55cc94d7f2880fc07122824bd36154e003c",
+      "size_bytes": 13787
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000865.json": {
+      "sha256": "415e51141ee7314be2ae43371b625bf6efcbc8d27fe04c063ca443227894e8f1",
+      "size_bytes": 34653
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000866.json": {
+      "sha256": "a524d1fcb0965a59b03405aa8be6c2fd6506051778c40ce7d5befab9cae0b39f",
+      "size_bytes": 34856
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000898.json": {
+      "sha256": "a4b37d2d17b964886ed78554150da2b6e18cf68ebfeb217e4688aba8ed8bac2a",
+      "size_bytes": 34419
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000899.json": {
+      "sha256": "2439f2c346fc71c12806b36041fba922e1ccd820ddc4a4022f5dd602d3adfb4a",
+      "size_bytes": 34829
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000931.json": {
+      "sha256": "c22fed577f2221bbe094a82a0f9d17cc7a38d282e5ec9206a59b895d0563ef50",
+      "size_bytes": 34097
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/000932.json": {
+      "sha256": "8803b22cfbf020b62c7e62943effe0b45fc190b2e7176ee7d75da1e4a0392389",
+      "size_bytes": 34474
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001096.json": {
+      "sha256": "28583c73a7f08e4cde0e1ca282afb0a9193b1121f9163994637e9104d8ce5227",
+      "size_bytes": 12384
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001097.json": {
+      "sha256": "3a7244cf65d8206decd27c068a83e1d81d7a4187d3e2ae8c86cc8facea3cf794",
+      "size_bytes": 12524
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001129.json": {
+      "sha256": "e277aa4f7633cdaaaf2c94ded5e31f844c61ee15e9f1001691dfd72ce10fc8ca",
+      "size_bytes": 12375
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001130.json": {
+      "sha256": "efee8d53edff2a9cd4ac3e11fcd66001282ae90a030738d452a0acd2a2819003",
+      "size_bytes": 12415
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001162.json": {
+      "sha256": "5604a816f04815e3d75e311f5fae7ab016418907a1bf0f30244ff8fe0b040bc0",
+      "size_bytes": 12280
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001163.json": {
+      "sha256": "6bf559d8b4cb26c3ca9ee1fdc7208d9be40f3813aee2fc94af20028e9997c0cf",
+      "size_bytes": 12429
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001294.json": {
+      "sha256": "614e9e9261e6fa59f4e300bdb78ef967abebbef62cd4e6c82158eb4627b78b14",
+      "size_bytes": 16795
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001295.json": {
+      "sha256": "b6b24747267be3b16777be9351bdffc34110feba7b14af25098bd55b47ca1729",
+      "size_bytes": 16882
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001327.json": {
+      "sha256": "85a1207e9ac0c63432b0f955cb5834055457b2ddf4bdc6d31cd9d8c6b9f03637",
+      "size_bytes": 16659
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001328.json": {
+      "sha256": "e5be05b08c340aaadd253fb0b26653d275a881e35044ad820ddc57771883e67e",
+      "size_bytes": 16710
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001360.json": {
+      "sha256": "9b5981b0cc4ccf86072490947e69e2c9c86f4e206eb9034a34ab53e17522b7f5",
+      "size_bytes": 16559
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001361.json": {
+      "sha256": "0f3a4e0e37305f87a44ce06fd30f6c8893b187a2cf7eb9847b03216ee2f6507b",
+      "size_bytes": 16840
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001855.json": {
+      "sha256": "d6f5e4ebf53fba02446f75589a38ef7e24c05164e2febf9b5ceda677b5599dfd",
+      "size_bytes": 11379
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001856.json": {
+      "sha256": "1893e888c5aeb489c08a76712cb8cc465a4ebb2044860f9b42d918060edbf43e",
+      "size_bytes": 11544
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001888.json": {
+      "sha256": "89bb22e63d95c4020785d2e18bb2996429d8b81f5a14fd866c6917fe857ce135",
+      "size_bytes": 11322
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001889.json": {
+      "sha256": "48ed16980abe31249f66ee94e6e5fd70e24233944b37adb2f6ac2bb89532496e",
+      "size_bytes": 11536
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001921.json": {
+      "sha256": "c3db11ae4a5b572002561026ac0cf624393512b91e3b26cb70025293025e7f8d",
+      "size_bytes": 11267
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/001922.json": {
+      "sha256": "74d27820e0b29821a0a2048cf9ecc6e703b46a9779df790280b31ee2d46ec1e1",
+      "size_bytes": 11435
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002053.json": {
+      "sha256": "e245f4585723c07cba28746e5b6548ac62c59e9cc8d03a9c62329045da212d49",
+      "size_bytes": 4493
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002054.json": {
+      "sha256": "8cd439c16ac8425774abc1c324bde3840cee440b3c7e926da9d752d4718ac4b8",
+      "size_bytes": 4491
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002086.json": {
+      "sha256": "b038a11748fa458fe0a05f51358430373b2bed46da9475239ca685559a2534f4",
+      "size_bytes": 4493
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002087.json": {
+      "sha256": "4e7ec21497ae8c5b069687284def7d8827078cf3035691dc3882afa6142754a3",
+      "size_bytes": 4480
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002119.json": {
+      "sha256": "3c3b1cd2dc311f139f709671b5892fd981279d9fecfb50b5ec14c58b259b6c9d",
+      "size_bytes": 4477
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002120.json": {
+      "sha256": "0047862d2e9fcce3f470be555c027a910c464e0b267224174c69d62b36ee6d63",
+      "size_bytes": 4467
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002186.json": {
+      "sha256": "699592b6628138aafb42f87ad4359a940d003be2eb8df327a6856b500557e8c7",
+      "size_bytes": 26409
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002217.json": {
+      "sha256": "bfa5b2b6f554ec215b5a126a82dbbca8d764aa2710194045b7a7a7f4184056c9",
+      "size_bytes": 26407
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002218.json": {
+      "sha256": "d8c80dbc4465f4da67d0dffbe5c9c4633c2775855357249ee54d405437193bd4",
+      "size_bytes": 2331
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002219.json": {
+      "sha256": "1b4390961045ce127eb84c94c404a417bceee4dc9db075c32448bf1eabb01aa1",
+      "size_bytes": 26411
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002250.json": {
+      "sha256": "d6261861af9fd5ab27fac34a9b9661fbcf8e884193eb653f7911a84c0d20c1dc",
+      "size_bytes": 26407
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002251.json": {
+      "sha256": "81e999ecf56ee9d89a1427831850260dd23aaadb780416a30585ec79d76a85c4",
+      "size_bytes": 2331
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002252.json": {
+      "sha256": "899da9371c929523f18c211d022be28127c9f2962232657eacd6b5148439675b",
+      "size_bytes": 26411
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002283.json": {
+      "sha256": "24f5a70ae1da798bed779d75e16a415eefe44daa91f840d5b943a9930f10632d",
+      "size_bytes": 2566
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002284.json": {
+      "sha256": "1b231c630f52f12ba99fb30035bc4c65d37aac1001ede4aa72633744c3c62c57",
+      "size_bytes": 2688
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002285.json": {
+      "sha256": "e2e47554e2d4bd7c058ae3e3b7ff66824cf84fb919c7daa93e07bad3589a614e",
+      "size_bytes": 2549
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002382.json": {
+      "sha256": "c718b1efbaa793a9a911cdaf004e49b13efdb9a5da274b3c21c95198d6675885",
+      "size_bytes": 26509
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002383.json": {
+      "sha256": "1c5faed9cce68212fde18e55752154d1f7f3f478ed45644af31e8514def5e2e6",
+      "size_bytes": 26631
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002384.json": {
+      "sha256": "b0b38004106e40fe077c32eb5fbd42fe9f002a8bf6f3ab61b1a678d860195546",
+      "size_bytes": 26514
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002415.json": {
+      "sha256": "addfa2a525b1c355cf7eb81ea541ead471bcf8d668e98509680881fde44884e5",
+      "size_bytes": 26510
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002416.json": {
+      "sha256": "ee0bcdd008428a5609c0ed817dfe746521ff01f00cd9813e9085aa04bda9ec3f",
+      "size_bytes": 26629
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002417.json": {
+      "sha256": "582bc86ef14593aa727525b82da0c0908baa2b4323fb0bb5bcf9a51f84f2247d",
+      "size_bytes": 26512
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002448.json": {
+      "sha256": "afc54f07b62ecc6708e6e722c6207d6565956fe7f490784f436f4ffd516f51e7",
+      "size_bytes": 26509
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002449.json": {
+      "sha256": "0b6ebc2f73462725de86ffe708fcb6966c0505b5a3a1417abb82105b7cb8bb99",
+      "size_bytes": 26629
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002450.json": {
+      "sha256": "b3e7ac6590c62ea0e0e24155e0db686749bff780c6645528558b8a579a0db4b0",
+      "size_bytes": 26513
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002481.json": {
+      "sha256": "c427608068264ae37d8fa79ba0cf879247c30c7bc9dbd48d65fe9969ed436319",
+      "size_bytes": 26445
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002482.json": {
+      "sha256": "236dd9bf61a7d2b56cd0d1a7708b3c9d7e6955d0b88096fa5dea40e6ef2aa08b",
+      "size_bytes": 26629
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002483.json": {
+      "sha256": "a6f8393aeec95a8831bf1d4961fc6115071a8c3b7eb9ca188843153f715f4dc6",
+      "size_bytes": 26449
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002580.json": {
+      "sha256": "fa3449a7d487a5fd53c5b81dcf1236d5a87d3e84ff17bbfdb82c048e6834f7c2",
+      "size_bytes": 26517
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002581.json": {
+      "sha256": "5c973efad5701474b483787985cb8124757a794616333c2ba72f65dd29ec4b5b",
+      "size_bytes": 26639
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002582.json": {
+      "sha256": "860aa106fac1a68d09e5e1f0aa583f31b7cd173fa46ec19d8d0e1e903c1deb14",
+      "size_bytes": 26518
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002613.json": {
+      "sha256": "81c56e4e4542f9fa92dc23abed02bfc4eb2a5eb8eca0f5563096ed7d981c7bac",
+      "size_bytes": 26518
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002614.json": {
+      "sha256": "c29c95463ce7bbf32499435fb22362f2e87b5fe0beedf9b180e68accdd5b7161",
+      "size_bytes": 26640
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002615.json": {
+      "sha256": "26f3230caaa9c37375b42b1c166553ea5bdf4f84435e5fac4f62689291e40376",
+      "size_bytes": 26518
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002646.json": {
+      "sha256": "4cfa9f50713a755cd8e377f782a09b0d6c2b6f68447b1d5aff489f53690bcdbd",
+      "size_bytes": 26521
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002647.json": {
+      "sha256": "b88bd61d636fe2f22e78a720ae630b32e1b7f4e48ab41ddfaa2469a998fbe411",
+      "size_bytes": 26642
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002648.json": {
+      "sha256": "65f9dcbafc1d7b6248e77062c8951eed7685104e6cfaba97681f7970c1607145",
+      "size_bytes": 26522
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002679.json": {
+      "sha256": "df8e4c07cc113ce5597e0706a6c5597320567c6c8f2c7cd90e732ecd43bc32f6",
+      "size_bytes": 26518
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002680.json": {
+      "sha256": "0af31212275079022bee83bb5a13f08e1651fa56dcc73da49c2566bc1613cfeb",
+      "size_bytes": 26643
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002681.json": {
+      "sha256": "1da29441f76fde8f7d6164e2b4249de875f7e3e7723f56fdb63a70ee5748403d",
+      "size_bytes": 26522
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002712.json": {
+      "sha256": "c71b1f6949179745f61ac330e711166af4517a02098e2c29459fa18ccc0b7f31",
+      "size_bytes": 26516
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002713.json": {
+      "sha256": "089c73752823b23dcd6a33fa973e6aa1b8596db33491da855a4873ee48fdc781",
+      "size_bytes": 26639
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002714.json": {
+      "sha256": "8577f99aaed7262a3943fd2b28073144eb37374529e7c125d85f4440afb7bc80",
+      "size_bytes": 26520
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002745.json": {
+      "sha256": "6916ace5206bc708c31f49465adfa906f42ab9f81bd04d08c33e57cebcb7179a",
+      "size_bytes": 26515
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002746.json": {
+      "sha256": "178f8a7bafbd723fbfe1ab8842d80a6ef5c73129f9a5a88c529925518260d549",
+      "size_bytes": 26638
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002747.json": {
+      "sha256": "e9b599611809ca8cedb9b4824e50bf27dda3430e8c4b2986ff9ac0dfae0735af",
+      "size_bytes": 26521
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002778.json": {
+      "sha256": "3bb16d7b002148fcb12b4b0bba054403d7f82b311f2cbea46f0c4730614f3929",
+      "size_bytes": 26519
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002779.json": {
+      "sha256": "24ac106f001158870e2375da23952705df4cfd8dad2f9cd02db4ea94dc1bada5",
+      "size_bytes": 26642
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002780.json": {
+      "sha256": "6772aa2189f49015977d5cf1df71cd92a000842d96280363f655b61ff5b8167a",
+      "size_bytes": 26522
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002811.json": {
+      "sha256": "ef2a2f001684c0806766fc7aee296bda11668e1fe57d18b8e582b05c142248d6",
+      "size_bytes": 26519
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002812.json": {
+      "sha256": "51da257806a9be3f2dd16d64d835e5000c1bcee4c35ab751153dd1254a07168f",
+      "size_bytes": 26640
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002813.json": {
+      "sha256": "9ffeaf90f47babd8cfaf23aa63693565510a09654dffed8744eb6c19b296cf85",
+      "size_bytes": 26524
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002844.json": {
+      "sha256": "8261f0097e316b93e8c8f1bede5423cd89b48a4f6d55453f5ff8e9f2c7109604",
+      "size_bytes": 26527
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002845.json": {
+      "sha256": "905e5543f7797c1f4ee871cad0fdfb607ef41fbd2586704284519a37eee958a8",
+      "size_bytes": 26652
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002846.json": {
+      "sha256": "1222f87115a5ea2f32e10d96015cbfd6500fe17cff5f4f81e8ea578706dcd8f5",
+      "size_bytes": 26535
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002877.json": {
+      "sha256": "b108ec1e5543b42365047514f60774c8b1e2b00d41155e23dfdd81aefd75558d",
+      "size_bytes": 4146
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002878.json": {
+      "sha256": "7e581dd0e5e95295821448ea346151df90353f149f0bb93830108010a7b801d6",
+      "size_bytes": 4268
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002879.json": {
+      "sha256": "a8bf898c554d50f30a855e32e21627c98fc77ae39a01eb260f3aa3d41a2beba4",
+      "size_bytes": 4149
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002910.json": {
+      "sha256": "c2508ff1bd27c8aeeebfe5c41f8d0f535e6629498552ade6de323aaa2667fefd",
+      "size_bytes": 4144
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002911.json": {
+      "sha256": "af3b2a2919f8ccd15010798339ae0ab11977ad70c1862f040666dff2518cbc6e",
+      "size_bytes": 4268
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002912.json": {
+      "sha256": "8f76098d1819429440fe1ad1bf323f9a1ec81aabff50364b2823ee3e71f1f464",
+      "size_bytes": 4150
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002943.json": {
+      "sha256": "afe80f971bbda66f03ad768f39dc70647a939d8e941abd2adcb3a5a63c6c5c63",
+      "size_bytes": 4149
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002944.json": {
+      "sha256": "4d53205a537529309621852ceccd6183f2b9ff29d58850d06829af01d04b2657",
+      "size_bytes": 4272
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002945.json": {
+      "sha256": "6f56fa9fa878e65e93d3610aba1553d02e596d018509a77509ad744c05b93fd9",
+      "size_bytes": 4153
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002976.json": {
+      "sha256": "97ea19c7b42e4c17e8ec8bdb01565a2ffc50e1ee9d392a88c75bddc55035f74c",
+      "size_bytes": 10703
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002977.json": {
+      "sha256": "8ec1454f0ebc0214d3e052f20b72ecb0cffd5a8203b32905c7871524ed3dfdda",
+      "size_bytes": 10999
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/002978.json": {
+      "sha256": "9c310d8c1274b20d4ea5499324d0155e564e1b7fe0cf1b4815b66fe38d172853",
+      "size_bytes": 11053
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003009.json": {
+      "sha256": "911c26e3342e862dca36d66bc2b7a210e8ea8a2f526eb9fcd3c9a96f803a0ea2",
+      "size_bytes": 10613
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003010.json": {
+      "sha256": "ca1cb42dfdcd5ffb6a47a11d3408618e4307e42d04e402c1cd81433b19d86460",
+      "size_bytes": 10951
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003011.json": {
+      "sha256": "53b2a6ab491404d601ec87a6e1feb4e52a9e667499baa3ee7baea1568e2438ec",
+      "size_bytes": 10895
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003042.json": {
+      "sha256": "b74ecf99c0cc129c70b50ad4c6c6c0ace0dc5966f1c8ffba5825cd767c19d59a",
+      "size_bytes": 10590
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003043.json": {
+      "sha256": "1ee1dc43bcf611aa2107fc8dc8317353503800f9df68f68ac37acbaf30c60b36",
+      "size_bytes": 10804
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003044.json": {
+      "sha256": "097c1acdb7982dd333cfbc75eeb150ebf6a8f58dedcf56820ebb13c18bf5c887",
+      "size_bytes": 11133
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003075.json": {
+      "sha256": "9742edb996bc19e0d265a01af3291984bdf92559c12a8e6ef28edb48783f3e5a",
+      "size_bytes": 48971
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003076.json": {
+      "sha256": "bd2ae30bbe52a6dc751f83398ac4936040ce8261f4be5885a4bfc1813726b96b",
+      "size_bytes": 49340
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003077.json": {
+      "sha256": "d74c6c0ea2803747b4c4ed55e70dcb93dff01af5c47c9e44ad9e4e2107be4cce",
+      "size_bytes": 49426
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003108.json": {
+      "sha256": "3d5b6a394c08aabab4c54d08c7bf364e8c805588dcf281c9d8534ddc7c5cd163",
+      "size_bytes": 49040
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003109.json": {
+      "sha256": "90adb442ccfad6968a507410e346a7dadef04c1ef9a93a0a77c2e42ce3387a43",
+      "size_bytes": 49468
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003110.json": {
+      "sha256": "efe21b4c38627dbee684cebcda8737f9920ca01438dcbb8d307c007b3d84190e",
+      "size_bytes": 49418
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003141.json": {
+      "sha256": "56d2c393607e9f21b75c63a06ced88c6104be154cf9340e6c1716463d87cc003",
+      "size_bytes": 49101
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003142.json": {
+      "sha256": "f0ad1435e70cb0e1fec601fe9ebf600de8adad8cf6c89705c32e0e25af3dd139",
+      "size_bytes": 49458
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003143.json": {
+      "sha256": "545d0d1af5bc94cc7420548f5aa7ee875d7f6cdfd5977f5212264ba16221120d",
+      "size_bytes": 49395
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003174.json": {
+      "sha256": "2d4900d18a2b4c093ae27fa68f4a26b97b48992084400b03d65923f67263871e",
+      "size_bytes": 49298
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003175.json": {
+      "sha256": "4510bc063ae5e1821824a6127f0bfdf6c050b08e82d67a8c53f05c7a5384aae9",
+      "size_bytes": 49532
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003176.json": {
+      "sha256": "ad347529d042f1697df01c1cb5c163df9501be5782fa7ba10db48683fa601687",
+      "size_bytes": 49492
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003207.json": {
+      "sha256": "9a10449ab013d5998a47e69c282b68633ee0660ac82efa307f1d1075c8f12aaa",
+      "size_bytes": 49307
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003208.json": {
+      "sha256": "9e246180eb89d87db52d4dff5cfc794da4c6b0142eaebd00bafe512a347fc6a5",
+      "size_bytes": 49541
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003209.json": {
+      "sha256": "6905a4fb3586e6f648cf251f5729f4552e40d2dd4d08401a866cd030d5a1ef43",
+      "size_bytes": 49501
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003240.json": {
+      "sha256": "78817136215d043724374f225c66adf4adcf1bfd9cc993821c55e2b895ba15a4",
+      "size_bytes": 12762
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003241.json": {
+      "sha256": "d246d7e650ff8e75d762de7f3fe8dbdb9b7658cb8475331ea7ae730101935678",
+      "size_bytes": 12864
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003242.json": {
+      "sha256": "a27aa08aa82f919033f6605a4fac9f0a92b819edd0c213c89f7ac7ec828f9dc1",
+      "size_bytes": 12645
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003273.json": {
+      "sha256": "902398d2bea116c05711e5ef56c0197ad4b7a5b53ad275815eb44c7af2f79931",
+      "size_bytes": 12871
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003274.json": {
+      "sha256": "b36dfb96b007ff15fef355e7bd00780ad2674d0eed10bef5602a8a302cbbf63e",
+      "size_bytes": 13001
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003275.json": {
+      "sha256": "76689d5b2a81b80d94f52e46f9760489b09928d2f271006fafe8c85c51f15592",
+      "size_bytes": 12723
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003306.json": {
+      "sha256": "92890d337513c877a3361391eeef77ae5f58f9e3d6d81470654b44c2cd2ce977",
+      "size_bytes": 13230
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003307.json": {
+      "sha256": "01a9d0400ecf51bb1b57f419ecc0d9887f4f2869cd89bbd76b7d22e1bd14ff91",
+      "size_bytes": 13485
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003308.json": {
+      "sha256": "8f687bc4862294c2110ea3a2129885a0b024545886ad1978b0135988dcdab423",
+      "size_bytes": 13227
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003339.json": {
+      "sha256": "cec91f9c6659bbebd85dc7ab183f17b2e717045b3e7606d6f1a47a656131bb5e",
+      "size_bytes": 10123
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003340.json": {
+      "sha256": "6ccc3f47d44e6a6bfaa6823f3b7b01c60276474cf03aef1ee136d2d64f0bfe2b",
+      "size_bytes": 10243
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003341.json": {
+      "sha256": "0d2677f64d7c8af5c62a1917e2ac66374dc380c8571afcede7b4753be39eb5c9",
+      "size_bytes": 10126
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003372.json": {
+      "sha256": "8e73c86fe71be05e46b4624865f97757daea6a68238b2ba7ff58c8c6c94a24bc",
+      "size_bytes": 10122
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003373.json": {
+      "sha256": "83900fa37cfc0bc6a07c6107a60d3d865d605aa7327c1d367fe63b8d48ee97bd",
+      "size_bytes": 10243
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003374.json": {
+      "sha256": "3ecebcb52f9eb425e3ba23ec1836c87d51bd110daf9e3e0be11fd3a1bac4ae21",
+      "size_bytes": 10120
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003405.json": {
+      "sha256": "7638784fa76571d44c48d8048c09f13f06248157964bbde7911ea681209a7760",
+      "size_bytes": 10109
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003406.json": {
+      "sha256": "3a7a1adec792e6d12ab3b71d2007e3039c5069b5b8a074bd4a94bbe70d2865b6",
+      "size_bytes": 10244
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003407.json": {
+      "sha256": "89fe4221623073a2163eb16c6cc451c58907af76362438faf296376b01b01080",
+      "size_bytes": 10129
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003438.json": {
+      "sha256": "860c3b0040da957eef524547804555cb4df9df717e9fd5947168af310112ed2b",
+      "size_bytes": 40906
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003439.json": {
+      "sha256": "6905f5ffb2e90f859cceeb132ccf28064b61b4a21122682f73c5626c2116f76b",
+      "size_bytes": 41567
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003440.json": {
+      "sha256": "b112407322cdccdf700efba6211dcc0cf142cac061ba85c058aefb6c2798c766",
+      "size_bytes": 41808
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003471.json": {
+      "sha256": "6584901fb1929b27cd55db150d661f9c9a7a3e26b0005128b51f974050f6884b",
+      "size_bytes": 40737
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003472.json": {
+      "sha256": "6c5f06ef3f05f20a6e751bb808ef8e535d6db45d889bc1e12f58bca2be98de28",
+      "size_bytes": 41261
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003473.json": {
+      "sha256": "119924c611cdb4ac1c1af8d8db0a275c00a56f3f01be15b9b58191df9987f8bc",
+      "size_bytes": 41943
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003504.json": {
+      "sha256": "cb76d3de692fe6bba3fa3cc0d0581514ac8f75ccc5931f9a90f82e92aa627cf7",
+      "size_bytes": 40432
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003505.json": {
+      "sha256": "dcd35bc1f217a12496d380461ffc24d6faa3c0906363b911aa4dd6d539ad74b2",
+      "size_bytes": 40744
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003506.json": {
+      "sha256": "774fcec23d26ac8c141b99661c609ac671c1521fc9f081957aeee83af4011629",
+      "size_bytes": 41531
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003537.json": {
+      "sha256": "82011ebf3b30e6f8af7b19a1b80330e7bbca66cbc1d2ecb8c8c2ba57ce41a799",
+      "size_bytes": 115048
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003538.json": {
+      "sha256": "a983d660ad5952e87106468fa064e55f2c76666bafdcb2abedf22b101b15dd12",
+      "size_bytes": 115211
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003539.json": {
+      "sha256": "919f97f5842a67d4b2fb5e36925249b72476c833783171f305f88c8ae5775da7",
+      "size_bytes": 115106
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003570.json": {
+      "sha256": "ff2a848a1b736424ba7b0a7a18d1519266376b96710d1cc8d14d331142f6b785",
+      "size_bytes": 114056
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003571.json": {
+      "sha256": "9433c503fa16e74a3c0c83e5e0524fc2a0b9e23cb65e196a9a069c4c2e3e2c54",
+      "size_bytes": 114462
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003572.json": {
+      "sha256": "e97996c2108df9bbbb61c1208110485fa66708651b01c5570aa09511226fc875",
+      "size_bytes": 114420
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003603.json": {
+      "sha256": "9cda87ca6bd53fec539cd79cb70ee9abff5eca2bb5ce9c0d387a6f9c4cedd4fd",
+      "size_bytes": 26515
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003604.json": {
+      "sha256": "2ef6edc7b67acf2931e49c9d6ef1a0cafa2f6c4562c9474b8065e53273252009",
+      "size_bytes": 26639
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003605.json": {
+      "sha256": "c8456d4ade23cafe54b1f79d760041a13bd243e8f3bc7156c5e6dcdd784cc4f4",
+      "size_bytes": 26521
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003636.json": {
+      "sha256": "4a09ede33b4b084555788c16b44c0592623902ff045a21085d3955cf9c366b33",
+      "size_bytes": 26519
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003637.json": {
+      "sha256": "0030e7e202191e1ffb9d409c0418ce4b0f9b1c3f72723cf5f114378f5a0b3d0c",
+      "size_bytes": 26641
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003638.json": {
+      "sha256": "45c2bd3e1dff2bf32aae03ad01ebb2c5ef60cad5ad2de70bff81940a7a8f9da4",
+      "size_bytes": 26524
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003669.json": {
+      "sha256": "cb97ecfcb1223399d9f0a3f68079cecf3da6394b1192b8d2e932d80c67082bae",
+      "size_bytes": 26520
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003670.json": {
+      "sha256": "53e3a79eecc4e7d0d3ae8f8615e66b91801ecbf6bad12eb9b88c90b4322bfcff",
+      "size_bytes": 26639
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003671.json": {
+      "sha256": "61c704a406c9feff7a741f9948abe0da7f34207c240a6046f9b35636d05b0e00",
+      "size_bytes": 26522
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003702.json": {
+      "sha256": "453170ed9ed9cfae9458716e2bcb0abfe00f9454b5bad0b77ad6224a7c560c9f",
+      "size_bytes": 26519
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003703.json": {
+      "sha256": "9d26f4cd417c5fad91934d28b186ce1ddef973078fdcc89626431926af0a15b7",
+      "size_bytes": 26639
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003704.json": {
+      "sha256": "a3adc0caa6b13b00d7e5b573963caf6559399ba6b1bd0616ef3288f852025787",
+      "size_bytes": 26523
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003768.json": {
+      "sha256": "68b3667d8e1eded333f69c7cc1d16d00d1c372a5f8059a595782f508de765985",
+      "size_bytes": 12775
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003769.json": {
+      "sha256": "2191c782c70670a504ae552aab59b065ded304a572a69d056132de9235ce6c5c",
+      "size_bytes": 12877
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003770.json": {
+      "sha256": "60a3d15a24adf35a25bd07fe2c20e97b132b9483a233f6011248be4cc45d478b",
+      "size_bytes": 12658
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003801.json": {
+      "sha256": "4e2f83d44986773994d2e10162e7c8abbe8f29a36669b461b9c57b9986f90838",
+      "size_bytes": 12884
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003802.json": {
+      "sha256": "416cecfbcbf46a4c7244f3ce04c36133dfeb142acde12ff0c56db41594b9eb7b",
+      "size_bytes": 13014
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003803.json": {
+      "sha256": "0f30567522ed6a34bb7035ec8972634291c8ac73b6d391aacd46ee30a64e0c1b",
+      "size_bytes": 12736
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003834.json": {
+      "sha256": "4a9d7a86b1bc23c8da35b3d738f0865bc0260cc92f008ac772683e6185ad4f0e",
+      "size_bytes": 13243
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003835.json": {
+      "sha256": "57d38770e5c819f58879a60f60ea1010482972330c0fbdad72463b3e1311da8a",
+      "size_bytes": 13498
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003836.json": {
+      "sha256": "71dbdda771c247aeb3d3756d7a3a9618b9fd540c465ef6d21c987da91f47be75",
+      "size_bytes": 13240
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003867.json": {
+      "sha256": "a6f22049d5ef52109bd585e2de7fe363f57f09ace9b75df219f4340b57ed7cea",
+      "size_bytes": 14077
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003868.json": {
+      "sha256": "61b61354a70c7f60c8afa9bf674e0465ea6ad5c5b739e09ac913034a375feff4",
+      "size_bytes": 13895
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003869.json": {
+      "sha256": "57d825cd5f1aac8a3f7ed9ddb7ca4e6fb5f09ace81b99dc06e487100ddc85fb1",
+      "size_bytes": 13566
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003900.json": {
+      "sha256": "affb784df4a85a19ca0da0fc7f42a8f33d8fe586e201fcc21976b9a0f1f2b1af",
+      "size_bytes": 14079
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003901.json": {
+      "sha256": "a0b288ab3247d2d56b9f28a6f49d3d803a66211cf03755c5723c454608a7cbfe",
+      "size_bytes": 13908
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003902.json": {
+      "sha256": "b61c01179b38e1366e60767c791c50afef8daa73dd9e1b0d5ba93a8df01034ee",
+      "size_bytes": 13805
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003933.json": {
+      "sha256": "9356e316dfe401af77f2caf6b078a845c929f849cdb3c4075ac007afd0e71bd3",
+      "size_bytes": 14164
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003934.json": {
+      "sha256": "91c9986448ca4ebae4a34b33547e09eafe31e2b09e67647f5ab464d8bf9b9513",
+      "size_bytes": 14070
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003935.json": {
+      "sha256": "93daa6f6054df90173ffb3b05e8cc651fda1b9e4a8073ba631d455d680ff6198",
+      "size_bytes": 13648
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003966.json": {
+      "sha256": "6bf53f717769b846b47040bb5bda4a13d6243a1478d0d3f327679dd1cb9937b6",
+      "size_bytes": 4135
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003967.json": {
+      "sha256": "29b9017b35af94b5f0d642dffa21b2acea10fccc7972ab436b82ded3c3a614e9",
+      "size_bytes": 4257
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003968.json": {
+      "sha256": "7216018f7b9051d4cbee4ebb8a1eb3da8aa8a7dde4d3a3b4e33d7805041f8902",
+      "size_bytes": 4138
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/003999.json": {
+      "sha256": "9c5f7acee6007496a4b3c7f3137d924c81f998b75810ec3288f60a184c794fca",
+      "size_bytes": 4133
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004000.json": {
+      "sha256": "e45ffbf65ba4e8e6085b5e9ddd62c662b711099c229bd854f547b66a7e46d657",
+      "size_bytes": 4257
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004001.json": {
+      "sha256": "dcc9b96f84018e388f23acac56103068fd785d03cab414ee9b31acb17fd24309",
+      "size_bytes": 4139
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004032.json": {
+      "sha256": "5310ea68e864db790b5ebd08b446434c4a3cd347c10431b985176dfe4f2ae6f0",
+      "size_bytes": 4138
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004033.json": {
+      "sha256": "e6ac59c4250176dc42f42537e57632744c43273fde810f0f45f92e8402298c9d",
+      "size_bytes": 4261
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004034.json": {
+      "sha256": "a878d13c6246253c99e5e5a08fd04790590b6ab3eb6e46c0357508f01de1bf74",
+      "size_bytes": 4142
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004065.json": {
+      "sha256": "14ac5c55a9463b0d29422c3f1c640c274b77cf5ca7e21bb109db0d3789c1c76c",
+      "size_bytes": 10692
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004066.json": {
+      "sha256": "dd93d0f3ba2edf03ba2897f57bbd5856ac76093ac88070a02fd5d8640629d765",
+      "size_bytes": 10988
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004067.json": {
+      "sha256": "fa656009afff759afe9e2ba1009c5389c30db4016939c0eee57c4da4db76e777",
+      "size_bytes": 11042
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004098.json": {
+      "sha256": "9b8cd88ea19d2f4da2be57dea90ea769753a33b6e641468652ec9e7789e19005",
+      "size_bytes": 10602
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004099.json": {
+      "sha256": "a5576605d06322df36dfd2d932293a88e75997637f43ceb5ec203422aad66d7e",
+      "size_bytes": 10940
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004100.json": {
+      "sha256": "c7445114bd9e9fba746f887a196aa56d173eab7f0659634d4800cd9ef96a618f",
+      "size_bytes": 10884
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004131.json": {
+      "sha256": "7be7f9d0341d28192f021be74a2c867b7340c219c7f085090040d435828b9875",
+      "size_bytes": 10579
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004132.json": {
+      "sha256": "e582c3626a2e0f589aca4bfbc892010f8b8c193f7b5b482ee7404d00506792ef",
+      "size_bytes": 10793
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004133.json": {
+      "sha256": "891b34c0c2d41525ef8ada5bef7ed142b57206965ce3fac66a8d684326471732",
+      "size_bytes": 11122
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004164.json": {
+      "sha256": "5277aa46a3b76b037a2af043ac580b23628940acd21a50b56ec0dc96c302a59f",
+      "size_bytes": 28595
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004165.json": {
+      "sha256": "04c9de6010db2d3eaa50fa3b172aad6d2c092a2c625614f399d3db2b13035d8b",
+      "size_bytes": 28453
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004166.json": {
+      "sha256": "8074deacb9c02403ed6e5fc47cb61fd7244b2816b63ed3b8753a79efe43cecf1",
+      "size_bytes": 28062
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004197.json": {
+      "sha256": "4a362e742dcca649b735b13073747b3d5b0a6d5d26786ab843f80f4f7304a0b7",
+      "size_bytes": 30220
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004198.json": {
+      "sha256": "f44874a7a1ea56a5e33a97ad74d9581105d7f19e8f3771118ac365833364dcc4",
+      "size_bytes": 29593
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004199.json": {
+      "sha256": "344203cdc8f2ba27c0f8dfb6034d9fffc340f0ee0ea662a0fdc4fa43fd0623ed",
+      "size_bytes": 29330
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004230.json": {
+      "sha256": "bfd34e30ef524c94f956f16bca937238770a47a2ed44e29dc35fde1992dd1d49",
+      "size_bytes": 30201
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004231.json": {
+      "sha256": "f46a7f8bdf176ded29f63205fad54deb5dd4e216a40b7e425c4c8df6687925c5",
+      "size_bytes": 29912
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004232.json": {
+      "sha256": "9ffd952b12ab6c7d7cb0910c03e66142efed55f424fbffdaeb481e1e3999e79d",
+      "size_bytes": 29543
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004263.json": {
+      "sha256": "ecea2c7801fd05ff153e9f992ba5987cceb58bd5f62afdae026658ff54846e1c",
+      "size_bytes": 30320
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004264.json": {
+      "sha256": "20a2f6e61029c35269a97d32e531b32e17f88c80b848ae56930f63c047594773",
+      "size_bytes": 30021
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004265.json": {
+      "sha256": "a9012368bd51b15ddc8f3d18ad2f47783454629e9da0f24530ff4db7b0fddf98",
+      "size_bytes": 29484
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004296.json": {
+      "sha256": "764c945940956ba7cf51e8ddce43a16eca354f9fc91ead58369def7d83e4194d",
+      "size_bytes": 29859
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004297.json": {
+      "sha256": "4bc79fd784393c19b4eac51683c7c24ad7eb62851cdbea6bdbd49556d3c5c2f1",
+      "size_bytes": 27750
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004298.json": {
+      "sha256": "0279857f8f13183f5c65c978f122472c032831de8173c19de11f137fc5db480f",
+      "size_bytes": 27211
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004329.json": {
+      "sha256": "d471d7f9d007f94575b9d3485f7c961353d1934938a6f1acfee9e0ca3cbb09d7",
+      "size_bytes": 5808
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004330.json": {
+      "sha256": "5201252045a099e292a6fc0fda0cbac3347592cff0947e6ee933a8b82fa1aba0",
+      "size_bytes": 5929
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004331.json": {
+      "sha256": "0615c466b3d9bfd8bec02192a54ef3a260984e6c03302fb007058facc83ce301",
+      "size_bytes": 5811
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004362.json": {
+      "sha256": "2f136bf64d53b19508010c89b017626c997ec50921364de14dd88456e876455e",
+      "size_bytes": 5809
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004363.json": {
+      "sha256": "300bac5db698f447e81ef2923951c40989ebb5d0378e15725a7c3fa1f59fb4ec",
+      "size_bytes": 5931
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004364.json": {
+      "sha256": "867919cb84a0e00b25d8009642c7b8dc5cc92fcc4685cbeeba11b911b23e26f4",
+      "size_bytes": 5812
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004395.json": {
+      "sha256": "50d667fe9fd0c5db263ab73ae3adbb724f08c12052b99a94f5e64add5eb08d91",
+      "size_bytes": 5809
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004396.json": {
+      "sha256": "42ad6f930262c5a19b4564dcdc2314097c98d68ca405463d1b9c19cf69e34dd9",
+      "size_bytes": 5890
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004397.json": {
+      "sha256": "518630b3ae7e4eb85ae1bd2130751f67d8a9c8ba9b44dddfa5f0417ed9cd8e2d",
+      "size_bytes": 5783
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004428.json": {
+      "sha256": "9114da5a276c4ae047d28714abdd5f258e7cd8d1d5e2bd78c080cfc6bd904b27",
+      "size_bytes": 18806
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004429.json": {
+      "sha256": "7018a55065632ef57c96900381198f32e3b319dc78a92a1bced938984c2d8699",
+      "size_bytes": 19270
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004430.json": {
+      "sha256": "85355e3820168e3607c416ee38a4775679ee4a4cd4cddbb86a05ce36c106c626",
+      "size_bytes": 19223
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004461.json": {
+      "sha256": "78aca26db515d566f08363ab931b1e86ef42e85fc737229baaae88a93387c7c1",
+      "size_bytes": 18783
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004462.json": {
+      "sha256": "5352962b1297042fbd3b91d6eeb703aabe826e9ab21449a6c936ec6c8b328a99",
+      "size_bytes": 19189
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004463.json": {
+      "sha256": "7e40c3a09952591edba33caa8d4ac43d6d6b46ff43655ed222168747b911750e",
+      "size_bytes": 19208
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004494.json": {
+      "sha256": "4824e86f728369b0092b91820a22bff25bc9b2d1bdfa401c5e28211ec17ad6ff",
+      "size_bytes": 18733
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004495.json": {
+      "sha256": "f6190c1493dbc6152e3897042f7c6409cc123c97db37c79630f93ac49b066a81",
+      "size_bytes": 19133
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004496.json": {
+      "sha256": "369b84df8801c1b2efa8b4fd3ef2df2e0e767b6e229bde2668e27e0f4caac5af",
+      "size_bytes": 19176
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004527.json": {
+      "sha256": "76e058efab8a8a5114aa8ca74912441a40c67f819abddde6a482d25442bf6e77",
+      "size_bytes": 18428
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004528.json": {
+      "sha256": "e64ea74c11837e3c9601fe448a7a3d2024dbb3ea7edb633043f1ce6bbd23bd96",
+      "size_bytes": 18548
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004529.json": {
+      "sha256": "3af3801b3dcec3be1c49a0455ec70cc9c15f608b23dca1ac8e80df136465faa8",
+      "size_bytes": 18432
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004560.json": {
+      "sha256": "ff5717aa8570f5d37498fbe0d1e415921fbdf8c26e5f4146a17dad923036cc67",
+      "size_bytes": 18426
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004561.json": {
+      "sha256": "67d3b17fd3a89e683740d640ce49c6508137866c17c80136a7395393a731b026",
+      "size_bytes": 18551
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004562.json": {
+      "sha256": "58b65d4959b20fce6756dfdf7dfcce593c471e9463f82a6695d83e65e788ffe5",
+      "size_bytes": 18431
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004593.json": {
+      "sha256": "18071ef7e7a1f7899d5813fa65c95384193efcb4f20e3f1ff572ad2a934645e0",
+      "size_bytes": 18429
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004594.json": {
+      "sha256": "5ba64384ae3cb10a00368bfea66e4785a3e446c608441ff8c213d34864ceaa3d",
+      "size_bytes": 18554
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004595.json": {
+      "sha256": "ee7e53ea96563f87a9edf90ca011b18303e6f52cb0d4084e95c0afe63c91a9fa",
+      "size_bytes": 18434
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004626.json": {
+      "sha256": "5355aa5a83f5a444e5b63f3e39d05c13c64cf63e42b56652f81ba3e8df339b7f",
+      "size_bytes": 82738
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004627.json": {
+      "sha256": "65bb0a885d80ba5198b49d779ef15dac7d2479d422b3d415e498fe9dfb7a5855",
+      "size_bytes": 83120
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004628.json": {
+      "sha256": "9ec5577dc6ae97b37692b4399063ef1b23662df7f6b415bc3a38cde96fb0fc82",
+      "size_bytes": 83623
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004659.json": {
+      "sha256": "c101c104039ae431e714e943a48bed05f74212053ee25ae0dced94174ae9efc3",
+      "size_bytes": 79978
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004660.json": {
+      "sha256": "ff092e5e0376e5ec04d6430aed0263a8f42885f74f4c40ec489c0d482a85b2c9",
+      "size_bytes": 82892
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004661.json": {
+      "sha256": "1fb5437149c815bafac678b0925d2c13c6c128fd31b9f80ff1aec551bddf1ba2",
+      "size_bytes": 82079
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004692.json": {
+      "sha256": "63910a27e3ea442f6d5f269a360d6a90b2d7a55c0d8b48479b22d59e6b60fc82",
+      "size_bytes": 79163
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004693.json": {
+      "sha256": "61236c634d27c01bd1b1d64d8efcbd65ea3d7bd38fea5e34657d6613a3456800",
+      "size_bytes": 82654
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004694.json": {
+      "sha256": "1747a6ea54091e3ab8b36b4b1c5be6226281d2b6198866fde3e596f6230d216e",
+      "size_bytes": 79107
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004725.json": {
+      "sha256": "9c86420ac1eabedc18db7b521a077a56895e54020ee387ee8fee23f6d374ea11",
+      "size_bytes": 8768
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004726.json": {
+      "sha256": "459912e5d31d62434cb4bf7eff7cb7460d36227e82fbb9e932aed0afdeade60f",
+      "size_bytes": 8891
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004727.json": {
+      "sha256": "422ed1e34bcdc9294420cc616ca4915a661a6d6a87f98a760fa2bea0cfef09b4",
+      "size_bytes": 8771
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004758.json": {
+      "sha256": "c5a1ba6e6a2353cc1ae2aa03bc196a0de1d89908e6b5ae619851dc4b400b05c1",
+      "size_bytes": 8769
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004759.json": {
+      "sha256": "e7adcdac2a1467fb2e3e889025befbfbac9182a0df2dcec80a7fa198dfa8083a",
+      "size_bytes": 8889
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004760.json": {
+      "sha256": "1fce3a767c8add0af849096f82bccc6d7690c0dbe12adf96b6255809798a9214",
+      "size_bytes": 8772
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004791.json": {
+      "sha256": "dd23843536666088ea33969622fc12f3754041e9ba406cfe3a7b665790fb49fe",
+      "size_bytes": 8770
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004792.json": {
+      "sha256": "5e0a39f6aa3c7da2d078f4d1546a127636514452435492e6543629cebc9e0318",
+      "size_bytes": 8893
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004793.json": {
+      "sha256": "14b8ffcfb50755ae96e4b0dd588c06557f35c8aa7696d6107371a17c83ff419c",
+      "size_bytes": 8773
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004824.json": {
+      "sha256": "f5faac25cfc393cc5be3e78402670d79b8ded16f928318590b617dffc3ef2bdd",
+      "size_bytes": 33795
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004825.json": {
+      "sha256": "1b19ecb0d01c0ecb90f261916d50e3a70727d1355ad5f8444c8348acb7a0682c",
+      "size_bytes": 34029
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004826.json": {
+      "sha256": "3dcc7bfe2e90e2c7ab04318a74c0c4f1c6f44f923af84db2059b66e0f8d6705d",
+      "size_bytes": 34483
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004857.json": {
+      "sha256": "03a31333512d33aa3cca62c3313fb7bc15d4a144265a789547225957c20b2654",
+      "size_bytes": 33666
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004858.json": {
+      "sha256": "bd81fa12d48d4454cb48b4074f7d3059d1d6a90d3c5d199e2b95eb798aa70790",
+      "size_bytes": 34057
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004859.json": {
+      "sha256": "d2dc168c2bdda69b3da8068c93956ef4c88e9d9f7781de8de2a0cdf6cb26a45f",
+      "size_bytes": 34420
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004890.json": {
+      "sha256": "38e337978fee1dad222368105122a07c27b3736cea4d3844959a7802a0c715dc",
+      "size_bytes": 33787
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004891.json": {
+      "sha256": "ddc423254fa12fb81930685a5ffd59b1d2e6bbc03a036beb11a65abd18e9093e",
+      "size_bytes": 34053
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004892.json": {
+      "sha256": "1fd56d5b0acadf77752a5027cbdeef977a6f39aa663302fd7718e18d2c93a65a",
+      "size_bytes": 33869
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004923.json": {
+      "sha256": "0bcc98114b45f0c2da3db0fb0f8af931d194ff3b64a26711a810cf95eb8e91f1",
+      "size_bytes": 4864
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004924.json": {
+      "sha256": "aaf0a2acb04bc16b55a7cf21d63caedb39c565379f2099c7e990f4ace4e28264",
+      "size_bytes": 4985
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004925.json": {
+      "sha256": "1386df170d0f8f184703f1113307f0904173cb1d68b3ac30955db48ecf9bb9a1",
+      "size_bytes": 4870
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004956.json": {
+      "sha256": "94ccb623e0bb81ba08263f692009cdb64ab16673434e00c75b9e17feda5e4e0c",
+      "size_bytes": 4865
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004957.json": {
+      "sha256": "bb92f32e02a418ca8dce1c5f54a828df34dd4b42bbb5a7e478f74bc12338299c",
+      "size_bytes": 4988
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004958.json": {
+      "sha256": "d061fcab5ce72f14717278111189abb1a31c5e78086ec89b2db58654e06cc32f",
+      "size_bytes": 4868
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004989.json": {
+      "sha256": "39ed866d8fa75a90828256463b14d64250c98ef931cd191e990e5ed5e61e7bd3",
+      "size_bytes": 4867
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004990.json": {
+      "sha256": "2d1f459e53d69bbe0f56af1074dc07ef3b8d8b753cead534103725159287f794",
+      "size_bytes": 4991
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/004991.json": {
+      "sha256": "b35d3126c8fefb44a655f444d33563e8bff7864e4ed004c1ca37159bb3c5b513",
+      "size_bytes": 4872
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005022.json": {
+      "sha256": "7bf5ad3f3c05245c7cf04b42f9293949beb3beb6e4abe452c96c95b13119458c",
+      "size_bytes": 14225
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005023.json": {
+      "sha256": "b2514e0787f218dfb0e3fa4a94c412b3295ce6c7465fcbabe7e815af3b4c0e8b",
+      "size_bytes": 14665
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005024.json": {
+      "sha256": "8a8bd889b5931c7887b5f22866f4663f903bc79bbb6b05fd2ec924edf15b067e",
+      "size_bytes": 14737
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005055.json": {
+      "sha256": "985c208e2fc67ecfc906fe1767742bc457a6bd7c04b399186a773168dd845d67",
+      "size_bytes": 14188
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005056.json": {
+      "sha256": "4265e16b0b4ce7d9a56c544db462433ab203d081bfcfd0dacaeb80d662c78958",
+      "size_bytes": 14509
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005057.json": {
+      "sha256": "34971b16f20c764baa6de15889f3e723c6feeb439e45b5fd11789c634cd781fc",
+      "size_bytes": 14609
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005088.json": {
+      "sha256": "69b8f866c999486751136825d9f2ba1049ed3f79881a15b5bec43c50c2e54f64",
+      "size_bytes": 14131
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005089.json": {
+      "sha256": "062c23b2cb6ff79845cc35b9b6b17f83f0065e4ca221471cdaeb79007b040de8",
+      "size_bytes": 14459
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005090.json": {
+      "sha256": "f0778b53a4b8432b0ae6c50c6a02089efc844731f28207353c4674a07f838fae",
+      "size_bytes": 14694
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005121.json": {
+      "sha256": "92c4e79517dc7177bb508e3261047f88d259388de71630392e950a4a32b60df3",
+      "size_bytes": 2399
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005122.json": {
+      "sha256": "34ca9a6754c1a7272bae11843d3b563c71e33ef77f185018e5a6489cba0bfa0f",
+      "size_bytes": 2521
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005123.json": {
+      "sha256": "6a3b15b6a6a04368ca428a565fbe9f753c5caa0ea437a994479160007b15161b",
+      "size_bytes": 2403
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005154.json": {
+      "sha256": "1772aa6f69bfcd4cd25c2a454a63331f00031557ed49fa4f1b1a2cf644ee5ff7",
+      "size_bytes": 2399
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005155.json": {
+      "sha256": "fc9eaa775780a76172ec10a12aefa35df9db0b030e41816c46382884d51dab34",
+      "size_bytes": 2511
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005156.json": {
+      "sha256": "2407b6e705a980534990605158530e043113c3a531e283ac3da266cb92a9087b",
+      "size_bytes": 2403
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005187.json": {
+      "sha256": "afd1e4aff8ccb9a713e83f9ca48344dfbcb295595983d51636d91d5985027d16",
+      "size_bytes": 2387
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005188.json": {
+      "sha256": "32263efb0a77f9fa031d8fe5be48c87ae686caf136eaab9f846ead8a3b5fe2d7",
+      "size_bytes": 2526
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v2/005189.json": {
+      "sha256": "d5f0224ebe40ccad2837190e135b588d91511b539bd71ab4850c942e9d6dd04b",
+      "size_bytes": 2391
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005220.json": {
+      "sha256": "bfe8ce1bfef05aa376220a7d5d74623578dada426352acde4c1c1d63e2999e4d",
+      "size_bytes": 2118
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005221.json": {
+      "sha256": "1f20e2509b3a446fb55b56e2d1f00ef09435c5295cd77e363a163facb01afa33",
+      "size_bytes": 2767
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005222.json": {
+      "sha256": "a82dcdbc355c55078046dd6cda36ea88a8fc1f66427707b5259fd9840891286b",
+      "size_bytes": 2444
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005253.json": {
+      "sha256": "1a0107c3de0f77a4bde15cc650f824d076180bf1bcf014cef29cfceb5d978d22",
+      "size_bytes": 2118
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005254.json": {
+      "sha256": "b2559c66557e8657c1892602c6e9ea9de6d6bc4ac0f99c43be540a03f29d7f98",
+      "size_bytes": 2751
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005255.json": {
+      "sha256": "26934dec69ec647c6f9d3ff1a19ceaacacd988bf3139def76bc861486aeb5274",
+      "size_bytes": 2444
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005286.json": {
+      "sha256": "a7d82cbed08efe77a1f62b3fdd86dc669d66957b0cfd32b93c51c9613833293c",
+      "size_bytes": 2120
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005287.json": {
+      "sha256": "9f9a684c068974e70f909184fd84933e544a2f6538ddc1a79569e0a44871772f",
+      "size_bytes": 2769
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005288.json": {
+      "sha256": "ac8eacbd0be92d2c34c704f953a014c8f1cc3344472946522f3c2a1703b13574",
+      "size_bytes": 2446
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005319.json": {
+      "sha256": "ba8189a6c3d1e971a90e5161961c46b6ae0f283fd974cefa72da9ca639c1eab6",
+      "size_bytes": 115128
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005320.json": {
+      "sha256": "4ac73991b89f9fd2a3c2f121db292ce177cad3c0c1f2a68e98035d417876b060",
+      "size_bytes": 115427
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005321.json": {
+      "sha256": "c81809aa74f173492e261bfb497ff52d56be1621df3ff80aa7c876215a39f669",
+      "size_bytes": 115285
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005352.json": {
+      "sha256": "ab9f00d64616af09946c90f036422c0b046e3fbbae353b58265e34918d9b083a",
+      "size_bytes": 115071
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005353.json": {
+      "sha256": "161c3ad3aaf8d9b022cda498ea5de1d556cced8a8400cf5093856d48c1769e36",
+      "size_bytes": 115445
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005354.json": {
+      "sha256": "9c18df58e48ef35b4ef6c590866ea961cf651f83e97cd4f245f913f0df8e6a05",
+      "size_bytes": 115116
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005385.json": {
+      "sha256": "b9e69194fd264379b4dd968cba02e68209591b9dd5aacbf1ce88608199aefdde",
+      "size_bytes": 115103
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005386.json": {
+      "sha256": "6346397f626228e2c09608595ea43d9d675354fc55205fd8b6dac9c786660418",
+      "size_bytes": 115356
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005387.json": {
+      "sha256": "b01ffd8f12157490ff54fa3cb629e615a81c56b03d218db2ff238cfe7bedfc17",
+      "size_bytes": 115146
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005451.json": {
+      "sha256": "948f503e1f1c39e24226ae54ec468d8acbd138c948a8c6f74e851610b7783da8",
+      "size_bytes": 115055
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005452.json": {
+      "sha256": "2d10b57ba7475d71dd55fa4db21f187cbec4dd58460676121d3d643906b44ed7",
+      "size_bytes": 115842
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005453.json": {
+      "sha256": "93461a87df06c098abe6d3603f1a49269a09709a4ef9eaab324182bd07b0d01a",
+      "size_bytes": 114947
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005484.json": {
+      "sha256": "eaa546a98badc2757427b0ae178cb1f8bb96e7072c153d5aba75ac0fafc948ef",
+      "size_bytes": 114737
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005485.json": {
+      "sha256": "5fe69f6ff528bcf66c123eb5be7134b3aa676788c90df429d1b9a2d68e2a1b77",
+      "size_bytes": 115741
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005486.json": {
+      "sha256": "c8245a7cad790e0da018b6e08357e076d037d57b2e5076d9df78c7dc49f723ad",
+      "size_bytes": 115136
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005517.json": {
+      "sha256": "849af001b611a53d19395d1212b0c76252327271ea7a6bf787067ac4bc7c829b",
+      "size_bytes": 114486
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005518.json": {
+      "sha256": "a52aa54c4c2652ffb1119ed846f6a53e51137c453550d61f1b8ca067ca3ae8ec",
+      "size_bytes": 115700
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005519.json": {
+      "sha256": "90877be8a0899053bd41a5f2fa81d831cbfd948e6353810d1b0659e370c184e3",
+      "size_bytes": 114684
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005550.json": {
+      "sha256": "165cd873efefe748efe8f18cd8878855a21808f66fb1201ad4adf50a669c4d99",
+      "size_bytes": 114808
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005551.json": {
+      "sha256": "fcaa54c2f031cce43381c60fa843e72a903198172c578f0cfc6589364ffc5a89",
+      "size_bytes": 115859
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005552.json": {
+      "sha256": "d9eda9d83ec9a4b700d58d7f2d79047cc2074807bdcb13d8ba62e4cc68e1207e",
+      "size_bytes": 114972
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005583.json": {
+      "sha256": "fddbcc85b09f491fada5cf67a6b3e38b828a9299636339694c9007e5285b16df",
+      "size_bytes": 119198
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005584.json": {
+      "sha256": "ff2fa22e7acda82570f55837735867663d04c43ac284d39bd88808031f945468",
+      "size_bytes": 123420
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005585.json": {
+      "sha256": "6b74f499895cd3a6c716c83981122741178f5db1feb9d83c1eeebdd7e9004143",
+      "size_bytes": 119682
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005616.json": {
+      "sha256": "1e2b4a78f156245b4a9220d73cc40cd63f276396acf6b9b773468197b3e4eb7a",
+      "size_bytes": 117380
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005617.json": {
+      "sha256": "16d8602e1a6160e46c7adfa8b4028470e95919cf5a29aeada2b276ee119fda6d",
+      "size_bytes": 120423
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005618.json": {
+      "sha256": "121a1ff791ffbc5c530d17ed224e18e34ddf430c39473452403d1b12f80c57a7",
+      "size_bytes": 117841
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005649.json": {
+      "sha256": "8016441ed077f0ea70cee247ec077cee167b0da799498f32779fd3597afe3eed",
+      "size_bytes": 115120
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005650.json": {
+      "sha256": "0f1a813a39095015e4c2bf6c4a714e1268f206670e912e6f79834fef967db308",
+      "size_bytes": 116180
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005651.json": {
+      "sha256": "6d971815e8a84892001e018b2bcc123b524eac1e2421e2a07fbe5a34e727744a",
+      "size_bytes": 115308
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005682.json": {
+      "sha256": "0ff5fc7524f5771ebcf732abed910d0e7b58a51fa46aee054d2a816eb50474e0",
+      "size_bytes": 117367
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005683.json": {
+      "sha256": "eba0acfe7e6391af4c86d9d879dcd83d1a472be6d06534e65eb1fc1fd0c8b043",
+      "size_bytes": 115317
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005684.json": {
+      "sha256": "dd5bc52f695727dc281ff1cc4b7a7f0bcc9f86d98edbbc57ab52229c53c7932c",
+      "size_bytes": 116582
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005715.json": {
+      "sha256": "acb4d6850ea363313b314bf3487ce33f0933795068815abe4f24c6c43e625901",
+      "size_bytes": 115295
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005716.json": {
+      "sha256": "5c47a0a8012569f72e23d286081d7e2c737e31b33d878ab516d82fd0cf2b2df0",
+      "size_bytes": 115388
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005717.json": {
+      "sha256": "a0bbcbb46b7a2f9e9c8f7590e5dbdd07c25fe641d0e030c1e04ead66c431c4e0",
+      "size_bytes": 115934
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005748.json": {
+      "sha256": "2e6ee569698ca98c6d1e934a8ae1768e20af902accb8a84f1e99808b25042e2c",
+      "size_bytes": 114366
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005749.json": {
+      "sha256": "2816e6d316629e3ea823cc89886c05c009e777cea9027c5b60caf2b655526f62",
+      "size_bytes": 115240
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005750.json": {
+      "sha256": "9562cceb5098911751b4dac8973ccd4a6fa03b813da311907409a9467f900d50",
+      "size_bytes": 115251
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005781.json": {
+      "sha256": "1fe15d26f816a94d99f33415ae7a706d3137897527500ae35fbf027049f65a2a",
+      "size_bytes": 26510
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005782.json": {
+      "sha256": "e5e96c0c9816d6eb081048b45a75e516255f5c4961c9ecfa9064a591c04402f9",
+      "size_bytes": 26633
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005783.json": {
+      "sha256": "32ee17591458c0d8d838ab9ac5382394651c039409b9a6a7a9974bc94e547eaa",
+      "size_bytes": 26515
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005814.json": {
+      "sha256": "26164ba99412db53a7d062d40dc77e26439edb5b35988972673002d11511191c",
+      "size_bytes": 26514
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005815.json": {
+      "sha256": "07c201cda431d666d2d18214fab9d5902ff2ec8b9b52989d92002200782b89f9",
+      "size_bytes": 26635
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005816.json": {
+      "sha256": "6aae9cdbfa7f1b6a3388b948aa1dc1e3215cc589b39209ef2d4d408e8f633adf",
+      "size_bytes": 26516
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005847.json": {
+      "sha256": "fcb26f35497b3f1dd6ecce553a06b503c9e9230d09f32663712e86935a6a8fbf",
+      "size_bytes": 26511
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005848.json": {
+      "sha256": "5f7dc0c1ed248ac13ace7250714056b2d4b065e29b333723e8a7f64f95f6e7b0",
+      "size_bytes": 26636
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005849.json": {
+      "sha256": "1902c5793ee88d242b3ba458c16f1b117f9f0daedebe0758c6149a7994ed4d90",
+      "size_bytes": 26516
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005880.json": {
+      "sha256": "c9d4a74ceab78a5b02151e965e16cc4b456f69fcff4f01d8f8941d09faf23b96",
+      "size_bytes": 122910
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005881.json": {
+      "sha256": "11ee6ba72a44ae0054b113505e54beb2e37bfc3562ed69068e10e96b5eab55bc",
+      "size_bytes": 122909
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005882.json": {
+      "sha256": "aa11cff42ce7e351f79010d3f772181cdcf35ede85a6603b2cad8bbb77fd4b6d",
+      "size_bytes": 122699
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005913.json": {
+      "sha256": "01e4b6cd180cce264d1fec4c38c2e33d6cfe5ec26208b741a1b94ec27d929cb9",
+      "size_bytes": 122528
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005914.json": {
+      "sha256": "f4f9b0122182585c7072acb361eeab0659631420fdd08c8e38e3d6424f48425a",
+      "size_bytes": 123185
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005915.json": {
+      "sha256": "c0527a421769ce6369b3dcfa315d2b8e8c6d64999b992489852a666ea3f09e0d",
+      "size_bytes": 123098
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005946.json": {
+      "sha256": "ffdfc69592dc8488935b550bc418f4f640c10ec0a1e2ed4afa0a0851ab1d5bce",
+      "size_bytes": 121306
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005947.json": {
+      "sha256": "13ee3c6ab38d7c925be547e1d3ae981622b4157f7e271226157d13eca792805c",
+      "size_bytes": 123083
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005948.json": {
+      "sha256": "169d7f2b92740846708dd6bb11685a2b8d187f84da7f25c16d0b682e7b4566ac",
+      "size_bytes": 122261
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005979.json": {
+      "sha256": "2acf07188ec033c32a734a40c4c137afd38021825b1070a713f24f303822d9c4",
+      "size_bytes": 120249
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005980.json": {
+      "sha256": "2b92e5f37d198f0c7a5dc4f81ffb97d0c70753cfb213b373a56597312955af13",
+      "size_bytes": 122649
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/005981.json": {
+      "sha256": "b6323cad1959cb4ce5db232bcc7943a11eccb3713d3c88c3f0037a9b946a8bc3",
+      "size_bytes": 120762
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006012.json": {
+      "sha256": "c7f55228facbeadd4803a3183d4552b48ea202e4a43e3c5a35ca174ecc1317e4",
+      "size_bytes": 119037
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006013.json": {
+      "sha256": "ea9f55e7b003b6eee99c26d8b4fc3f438103a1f9d98a16091596724834416fba",
+      "size_bytes": 121550
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006014.json": {
+      "sha256": "b599c12368a76fddc33e94307d636895ab9809b4a9663c0110259b65773b5dfe",
+      "size_bytes": 117910
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006045.json": {
+      "sha256": "0642ec8101b893fdd2cb3d91af08a3554aba2da04f567932c543befba6cc7f68",
+      "size_bytes": 118032
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006046.json": {
+      "sha256": "7ab224bcc445c001b3822a105aeb5206c264954282a939488ce6f61c4c31ba7d",
+      "size_bytes": 120316
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006047.json": {
+      "sha256": "4712205832de29363def56e94811c9f50a57e0bf501cff806cce3e5bc5eb00fd",
+      "size_bytes": 117252
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006078.json": {
+      "sha256": "f47ece57a8b61bc8bff70763b76ad8dd2e8422bc140f05b6bbe0ba3e36204c97",
+      "size_bytes": 134718
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006079.json": {
+      "sha256": "cc24986e9170c2b4ef0d3f610b9572ebf478aae9451d198e3fb5fc0549f55fcc",
+      "size_bytes": 134764
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006080.json": {
+      "sha256": "0a0296c539518cfc4429ca67fdba1f9b048171b1c7a046cf1cbfdfd3c2b086eb",
+      "size_bytes": 134508
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006111.json": {
+      "sha256": "4a34a113ebf76537465e14acd7e0ba4f36e1c0b20603f665c7031dead7986dc7",
+      "size_bytes": 134949
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006112.json": {
+      "sha256": "102cfa97ad33457ad83f199278c94b1d4616175fcc3f82c8c3da2434efa06686",
+      "size_bytes": 134797
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006113.json": {
+      "sha256": "d817746f70571cd68e0e0de49c57eba2bad041c71418573f024804d3fd9c8f3f",
+      "size_bytes": 134466
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006144.json": {
+      "sha256": "ada0fc8d57ed95d16b1bb76cb32d83d2620f72342027f51b91f43de62c4f48d6",
+      "size_bytes": 117086
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006145.json": {
+      "sha256": "81e7a17bd8b9dffbdc7b6b0ab06e0a2573ecb8588e8e59b24fc85f7fb19db47d",
+      "size_bytes": 118655
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006146.json": {
+      "sha256": "7420d3684a30cd1360438c1b97340daa1d5886aa305abb5c3f3385d99fbc2e34",
+      "size_bytes": 117335
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006177.json": {
+      "sha256": "58b173c3af7f905cafef5a3755a53fc39882bbaf95dec18bd2c793946e166a1e",
+      "size_bytes": 116170
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006178.json": {
+      "sha256": "ae243fdbb06b1e6bf96e533a5ae625e66f988cda78a46c1bfb983a90e9405dd7",
+      "size_bytes": 117460
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006179.json": {
+      "sha256": "ac86f0e2f2c5ea79b84c6609e5da0fb4d09c22e34d6093224a674004f79547b9",
+      "size_bytes": 116408
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006210.json": {
+      "sha256": "0bbfbcfe92920330033d1e29b7980ff2e1b8e79971f979122195b6105d686a60",
+      "size_bytes": 117200
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006211.json": {
+      "sha256": "40ae7b8af7e28ce143b6c632616207c373b7fea75865e2895fe2b8bc0165931b",
+      "size_bytes": 117115
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006212.json": {
+      "sha256": "e16bfb75a39f09a4ac80c367b34b39429f0edb2efabe80bd2ec0a609ebda0fa2",
+      "size_bytes": 116094
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006243.json": {
+      "sha256": "839334d12dd51a14dbf8cd6d721ea82fe500663c8bf50aa725914b6aa88ebc6f",
+      "size_bytes": 116260
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006244.json": {
+      "sha256": "c5e72cb6c400c91c9ca89abe887a6fd0fa337d866b24bd159104c19cfb487a80",
+      "size_bytes": 116039
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006245.json": {
+      "sha256": "b6d2ed2262bf9d8021f1a523ae6acbfa2084ba060156b1db8a21c88fd7990cc4",
+      "size_bytes": 115244
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006276.json": {
+      "sha256": "db50e3d5e94526eb1e69a8af32e69cabb0276be48634a0e6b47695741ec65c54",
+      "size_bytes": 115405
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006277.json": {
+      "sha256": "43614ae6363c580d1c0335e3bc772a1d3661ecfdcf225cb2d281f2de07f62328",
+      "size_bytes": 114876
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006278.json": {
+      "sha256": "62465920913427e8b643f5fc1f4fe6283eabc0babe232efb26dbfbec804ae2ca",
+      "size_bytes": 114957
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006309.json": {
+      "sha256": "5b6394c997e72e31314da82a8d944e8fcd29d64722a0b0f45de3247ea6546dc3",
+      "size_bytes": 114963
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006310.json": {
+      "sha256": "c75ec5fe96d30f873868a9062c7e3e91b0269402c378473d7e4182cdb407e851",
+      "size_bytes": 114666
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006311.json": {
+      "sha256": "20956bfb69432a98b79b4774f2f89dbeeae496563443b02180fc84c45dad13ac",
+      "size_bytes": 114768
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006342.json": {
+      "sha256": "228649195ef6783e3e40bd6cc96896eeb824485c36232f8c0b736ec631dc9ef0",
+      "size_bytes": 119507
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006343.json": {
+      "sha256": "1f0e0afd0332d5212d41f27c278a510d4af13eb2fb25d6fa841f4dec2511f3b2",
+      "size_bytes": 121847
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006344.json": {
+      "sha256": "2098c4f8a22503548faed9639cc9f79d379fe75b7e3675d158e62605914879ca",
+      "size_bytes": 120356
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006375.json": {
+      "sha256": "5d3a2158e2a509f25716d34e65fa34b1e1e4f049a87462b4b130ec8d8d8ddf89",
+      "size_bytes": 117724
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006376.json": {
+      "sha256": "e3c72c7d0bce99122a146c1d687f1a821cea4f61dc755fb49bf59f9d3b4f4741",
+      "size_bytes": 120885
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006377.json": {
+      "sha256": "6765f6a75b9a163d53c19b6a991171825b0c7470f4dbd3b513029785a9f40be7",
+      "size_bytes": 117740
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006408.json": {
+      "sha256": "4fca98499d13a7e95fec2a8b4467c6c0e3e9689366fd48d5818342ab6ea2d819",
+      "size_bytes": 117130
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006409.json": {
+      "sha256": "9a08c8bc94d80af6854b31af40314aa0192365416f36a027db9a15bae8552dba",
+      "size_bytes": 119707
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006410.json": {
+      "sha256": "cd22b9a162e0a021abf205c7bb0a14c76286f50ddcdcad94055599661816f078",
+      "size_bytes": 117201
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006441.json": {
+      "sha256": "f63455dae4de2397708f0d454c3a7bebf58541335fa2b29ce40b5b24d7dc79fb",
+      "size_bytes": 117746
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006442.json": {
+      "sha256": "944222a292ed31de7dd6752b6fc63bd30fa910f300545637589ae2fdb29706eb",
+      "size_bytes": 118170
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006443.json": {
+      "sha256": "608e4c92a8345051a33d6d13c7b015fde385f419b822ed2c9b0aa10fb2cc1a6f",
+      "size_bytes": 116588
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006474.json": {
+      "sha256": "632bfacfe8b94ab767fc8303a03a6f5cb34c6d5dc0ee4eeead58d3eb8db8f285",
+      "size_bytes": 113357
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006475.json": {
+      "sha256": "98d3221df52ae15780a8874110d9b11045e0d825daafa9e8f23c3a83307987e9",
+      "size_bytes": 114497
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006476.json": {
+      "sha256": "e481a2763c9a93b7660c4a1fd3ea8860ebff49f4657ca2761bc799efac629514",
+      "size_bytes": 113737
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006507.json": {
+      "sha256": "40ddfee02c8ae28094e3c7f8d7ec624208f76936e18de3bcd87d847cd9436d52",
+      "size_bytes": 111602
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006508.json": {
+      "sha256": "fb87a9c76c90165af8c627d4d015768df4fca7ca58b93166c90c498a7eb14ca5",
+      "size_bytes": 113602
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006509.json": {
+      "sha256": "2159761dc070579288b2813f14d14c2c9e49615fc2de0edfb8691912434cc77f",
+      "size_bytes": 111566
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006540.json": {
+      "sha256": "16222b6d146d79ce6917a9bed1f6995c4d9629e79a6f68e02b160f201f692fba",
+      "size_bytes": 110922
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006541.json": {
+      "sha256": "40957f2fac74a28cb3d016e651551e424f7dd3285ca5a8639c28de20c82d7edf",
+      "size_bytes": 111858
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006542.json": {
+      "sha256": "7215e02388ca2a13f020dc5a82da9ce22ade812ef6e79963cc543c14d0048a58",
+      "size_bytes": 110402
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006573.json": {
+      "sha256": "08c1e53a9e54ea09637732134e97ccfeb51228b12a6cd62d3cf42ed1510a15b2",
+      "size_bytes": 111020
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006574.json": {
+      "sha256": "5d2e124450ab5596207bd9c059ba22e5d4251b0f0478e81a4c4f38cdcd1008c6",
+      "size_bytes": 110905
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006575.json": {
+      "sha256": "9fe6fccb47ae0df5635bc9e3c42fcc6799430f2930768f1edef55da4f5b0a205",
+      "size_bytes": 110223
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006606.json": {
+      "sha256": "7efb948d7630554041849c191122183e5d7e50a70725e851a850bf07fdc27909",
+      "size_bytes": 124294
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006607.json": {
+      "sha256": "b9e78b70b130feeba5164bef93fd0ea5e37acc8e90d7fbd825a09f3f20a2ae05",
+      "size_bytes": 124677
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006608.json": {
+      "sha256": "fc771cff3c7393e7927bb68232200335d29f83c67b4c184548f0f0520c184adc",
+      "size_bytes": 124051
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006639.json": {
+      "sha256": "aa81bcd0c68e4096920590293e3968d15b726cefc1a262eeccaf640858efffb1",
+      "size_bytes": 124459
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006640.json": {
+      "sha256": "ad8fe6965a8ea031b4c579a76f95e82f3a148b979e5664bc0fff86eedbe1b569",
+      "size_bytes": 125531
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006641.json": {
+      "sha256": "d6d0c207474534eb1c5e7e08142be36522d4cc97e653ff36600db46068c28316",
+      "size_bytes": 125716
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006672.json": {
+      "sha256": "54518ce679231639f3efc582e19e917b3015383a042e2a27fbc37c23350858ba",
+      "size_bytes": 124048
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006673.json": {
+      "sha256": "ee3f9e06ce2fdbf7043427cd9fc1614fa81f48ff2f2c83dfb41088606af095a9",
+      "size_bytes": 125888
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006674.json": {
+      "sha256": "d9594d121390fb3b4794eb74c6bbebb4ff75da23c91292ec24374ca9e825cda6",
+      "size_bytes": 125443
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006705.json": {
+      "sha256": "d30c1770c2c0dbdbd59465fd1d300445aaa60192338672c41bb5e23a30ec6003",
+      "size_bytes": 124042
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006706.json": {
+      "sha256": "7b651a48b2b46312f72c0a7c63d9317bafcca619d6d5f80ebc6498276f597a06",
+      "size_bytes": 125750
+    },
+    "/Volumes/Seagate-14T/axone_research/tibot/TX_20261116_001_CLEAN_BTCUSDT_ALL_FAMILY_PASS/receipts_v3/006707.json": {
+      "sha256": "51ea94e3db828213ad99657f62728b3e6eeee2d325879d3bf50e181045dc59cc",
+      "size_bytes": 124106
+    }
+  }
+}

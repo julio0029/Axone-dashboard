@@ -1,0 +1,7 @@
+{
+  "transaction": "TX:20261116-225243",
+  "evidence_transaction": "TX:20261116-164642",
+  "bundle_manifest_sha256": "bda27724d1ad17fdf78582a8f006c06b5c6887d38cded40f4132b1d5c5d76878",
+  "source_artifact": "btc_usdt_ohlcv_predictions_wide.csv.gz",
+  "delivery": "Exact gzip-compressed CSV from the verified bundle; 6,011 rows, 594 candidate columns, no sampling or imputation."
+}

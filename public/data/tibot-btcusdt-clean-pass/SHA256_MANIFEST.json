@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "DATA_DICTIONARY.json": {
+      "sha256": "0a04d0c07b35021d33e8a7f803129a6936bb91625d1d51b4df65dc6a40c2111e",
+      "size_bytes": 946
+    },
+    "INPUT_SHA256_MANIFEST.json": {
+      "sha256": "e66118e2f311f02e39ca6703ee326a138d1f937e34b71e12b5cdd8942178411e",
+      "size_bytes": 154869
+    },
+    "btc_usdt_ohlcv_predictions_wide.csv.gz": {
+      "sha256": "c72bd847c7291add035870ff667a15b911978fe84166f1ef1ba2f46a7c821514",
+      "size_bytes": 9005175
+    },
+    "btc_usdt_ohlcv_predictions_wide.parquet": {
+      "sha256": "6bf6e39ee57167eea1fdf367e2770569323b8868c65254b95b9e3e1cb272d0b6",
+      "size_bytes": 9739424
+    },
+    "btc_usdt_predictions_long.csv.gz": {
+      "sha256": "e88035d3bf2d63cf60ca28f4c8b8c2df3c75ad4a86fcf6a5ad09bd0ec1a0de86",
+      "size_bytes": 29586827
+    },
+    "btc_usdt_predictions_long.parquet": {
+      "sha256": "66a6f6057f56e258c1a9770866ce528d3a8374f2b727cd970433b49c615cb79c",
+      "size_bytes": 19936235
+    },
+    "no_fit_cells.json": {
+      "sha256": "f6ba0811a1cd2e0a81044bb58c732c7a8b98007460dfa312b438f36b9f1bd7c9",
+      "size_bytes": 1574
+    },
+    "reconciliation_summary.json": {
+      "sha256": "515282381dbc25529c5adf852624bbecc7a85065250bf337105a85809f78a3c7",
+      "size_bytes": 1049
+    },
+    "selected_candidate_metadata.json": {
+      "sha256": "b9655052dd5a7cb95f6be28bfd4d1950a952b9ea9feda6f3edfb35dc99cf7414",
+      "size_bytes": 416413
+    }
+  },
+  "bundle_path": "/Users/julesdevaux/.openclaw/agents/sentinel/workspace/AUDITS/TX_20261116_164642_REVIEW_BUNDLE",
+  "generated_utc": "2026-11-16T03:54:54.066799+00:00"
+}
